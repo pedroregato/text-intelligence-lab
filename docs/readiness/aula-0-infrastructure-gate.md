@@ -51,30 +51,18 @@ Current status: **PASS**
 Evidence:
 
 - official Kaggle package installed successfully;
-- Kaggle 2.2.4 installation was observed on the permanent desktop;
-- the earlier TLS issue was resolved safely with the system trust store.
+- Kaggle 2.2.4 installation validated;
+- earlier TLS issue was resolved safely with the system trust store.
 
 ### G5 — Kaggle CLI executable and authentication
 
-Required evidence:
+Current status: **PASS**
 
-- `where.exe kaggle` resolves to the project virtual environment;
-- `kaggle --version` succeeds;
-- `kaggle auth login` succeeds.
+Evidence:
 
-Current status: **PARTIAL — AUTH PASS, PATH/VERSION EVIDENCE PENDING**
-
-Evidence already obtained:
-
-- interactive Kaggle authentication succeeded on the temporary desktop;
-- subsequent Kaggle CLI query executed successfully.
-
-Still required:
-
-- capture `where.exe kaggle`;
-- capture `kaggle --version`.
-
-Blocking: **YES, evidence-only**
+- `where.exe kaggle` → `F:\text-intelligence-lab\.venv\Scripts\kaggle.exe`
+- `kaggle --version` → `Kaggle CLI 2.2.4`
+- interactive Kaggle authentication succeeded.
 
 Tracked by:
 
@@ -82,19 +70,12 @@ Tracked by:
 
 ### G6 — Kaggle read-only connectivity
 
-Required evidence:
-
-- one non-destructive public query succeeds through Kaggle CLI.
-
-Test executed:
-
-`kaggle datasets list --search iris`
-
 Current status: **PASS**
 
 Evidence:
 
-The query returned multiple public datasets, including `uciml/iris — Iris Species`.
+- `kaggle datasets list --search iris` returned multiple public datasets;
+- `uciml/iris — Iris Species` was among the returned resources.
 
 Tracked by:
 
@@ -143,7 +124,7 @@ G1 Local Git workflow              PASS
 G2 GitHub source of truth          PASS
 G3 Python 3.11 / .venv            PASS
 G4 Kaggle CLI installed           PASS
-G5 Kaggle CLI auth/path/version   PARTIAL
+G5 Kaggle CLI auth/path/version   PASS
 G6 Kaggle public read query       PASS
 G7 Credential safety              PASS
 
@@ -153,22 +134,11 @@ O2 ChatGPT web → Kaggle MCP       UNAVAILABLE
 
 ## Release Status
 
-**AULA 0: NOT YET RELEASED — ONE EVIDENCE CHECK REMAINS**
+**AULA 0: RELEASED**
 
-The functional Kaggle path is already validated.
+All mandatory infrastructure criteria are PASS.
 
-Only the following evidence must still be captured from the currently active temporary desktop environment:
-
-```powershell
-where.exe kaggle
-kaggle --version
-```
-
-If both succeed and the executable resolves from the project `.venv`:
-
-- mark G5 PASS;
-- mark INFRA-002 PASS;
-- update this document to `AULA 0: RELEASED`.
+Optional MCP validation may continue independently and does not block the educational phase.
 
 ## Principle
 
