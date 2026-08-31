@@ -25,6 +25,8 @@ A TIL Python 3.11 virtual environment can install and run the official Kaggle CL
 - Project: `F:\text-intelligence-lab`
 - Project synchronized from GitHub
 - Project-local `.venv` created and activated
+- Kaggle CLI executable: `F:\text-intelligence-lab\.venv\Scripts\kaggle.exe`
+- Kaggle CLI version: 2.2.4
 - Kaggle authentication completed successfully
 
 ## Procedure and Evidence
@@ -66,14 +68,12 @@ Kaggle 2.2.4 and its dependencies were installed successfully.
 
 ### 4. Kaggle executable provenance/version — temporary desktop
 
-Still to record:
+Validated:
 
-- `where.exe kaggle`
-- `kaggle --version`
+- `where.exe kaggle` → `F:\text-intelligence-lab\.venv\Scripts\kaggle.exe`
+- `kaggle --version` → `Kaggle CLI 2.2.4`
 
-The successful authenticated query proves the command is executable, but the exact executable path and reported CLI version have not yet been captured as evidence on the temporary desktop.
-
-**Result: PENDING EVIDENCE**
+**Result: PASS**
 
 ### 5. Kaggle authentication — temporary desktop
 
@@ -101,26 +101,20 @@ No persistent Kaggle resource was created or modified.
 
 ## Result
 
-**PASS WITH ONE EVIDENCE ITEM PENDING**
+**PASS**
 
-The important functional hypothesis is validated:
+The hypothesis is validated:
 
-- Kaggle CLI is callable;
+- the Kaggle CLI is installed and resolved from the project virtual environment;
+- the exact CLI version is recorded;
 - interactive authentication succeeds;
-- authenticated/public Kaggle connectivity works;
-- a read-only dataset search returns real Kaggle resources.
-
-The only remaining evidence item is to capture the executable path and CLI version on the temporary desktop.
+- Kaggle connectivity works;
+- a read-only public dataset query returns real resources.
 
 ## Conclusion
 
-INFRA-002 has functionally succeeded.
+INFRA-002 is complete.
 
-For strict completion of the readiness gate, record:
+The TIL local/portable Windows workflow for Kaggle CLI access is validated.
 
-```powershell
-where.exe kaggle
-kaggle --version
-```
-
-No further Kaggle authentication or public-query test is required unless the environment changes.
+No further Kaggle CLI validation is required unless the environment, authentication method, or project baseline changes.
