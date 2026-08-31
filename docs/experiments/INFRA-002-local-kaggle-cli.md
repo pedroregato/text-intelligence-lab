@@ -2,13 +2,15 @@
 
 ## Objective
 
-Validate the local PyCharm/Python environment for authenticated Kaggle CLI access and a non-destructive public Kaggle query.
+Validate the local Python environment for authenticated Kaggle CLI access and a non-destructive public Kaggle query.
 
 ## Hypothesis
 
-The TIL local Python 3.11 virtual environment can install and run the official Kaggle CLI and query Kaggle successfully.
+A TIL Python 3.11 virtual environment can install and run the official Kaggle CLI, authenticate successfully, and query Kaggle.
 
-## Environment
+## Environments
+
+### Permanent desktop
 
 - Windows PowerShell
 - Project: `D:\PythonProjects\text-intelligence-lab`
@@ -17,9 +19,17 @@ The TIL local Python 3.11 virtual environment can install and run the official K
 - pip: 24.0
 - Kaggle package installed: 2.2.4
 
+### Temporary desktop
+
+- Windows PowerShell
+- Project: `F:\text-intelligence-lab`
+- Project synchronized from GitHub
+- Project-local `.venv` created and activated
+- Kaggle authentication completed successfully
+
 ## Procedure and Evidence
 
-### 1. Python environment validation
+### 1. Python environment validation — permanent desktop
 
 Validated:
 
@@ -30,13 +40,13 @@ Validated:
 
 **Result: PASS**
 
-### 2. pip configuration validation
+### 2. pip configuration validation — permanent desktop
 
 `python -m pip config debug` showed no active global, user, or virtual-environment pip configuration files.
 
 **Result: PASS**
 
-### 3. Kaggle CLI installation
+### 3. Kaggle CLI installation — permanent desktop
 
 Initial installation with:
 
@@ -54,43 +64,63 @@ Kaggle 2.2.4 and its dependencies were installed successfully.
 
 **Result: PASS**
 
-### 4. Kaggle executable validation
+### 4. Kaggle executable provenance/version — temporary desktop
 
-Pending:
+Still to record:
 
 - `where.exe kaggle`
 - `kaggle --version`
 
-**Result: PENDING**
+The successful authenticated query proves the command is executable, but the exact executable path and reported CLI version have not yet been captured as evidence on the temporary desktop.
 
-### 5. Kaggle authentication
+**Result: PENDING EVIDENCE**
 
-Pending:
+### 5. Kaggle authentication — temporary desktop
 
-- `kaggle auth login`
+Interactive Kaggle authentication completed successfully and returned:
 
-**Result: PENDING**
+`Authentication Successful!`
 
-### 6. Non-destructive Kaggle query
+**Result: PASS**
 
-Pending:
+### 6. Non-destructive Kaggle query — temporary desktop
 
-- `kaggle datasets list --search iris`
+Command:
 
-**Result: PENDING**
+`kaggle datasets list --search iris`
+
+The command returned public Kaggle dataset results successfully, including:
+
+- `uciml/iris` — Iris Species
+- `himanshunakrani/iris-dataset` — Iris dataset
+- `arshid/iris-flower-dataset` — Iris Flower Dataset
+
+No persistent Kaggle resource was created or modified.
+
+**Result: PASS**
 
 ## Result
 
-**IN PROGRESS**
+**PASS WITH ONE EVIDENCE ITEM PENDING**
 
-The local Python environment and Kaggle CLI installation are validated.
+The important functional hypothesis is validated:
 
-The initial TLS issue was resolved without disabling certificate verification by enabling the system trust store.
+- Kaggle CLI is callable;
+- interactive authentication succeeds;
+- authenticated/public Kaggle connectivity works;
+- a read-only dataset search returns real Kaggle resources.
 
-Authentication and live Kaggle connectivity remain to be tested.
+The only remaining evidence item is to capture the executable path and CLI version on the temporary desktop.
 
 ## Conclusion
 
-INFRA-002 is no longer blocked.
+INFRA-002 has functionally succeeded.
 
-The experiment will be complete after validating the Kaggle executable, authentication, and one public read-only query.
+For strict completion of the readiness gate, record:
+
+```powershell
+where.exe kaggle
+kaggle --version
+```
+
+No further Kaggle authentication or public-query test is required unless the environment changes.
