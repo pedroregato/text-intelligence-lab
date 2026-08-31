@@ -1,0 +1,14 @@
+{
+  "id": "pedroregato/til-00-environment-validation",
+  "title": "TIL 00 Environment Validation",
+  "code_file": "00-til-environment-validation.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "false",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
