@@ -700,3 +700,67 @@ terms:
       til_context: In Lesson 7, repeatedly consulting the test set during tuning is presented as a risk of test-set overfitting.
       example: Repeatedly choosing configurations based on the final test score.
     related: [cross-validation, train-test-split]
+
+  - id: token
+    category: text-intelligence
+    lesson_first_seen: "02"
+    pt-BR:
+      term: Token
+      english_term: Token
+      definition: Unidade resultante da segmentação de um texto para processamento computacional.
+      til_context: Na Aula 2, começamos tratando palavras como tokens, embora outras técnicas possam usar subpalavras ou caracteres.
+      example: Na frase "atendimento excelente", atendimento e excelente podem ser tokens.
+    en:
+      term: Token
+      definition: A unit produced by segmenting text for computational processing.
+      til_context: In Lesson 2, we begin by treating words as tokens, although other techniques may use subwords or characters.
+      example: In "excellent service", excellent and service may be tokens.
+    related: [tokenization, raw-text]
+
+  - id: tokenization
+    category: text-intelligence
+    lesson_first_seen: "02"
+    pt-BR:
+      term: Tokenização
+      english_term: Tokenization
+      definition: Processo de dividir texto em unidades menores chamadas tokens.
+      til_context: Na Aula 2, comparamos uma estratégia simples com split e uma tokenização baseada em expressão regular.
+      example: "atendimento excelente" se torna ["atendimento", "excelente"].
+    en:
+      term: Tokenization
+      definition: The process of splitting text into smaller units called tokens.
+      til_context: In Lesson 2, we compare a simple split strategy with regular-expression tokenization.
+      example: "excellent service" becomes ["excellent", "service"].
+    related: [token, normalization, raw-text]
+
+  - id: normalization
+    category: text-intelligence
+    lesson_first_seen: "02"
+    pt-BR:
+      term: Normalização textual
+      english_term: Text normalization
+      definition: Conjunto de transformações aplicadas para reduzir variações superficiais do texto preservando a informação relevante ao problema.
+      til_context: Na Aula 2, usamos minúsculas e remoção de espaços nas extremidades como exemplos simples.
+      example: " ATENDIMENTO " se torna "atendimento".
+    en:
+      term: Text normalization
+      definition: A set of transformations used to reduce superficial text variation while preserving information relevant to the problem.
+      til_context: In Lesson 2, lowercasing and trimming whitespace are used as simple examples.
+      example: " SERVICE " becomes "service".
+    related: [tokenization, raw-text]
+
+  - id: regular-expression
+    category: engineering
+    lesson_first_seen: "02"
+    pt-BR:
+      term: Expressão regular
+      english_term: Regular expression
+      definition: Linguagem compacta de padrões usada para localizar, validar ou extrair sequências de caracteres.
+      til_context: Na Aula 2, a biblioteca padrão re é usada para extrair tokens com um padrão simples.
+      example: re.findall(r"\\b\\w+\\b", text).
+    en:
+      term: Regular expression
+      definition: A compact pattern language used to locate, validate, or extract character sequences.
+      til_context: In Lesson 2, Python's standard re library is used to extract tokens with a simple pattern.
+      example: re.findall(r"\\b\\w+\\b", text).
+    related: [tokenization]
