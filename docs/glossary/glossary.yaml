@@ -412,3 +412,67 @@ terms:
       til_context: It is used in Lesson 3 to build the vocabulary, features, and Bag-of-Words matrix.
       example: vectorizer.fit_transform(texts).
     related: [bag-of-words, vocabulary, document-term-matrix]
+
+  - id: tf
+    category: text-intelligence
+    lesson_first_seen: "04"
+    pt-BR:
+      term: TF
+      english_term: Term Frequency
+      definition: Medida da frequência de um termo dentro de um documento.
+      til_context: Na Aula 4, TF compõe o primeiro fator da ponderação TF-IDF.
+      example: Quantas vezes uma palavra aparece em uma mensagem.
+    en:
+      term: Term Frequency
+      definition: A measure of how frequently a term appears within a document.
+      til_context: In Lesson 4, TF is the first component of TF-IDF weighting.
+      example: How many times a word appears in a message.
+    related: [idf, tfidf]
+
+  - id: idf
+    category: text-intelligence
+    lesson_first_seen: "04"
+    pt-BR:
+      term: IDF
+      english_term: Inverse Document Frequency
+      definition: Medida que reduz o peso de termos presentes em muitos documentos e aumenta o peso relativo de termos mais raros no corpus.
+      til_context: Na Aula 4, IDF ajuda a diferenciar termos comuns de termos mais discriminantes.
+      example: atendimento recebe menor IDF quando aparece em todos os documentos.
+    en:
+      term: Inverse Document Frequency
+      definition: A measure that downweights terms appearing in many documents and relatively upweights rarer terms.
+      til_context: In Lesson 4, IDF helps distinguish common terms from more discriminative ones.
+      example: service receives a lower IDF when it appears in every document.
+    related: [tf, tfidf, corpus]
+
+  - id: tfidf
+    category: text-intelligence
+    lesson_first_seen: "04"
+    pt-BR:
+      term: TF-IDF
+      english_term: TF-IDF
+      definition: Técnica de ponderação que combina frequência de termo no documento e raridade do termo no corpus.
+      til_context: Na Aula 4, TF-IDF transforma documentos em features ponderadas mais informativas do que simples contagens em muitos cenários.
+      example: termos específicos recebem peso maior do que termos presentes em todos os documentos.
+    en:
+      term: TF-IDF
+      definition: A weighting technique that combines term frequency within a document with term rarity across the corpus.
+      til_context: In Lesson 4, TF-IDF transforms documents into weighted features that can be more informative than raw counts.
+      example: Specific terms receive higher weight than terms occurring in every document.
+    related: [tf, idf, tfidfvectorizer, feature]
+
+  - id: tfidfvectorizer
+    category: machine-learning
+    lesson_first_seen: "04"
+    pt-BR:
+      term: TfidfVectorizer
+      english_term: TfidfVectorizer
+      definition: Classe do scikit-learn que converte documentos textuais em uma matriz de features ponderadas por TF-IDF.
+      til_context: É a ferramenta principal utilizada na Aula 4.
+      example: vectorizer.fit_transform(texts).
+    en:
+      term: TfidfVectorizer
+      definition: A scikit-learn class that converts text documents into a TF-IDF-weighted feature matrix.
+      til_context: It is the main tool used in Lesson 4.
+      example: vectorizer.fit_transform(texts).
+    related: [tfidf, document-term-matrix, feature]
