@@ -1,0 +1,14 @@
+{
+  "id": "pedrogentil/til-05-first-text-classifier",
+  "title": "TIL 05 First Text Classifier",
+  "code_file": "05-til-first-text-classifier.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "false",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
