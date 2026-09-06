@@ -1052,3 +1052,115 @@ terms:
       til_context: In Lesson 10, a pretrained encoder is used only for inference and contextual embedding observation.
       example: distilbert-base-uncased loaded to extract representations.
     related: [transformer, contextual-embedding]
+
+  - id: fine-tuning
+    category: machine-learning
+    lesson_first_seen: "11"
+    pt-BR:
+      term: Fine-tuning
+      english_term: Fine-tuning
+      definition: Processo de adaptar um modelo pré-treinado a uma tarefa específica usando dados rotulados da nova tarefa.
+      til_context: Na Aula 11, um Transformer multilíngue é ajustado para classificar mensagens em três categorias.
+      example: Ajustar um encoder pré-treinado para prever duvida, reclamacao ou elogio.
+    en:
+      term: Fine-tuning
+      definition: The process of adapting a pretrained model to a specific task using labeled data from the new task.
+      til_context: In Lesson 11, a multilingual Transformer is fine-tuned to classify messages into three categories.
+      example: Adapting a pretrained encoder to predict question, complaint, or praise.
+    related: [pretrained-model, transfer-learning, sequence-classification]
+
+  - id: transfer-learning
+    category: machine-learning
+    lesson_first_seen: "11"
+    pt-BR:
+      term: Transfer learning
+      english_term: Transfer learning
+      definition: Estratégia de reutilizar conhecimento aprendido em uma tarefa ou domínio para acelerar ou melhorar o aprendizado em outra tarefa.
+      til_context: Na Aula 11, o conhecimento linguístico do modelo pré-treinado é transferido para classificação de mensagens.
+      example: Reutilizar BERT em vez de treinar um modelo de linguagem do zero.
+    en:
+      term: Transfer learning
+      definition: A strategy that reuses knowledge learned in one task or domain to accelerate or improve learning in another task.
+      til_context: In Lesson 11, pretrained linguistic knowledge is transferred to message classification.
+      example: Reusing BERT instead of training a language model from scratch.
+    related: [fine-tuning, pretrained-model]
+
+  - id: sequence-classification
+    category: text-intelligence
+    lesson_first_seen: "11"
+    pt-BR:
+      term: Classificação de sequência
+      english_term: Sequence classification
+      definition: Tarefa em que uma sequência textual inteira recebe uma classe ou rótulo.
+      til_context: Na Aula 11, cada mensagem recebe uma das classes duvida, reclamacao ou elogio.
+      example: Classificar uma mensagem de atendimento em uma categoria.
+    en:
+      term: Sequence classification
+      definition: A task in which an entire text sequence receives a class or label.
+      til_context: In Lesson 11, each message receives one of the labels question, complaint, or praise.
+      example: Classifying a customer-service message into a category.
+    related: [classification, fine-tuning]
+
+  - id: epoch
+    category: machine-learning
+    lesson_first_seen: "11"
+    pt-BR:
+      term: Época
+      english_term: Epoch
+      definition: Uma passagem completa do algoritmo de treinamento por todos os exemplos do conjunto de treino.
+      til_context: Na Aula 11, usamos uma única época para manter o experimento leve e didático.
+      example: num_train_epochs=1.
+    en:
+      term: Epoch
+      definition: One complete pass of the training algorithm through all examples in the training set.
+      til_context: In Lesson 11, a single epoch is used to keep the experiment lightweight and didactic.
+      example: num_train_epochs=1.
+    related: [batch, learning-rate, fine-tuning]
+
+  - id: batch
+    category: machine-learning
+    lesson_first_seen: "11"
+    pt-BR:
+      term: Batch
+      english_term: Batch
+      definition: Pequeno grupo de exemplos processados juntos durante uma etapa de treinamento.
+      til_context: Na Aula 11, o batch size controla quantas mensagens entram em cada passo.
+      example: per_device_train_batch_size=4.
+    en:
+      term: Batch
+      definition: A small group of examples processed together during a training step.
+      til_context: In Lesson 11, batch size controls how many messages are processed in each step.
+      example: per_device_train_batch_size=4.
+    related: [epoch, learning-rate]
+
+  - id: learning-rate
+    category: machine-learning
+    lesson_first_seen: "11"
+    pt-BR:
+      term: Learning rate
+      english_term: Learning rate
+      definition: Hiperparâmetro que controla o tamanho das atualizações aplicadas aos pesos durante o treinamento.
+      til_context: Na Aula 11, usamos uma taxa pequena adequada ao fine-tuning de um modelo pré-treinado.
+      example: learning_rate=2e-5.
+    en:
+      term: Learning rate
+      definition: A hyperparameter that controls the size of weight updates during training.
+      til_context: In Lesson 11, a small rate is used for fine-tuning a pretrained model.
+      example: learning_rate=2e-5.
+    related: [epoch, batch, hyperparameter]
+
+  - id: tokenizer
+    category: text-intelligence
+    lesson_first_seen: "11"
+    pt-BR:
+      term: Tokenizer
+      english_term: Tokenizer
+      definition: Componente que converte texto em unidades e identificadores numéricos compatíveis com o vocabulário de um modelo.
+      til_context: Na Aula 11, o tokenizer prepara as mensagens para entrada no Transformer.
+      example: AutoTokenizer.from_pretrained(...).
+    en:
+      term: Tokenizer
+      definition: A component that converts text into units and numerical identifiers compatible with a model vocabulary.
+      til_context: In Lesson 11, the tokenizer prepares messages for Transformer input.
+      example: AutoTokenizer.from_pretrained(...).
+    related: [tokenization, subword-tokenization, transformer]
