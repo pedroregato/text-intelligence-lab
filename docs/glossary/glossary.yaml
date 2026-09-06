@@ -332,3 +332,83 @@ terms:
       til_context: TIL will use classification for document and message problems.
       example: Classifying a message as complaint, praise, or question.
     related: [class, label, model]
+
+  - id: bag-of-words
+    category: text-intelligence
+    lesson_first_seen: "03"
+    pt-BR:
+      term: Bag-of-Words
+      english_term: Bag-of-Words
+      definition: Representação textual que descreve um documento pelas ocorrências dos termos de um vocabulário, sem preservar diretamente a ordem completa das palavras.
+      til_context: Na Aula 3, Bag-of-Words é a primeira ponte entre texto e uma representação numérica utilizável por modelos tradicionais.
+      example: As palavras de um documento tornam-se colunas de uma matriz e seus valores representam contagens.
+    en:
+      term: Bag-of-Words
+      definition: A text representation that describes a document through occurrences of vocabulary terms without directly preserving full word order.
+      til_context: In Lesson 3, Bag-of-Words is the first bridge between text and a numerical representation usable by traditional models.
+      example: Document words become matrix columns and their values represent counts.
+    related: [vocabulary, document-term-matrix, feature]
+
+  - id: vocabulary
+    category: text-intelligence
+    lesson_first_seen: "03"
+    pt-BR:
+      term: Vocabulário
+      english_term: Vocabulary
+      definition: Conjunto de termos distintos reconhecidos por uma representação textual em um corpus.
+      til_context: Cada termo do vocabulário produzido pelo CountVectorizer pode se tornar uma feature.
+      example: atendimento, excelente, gostei e não.
+    en:
+      term: Vocabulary
+      definition: The set of distinct terms recognized by a text representation in a corpus.
+      til_context: Each vocabulary term produced by CountVectorizer may become a feature.
+      example: service, excellent, liked, and not.
+    related: [bag-of-words, feature, corpus]
+
+  - id: document-term-matrix
+    category: text-intelligence
+    lesson_first_seen: "03"
+    pt-BR:
+      term: Matriz documento-termo
+      english_term: Document-term matrix
+      definition: Matriz em que as linhas representam documentos, as colunas representam termos e os valores representam alguma medida associada à ocorrência desses termos.
+      til_context: Na Aula 3, os valores são contagens produzidas pelo CountVectorizer.
+      example: Uma linha por mensagem e uma coluna por palavra do vocabulário.
+    en:
+      term: Document-term matrix
+      definition: A matrix whose rows represent documents, columns represent terms, and values represent a measure associated with term occurrence.
+      til_context: In Lesson 3, values are counts produced by CountVectorizer.
+      example: One row per message and one column per vocabulary word.
+    related: [bag-of-words, vocabulary, sparse-matrix]
+
+  - id: sparse-matrix
+    category: machine-learning
+    lesson_first_seen: "03"
+    pt-BR:
+      term: Matriz esparsa
+      english_term: Sparse matrix
+      definition: Estrutura matricial eficiente para dados em que a maioria dos valores é zero.
+      til_context: Representações textuais costumam ser esparsas porque cada documento contém apenas uma pequena parte do vocabulário total.
+      example: A saída padrão de CountVectorizer antes de chamar toarray().
+    en:
+      term: Sparse matrix
+      definition: An efficient matrix structure for data in which most values are zero.
+      til_context: Text representations are often sparse because each document contains only a small fraction of the full vocabulary.
+      example: CountVectorizer's default output before calling toarray().
+    related: [document-term-matrix, bag-of-words]
+
+  - id: countvectorizer
+    category: machine-learning
+    lesson_first_seen: "03"
+    pt-BR:
+      term: CountVectorizer
+      english_term: CountVectorizer
+      definition: Classe do scikit-learn que transforma uma coleção de documentos textuais em uma matriz de contagens de tokens.
+      til_context: É a ferramenta usada na Aula 3 para construir vocabulário, features e a matriz Bag-of-Words.
+      example: vectorizer.fit_transform(texts).
+    en:
+      term: CountVectorizer
+      definition: A scikit-learn class that converts a collection of text documents into a matrix of token counts.
+      til_context: It is used in Lesson 3 to build the vocabulary, features, and Bag-of-Words matrix.
+      example: vectorizer.fit_transform(texts).
+    related: [bag-of-words, vocabulary, document-term-matrix]
