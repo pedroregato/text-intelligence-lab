@@ -166,6 +166,26 @@ Do not overuse them.
 
 Exercises should require the student to retrieve, interpret, modify, compare, or reason about what was taught.
 
+### Mandatory pattern for coding exercises
+
+Whenever the exercise requires Python or another programming language, the notebook must provide:
+
+1. **A clear executable answer cell** where the student writes and runs the solution.
+2. **A hint** that identifies the relevant language, library, API, functions, methods, or objects that may help.
+3. **An executable solution** that the student can reveal and run for verification.
+4. **A short explanation** of why the solution works when the code is not self-explanatory.
+
+The preferred learner flow is:
+
+```text
+Read the problem
+→ Write code in the student answer cell
+→ Execute and inspect the result
+→ Use hint if needed
+→ Reveal and run the solution
+→ Compare approaches
+```
+
 Whenever appropriate, follow the Kaggle-inspired interaction pattern:
 
 ```python
@@ -179,12 +199,16 @@ Recommended sequence:
 Try
 → Check when applicable
 → Hint if needed
-→ Solution for verification
+→ Executable solution for verification
 ```
 
-Hints should guide without immediately giving the answer.
+Hints must guide without immediately giving the final answer. For coding exercises, a good hint should usually mention the relevant library and a small set of useful functions or methods.
 
-Solutions should explain the reasoning, not only reveal the final result.
+Solutions must be executable whenever the exercise itself is executable. Do not provide only a prose answer to a programming exercise.
+
+The learner's answer cell must appear before the hint and solution cells.
+
+For non-coding exercises, prose answers are acceptable when execution would add no pedagogical value.
 
 ---
 
@@ -195,7 +219,9 @@ If an exercise requires setup code for hints, checking, or solutions:
 - explain its purpose before the cell;
 - state that it should be executed;
 - clarify that it does not solve the exercise;
-- keep the helper minimal and self-contained.
+- keep the helper minimal and self-contained;
+- place the student's executable answer cell before helper, hint, and solution cells;
+- ensure that the revealed solution is executable for coding exercises.
 
 Avoid dependencies on internal Kaggle teaching packages unless there is a strong reason.
 
