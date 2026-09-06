@@ -476,3 +476,67 @@ terms:
       til_context: It is the main tool used in Lesson 4.
       example: vectorizer.fit_transform(texts).
     related: [tfidf, document-term-matrix, feature]
+
+  - id: supervised-learning
+    category: machine-learning
+    lesson_first_seen: "05"
+    pt-BR:
+      term: Aprendizagem supervisionada
+      english_term: Supervised learning
+      definition: Abordagem de Machine Learning em que o modelo aprende a partir de exemplos associados a respostas conhecidas.
+      til_context: Na Aula 5, cada texto possui um rótulo conhecido usado durante o treinamento.
+      example: Mensagens rotuladas como duvida, reclamacao ou elogio.
+    en:
+      term: Supervised learning
+      definition: A Machine Learning approach in which a model learns from examples associated with known target answers.
+      til_context: In Lesson 5, each text has a known label used during training.
+      example: Messages labeled as question, complaint, or praise.
+    related: [label, classification, training]
+
+  - id: train-test-split
+    category: machine-learning
+    lesson_first_seen: "05"
+    pt-BR:
+      term: Divisão treino/teste
+      english_term: Train/test split
+      definition: Separação de um dataset em uma parte usada para treinamento e outra reservada para avaliação.
+      til_context: Na Aula 5, train_test_split evita avaliar o modelo apenas nos exemplos usados para aprender.
+      example: 67% dos exemplos para treino e 33% para teste.
+    en:
+      term: Train/test split
+      definition: Splitting a dataset into one portion used for training and another reserved for evaluation.
+      til_context: In Lesson 5, train_test_split prevents evaluating the model only on examples used for learning.
+      example: 67% of examples for training and 33% for testing.
+    related: [training, accuracy, supervised-learning]
+
+  - id: multinomial-naive-bayes
+    category: machine-learning
+    lesson_first_seen: "05"
+    pt-BR:
+      term: Multinomial Naive Bayes
+      english_term: Multinomial Naive Bayes
+      definition: Algoritmo probabilístico frequentemente usado como baseline em classificação de texto com features de contagem ou ponderadas.
+      til_context: Na Aula 5, MultinomialNB recebe features TF-IDF e aprende a prever classes.
+      example: MultinomialNB() dentro de um Pipeline.
+    en:
+      term: Multinomial Naive Bayes
+      definition: A probabilistic algorithm often used as a baseline for text classification with count-based or weighted features.
+      til_context: In Lesson 5, MultinomialNB receives TF-IDF features and learns to predict classes.
+      example: MultinomialNB() inside a Pipeline.
+    related: [classification, tfidf, baseline]
+
+  - id: accuracy
+    category: machine-learning
+    lesson_first_seen: "05"
+    pt-BR:
+      term: Acurácia
+      english_term: Accuracy
+      definition: Proporção de previsões corretas entre todas as previsões realizadas.
+      til_context: Na Aula 5, a acurácia é apresentada como uma primeira métrica, com a ressalva de que não deve ser interpretada isoladamente.
+      example: 3 acertos em 4 previsões correspondem a acurácia 0,75.
+    en:
+      term: Accuracy
+      definition: The proportion of correct predictions among all predictions made.
+      til_context: In Lesson 5, accuracy is introduced as a first metric with the caveat that it should not be interpreted alone.
+      example: 3 correct predictions out of 4 correspond to accuracy 0.75.
+    related: [metric, classification, train-test-split]
