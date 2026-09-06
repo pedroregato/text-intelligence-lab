@@ -1,0 +1,14 @@
+{
+  "id": "pedrogentil/til-09-word-embeddings",
+  "title": "TIL 09 Word Embeddings",
+  "code_file": "09-til-word-embeddings.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "false",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
