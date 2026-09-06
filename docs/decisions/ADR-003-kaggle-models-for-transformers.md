@@ -67,3 +67,12 @@ Quando possível, preferir `kagglehub.model_download('owner/model/framework/vari
 - A Aula 10 deve continuar tolerante à indisponibilidade do recurso enquanto o modelo Kaggle oficial não estiver anexado.
 - A Aula 11 mantém temporariamente o download Hugging Face como fallback, mas a arquitetura preferida passa a ser Kaggle Model versionado.
 - Uma aula só pode ser marcada student-ready após o recurso externo ter sido executado e validado no Kaggle.
+
+
+## Discovery update — 2026-09-06
+
+A busca pública não encontrou com confiança suficiente um Kaggle Model oficial exato para `distilbert-base-multilingual-cased`.
+
+Um Dataset antigo com esse nome foi identificado, mas foi rejeitado como dependência oficial por não ser Kaggle Model e por apresentar licença desconhecida.
+
+Portanto, a decisão arquitetural permanece aceita, porém a migração das Aulas 10–11 fica condicionada ao experimento `EDU-INFRA-002` e ao runbook `docs/runbooks/kaggle-model-provisioning.md`.
