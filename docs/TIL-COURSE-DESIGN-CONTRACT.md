@@ -227,6 +227,23 @@ Avoid dependencies on internal Kaggle teaching packages unless there is a strong
 
 ---
 
+## 12. Glossary Integration
+
+Every lesson must actively use the **TIL Living Glossary**.
+
+Minimum requirements:
+
+- include a visible **Glossário da aula** block near the beginning;
+- list the central concepts introduced or reinforced in the lesson;
+- link to the PT-BR and EN glossary views;
+- use contextual glossary callouts when a concept benefits from formal clarification;
+- register new concepts in `docs/glossary/glossary.yaml` before the lesson is considered student-ready;
+- regenerate the PT-BR, EN, and HTML glossary views whenever the canonical YAML changes.
+
+Glossary integration should support the learning flow without turning every technical term into a distracting link.
+
+---
+
 ## 12. Reproducibility
 
 Every lesson must contain enough information to reproduce its execution.
