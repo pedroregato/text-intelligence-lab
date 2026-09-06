@@ -1,0 +1,14 @@
+{
+  "id": "pedrogentil/til-04-tfidf",
+  "title": "TIL 04 TF IDF",
+  "code_file": "04-til-tfidf.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "false",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
