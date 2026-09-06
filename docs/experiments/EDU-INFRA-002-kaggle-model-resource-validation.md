@@ -52,8 +52,8 @@ Preencher após execução no Kaggle:
 - model_type: distilbert
 - vocab_size: 119547
 - Aula 10 local model load with Internet OFF: PASS
-- Aula 11 fine-tuning: PENDING
-- SHA-256 comparison: PENDING
+- Aula 11 classification model load with Internet OFF: PASS
+- SHA-256 observed for model.safetensors: 45620facecba512b46c58430d27e20af43952eda9c1be56e023d0bbcfdcf10cb
 - copied notebook preserves resource: PENDING
 
 ## Decision gate
@@ -91,3 +91,50 @@ Remaining gates before full acceptance for Aula 11:
 2. offline load with `AutoModelForSequenceClassification`;
 3. offline fine-tuning execution;
 4. confirmation that a copied notebook preserves the attached model resource.
+
+
+## Aula 11 classification-head validation
+
+With Internet OFF, the attached Kaggle model loaded successfully as:
+
+```text
+DistilBertForSequenceClassification
+distilbert
+3
+```
+
+Load report:
+
+```text
+classifier.bias       MISSING
+pre_classifier.bias   MISSING
+pre_classifier.weight MISSING
+classifier.weight     MISSING
+```
+
+Interpretation:
+
+This is the expected behavior for the TIL lesson. The checkpoint contains the pretrained DistilBERT encoder, while the downstream classification head is newly initialized for the three-class task.
+
+Therefore:
+
+```text
+pretrained encoder         PASS
+new classification head    PASS
+offline loading            PASS
+num_labels = 3             PASS
+```
+
+Observed SHA-256 for `model.safetensors`:
+
+```text
+45620facecba512b46c58430d27e20af43952eda9c1be56e023d0bbcfdcf10cb
+```
+
+This hash must not yet be treated as equivalent to the canonical upstream artifact until provenance/integrity comparison is completed.
+
+Remaining gates:
+
+1. verify upstream artifact/hash provenance;
+2. run a minimal offline fine-tuning;
+3. confirm copied notebook preserves the attached model resource.
