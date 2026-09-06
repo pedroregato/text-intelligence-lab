@@ -764,3 +764,83 @@ terms:
       til_context: In Lesson 2, Python's standard re library is used to extract tokens with a simple pattern.
       example: re.findall(r"\\b\\w+\\b", text).
     related: [tokenization]
+
+  - id: n-gram
+    category: text-intelligence
+    lesson_first_seen: "08"
+    pt-BR:
+      term: N-gram
+      english_term: N-gram
+      definition: Sequência de n tokens consecutivos usada como unidade de representação textual.
+      til_context: Na Aula 8, n-grams preservam parte do contexto local que se perde quando usamos apenas palavras isoladas.
+      example: Em "não gostei", "não gostei" é um bigrama.
+    en:
+      term: N-gram
+      definition: A sequence of n consecutive tokens used as a unit of text representation.
+      til_context: In Lesson 8, n-grams preserve some local context that is lost when using only isolated words.
+      example: In "did not like", "not like" can be a bigram.
+    related: [unigram, bigram, trigram, token]
+
+  - id: unigram
+    category: text-intelligence
+    lesson_first_seen: "08"
+    pt-BR:
+      term: Unigrama
+      english_term: Unigram
+      definition: N-gram formado por um único token.
+      til_context: Na Aula 8, unigramas representam o caso tradicional de palavras isoladas.
+      example: "atendimento" é um unigrama.
+    en:
+      term: Unigram
+      definition: An n-gram consisting of a single token.
+      til_context: In Lesson 8, unigrams represent the traditional isolated-word case.
+      example: "service" is a unigram.
+    related: [n-gram, bigram]
+
+  - id: bigram
+    category: text-intelligence
+    lesson_first_seen: "08"
+    pt-BR:
+      term: Bigrama
+      english_term: Bigram
+      definition: N-gram formado por dois tokens consecutivos.
+      til_context: Na Aula 8, bigramas mostram como combinações como "não gostei" podem se tornar features explícitas.
+      example: "não gostei" é um bigrama.
+    en:
+      term: Bigram
+      definition: An n-gram consisting of two consecutive tokens.
+      til_context: In Lesson 8, bigrams show how combinations such as "not like" can become explicit features.
+      example: "not like" is a bigram.
+    related: [n-gram, unigram, trigram]
+
+  - id: trigram
+    category: text-intelligence
+    lesson_first_seen: "08"
+    pt-BR:
+      term: Trigrama
+      english_term: Trigram
+      definition: N-gram formado por três tokens consecutivos.
+      til_context: Na Aula 8, trigramas ilustram o ganho de contexto e o aumento da dimensionalidade.
+      example: "não gostei do" é um trigrama.
+    en:
+      term: Trigram
+      definition: An n-gram consisting of three consecutive tokens.
+      til_context: In Lesson 8, trigrams illustrate the gain in context and the increase in dimensionality.
+      example: "did not like" is a trigram.
+    related: [n-gram, bigram]
+
+  - id: dimensionality
+    category: machine-learning
+    lesson_first_seen: "08"
+    pt-BR:
+      term: Dimensionalidade
+      english_term: Dimensionality
+      definition: Número de dimensões ou features usadas para representar os dados.
+      til_context: Na Aula 8, adicionar bigramas e trigramas aumenta o número de colunas da matriz textual.
+      example: Um vocabulário com 5000 features produz uma representação de dimensionalidade 5000.
+    en:
+      term: Dimensionality
+      definition: The number of dimensions or features used to represent data.
+      til_context: In Lesson 8, adding bigrams and trigrams increases the number of columns in the text matrix.
+      example: A vocabulary with 5000 features produces a 5000-dimensional representation.
+    related: [feature, sparse-matrix, n-gram]
