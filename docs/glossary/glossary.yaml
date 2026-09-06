@@ -956,3 +956,99 @@ terms:
       til_context: In Lesson 9, this limitation prepares the later transition to contextual embeddings.
       example: bank receives the same representation in different senses.
     related: [embedding, word2vec]
+
+  - id: contextual-embedding
+    category: text-intelligence
+    lesson_first_seen: "10"
+    pt-BR:
+      term: Embedding contextual
+      english_term: Contextual embedding
+      definition: Representação vetorial cujo valor depende do contexto em que o token aparece.
+      til_context: Na Aula 10, a mesma palavra recebe vetores diferentes em frases com sentidos distintos.
+      example: bank em contexto financeiro e bank em contexto geográfico.
+    en:
+      term: Contextual embedding
+      definition: A vector representation whose value depends on the context in which a token appears.
+      til_context: In Lesson 10, the same word receives different vectors in sentences with different meanings.
+      example: bank in a financial context and bank in a river context.
+    related: [static-embedding, transformer, self-attention]
+
+  - id: attention
+    category: text-intelligence
+    lesson_first_seen: "10"
+    pt-BR:
+      term: Atenção
+      english_term: Attention
+      definition: Mecanismo que calcula pesos de relevância entre elementos de uma sequência para combinar informação contextual.
+      til_context: Na Aula 10, atenção é introduzida como base para contextualizar tokens em Transformers.
+      example: Um token pode atribuir maior peso a palavras relevantes ao seu redor.
+    en:
+      term: Attention
+      definition: A mechanism that computes relevance weights between sequence elements to combine contextual information.
+      til_context: In Lesson 10, attention is introduced as a basis for contextualizing tokens in Transformers.
+      example: A token may assign greater weight to relevant surrounding words.
+    related: [self-attention, transformer, contextual-embedding]
+
+  - id: self-attention
+    category: text-intelligence
+    lesson_first_seen: "10"
+    pt-BR:
+      term: Self-attention
+      english_term: Self-attention
+      definition: Forma de atenção em que elementos da mesma sequência interagem entre si.
+      til_context: Na Aula 10, self-attention permite que cada token considere os demais tokens da frase.
+      example: bank considera river em uma frase para construir sua representação contextual.
+    en:
+      term: Self-attention
+      definition: A form of attention in which elements of the same sequence interact with one another.
+      til_context: In Lesson 10, self-attention lets each token consider other tokens in the sentence.
+      example: bank considers river in a sentence when building its contextual representation.
+    related: [attention, transformer, contextual-embedding]
+
+  - id: transformer
+    category: text-intelligence
+    lesson_first_seen: "10"
+    pt-BR:
+      term: Transformer
+      english_term: Transformer
+      definition: Arquitetura neural baseada em mecanismos de atenção para processar sequências e construir representações contextualizadas.
+      til_context: Na Aula 10, Transformers são apresentados como base de grande parte dos modelos modernos de linguagem.
+      example: BERT e muitos modelos autoregressivos usam arquitetura Transformer.
+    en:
+      term: Transformer
+      definition: A neural architecture based on attention mechanisms for processing sequences and building contextual representations.
+      til_context: In Lesson 10, Transformers are introduced as the foundation of many modern language models.
+      example: BERT and many autoregressive models use Transformer architecture.
+    related: [attention, self-attention, contextual-embedding]
+
+  - id: subword-tokenization
+    category: text-intelligence
+    lesson_first_seen: "10"
+    pt-BR:
+      term: Tokenização por subpalavras
+      english_term: Subword tokenization
+      definition: Estratégia que divide palavras em unidades menores reutilizáveis para reduzir problemas de vocabulário e palavras raras.
+      til_context: Na Aula 10, subwords são apresentados como unidades comuns em tokenizadores de Transformers.
+      example: Uma palavra rara pode ser dividida em fragmentos conhecidos pelo vocabulário.
+    en:
+      term: Subword tokenization
+      definition: A strategy that splits words into smaller reusable units to reduce vocabulary and rare-word problems.
+      til_context: In Lesson 10, subwords are introduced as common units in Transformer tokenizers.
+      example: A rare word may be split into fragments known by the vocabulary.
+    related: [tokenization, transformer]
+
+  - id: pretrained-model
+    category: machine-learning
+    lesson_first_seen: "10"
+    pt-BR:
+      term: Modelo pré-treinado
+      english_term: Pretrained model
+      definition: Modelo que já passou por treinamento em uma grande coleção de dados antes de ser reutilizado em outra tarefa.
+      til_context: Na Aula 10, um encoder pré-treinado é usado apenas para inferência e observação de embeddings contextuais.
+      example: distilbert-base-uncased carregado para extrair representações.
+    en:
+      term: Pretrained model
+      definition: A model that has already been trained on a large dataset before being reused for another task.
+      til_context: In Lesson 10, a pretrained encoder is used only for inference and contextual embedding observation.
+      example: distilbert-base-uncased loaded to extract representations.
+    related: [transformer, contextual-embedding]
