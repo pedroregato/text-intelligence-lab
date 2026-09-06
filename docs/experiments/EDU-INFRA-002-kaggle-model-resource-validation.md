@@ -138,3 +138,33 @@ Remaining gates:
 1. verify upstream artifact/hash provenance;
 2. run a minimal offline fine-tuning;
 3. confirm copied notebook preserves the attached model resource.
+
+
+## Tensor structure validation
+
+The attached `model.safetensors` was inspected offline with `safetensors.torch.load_file`.
+
+Observed:
+
+```text
+Number of tensors: 100
+embeddings.LayerNorm.bias (768,) torch.float32
+embeddings.LayerNorm.weight (768,) torch.float32
+embeddings.position_embeddings.weight (512, 768) torch.float32
+embeddings.word_embeddings.weight (119547, 768) torch.float32
+transformer.layer.0.attention.k_lin.bias (768,) torch.float32
+transformer.layer.0.attention.k_lin.weight (768, 768) torch.float32
+transformer.layer.0.attention.out_lin.bias (768,) torch.float32
+transformer.layer.0.attention.out_lin.weight (768, 768) torch.float32
+transformer.layer.0.attention.q_lin.bias (768,) torch.float32
+transformer.layer.0.attention.q_lin.weight (768, 768) torch.float32
+```
+
+Interpretation:
+
+- the checkpoint contains the expected DistilBERT encoder structure;
+- vocabulary size is consistent with multilingual DistilBERT;
+- no downstream classification-head tensors were observed in the checkpoint;
+- this is consistent with the expected base-model use for TIL fine-tuning.
+
+This does not yet prove tensor equality with the canonical upstream checkpoint.
