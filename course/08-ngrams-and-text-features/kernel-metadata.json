@@ -1,0 +1,14 @@
+{
+  "id": "pedrogentil/til-08-ngrams-and-text-features",
+  "title": "TIL 08 Ngrams and Text Features",
+  "code_file": "08-til-ngrams-and-text-features.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "false",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
