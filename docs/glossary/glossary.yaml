@@ -636,3 +636,67 @@ terms:
       til_context: In Lesson 6, weighted average is compared with macro average for differently sized classes.
       example: Larger classes contribute more to the average.
     related: [macro-average, f1-score]
+
+  - id: cross-validation
+    category: machine-learning
+    lesson_first_seen: "07"
+    pt-BR:
+      term: Validação cruzada
+      english_term: Cross-validation
+      definition: Estratégia de avaliação que divide os dados de treinamento em múltiplas partes e alterna quais partes são usadas para treino e validação.
+      til_context: Na Aula 7, validação cruzada permite comparar configurações sem usar o conjunto de teste final.
+      example: Validação cruzada com 3 folds.
+    en:
+      term: Cross-validation
+      definition: An evaluation strategy that splits training data into multiple parts and rotates which parts are used for training and validation.
+      til_context: In Lesson 7, cross-validation allows configuration comparison without using the final test set.
+      example: 3-fold cross-validation.
+    related: [grid-search, hyperparameter, train-test-split]
+
+  - id: hyperparameter
+    category: machine-learning
+    lesson_first_seen: "07"
+    pt-BR:
+      term: Hiperparâmetro
+      english_term: Hyperparameter
+      definition: Configuração definida antes do treinamento que controla o comportamento de um algoritmo ou pipeline.
+      til_context: Na Aula 7, ngram_range, min_df e alpha são hiperparâmetros ajustados.
+      example: classifier__alpha igual a 0.5 ou 1.0.
+    en:
+      term: Hyperparameter
+      definition: A configuration set before training that controls the behavior of an algorithm or pipeline.
+      til_context: In Lesson 7, ngram_range, min_df, and alpha are tuned hyperparameters.
+      example: classifier__alpha equal to 0.5 or 1.0.
+    related: [grid-search, cross-validation]
+
+  - id: grid-search
+    category: machine-learning
+    lesson_first_seen: "07"
+    pt-BR:
+      term: Grid Search
+      english_term: Grid Search
+      definition: Estratégia de busca que avalia sistematicamente combinações predefinidas de hiperparâmetros.
+      til_context: Na Aula 7, GridSearchCV combina Grid Search e validação cruzada para selecionar configurações.
+      example: Testar diferentes valores de ngram_range, min_df e alpha.
+    en:
+      term: Grid Search
+      definition: A search strategy that systematically evaluates predefined combinations of hyperparameters.
+      til_context: In Lesson 7, GridSearchCV combines Grid Search and cross-validation to select configurations.
+      example: Testing different ngram_range, min_df, and alpha values.
+    related: [cross-validation, hyperparameter]
+
+  - id: overfitting
+    category: machine-learning
+    lesson_first_seen: "07"
+    pt-BR:
+      term: Overfitting
+      english_term: Overfitting
+      definition: Situação em que um modelo ou processo de seleção se ajusta excessivamente aos dados observados e perde capacidade de generalização.
+      til_context: Na Aula 7, olhar repetidamente o conjunto de teste durante o tuning é apresentado como risco de overfitting ao teste.
+      example: Escolher repetidamente configurações pela melhor nota no teste final.
+    en:
+      term: Overfitting
+      definition: A situation in which a model or selection process fits observed data too closely and loses generalization ability.
+      til_context: In Lesson 7, repeatedly consulting the test set during tuning is presented as a risk of test-set overfitting.
+      example: Repeatedly choosing configurations based on the final test score.
+    related: [cross-validation, train-test-split]
