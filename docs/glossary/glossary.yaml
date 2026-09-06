@@ -1,0 +1,334 @@
+version: 1
+default_language: pt-BR
+languages: [pt-BR, en]
+terms:
+  - id: data
+    category: core
+    lesson_first_seen: "01"
+    pt-BR:
+      term: Dado
+      english_term: Data
+      definition: Representação registrada de fatos, observações, medições, categorias, eventos ou outras informações que podem ser armazenadas, inspecionadas, processadas ou analisadas.
+      til_context: No TIL, texto passa a ser tratado como dado quando pode ser organizado, observado, medido, transformado e utilizado em experimentos.
+      example: Uma linha de um DataFrame contendo id, canal, rótulo e texto.
+    en:
+      term: Data
+      definition: A recorded representation of facts, observations, measurements, categories, events, or other information that can be stored, inspected, processed, or analyzed.
+      til_context: In TIL, text becomes data when it can be organized, observed, measured, transformed, and used in experiments.
+      example: A DataFrame row containing an id, channel, label, and text.
+    related: [observable-data, inspectable-data, dataset]
+  - id: observable-data
+    category: core
+    lesson_first_seen: "00"
+    pt-BR:
+      term: Dado observável
+      english_term: Observable data
+      definition: Dado cujos valores, estrutura, estado ou outputs podem ser examinados diretamente.
+      til_context: O aluno deve conseguir ver registros, colunas, métricas, arquivos gerados ou informações de runtime em vez de apenas assumir que algo aconteceu.
+      example: Um DataFrame exibido no notebook ou um JSON de evidência baixado do Kaggle.
+    en:
+      term: Observable data
+      definition: Data whose values, structure, state, or outputs can be directly examined.
+      til_context: The learner should be able to inspect records, columns, metrics, generated files, or runtime information instead of merely assuming that something happened.
+      example: A displayed DataFrame or a Kaggle evidence JSON file.
+    related: [inspectable-data, evidence, reproducibility]
+  - id: inspectable-data
+    category: core
+    lesson_first_seen: "01"
+    pt-BR:
+      term: Dado inspecionável
+      english_term: Inspectable data
+      definition: Dado que pode ser examinado sistematicamente para compreender estrutura, qualidade, consistência, anomalias, ausências e duplicações.
+      til_context: Inspecionar significa perguntar quantos documentos existem, quais campos estão vazios, quais rótulos faltam e que metadados estão disponíveis.
+      example: Contar textos vazios e duplicatas antes de qualquer modelagem.
+    en:
+      term: Inspectable data
+      definition: Data that can be systematically examined to understand structure, quality, consistency, anomalies, missing values, and duplicates.
+      til_context: Inspection means asking how many documents exist, which fields are empty, which labels are missing, and what metadata is available.
+      example: Counting empty texts and duplicates before modeling.
+    related: [observable-data, missing-value, duplicate]
+  - id: reproducibility
+    category: engineering
+    lesson_first_seen: "00"
+    pt-BR:
+      term: Reprodutibilidade
+      english_term: Reproducibility
+      definition: Capacidade de repetir um procedimento analítico ou computacional a partir de entradas, código, condições e passos documentados e obter resultado igual ou substantivamente equivalente.
+      til_context: GitHub preserva a fonte canônica; Kaggle fornece o ambiente de execução; outputs e evidências permitem verificar o resultado.
+      example: Reexecutar um notebook e gerar novamente o mesmo tipo de arquivo de evidência.
+    en:
+      term: Reproducibility
+      definition: The ability to repeat an analytical or computational procedure from documented inputs, code, conditions, and steps and obtain the same or substantively equivalent outcome.
+      til_context: GitHub preserves the canonical source; Kaggle provides the execution environment; outputs and evidence make results verifiable.
+      example: Re-running a notebook and generating the same type of evidence file.
+    related: [evidence, runtime, source-of-truth]
+  - id: evidence
+    category: engineering
+    lesson_first_seen: "00"
+    pt-BR:
+      term: Evidência
+      english_term: Evidence
+      definition: Artefato ou resultado observável que sustenta uma conclusão técnica.
+      til_context: O curso prioriza evidência sobre suposição.
+      example: Status COMPLETE do Kaggle, uma métrica, um log ou um arquivo JSON gerado.
+    en:
+      term: Evidence
+      definition: An observable artifact or result that supports a technical conclusion.
+      til_context: The course prioritizes evidence over assumption.
+      example: A Kaggle COMPLETE status, a metric, a log, or a generated JSON file.
+    related: [observable-data, experiment, output]
+  - id: document
+    category: text-intelligence
+    lesson_first_seen: "01"
+    pt-BR:
+      term: Documento
+      english_term: Document
+      definition: Unidade individual de texto selecionada para análise.
+      til_context: Na Aula 1, cada linha do DataFrame representa um documento.
+      example: Uma mensagem, e-mail, notícia, avaliação, contrato ou chamado.
+    en:
+      term: Document
+      definition: An individual unit of text selected for analysis.
+      til_context: In Lesson 1, each DataFrame row represents one document.
+      example: A message, email, news article, review, contract, or support ticket.
+    related: [corpus, dataset, metadata]
+  - id: corpus
+    category: text-intelligence
+    lesson_first_seen: "01"
+    pt-BR:
+      term: Corpus
+      english_term: Corpus
+      definition: Coleção de documentos organizada para análise linguística, estatística ou computacional.
+      til_context: Um corpus pode ser pequeno e artificial para aprendizagem ou conter milhões de documentos em produção.
+      example: A coleção de mensagens de atendimento usada na Aula 1.
+    en:
+      term: Corpus
+      definition: A collection of documents organized for linguistic, statistical, or computational analysis.
+      til_context: A corpus may be small and artificial for learning or contain millions of documents in production.
+      example: The customer-service message collection used in Lesson 1.
+    related: [document, dataset, label]
+  - id: dataset
+    category: core
+    lesson_first_seen: "01"
+    pt-BR:
+      term: Dataset
+      english_term: Dataset
+      definition: Coleção organizada de dados utilizada para análise, experimentação ou modelagem.
+      til_context: Um corpus é um dataset cujo objeto analítico central é texto, podendo também conter campos não textuais.
+      example: Um DataFrame com id, canal, rótulo e texto.
+    en:
+      term: Dataset
+      definition: An organized collection of data used for analysis, experimentation, or modeling.
+      til_context: A corpus is a dataset whose central analytical object is text, while it may also contain non-text fields.
+      example: A DataFrame with id, channel, label, and text.
+    related: [data, corpus, metadata]
+  - id: metadata
+    category: core
+    lesson_first_seen: "01"
+    pt-BR:
+      term: Metadado
+      english_term: Metadata
+      definition: Dado que descreve ou fornece contexto sobre outro dado.
+      til_context: id, channel e label descrevem o documento; text contém o conteúdo textual.
+      example: O canal de origem de uma mensagem.
+    en:
+      term: Metadata
+      definition: Data that describes or provides context about other data.
+      til_context: id, channel, and label describe the document; text contains the textual content.
+      example: The source channel of a message.
+    related: [document, dataset, label]
+  - id: label
+    category: machine-learning
+    lesson_first_seen: "01"
+    pt-BR:
+      term: Rótulo
+      english_term: Label
+      definition: Categoria, classe ou valor-alvo conhecido associado a uma observação.
+      til_context: Mais adiante, rótulos poderão servir como alvo em tarefas supervisionadas.
+      example: duvida, reclamacao ou elogio.
+    en:
+      term: Label
+      definition: A known category, class, or target value associated with an observation.
+      til_context: Later, labels may serve as targets in supervised learning tasks.
+      example: question, complaint, or praise.
+    related: [class, classification, corpus]
+  - id: class
+    category: machine-learning
+    lesson_first_seen: "01"
+    pt-BR:
+      term: Classe
+      english_term: Class
+      definition: Uma das categorias possíveis em um problema de classificação.
+      til_context: Se reclamacao, elogio e duvida são rótulos possíveis, cada um representa uma classe.
+      example: A classe reclamacao.
+    en:
+      term: Class
+      definition: One of the possible categories in a classification problem.
+      til_context: If complaint, praise, and question are possible labels, each represents a class.
+      example: The complaint class.
+    related: [label, classification]
+  - id: raw-text
+    category: text-intelligence
+    lesson_first_seen: "01"
+    pt-BR:
+      term: Texto bruto
+      english_term: Raw text
+      definition: Texto em sua forma original ou minimamente processada antes de transformações para análise ou modelagem.
+      til_context: A coluna text da Aula 1 contém texto bruto.
+      example: Meu pedido ainda não chegou.
+    en:
+      term: Raw text
+      definition: Text in its original or minimally processed form before transformations for analysis or modeling.
+      til_context: The text column in Lesson 1 contains raw text.
+      example: My order has not arrived yet.
+    related: [document, feature]
+  - id: missing-value
+    category: core
+    lesson_first_seen: "01"
+    pt-BR:
+      term: Valor ausente
+      english_term: Missing value
+      definition: Campo cujo valor esperado está ausente ou indefinido.
+      til_context: Um label ausente é diferente de um texto vazio e pode exigir tratamento diferente.
+      example: label igual a None.
+    en:
+      term: Missing value
+      definition: A field whose expected value is absent or undefined.
+      til_context: A missing label is different from an empty text and may require different treatment.
+      example: A label equal to None.
+    related: [inspectable-data, duplicate]
+  - id: duplicate
+    category: core
+    lesson_first_seen: "01"
+    pt-BR:
+      term: Duplicata
+      english_term: Duplicate
+      definition: Observação ou valor repetido que aparece mais de uma vez em um dataset.
+      til_context: Duplicatas devem ser investigadas antes de serem removidas automaticamente.
+      example: Duas mensagens com o mesmo texto.
+    en:
+      term: Duplicate
+      definition: A repeated observation or value appearing more than once in a dataset.
+      til_context: Duplicates should be investigated before being automatically removed.
+      example: Two messages with the same text.
+    related: [inspectable-data, missing-value]
+  - id: runtime
+    category: engineering
+    lesson_first_seen: "00"
+    pt-BR:
+      term: Runtime
+      english_term: Runtime
+      definition: Ambiente de software e sistema no qual o código é efetivamente executado.
+      til_context: Inclui versão do Python, sistema operacional, diretório de trabalho e bibliotecas disponíveis.
+      example: Kaggle executando Python em Linux.
+    en:
+      term: Runtime
+      definition: The software and system environment in which code is actually executed.
+      til_context: It includes Python version, operating system, working directory, and available libraries.
+      example: Kaggle running Python on Linux.
+    related: [reproducibility, output]
+  - id: output
+    category: engineering
+    lesson_first_seen: "00"
+    pt-BR:
+      term: Output
+      english_term: Output
+      definition: Qualquer resultado produzido pela execução de código.
+      til_context: Pode ser um valor exibido, tabela, arquivo, métrica, log ou gráfico.
+      example: til_environment_evidence.json.
+    en:
+      term: Output
+      definition: Any result produced by executing code.
+      til_context: It may be a displayed value, table, file, metric, log, or chart.
+      example: til_environment_evidence.json.
+    related: [evidence, runtime]
+  - id: experiment
+    category: engineering
+    lesson_first_seen: "00"
+    pt-BR:
+      term: Experimento
+      english_term: Experiment
+      definition: Procedimento estruturado concebido para testar uma hipótese ou validar uma suposição.
+      til_context: Os experimentos do TIL registram objetivo, hipótese, ambiente, procedimento, evidência, resultado e conclusão.
+      example: EDU-INFRA-001.
+    en:
+      term: Experiment
+      definition: A structured procedure designed to test a hypothesis or validate an assumption.
+      til_context: TIL experiments record objective, hypothesis, environment, procedure, evidence, result, and conclusion.
+      example: EDU-INFRA-001.
+    related: [evidence, reproducibility]
+  - id: source-of-truth
+    category: engineering
+    lesson_first_seen: "00"
+    pt-BR:
+      term: Source of truth
+      english_term: Source of truth
+      definition: Local considerado a versão autoritativa e canônica de um artefato.
+      til_context: GitHub é o source of truth do TIL; Kaggle é o ambiente principal de execução.
+      example: O notebook canônico está no repositório GitHub.
+    en:
+      term: Source of truth
+      definition: The location considered the authoritative and canonical version of an artifact.
+      til_context: GitHub is TIL's source of truth; Kaggle is the primary execution environment.
+      example: The canonical notebook lives in the GitHub repository.
+    related: [reproducibility, versioning]
+  - id: versioning
+    category: engineering
+    lesson_first_seen: "00"
+    pt-BR:
+      term: Versionamento
+      english_term: Versioning
+      definition: Rastreamento sistemático de alterações em código, documentos, dados ou outros artefatos ao longo do tempo.
+      til_context: Git/GitHub mantém a história canônica; Kaggle Versions registra versões de execução.
+      example: Um commit que altera uma aula.
+    en:
+      term: Versioning
+      definition: The systematic tracking of changes to code, documents, data, or other artifacts over time.
+      til_context: Git/GitHub maintains canonical history; Kaggle Versions records execution versions.
+      example: A commit that changes a lesson.
+    related: [source-of-truth, reproducibility]
+  - id: feature
+    category: machine-learning
+    lesson_first_seen: "01"
+    pt-BR:
+      term: Feature
+      english_term: Feature
+      definition: Característica mensurável ou codificada utilizada como entrada de um modelo analítico ou preditivo.
+      til_context: O texto bruto ainda não é uma matriz numérica de features; aulas futuras mostrarão como representá-lo.
+      example: Contagens de termos ou valores TF-IDF.
+    en:
+      term: Feature
+      definition: A measurable or encoded characteristic used as input to an analytical or predictive model.
+      til_context: Raw text is not yet a numerical feature matrix; future lessons will show how to represent it.
+      example: Term counts or TF-IDF values.
+    related: [raw-text, model]
+  - id: model
+    category: machine-learning
+    lesson_first_seen: "01"
+    pt-BR:
+      term: Modelo
+      english_term: Model
+      definition: Representação matemática ou computacional utilizada para descrever padrões ou produzir previsões.
+      til_context: Modelos só entram depois que o curso estabelece dados, representação e avaliação.
+      example: Um classificador treinado para prever categorias de documentos.
+    en:
+      term: Model
+      definition: A mathematical or computational representation used to describe patterns or make predictions.
+      til_context: Models appear only after the course establishes data, representation, and evaluation foundations.
+      example: A classifier trained to predict document categories.
+    related: [feature, classification]
+  - id: classification
+    category: machine-learning
+    lesson_first_seen: "01"
+    pt-BR:
+      term: Classificação
+      english_term: Classification
+      definition: Tarefa preditiva em que uma observação é atribuída a uma entre várias classes predefinidas.
+      til_context: O TIL usará classificação em problemas de documentos e mensagens.
+      example: Classificar uma mensagem como reclamacao, elogio ou duvida.
+    en:
+      term: Classification
+      definition: A predictive task in which an observation is assigned to one of several predefined classes.
+      til_context: TIL will use classification for document and message problems.
+      example: Classifying a message as complaint, praise, or question.
+    related: [class, label, model]
