@@ -1,0 +1,14 @@
+{
+  "id": "pedrogentil/til-01-text-as-data",
+  "title": "TIL 01 Text as Data",
+  "code_file": "01-til-text-as-data.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "false",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
