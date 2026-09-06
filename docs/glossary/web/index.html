@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TIL Interactive Glossary</title>
+<style>
+:root{font-family:Inter,system-ui,sans-serif;color:#17202a;background:#f7f8fa}
+*{box-sizing:border-box}body{margin:0}
+header{background:#fff;border-bottom:1px solid #e5e7eb;padding:28px 20px 18px;position:sticky;top:0;z-index:2}
+.wrap,main{max-width:1100px;margin:auto}
+h1{margin:0 0 6px}.sub{margin:0;color:#667085}
+.controls{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:18px}
+input,button{font:inherit;border:1px solid #d0d5dd;border-radius:10px;padding:10px 12px;background:#fff}
+button{cursor:pointer}main{padding:24px 20px 50px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.card{background:#fff;border:1px solid #e4e7ec;border-radius:14px;padding:18px}
+.term{font-size:20px;font-weight:700}.alt{font-size:13px;color:#667085;margin:2px 0 10px}
+.label{font-size:13px;font-weight:700;margin-top:12px}.text{line-height:1.5;color:#344054}
+.meta{font-size:12px;color:#667085;margin-bottom:10px}.related a{margin-right:8px;text-decoration:none}
+#count{color:#667085;margin-bottom:14px}
+@media(max-width:700px){.controls{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<h1>TIL Interactive Glossary</h1>
+<p class="sub">Glossário vivo bilíngue do Text Intelligence Lab</p>
+<div class="controls">
+<input id="search" placeholder="Buscar conceito, definição ou contexto...">
+<button id="lang">EN</button>
+</div>
+</div>
+</header>
+<main>
+<div id="count"></div>
+<div id="cards" class="grid"></div>
+</main>
+<script>
+const terms=[
+["data","Dado","Data","Representação registrada de fatos, observações, medições, categorias, eventos ou outras informações que podem ser armazenadas, inspecionadas, processadas ou analisadas.","A recorded representation of facts, observations, measurements, categories, events, or other information that can be stored, inspected, processed, or analyzed.","No TIL, texto passa a ser tratado como dado quando pode ser organizado, observado, medido, transformado e utilizado em experimentos.","In TIL, text becomes data when it can be organized, observed, measured, transformed, and used in experiments.","01"],
+["observable-data","Dado observável","Observable data","Dado cujos valores, estrutura, estado ou outputs podem ser examinados diretamente.","Data whose values, structure, state, or outputs can be directly examined.","O aluno deve conseguir ver registros, colunas, métricas, arquivos gerados ou informações de runtime.","The learner should be able to inspect records, columns, metrics, generated files, or runtime information.","00"],
+["inspectable-data","Dado inspecionável","Inspectable data","Dado que pode ser examinado sistematicamente para compreender estrutura, qualidade, consistência, anomalias, ausências e duplicações.","Data that can be systematically examined to understand structure, quality, consistency, anomalies, missing values, and duplicates.","Inspecionar é conhecer o que existe antes de modelar.","Inspection means knowing what exists before modeling.","01"],
+["reproducibility","Reprodutibilidade","Reproducibility","Capacidade de repetir um procedimento analítico ou computacional a partir de entradas, código, condições e passos documentados.","The ability to repeat an analytical or computational procedure from documented inputs, code, conditions, and steps.","GitHub, Kaggle e evidências sustentam a reprodutibilidade no TIL.","GitHub, Kaggle, and evidence support reproducibility in TIL.","00"],
+["evidence","Evidência","Evidence","Artefato ou resultado observável que sustenta uma conclusão técnica.","An observable artifact or result that supports a technical conclusion.","O TIL prioriza evidência sobre suposição.","TIL prioritizes evidence over assumption.","00"],
+["document","Documento","Document","Unidade individual de texto selecionada para análise.","An individual unit of text selected for analysis.","Na Aula 1, cada linha do DataFrame representa um documento.","In Lesson 1, each DataFrame row represents one document.","01"],
+["corpus","Corpus","Corpus","Coleção de documentos organizada para análise linguística, estatística ou computacional.","A collection of documents organized for linguistic, statistical, or computational analysis.","Um corpus pode ser pequeno para ensino ou massivo em produção.","A corpus may be small for learning or massive in production.","01"],
+["dataset","Dataset","Dataset","Coleção organizada de dados utilizada para análise, experimentação ou modelagem.","An organized collection of data used for analysis, experimentation, or modeling.","Um corpus é um dataset cujo objeto central é texto.","A corpus is a dataset whose central object is text.","01"],
+["metadata","Metadado","Metadata","Dado que descreve ou fornece contexto sobre outro dado.","Data that describes or provides context about other data.","id, channel e label descrevem o documento.","id, channel, and label describe the document.","01"],
+["label","Rótulo","Label","Categoria, classe ou valor-alvo conhecido associado a uma observação.","A known category, class, or target value associated with an observation.","Mais adiante, rótulos poderão ser alvos de aprendizagem supervisionada.","Later, labels may become supervised-learning targets.","01"],
+["class","Classe","Class","Uma das categorias possíveis em um problema de classificação.","One of the possible categories in a classification problem.","reclamacao, elogio e duvida podem ser classes.","complaint, praise, and question may be classes.","01"],
+["raw-text","Texto bruto","Raw text","Texto em sua forma original ou minimamente processada antes de transformações.","Text in its original or minimally processed form before transformations.","A coluna text da Aula 1 contém texto bruto.","The text column in Lesson 1 contains raw text.","01"],
+["missing-value","Valor ausente","Missing value","Campo cujo valor esperado está ausente ou indefinido.","A field whose expected value is absent or undefined.","Um label ausente é diferente de um texto vazio.","A missing label is different from an empty text.","01"],
+["duplicate","Duplicata","Duplicate","Observação ou valor repetido que aparece mais de uma vez em um dataset.","A repeated observation or value appearing more than once in a dataset.","Duplicatas devem ser investigadas antes de serem removidas.","Duplicates should be investigated before removal.","01"],
+["runtime","Runtime","Runtime","Ambiente de software e sistema no qual o código é efetivamente executado.","The software and system environment in which code is actually executed.","Inclui Python, sistema operacional, diretório de trabalho e bibliotecas.","It includes Python, operating system, working directory, and libraries.","00"],
+["output","Output","Output","Qualquer resultado produzido pela execução de código.","Any result produced by executing code.","Pode ser tabela, arquivo, métrica, log ou gráfico.","It may be a table, file, metric, log, or chart.","00"],
+["experiment","Experimento","Experiment","Procedimento estruturado concebido para testar uma hipótese ou validar uma suposição.","A structured procedure designed to test a hypothesis or validate an assumption.","Os experimentos do TIL registram evidência e conclusão.","TIL experiments record evidence and conclusions.","00"],
+["source-of-truth","Source of truth","Source of truth","Local considerado a versão autoritativa e canônica de um artefato.","The location considered the authoritative and canonical version of an artifact.","GitHub é o source of truth do TIL.","GitHub is TIL's source of truth.","00"],
+["versioning","Versionamento","Versioning","Rastreamento sistemático de alterações em artefatos ao longo do tempo.","The systematic tracking of changes to artifacts over time.","Git/GitHub mantém a história canônica.","Git/GitHub maintains canonical history.","00"],
+["feature","Feature","Feature","Característica mensurável ou codificada utilizada como entrada de um modelo.","A measurable or encoded characteristic used as model input.","Texto bruto ainda não é uma matriz numérica de features.","Raw text is not yet a numerical feature matrix.","01"],
+["model","Modelo","Model","Representação matemática ou computacional utilizada para descrever padrões ou produzir previsões.","A mathematical or computational representation used to describe patterns or make predictions.","Modelos aparecem depois de dados, representação e avaliação.","Models appear after data, representation, and evaluation.","01"],
+["classification","Classificação","Classification","Tarefa preditiva em que uma observação é atribuída a uma entre várias classes predefinidas.","A predictive task in which an observation is assigned to one of several predefined classes.","O TIL usará classificação em documentos e mensagens.","TIL will use classification for documents and messages.","01"]
+];
+let lang="pt";
+const search=document.getElementById("search"),cards=document.getElementById("cards"),count=document.getElementById("count"),button=document.getElementById("lang");
+function render(){
+ const q=search.value.toLowerCase().trim();
+ const rows=terms.filter(t=>t.join(" ").toLowerCase().includes(q));
+ count.textContent=(lang==="pt"?rows.length+" conceito(s)":rows.length+" concept(s)");
+ cards.innerHTML="";
+ rows.forEach(t=>{
+   const d=document.createElement("article");d.className="card";d.id=t[0];
+   const term=lang==="pt"?t[1]:t[2], alt=lang==="pt"?t[2]:t[1], def=lang==="pt"?t[3]:t[4], ctx=lang==="pt"?t[5]:t[6];
+   d.innerHTML='<div class="term">'+term+'</div><div class="alt">'+alt+'</div><div class="meta">'+(lang==="pt"?"Primeira aula: ":"First lesson: ")+t[7]+'</div><div class="label">'+(lang==="pt"?"Definição":"Definition")+'</div><div class="text">'+def+'</div><div class="label">'+(lang==="pt"?"No TIL":"In TIL")+'</div><div class="text">'+ctx+'</div>';
+   cards.appendChild(d);
+ });
+}
+search.addEventListener("input",render);
+button.addEventListener("click",()=>{lang=lang==="pt"?"en":"pt";button.textContent=lang==="pt"?"EN":"PT-BR";search.placeholder=lang==="pt"?"Buscar conceito, definição ou contexto...":"Search concept, definition, or context...";render()});
+render();
+</script>
+</body>
+</html>
