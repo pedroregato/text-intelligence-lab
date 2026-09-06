@@ -447,3 +447,44 @@ Only then should the lesson be listed as **Available** on the Course Home.
 When there is tension between adding more content and improving learner understanding, prefer learner understanding.
 
 The TIL should grow by validated learning units, not by notebook volume.
+
+
+---
+
+## Internet Policy
+
+Official TIL notebooks should use **Internet OFF by default**.
+
+Rationale:
+
+- reduce hidden or unstable external dependencies;
+- improve reproducibility across executions;
+- make required artifacts explicit;
+- avoid silent downloads, changing remote models, API limits, and authentication dependencies;
+- strengthen the evidentiary value of experiments.
+
+Internet may be enabled only when external access is intentionally part of the pedagogical objective, such as:
+
+- model hubs;
+- remote APIs;
+- externally hosted datasets;
+- live ecosystem integration.
+
+When Internet is enabled, the lesson must:
+
+- explain why it is necessary;
+- identify the external dependency;
+- document the reproducibility implications;
+- prefer pinned versions, fixed artifacts, or attached Kaggle resources where practical.
+
+Governing rule:
+
+```text
+Internet OFF by default
+→ explicit dependencies
+→ controlled execution
+→ reproducible evidence
+
+Internet ON by justified exception
+→ external access is part of the lesson
+```
