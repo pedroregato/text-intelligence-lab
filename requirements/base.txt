@@ -1,0 +1,6 @@
+# Dependências básicas do TIL
+# Não representa lock exato do runtime Kaggle.
+# Versões observadas devem ser registradas em evidência de execução.
+numpy
+pandas
+scikit-learn
