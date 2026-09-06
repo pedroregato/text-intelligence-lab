@@ -540,3 +540,99 @@ terms:
       til_context: In Lesson 5, accuracy is introduced as a first metric with the caveat that it should not be interpreted alone.
       example: 3 correct predictions out of 4 correspond to accuracy 0.75.
     related: [metric, classification, train-test-split]
+
+  - id: confusion-matrix
+    category: machine-learning
+    lesson_first_seen: "06"
+    pt-BR:
+      term: Matriz de confusão
+      english_term: Confusion matrix
+      definition: Tabela que cruza classes reais e previstas para mostrar acertos e tipos de erro de um classificador.
+      til_context: Na Aula 6, a matriz de confusão permite observar quais classes estão sendo confundidas.
+      example: Linhas representam classes reais e colunas classes previstas.
+    en:
+      term: Confusion matrix
+      definition: A table crossing true and predicted classes to show correct predictions and error types.
+      til_context: In Lesson 6, the confusion matrix shows which classes are being confused.
+      example: Rows represent true classes and columns predicted classes.
+    related: [precision, recall, f1-score, accuracy]
+
+  - id: precision
+    category: machine-learning
+    lesson_first_seen: "06"
+    pt-BR:
+      term: Precisão
+      english_term: Precision
+      definition: Proporção de previsões de uma classe que estão corretas.
+      til_context: Na Aula 6, precisão é discutida quando falsos positivos têm custo relevante.
+      example: Entre tudo que o modelo chamou de reclamacao, quanto realmente era reclamacao.
+    en:
+      term: Precision
+      definition: The proportion of predictions for a class that are correct.
+      til_context: In Lesson 6, precision matters when false positives are costly.
+      example: Of everything predicted as complaint, how much was actually complaint.
+    related: [recall, f1-score, confusion-matrix]
+
+  - id: recall
+    category: machine-learning
+    lesson_first_seen: "06"
+    pt-BR:
+      term: Recall
+      english_term: Recall
+      definition: Proporção de exemplos reais de uma classe que o modelo conseguiu identificar.
+      til_context: Na Aula 6, recall é discutido quando perder exemplos positivos é especialmente custoso.
+      example: Entre todas as reclamações reais, quantas foram detectadas.
+    en:
+      term: Recall
+      definition: The proportion of actual examples of a class that the model successfully identifies.
+      til_context: In Lesson 6, recall matters when missing positive examples is especially costly.
+      example: Of all real complaints, how many were detected.
+    related: [precision, f1-score, confusion-matrix]
+
+  - id: f1-score
+    category: machine-learning
+    lesson_first_seen: "06"
+    pt-BR:
+      term: F1-score
+      english_term: F1-score
+      definition: Média harmônica entre precisão e recall.
+      til_context: Na Aula 6, F1-score é apresentado como uma forma de equilibrar as duas métricas.
+      example: Útil quando precisão e recall precisam ser considerados em conjunto.
+    en:
+      term: F1-score
+      definition: The harmonic mean of precision and recall.
+      til_context: In Lesson 6, F1-score is introduced as a way to balance both metrics.
+      example: Useful when precision and recall must be considered together.
+    related: [precision, recall, confusion-matrix]
+
+  - id: macro-average
+    category: machine-learning
+    lesson_first_seen: "06"
+    pt-BR:
+      term: Macro average
+      english_term: Macro average
+      definition: Média simples de uma métrica calculada separadamente para cada classe.
+      til_context: Na Aula 6, macro average ajuda a dar o mesmo peso a todas as classes.
+      example: Média dos F1-scores das classes sem ponderação por tamanho.
+    en:
+      term: Macro average
+      definition: The unweighted mean of a metric computed separately for each class.
+      til_context: In Lesson 6, macro average gives equal weight to each class.
+      example: Mean of class F1-scores without weighting by class size.
+    related: [weighted-average, f1-score]
+
+  - id: weighted-average
+    category: machine-learning
+    lesson_first_seen: "06"
+    pt-BR:
+      term: Weighted average
+      english_term: Weighted average
+      definition: Média de uma métrica ponderada pelo número de exemplos de cada classe.
+      til_context: Na Aula 6, weighted average é comparada à macro average em cenários com classes de tamanhos diferentes.
+      example: Classes maiores contribuem mais para a média.
+    en:
+      term: Weighted average
+      definition: A metric average weighted by the number of examples in each class.
+      til_context: In Lesson 6, weighted average is compared with macro average for differently sized classes.
+      example: Larger classes contribute more to the average.
+    related: [macro-average, f1-score]
