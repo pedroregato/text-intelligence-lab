@@ -1,0 +1,14 @@
+{
+  "id": "pedrogentil/til-06-classification-evaluation",
+  "title": "TIL 06 Classification Evaluation",
+  "code_file": "06-til-classification-evaluation.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "false",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
