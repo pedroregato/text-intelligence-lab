@@ -844,3 +844,115 @@ terms:
       til_context: In Lesson 8, adding bigrams and trigrams increases the number of columns in the text matrix.
       example: A vocabulary with 5000 features produces a 5000-dimensional representation.
     related: [feature, sparse-matrix, n-gram]
+
+  - id: embedding
+    category: text-intelligence
+    lesson_first_seen: "09"
+    pt-BR:
+      term: Embedding
+      english_term: Embedding
+      definition: Representação vetorial aprendida que mapeia entidades, como palavras, para um espaço numérico contínuo.
+      til_context: Na Aula 9, palavras deixam de ocupar uma dimensão exclusiva e passam a ser representadas por vetores densos.
+      example: atendimento pode ser representado por [0.18, -0.42, 0.77, ...].
+    en:
+      term: Embedding
+      definition: A learned vector representation that maps entities such as words into a continuous numerical space.
+      til_context: In Lesson 9, words stop occupying exclusive dimensions and are represented by dense vectors.
+      example: service may be represented by [0.18, -0.42, 0.77, ...].
+    related: [dense-vector, distributed-representation, cosine-similarity]
+
+  - id: dense-vector
+    category: machine-learning
+    lesson_first_seen: "09"
+    pt-BR:
+      term: Vetor denso
+      english_term: Dense vector
+      definition: Vetor em que a maior parte das posições contém valores informativos, em contraste com representações esparsas dominadas por zeros.
+      til_context: Na Aula 9, embeddings de palavras são vetores densos de baixa dimensionalidade relativa.
+      example: [0.18, -0.42, 0.77, 0.11].
+    en:
+      term: Dense vector
+      definition: A vector in which most positions contain informative values, unlike sparse representations dominated by zeros.
+      til_context: In Lesson 9, word embeddings are relatively low-dimensional dense vectors.
+      example: [0.18, -0.42, 0.77, 0.11].
+    related: [embedding, sparse-matrix, dimensionality]
+
+  - id: distributed-representation
+    category: text-intelligence
+    lesson_first_seen: "09"
+    pt-BR:
+      term: Representação distribuída
+      english_term: Distributed representation
+      definition: Representação em que a informação não está concentrada em uma única dimensão, mas distribuída por várias dimensões do vetor.
+      til_context: Na Aula 9, o significado lexical é aproximado por padrões distribuídos aprendidos a partir do contexto.
+      example: Duas palavras semelhantes podem compartilhar padrões próximos em várias dimensões.
+    en:
+      term: Distributed representation
+      definition: A representation in which information is not concentrated in a single dimension but distributed across multiple vector dimensions.
+      til_context: In Lesson 9, lexical meaning is approximated by distributed patterns learned from context.
+      example: Similar words may share nearby patterns across many dimensions.
+    related: [embedding, dense-vector]
+
+  - id: cosine-similarity
+    category: machine-learning
+    lesson_first_seen: "09"
+    pt-BR:
+      term: Similaridade por cosseno
+      english_term: Cosine similarity
+      definition: Medida de similaridade baseada no ângulo entre dois vetores.
+      til_context: Na Aula 9, é usada para comparar embeddings de palavras.
+      example: Vetores com direções muito parecidas têm similaridade próxima de 1.
+    en:
+      term: Cosine similarity
+      definition: A similarity measure based on the angle between two vectors.
+      til_context: In Lesson 9, it is used to compare word embeddings.
+      example: Vectors pointing in very similar directions have similarity close to 1.
+    related: [embedding, dense-vector]
+
+  - id: word2vec
+    category: text-intelligence
+    lesson_first_seen: "09"
+    pt-BR:
+      term: Word2Vec
+      english_term: Word2Vec
+      definition: Família de métodos neurais que aprende embeddings de palavras a partir de seus contextos de ocorrência.
+      til_context: Na Aula 9, treinamos um pequeno Word2Vec com gensim apenas para observar o mecanismo.
+      example: Skip-gram tenta prever palavras de contexto a partir de uma palavra central.
+    en:
+      term: Word2Vec
+      definition: A family of neural methods that learns word embeddings from occurrence contexts.
+      til_context: In Lesson 9, a small Word2Vec model is trained with gensim for observation.
+      example: Skip-gram predicts context words from a central word.
+    related: [embedding, fasttext, distributed-representation]
+
+  - id: fasttext
+    category: text-intelligence
+    lesson_first_seen: "09"
+    pt-BR:
+      term: FastText
+      english_term: FastText
+      definition: Método de embeddings que representa palavras também por unidades de subpalavras.
+      til_context: Na Aula 9, FastText é apresentado como evolução útil para variações morfológicas e palavras raras.
+      example: Uma palavra pode ser composta por vários fragmentos de caracteres.
+    en:
+      term: FastText
+      definition: An embedding method that also represents words through subword units.
+      til_context: In Lesson 9, FastText is introduced as useful for morphological variation and rare words.
+      example: A word may be composed from several character fragments.
+    related: [word2vec, embedding]
+
+  - id: static-embedding
+    category: text-intelligence
+    lesson_first_seen: "09"
+    pt-BR:
+      term: Embedding estático
+      english_term: Static embedding
+      definition: Embedding que atribui essencialmente a mesma representação a uma palavra independentemente do contexto em que ocorre.
+      til_context: Na Aula 9, essa limitação prepara a transição futura para embeddings contextuais.
+      example: banco recebe a mesma representação em "banco aprovou" e "banco da praça".
+    en:
+      term: Static embedding
+      definition: An embedding that essentially assigns the same representation to a word regardless of its context.
+      til_context: In Lesson 9, this limitation prepares the later transition to contextual embeddings.
+      example: bank receives the same representation in different senses.
+    related: [embedding, word2vec]
