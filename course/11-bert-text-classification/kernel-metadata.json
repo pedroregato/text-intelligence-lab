@@ -1,0 +1,14 @@
+{
+  "id": "pedrogentil/til-11-bert-text-classification",
+  "title": "TIL 11 BERT Text Classification",
+  "code_file": "11-til-bert-text-classification.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
