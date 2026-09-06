@@ -1,7 +1,7 @@
 # EDU-INFRA-002 — Kaggle Model Resource Validation
 
 ## Status
-OPEN
+PARTIAL PASS — Aula 10 operationally validated
 
 ## Objective
 
@@ -35,21 +35,26 @@ Foi identificado um Dataset antigo com o mesmo nome, porém não será utilizado
 
 Preencher após execução no Kaggle:
 
-- Kaggle model page:
-- owner:
-- model:
-- framework:
-- variation:
-- version:
-- license:
-- language:
-- exact handle:
-- internet setting:
-- tokenizer load: PASS / FAIL
-- model load: PASS / FAIL
-- Aula 10 execution: PASS / FAIL
-- Aula 11 fine-tuning: PASS / FAIL
-- copied notebook preserves resource: PASS / FAIL
+- Kaggle model page: GODDiao / distilbert-base-multilingual-cased
+- owner: goddiao
+- model: distilbert-base-multilingual-cased
+- framework: pytorch
+- variation: default
+- version: 1
+- license: Apache 2.0
+- language: multilingual
+- exact handle: goddiao/distilbert-base-multilingual-cased/pyTorch/default
+- mounted path: /kaggle/input/models/goddiao/distilbert-base-multilingual-cased/pytorch/default/1
+- model directory: /kaggle/input/models/goddiao/distilbert-base-multilingual-cased/pytorch/default/1/distilbert-base-multilingual-cased
+- internet setting: OFF — PASS
+- tokenizer load: PASS — DistilBertTokenizer
+- model load: PASS — DistilBertModel
+- model_type: distilbert
+- vocab_size: 119547
+- Aula 10 local model load with Internet OFF: PASS
+- Aula 11 fine-tuning: PENDING
+- SHA-256 comparison: PENDING
+- copied notebook preserves resource: PENDING
 
 ## Decision gate
 
@@ -63,3 +68,26 @@ Kaggle Model versionado
 Internet
 → OFF
 ```
+
+
+## Evidence from offline execution
+
+With Kaggle Internet set to OFF, the attached model loaded successfully using local files only.
+
+Observed:
+
+```text
+DistilBertTokenizer
+DistilBertModel
+distilbert
+119547
+```
+
+This validates the model resource operationally for Aula 10.
+
+Remaining gates before full acceptance for Aula 11:
+
+1. SHA-256 integrity comparison of `model.safetensors`;
+2. offline load with `AutoModelForSequenceClassification`;
+3. offline fine-tuning execution;
+4. confirmation that a copied notebook preserves the attached model resource.
