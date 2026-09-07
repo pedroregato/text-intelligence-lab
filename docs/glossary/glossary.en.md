@@ -542,3 +542,74 @@ A weight learned by a linear model indicating a feature's contribution to the de
 **Example:** A large positive coefficient may favor a specific class.
 
 **First lesson:** 12
+
+
+## False Positive
+
+A truly negative case incorrectly classified as positive.
+
+**In TIL:** In Lesson 13, false positives are linked to the cost of incorrect alerts and unnecessary reviews.
+
+**Example:** A legitimate transaction flagged as fraud.
+
+**First lesson:** 13
+
+## False Negative
+
+A truly positive case incorrectly classified as negative.
+
+**In TIL:** In Lesson 13, false negatives represent important cases the system failed to detect.
+
+**Example:** A fraudulent transaction classified as legitimate.
+
+**First lesson:** 13
+
+## Specificity
+
+The proportion of truly negative cases correctly identified as negative.
+
+**In TIL:** In Lesson 13, it complements recall by describing behavior on the negative class.
+
+**Example:** TN / (TN + FP).
+
+**First lesson:** 13
+
+## Balanced Accuracy
+
+A metric that balances performance across classes, reducing the effect of class imbalance.
+
+**In TIL:** In Lesson 13, it is introduced as an alternative to plain accuracy in imbalanced settings.
+
+**Example:** In binary classification, it can be seen as the mean of recall and specificity.
+
+**First lesson:** 13
+
+## Support
+
+The number of true examples belonging to a class in an evaluated dataset.
+
+**In TIL:** In Lesson 13, support helps explain why weighted averages may be dominated by larger classes.
+
+**Example:** A class with 900 examples has much more support than a class with 20.
+
+**First lesson:** 13
+
+## Decision Threshold
+
+A cutoff used to convert a score or probability into a class decision.
+
+**In TIL:** In Lesson 13, changing the threshold demonstrates the trade-off between precision and recall.
+
+**Example:** score >= 0.50 implies the positive class.
+
+**First lesson:** 13
+
+## Abstention Rate
+
+The proportion of cases where a system avoids making an automatic decision and routes the case elsewhere.
+
+**In TIL:** In Lesson 13, it appears as an operational indicator alongside quality and latency.
+
+**Example:** The model abstains on 8% of cases and sends them to human review.
+
+**First lesson:** 13
