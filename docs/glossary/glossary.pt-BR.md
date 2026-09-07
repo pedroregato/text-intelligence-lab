@@ -650,3 +650,88 @@ Peso aprendido por um modelo linear para indicar a contribuição de uma feature
 **Exemplo:** Um coeficiente positivo alto pode favorecer uma classe específica.
 
 **Primeira aula:** 12
+
+
+## Falso positivo
+
+**English:** False Positive
+
+Caso negativo real que o modelo classificou incorretamente como positivo.
+
+**No TIL:** Na Aula 13, falsos positivos são associados ao custo de alertas incorretos e revisões desnecessárias.
+
+**Exemplo:** Uma transação legítima marcada como fraude.
+
+**Primeira aula:** 13
+
+## Falso negativo
+
+**English:** False Negative
+
+Caso positivo real que o modelo classificou incorretamente como negativo.
+
+**No TIL:** Na Aula 13, falsos negativos representam casos importantes que o sistema deixou escapar.
+
+**Exemplo:** Uma fraude real classificada como transação legítima.
+
+**Primeira aula:** 13
+
+## Especificidade
+
+**English:** Specificity
+
+Proporção dos negativos reais corretamente identificados como negativos.
+
+**No TIL:** Na Aula 13, complementa o recall ao observar o comportamento sobre a classe negativa.
+
+**Exemplo:** TN / (TN + FP).
+
+**Primeira aula:** 13
+
+## Balanced Accuracy
+
+**English:** Balanced Accuracy
+
+Métrica que dá peso equilibrado ao desempenho entre classes, reduzindo o efeito de desbalanceamento.
+
+**No TIL:** Na Aula 13, é apresentada como alternativa à acurácia simples em cenários desbalanceados.
+
+**Exemplo:** No caso binário, pode ser vista como a média entre recall e especificidade.
+
+**Primeira aula:** 13
+
+## Support
+
+**English:** Support
+
+Quantidade de exemplos reais pertencentes a uma classe em um conjunto avaliado.
+
+**No TIL:** Na Aula 13, support ajuda a entender por que weighted averages podem ser dominadas por classes maiores.
+
+**Exemplo:** Uma classe com 900 exemplos tem support muito maior que outra com 20.
+
+**Primeira aula:** 13
+
+## Threshold de decisão
+
+**English:** Decision Threshold
+
+Valor de corte usado para transformar um score ou probabilidade em uma decisão de classe.
+
+**No TIL:** Na Aula 13, alterar o threshold mostra o trade-off entre precision e recall.
+
+**Exemplo:** score >= 0.50 implica classe positiva.
+
+**Primeira aula:** 13
+
+## Taxa de abstenção
+
+**English:** Abstention Rate
+
+Proporção de casos em que o sistema evita emitir uma decisão automática e encaminha o caso para outro fluxo.
+
+**No TIL:** Na Aula 13, aparece como indicador operacional ao lado de qualidade e latência.
+
+**Exemplo:** O modelo abstém em 8% dos casos e envia esses casos para revisão humana.
+
+**Primeira aula:** 13
