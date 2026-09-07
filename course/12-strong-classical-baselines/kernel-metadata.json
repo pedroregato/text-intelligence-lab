@@ -1,0 +1,14 @@
+{
+  "id": "pedrogentil/til-12-strong-classical-baselines",
+  "title": "TIL 12 Strong Classical Baselines",
+  "code_file": "12-til-strong-classical-baselines.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "false",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
