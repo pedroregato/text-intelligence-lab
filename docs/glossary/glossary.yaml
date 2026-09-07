@@ -1244,3 +1244,115 @@ terms:
       til_context: In Lesson 12, LinearSVC coefficients are inspected to identify features strongly associated with classes.
       example: A large positive coefficient may favor a specific class.
     related: [feature, linear-svc]
+
+  - id: false-positive
+    category: evaluation
+    lesson_first_seen: "13"
+    pt-BR:
+      term: Falso positivo
+      english_term: False Positive
+      definition: Caso negativo real que o modelo classificou incorretamente como positivo.
+      til_context: Na Aula 13, falsos positivos são associados ao custo de alertas incorretos e revisões desnecessárias.
+      example: Uma transação legítima marcada como fraude.
+    en:
+      term: False Positive
+      definition: A truly negative case incorrectly classified as positive.
+      til_context: In Lesson 13, false positives are linked to the cost of incorrect alerts and unnecessary reviews.
+      example: A legitimate transaction flagged as fraud.
+    related: [precision, confusion-matrix]
+
+  - id: false-negative
+    category: evaluation
+    lesson_first_seen: "13"
+    pt-BR:
+      term: Falso negativo
+      english_term: False Negative
+      definition: Caso positivo real que o modelo classificou incorretamente como negativo.
+      til_context: Na Aula 13, falsos negativos representam casos importantes que o sistema deixou escapar.
+      example: Uma fraude real classificada como transação legítima.
+    en:
+      term: False Negative
+      definition: A truly positive case incorrectly classified as negative.
+      til_context: In Lesson 13, false negatives represent important cases the system failed to detect.
+      example: A fraudulent transaction classified as legitimate.
+    related: [recall, confusion-matrix]
+
+  - id: specificity
+    category: evaluation
+    lesson_first_seen: "13"
+    pt-BR:
+      term: Especificidade
+      english_term: Specificity
+      definition: Proporção dos negativos reais corretamente identificados como negativos.
+      til_context: Na Aula 13, complementa o recall ao observar o comportamento sobre a classe negativa.
+      example: TN / (TN + FP).
+    en:
+      term: Specificity
+      definition: The proportion of truly negative cases correctly identified as negative.
+      til_context: In Lesson 13, it complements recall by describing behavior on the negative class.
+      example: TN / (TN + FP).
+    related: [recall, balanced-accuracy]
+
+  - id: balanced-accuracy
+    category: evaluation
+    lesson_first_seen: "13"
+    pt-BR:
+      term: Balanced Accuracy
+      english_term: Balanced Accuracy
+      definition: Métrica que dá peso equilibrado ao desempenho entre classes, reduzindo o efeito de desbalanceamento.
+      til_context: Na Aula 13, é apresentada como alternativa à acurácia simples em cenários desbalanceados.
+      example: No caso binário, pode ser vista como a média entre recall e especificidade.
+    en:
+      term: Balanced Accuracy
+      definition: A metric that balances performance across classes, reducing the effect of class imbalance.
+      til_context: In Lesson 13, it is introduced as an alternative to plain accuracy in imbalanced settings.
+      example: In binary classification, it can be seen as the mean of recall and specificity.
+    related: [accuracy, specificity, recall]
+
+  - id: support
+    category: evaluation
+    lesson_first_seen: "13"
+    pt-BR:
+      term: Support
+      english_term: Support
+      definition: Quantidade de exemplos reais pertencentes a uma classe em um conjunto avaliado.
+      til_context: Na Aula 13, support ajuda a entender por que weighted averages podem ser dominadas por classes maiores.
+      example: Uma classe com 900 exemplos tem support muito maior que outra com 20.
+    en:
+      term: Support
+      definition: The number of true examples belonging to a class in an evaluated dataset.
+      til_context: In Lesson 13, support helps explain why weighted averages may be dominated by larger classes.
+      example: A class with 900 examples has much more support than a class with 20.
+    related: [weighted-average, macro-average]
+
+  - id: decision-threshold
+    category: evaluation
+    lesson_first_seen: "13"
+    pt-BR:
+      term: Threshold de decisão
+      english_term: Decision Threshold
+      definition: Valor de corte usado para transformar um score ou probabilidade em uma decisão de classe.
+      til_context: Na Aula 13, alterar o threshold mostra o trade-off entre precision e recall.
+      example: score >= 0.50 implica classe positiva.
+    en:
+      term: Decision Threshold
+      definition: A cutoff used to convert a score or probability into a class decision.
+      til_context: In Lesson 13, changing the threshold demonstrates the trade-off between precision and recall.
+      example: score >= 0.50 implies the positive class.
+    related: [precision, recall]
+
+  - id: abstention-rate
+    category: production
+    lesson_first_seen: "13"
+    pt-BR:
+      term: Taxa de abstenção
+      english_term: Abstention Rate
+      definition: Proporção de casos em que o sistema evita emitir uma decisão automática e encaminha o caso para outro fluxo.
+      til_context: Na Aula 13, aparece como indicador operacional ao lado de qualidade e latência.
+      example: O modelo abstém em 8% dos casos e envia esses casos para revisão humana.
+    en:
+      term: Abstention Rate
+      definition: The proportion of cases where a system avoids making an automatic decision and routes the case elsewhere.
+      til_context: In Lesson 13, it appears as an operational indicator alongside quality and latency.
+      example: The model abstains on 8% of cases and sends them to human review.
+    related: [decision-threshold, latency]
