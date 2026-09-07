@@ -491,3 +491,54 @@ A compact pattern language used to locate, validate, or extract character sequen
 **Example:** re.findall(r"\\b\\w+\\b", text).
 
 **First lesson:** 02
+
+
+## Baseline
+
+A reference model or result used to compare more complex approaches.
+
+**In TIL:** In Lesson 12, classical models provide a reference for deciding whether Transformer complexity is justified.
+
+**Example:** TF-IDF + LinearSVC can serve as a strong baseline for text classification.
+
+**First lesson:** 12
+
+## Logistic Regression
+
+A discriminative linear model used for classification by estimating class-associated scores.
+
+**In TIL:** In Lesson 12, it is compared with Naive Bayes and LinearSVC using the same TF-IDF representation.
+
+**Example:** LogisticRegression(max_iter=1000).
+
+**First lesson:** 12
+
+## LinearSVC
+
+A linear SVM classifier that seeks a decision boundary with a wide margin between classes.
+
+**In TIL:** In Lesson 12, it is used as a strong baseline for high-dimensional text spaces.
+
+**Example:** LinearSVC(random_state=42).
+
+**First lesson:** 12
+
+## Margin
+
+The distance between a decision boundary and the nearest examples in margin-based models.
+
+**In TIL:** In Lesson 12, it helps explain how LinearSVC works.
+
+**Example:** SVMs seek to separate classes with a wide margin.
+
+**First lesson:** 12
+
+## Coefficient
+
+A weight learned by a linear model indicating a feature's contribution to the decision.
+
+**In TIL:** In Lesson 12, LinearSVC coefficients are inspected to identify features strongly associated with classes.
+
+**Example:** A large positive coefficient may favor a specific class.
+
+**First lesson:** 12
