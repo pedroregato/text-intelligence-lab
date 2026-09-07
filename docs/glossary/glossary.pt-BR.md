@@ -589,3 +589,64 @@ Linguagem compacta de padrões usada para localizar, validar ou extrair sequênc
 **Exemplo:** re.findall(r"\\b\\w+\\b", text).
 
 **Primeira aula:** 02
+
+
+## Baseline
+
+**English:** Baseline
+
+Modelo ou resultado de referência usado para comparar abordagens mais complexas.
+
+**No TIL:** Na Aula 12, modelos clássicos servem de referência para decidir se a complexidade de um Transformer se justifica.
+
+**Exemplo:** TF-IDF + LinearSVC pode funcionar como baseline forte para classificação de texto.
+
+**Primeira aula:** 12
+
+## Regressão Logística
+
+**English:** Logistic Regression
+
+Modelo linear discriminativo usado para classificação ao estimar escores associados às classes.
+
+**No TIL:** Na Aula 12, é comparada com Naive Bayes e LinearSVC usando a mesma representação TF-IDF.
+
+**Exemplo:** LogisticRegression(max_iter=1000).
+
+**Primeira aula:** 12
+
+## LinearSVC
+
+**English:** LinearSVC
+
+Classificador SVM linear que busca uma fronteira de decisão com ampla margem entre classes.
+
+**No TIL:** Na Aula 12, é usado como baseline forte para espaços textuais de alta dimensionalidade.
+
+**Exemplo:** LinearSVC(random_state=42).
+
+**Primeira aula:** 12
+
+## Margem
+
+**English:** Margin
+
+Distância entre a fronteira de decisão e os exemplos mais próximos em modelos baseados em margem.
+
+**No TIL:** Na Aula 12, ajuda a explicar a lógica do LinearSVC.
+
+**Exemplo:** SVMs procuram separar classes com uma margem ampla.
+
+**Primeira aula:** 12
+
+## Coeficiente
+
+**English:** Coefficient
+
+Peso aprendido por um modelo linear para indicar a contribuição de uma feature à decisão.
+
+**No TIL:** Na Aula 12, coeficientes do LinearSVC são inspecionados para identificar features fortemente associadas às classes.
+
+**Exemplo:** Um coeficiente positivo alto pode favorecer uma classe específica.
+
+**Primeira aula:** 12
