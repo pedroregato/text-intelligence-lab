@@ -25,6 +25,9 @@
 ### Módulo V — Modelos clássicos comparativos
 - Aula 12 — Baselines fortes: Naive Bayes, Logistic Regression e LinearSVC
 
+### Módulo VI — Métricas, indicadores e decisão
+- Aula 13 — Métricas e Indicadores: da fórmula à decisão
+
 ## Próximos blocos planejados
 
 ### Sequências antes dos Transformers
