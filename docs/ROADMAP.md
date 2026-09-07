@@ -22,13 +22,10 @@
 - Aula 10 — Embeddings contextuais e Transformers
 - Aula 11 — BERT para classificação de texto
 
-## Próximos blocos planejados
+### Módulo V — Modelos clássicos comparativos
+- Aula 12 — Baselines fortes: Naive Bayes, Logistic Regression e LinearSVC
 
-### Modelos clássicos comparativos
-- Multinomial Naive Bayes
-- Logistic Regression
-- LinearSVC
-- custo × desempenho × interpretabilidade
+## Próximos blocos planejados
 
 ### Sequências antes dos Transformers
 - RNN
