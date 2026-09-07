@@ -1164,3 +1164,83 @@ terms:
       til_context: In Lesson 11, the tokenizer prepares messages for Transformer input.
       example: AutoTokenizer.from_pretrained(...).
     related: [tokenization, subword-tokenization, transformer]
+
+  - id: baseline
+    category: machine-learning
+    lesson_first_seen: "12"
+    pt-BR:
+      term: Baseline
+      english_term: Baseline
+      definition: Modelo ou resultado de referência usado para comparar abordagens mais complexas.
+      til_context: Na Aula 12, modelos clássicos servem de referência para decidir se a complexidade de um Transformer se justifica.
+      example: TF-IDF + LinearSVC pode funcionar como baseline forte para classificação de texto.
+    en:
+      term: Baseline
+      definition: A reference model or result used to compare more complex approaches.
+      til_context: In Lesson 12, classical models provide a reference for deciding whether Transformer complexity is justified.
+      example: TF-IDF + LinearSVC can serve as a strong baseline for text classification.
+    related: [classification, f1-score]
+
+  - id: logistic-regression
+    category: machine-learning
+    lesson_first_seen: "12"
+    pt-BR:
+      term: Regressão Logística
+      english_term: Logistic Regression
+      definition: Modelo linear discriminativo usado para classificação ao estimar escores associados às classes.
+      til_context: Na Aula 12, é comparada com Naive Bayes e LinearSVC usando a mesma representação TF-IDF.
+      example: LogisticRegression(max_iter=1000).
+    en:
+      term: Logistic Regression
+      definition: A discriminative linear model used for classification by estimating class-associated scores.
+      til_context: In Lesson 12, it is compared with Naive Bayes and LinearSVC using the same TF-IDF representation.
+      example: LogisticRegression(max_iter=1000).
+    related: [baseline, linear-svc]
+
+  - id: linear-svc
+    category: machine-learning
+    lesson_first_seen: "12"
+    pt-BR:
+      term: LinearSVC
+      english_term: LinearSVC
+      definition: Classificador SVM linear que busca uma fronteira de decisão com ampla margem entre classes.
+      til_context: Na Aula 12, é usado como baseline forte para espaços textuais de alta dimensionalidade.
+      example: LinearSVC(random_state=42).
+    en:
+      term: LinearSVC
+      definition: A linear SVM classifier that seeks a decision boundary with a wide margin between classes.
+      til_context: In Lesson 12, it is used as a strong baseline for high-dimensional text spaces.
+      example: LinearSVC(random_state=42).
+    related: [baseline, margin, logistic-regression]
+
+  - id: margin
+    category: machine-learning
+    lesson_first_seen: "12"
+    pt-BR:
+      term: Margem
+      english_term: Margin
+      definition: Distância entre a fronteira de decisão e os exemplos mais próximos em modelos baseados em margem.
+      til_context: Na Aula 12, ajuda a explicar a lógica do LinearSVC.
+      example: SVMs procuram separar classes com uma margem ampla.
+    en:
+      term: Margin
+      definition: The distance between a decision boundary and the nearest examples in margin-based models.
+      til_context: In Lesson 12, it helps explain how LinearSVC works.
+      example: SVMs seek to separate classes with a wide margin.
+    related: [linear-svc]
+
+  - id: coefficient
+    category: machine-learning
+    lesson_first_seen: "12"
+    pt-BR:
+      term: Coeficiente
+      english_term: Coefficient
+      definition: Peso aprendido por um modelo linear para indicar a contribuição de uma feature à decisão.
+      til_context: Na Aula 12, coeficientes do LinearSVC são inspecionados para identificar features fortemente associadas às classes.
+      example: Um coeficiente positivo alto pode favorecer uma classe específica.
+    en:
+      term: Coefficient
+      definition: A weight learned by a linear model indicating a feature's contribution to the decision.
+      til_context: In Lesson 12, LinearSVC coefficients are inspected to identify features strongly associated with classes.
+      example: A large positive coefficient may favor a specific class.
+    related: [feature, linear-svc]
