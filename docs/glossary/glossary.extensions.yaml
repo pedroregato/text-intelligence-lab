@@ -1,0 +1,33 @@
+version: 1
+terms:
+  - id: didactic-proxy
+    category: core
+    lesson_first_seen: "13"
+    pt-BR:
+      term: Proxy didático
+      english_term: Didactic proxy
+      definition: Representação simplificada usada para aproximar um conceito, custo, comportamento ou consequência real com finalidade de aprendizagem, sem pretender reproduzir toda a complexidade do fenômeno original.
+      til_context: Na Aula 13 e no Metric Scenario Lab, valores monetários atribuídos a erros podem funcionar como proxies didáticos para tornar trade-offs visíveis e comparáveis. Eles não devem ser confundidos com uma valoração completa de consequências humanas, éticas, sociais ou regulatórias.
+      example: Atribuir R$ 500 a um falso negativo em uma simulação médica pode ajudar a comparar cenários, mas esse valor não representa o valor de uma vida nem esgota o impacto de um diagnóstico perdido.
+    en:
+      term: Didactic proxy
+      definition: A simplified representation used to approximate a real concept, cost, behavior, or consequence for learning purposes without claiming to reproduce the full complexity of the original phenomenon.
+      til_context: In Lesson 13 and the Metric Scenario Lab, monetary values assigned to errors may act as didactic proxies to make trade-offs visible and comparable. They should not be confused with a complete valuation of human, ethical, social, or regulatory consequences.
+      example: Assigning R$ 500 to a false negative in a medical simulation can help compare scenarios, but that amount does not represent the value of a human life or exhaust the impact of a missed diagnosis.
+    related: [trade-off, false-negative, false-positive, decision-threshold]
+
+  - id: trade-off
+    category: core
+    lesson_first_seen: "13"
+    pt-BR:
+      term: Trade-off
+      english_term: Trade-off
+      definition: Situação em que melhorar uma dimensão de uma decisão tende a piorar outra, exigindo equilíbrio entre objetivos que não podem ser maximizados simultaneamente.
+      til_context: Na Aula 13, reduzir o threshold pode aumentar o recall e diminuir falsos negativos, mas também aumentar falsos positivos e reduzir a precisão. O melhor ponto depende do contexto, dos custos e do objetivo do sistema.
+      example: Em triagem médica, aceitar mais falsos positivos pode ser um trade-off razoável se isso reduzir significativamente o risco de deixar pacientes graves sem encaminhamento.
+    en:
+      term: Trade-off
+      definition: A situation in which improving one dimension of a decision tends to worsen another, requiring a balance between objectives that cannot all be maximized simultaneously.
+      til_context: In Lesson 13, lowering a decision threshold may increase recall and reduce false negatives, but it may also increase false positives and reduce precision. The best point depends on context, costs, and system goals.
+      example: In medical triage, accepting more false positives may be a reasonable trade-off if it significantly reduces the risk of missing seriously ill patients.
+    related: [didactic-proxy, precision, recall, f1-score, decision-threshold]
