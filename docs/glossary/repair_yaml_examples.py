@@ -1,18 +1,21 @@
-"""Repair malformed glossary YAML example scalars.
+"""Repair legacy glossary YAML example scalars.
 
-This is a one-time maintenance helper for legacy entries such as:
+Why this exists
+---------------
+Some historical ``example:`` values were written as YAML plain scalars even
+though they contain characters that YAML interprets structurally, for example:
 
     example: "atendimento excelente" se torna ["atendimento", "excelente"].
+    example: [0.18, -0.42, 0.77, 0.11].
 
-The value starts with a double quote but contains additional unescaped quoted
-fragments, which makes the YAML invalid. The script wraps the whole scalar in
-single quotes while preserving the inner double quotes.
+Those values are meant to be *text examples*, not YAML strings mixed with flow
+collections. This helper normalizes every one-line ``example:`` value to a
+single-quoted YAML string. Existing valid single-quoted examples are preserved.
 
 Usage:
     python docs/glossary/repair_yaml_examples.py
 
-The script is idempotent: running it again after the repair should make no
-changes.
+The script is idempotent: a second run should report no changes.
 """
 from pathlib import Path
 import re
@@ -20,27 +23,32 @@ import re
 ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT / "glossary.yaml"
 
-EXAMPLE_RE = re.compile(r"^(\s+example:\s+)(.*)$")
+EXAMPLE_RE = re.compile(r"^(\s+example:\s+)(.*?)(\r?\n)?$")
 
 
-def is_single_double_quoted_scalar(value: str) -> bool:
-    """Return True only when value is one complete YAML double-quoted scalar."""
-    if not (value.startswith('"') and value.endswith('"')):
+def is_valid_single_quoted_scalar(value: str) -> bool:
+    """Return True when value is already one complete YAML single-quoted scalar."""
+    if not (value.startswith("'") and value.endswith("'")):
         return False
 
-    escaped = False
-    for index, char in enumerate(value[1:-1], start=1):
-        if escaped:
-            escaped = False
-            continue
-        if char == "\\":
-            escaped = True
-            continue
-        if char == '"':
-            # An unescaped quote before the final quote means the scalar closed
-            # early and more text follows: exactly the legacy problem we fix.
-            return False
+    # Inside a YAML single-quoted scalar, a literal apostrophe is represented
+    # by two consecutive single quotes. Validate that convention so malformed
+    # legacy values are still repaired.
+    inner = value[1:-1]
+    i = 0
+    while i < len(inner):
+        if inner[i] == "'":
+            if i + 1 >= len(inner) or inner[i + 1] != "'":
+                return False
+            i += 2
+        else:
+            i += 1
     return True
+
+
+def quote_as_yaml_string(value: str) -> str:
+    """Wrap arbitrary one-line text as a safe YAML single-quoted scalar."""
+    return "'" + value.replace("'", "''") + "'"
 
 
 def repair_line(line: str) -> tuple[str, bool]:
@@ -48,17 +56,18 @@ def repair_line(line: str) -> tuple[str, bool]:
     if not match:
         return line, False
 
-    prefix, value = match.groups()
+    prefix, value, newline = match.groups()
+    newline = newline or ""
     value = value.rstrip()
 
-    # Plain scalars and already-valid quoted scalars are left untouched.
-    if not value.startswith('"') or is_single_double_quoted_scalar(value):
+    # Empty values and block scalars are not one-line examples and are left as-is.
+    if not value or value in {"|", ">", "|-", ">-", "|+", ">+"}:
         return line, False
 
-    # Single quotes are escaped in YAML by doubling them.
-    safe_value = value.replace("'", "''")
-    newline = "\n" if line.endswith("\n") else ""
-    return f"{prefix}'{safe_value}'{newline}", True
+    if is_valid_single_quoted_scalar(value):
+        return line, False
+
+    return f"{prefix}{quote_as_yaml_string(value)}{newline}", True
 
 
 def main() -> None:
