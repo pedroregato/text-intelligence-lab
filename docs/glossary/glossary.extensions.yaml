@@ -31,3 +31,19 @@ terms:
       til_context: In Lesson 13, lowering a decision threshold may increase recall and reduce false negatives, but it may also increase false positives and reduce precision. The best point depends on context, costs, and system goals.
       example: In medical triage, accepting more false positives may be a reasonable trade-off if it significantly reduces the risk of missing seriously ill patients.
     related: [didactic-proxy, precision, recall, f1-score, decision-threshold]
+
+  - id: harmonic-mean
+    category: machine-learning
+    lesson_first_seen: "13"
+    pt-BR:
+      term: Média harmônica
+      english_term: Harmonic Mean
+      definition: Tipo de média que dá influência relativamente maior aos valores menores e, por isso, é útil quando um resultado só deve ser considerado forte se todos os componentes combinados também forem fortes.
+      til_context: No F1-score, a média harmônica combina Precisão e Recall e penaliza desequilíbrios: uma métrica muito alta não compensa facilmente a outra muito baixa.
+      example: Com Precisão de 0,90 e Recall de 0,30, a média aritmética é 0,60, enquanto o F1, baseado na média harmônica, é 0,45.
+    en:
+      term: Harmonic Mean
+      definition: A type of mean that gives relatively greater influence to smaller values and is therefore useful when a result should be considered strong only if all combined components are also strong.
+      til_context: In F1-score, the harmonic mean combines Precision and Recall and penalizes imbalance: one very high metric does not easily compensate for the other being very low.
+      example: With Precision 0.90 and Recall 0.30, the arithmetic mean is 0.60 while F1, based on the harmonic mean, is 0.45.
+    related: [f1-score, precision, recall, trade-off]
