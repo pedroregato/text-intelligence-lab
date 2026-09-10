@@ -1,10 +1,13 @@
-"""Generate TIL glossary views from glossary.yaml.
+"""Generate TIL glossary views from canonical glossary sources.
 
 Requires:
     pip install pyyaml
 
 Usage:
     python docs/glossary/build_glossary.py
+
+The main source is glossary.yaml. Small curricular additions may live in
+`glossary.extensions.yaml`; the generator merges them and rejects duplicate IDs.
 """
 from pathlib import Path
 import json
@@ -12,6 +15,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT / "glossary.yaml"
+EXTENSIONS = ROOT / "glossary.extensions.yaml"
 WEB = ROOT / "web"
 
 CATEGORY_NAMES = {
@@ -19,14 +23,58 @@ CATEGORY_NAMES = {
     "text-intelligence": {"pt-BR": "Text Intelligence", "en": "Text Intelligence"},
     "engineering": {"pt-BR": "Experimentação e engenharia", "en": "Experimentation and engineering"},
     "machine-learning": {"pt-BR": "Machine Learning e estatística", "en": "Machine Learning and statistics"},
+    "evaluation": {"pt-BR": "Avaliação", "en": "Evaluation"},
+    "production": {"pt-BR": "Produção e operação", "en": "Production and operations"},
 }
 
+
+def load_yaml(path):
+    return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+
+
 def load_data():
-    return yaml.safe_load(SOURCE.read_text(encoding="utf-8"))
+    data = load_yaml(SOURCE)
+    data.setdefault("terms", [])
+
+    if EXTENSIONS.exists():
+        extension_data = load_yaml(EXTENSIONS)
+        extension_terms = extension_data.get("terms", [])
+
+        existing_ids = {item["id"] for item in data["terms"]}
+        duplicate_ids = sorted(
+            item["id"] for item in extension_terms if item["id"] in existing_ids
+        )
+        if duplicate_ids:
+            raise ValueError(
+                "Duplicate glossary term IDs found in extensions: "
+                + ", ".join(duplicate_ids)
+            )
+
+        data["terms"].extend(extension_terms)
+
+    ids = [item["id"] for item in data["terms"]]
+    if len(ids) != len(set(ids)):
+        raise ValueError("Glossary contains duplicate term IDs.")
+
+    unknown_categories = sorted(
+        {item["category"] for item in data["terms"]}
+        - set(CATEGORY_NAMES)
+    )
+    if unknown_categories:
+        raise ValueError(
+            "Unknown glossary categories: " + ", ".join(unknown_categories)
+        )
+
+    return data
+
 
 def markdown(data, lang):
     title = "# Glossário Vivo do TIL — PT-BR" if lang == "pt-BR" else "# TIL Living Glossary — EN"
-    note = "> Gerado a partir de `glossary.yaml`. Não edite manualmente como fonte primária." if lang == "pt-BR" else "> Generated from `glossary.yaml`. Do not edit manually as the primary source."
+    note = (
+        "> Gerado a partir de `glossary.yaml` + extensões curriculares. Não edite manualmente como fonte primária."
+        if lang == "pt-BR"
+        else "> Generated from `glossary.yaml` + curriculum extensions. Do not edit manually as the primary source."
+    )
     lines = [title, "", note, ""]
     for item in data["terms"]:
         x = item[lang]
@@ -40,6 +88,7 @@ def markdown(data, lang):
             f"**{'Primeira aula' if lang == 'pt-BR' else 'First lesson'}:** {item['lesson_first_seen']}", "",
         ])
     return "\n".join(lines)
+
 
 def html_page(data):
     payload = json.dumps(data["terms"], ensure_ascii=False)
@@ -170,6 +219,7 @@ render();
 </html>"""
     return template.replace("__TERMS__", payload).replace("__CATEGORIES__", categories)
 
+
 def main():
     data = load_data()
     (ROOT / "glossary.pt-BR.md").write_text(markdown(data, "pt-BR"), encoding="utf-8")
@@ -177,6 +227,7 @@ def main():
     WEB.mkdir(exist_ok=True)
     (WEB / "index.html").write_text(html_page(data), encoding="utf-8")
     print("Generated glossary.pt-BR.md, glossary.en.md and web/index.html")
+
 
 if __name__ == "__main__":
     main()
