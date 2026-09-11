@@ -35,6 +35,21 @@ Cada linha representa um modelo ou sistema medido em condições documentadas.
 
 As linhas comparadas precisam usar uma definição compatível de `quality`, a mesma unidade de custo e metodologia de latência comparável. Se isso não for possível, normalize ou mantenha experimentos separados.
 
+## Protocolo mínimo de medição
+
+Uma linha marcada como `measured` deve ter suporte em um experimento reproduzível que registre, no mínimo:
+
+1. dataset e split;
+2. métrica de qualidade e sua implementação;
+3. número de exemplos avaliados;
+4. hardware/ambiente;
+5. versão do modelo e código relevante;
+6. metodologia de latência;
+7. metodologia de custo;
+8. data da medição.
+
+Para latência, preferir registrar média e, no relatório completo, também p50/p95 quando isso trouxer valor. Para custo, declarar explicitamente se o valor representa preço monetário observado, estimativa ou proxy computacional.
+
 ## Proveniência
 
 O CSV é um resumo para consumo pelo simulador. A medição completa deve permanecer registrada em `docs/experiments/` com dataset/split, configuração, hardware, versão do código/modelo e metodologia de custo.
@@ -45,6 +60,22 @@ O CSV é um resumo para consumo pelo simulador. A medição completa deve perman
 - **DEMO**: não há evidência suficiente; o notebook usa proxies sintéticos explicitamente rotulados.
 
 Valores `demo` nunca devem ser apresentados como benchmark real do TIL.
+
+## Próximo conjunto de evidências
+
+O próximo experimento do TIL deve produzir medições comparáveis para pelo menos duas camadas da arquitetura abaixo:
+
+```text
+TF-IDF + classificador clássico
+        ↓
+DistilBERT multilíngue
+        ↓
+LLM e/ou revisão humana
+```
+
+A primeira meta é comparar o baseline clássico e o Transformer usando o mesmo dataset/split e a mesma métrica de qualidade. A camada LLM/humana só deve entrar quando houver uma metodologia de avaliação e custo claramente documentada.
+
+Nenhum valor deve ser incluído no CSV apenas para completar o simulador.
 
 ## Fluxo esperado
 
