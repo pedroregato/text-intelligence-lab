@@ -272,11 +272,11 @@ Os sliders mudam **prioridades**, não as medições. Ajuste qualidade, custo, l
 
 A aula está pronta para consumir evidência real, mas não devemos preencher `til-model-evidence.csv` apenas para tornar o simulador mais convincente.
 
-O experimento `docs/experiments/EDU-ORCH-001-model-evidence-baseline-vs-transformer.md` define o próximo passo:
+O experimento `docs/experiments/EDU-ORCH-001-model-evidence-baseline-vs-transformer.md` define o próximo passo. A referência inicial será o {glossary_link('Baseline')} **TF-IDF + classificador clássico**, comparado ao **DistilBERT multilíngue**.
 
 ```text
 mesmo dataset/split
-→ {glossary_link('Baseline')} TF-IDF + classificador clássico
+→ Baseline TF-IDF + classificador clássico
 → DistilBERT multilíngue
 → qualidade + latência + custo
 → proveniência
