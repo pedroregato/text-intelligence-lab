@@ -1,5 +1,17 @@
 # Estudo de caso — GitHub Project HydraFusion
 
+## Registro na Biblioteca Viva
+
+Este estudo de caso está conectado ao catálogo canônico do TIL:
+
+```text
+ref-github-hydrafusion-2026      → fonte primária
+ref-venturebeat-hydrafusion-2026 → análise secundária/crítica
+set-hydrafusion-2026              → conjunto pedagógico
+```
+
+A fonte de verdade dos metadados está em `docs/references/references.yaml`.
+
 ## Por que este caso entra no TIL
 
 O Project HydraFusion é útil para o TIL porque desloca a análise de **seleção de modelo** para **engenharia de sistemas compostos de IA**.
@@ -99,9 +111,9 @@ O objetivo não é usar sempre a camada mais sofisticada, mas direcionar capacid
 
 ## Leituras
 
-- GitHub Blog — *Project HydraFusion: Frontier quality via multi-model orchestration*  
+- `ref-github-hydrafusion-2026` — GitHub Blog, *Project HydraFusion: Frontier quality via multi-model orchestration*  
   https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/
-- VentureBeat — *GitHub's HydraFusion cuts AI coding costs in every benchmark. It only matches quality in one*  
+- `ref-venturebeat-hydrafusion-2026` — VentureBeat, *GitHub's HydraFusion cuts AI coding costs in every benchmark. It only matches quality in one*  
   https://venturebeat.com/orchestration/githubs-hydrafusion-cuts-ai-coding-costs-in-every-benchmark-it-only-matches-quality-in-one
 
 ## Nota metodológica
