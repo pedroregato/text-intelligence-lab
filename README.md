@@ -47,6 +47,10 @@ Ler
 | 9 | Word Embeddings |
 | 10 | Embeddings contextuais e Transformers |
 | 11 | BERT para classificação de texto |
+| 12 | Baselines clássicos fortes |
+| 13 | Métricas e indicadores: da fórmula à decisão |
+| 13B | Metric Scenario Lab: cenários, thresholds e custos de erro |
+| 13C | Model Routing, Orchestration e Utility: sistemas compostos de IA |
 
 A trilha continua em desenvolvimento com tarefas aplicadas de NLP, LLMs, RAG, agentes, avaliação avançada, observabilidade e capstone Kaggle.
 
@@ -63,17 +67,33 @@ Módulo III — Representações distribuídas
 Aula 9
 
 Módulo IV — Transformers aplicados
-Aulas 10–11
+Aulas 10–12
 
-Módulo V — LLMs, RAG e agentes
-Em planejamento
+Módulo V — Avaliação, métricas e decisões de engenharia
+Aula 13 + Labs 13B e 13C
 
-Módulo VI — Engenharia, avaliação e produção
+Módulo VI — LLMs, RAG, agentes e sistemas compostos
+Em desenvolvimento
+
+Módulo VII — Engenharia, observabilidade e produção
 Em planejamento
 
 Capstone — Kaggle
 Em planejamento
 ```
+
+## Da avaliação de modelos à avaliação de sistemas
+
+A partir da Aula 13, o TIL amplia a pergunta de avaliação:
+
+```text
+Qual modelo tem a maior métrica?
+            ↓
+Qual sistema entrega valor suficiente
+com qualidade, custo, latência e risco aceitáveis?
+```
+
+O laboratório **13C — Model Routing, Orchestration e Utility** introduz `single`, `cascade`, `critique`, `quality gates`, funções de utilidade e métricas de sistemas orquestrados, usando o GitHub Project HydraFusion como estudo de caso contemporâneo.
 
 ## Glossário Vivo
 
@@ -146,7 +166,7 @@ text-intelligence-lab/
 
 O curso está em construção ativa.
 
-As Aulas 0–11 já possuem notebooks oficiais no repositório e estão sendo revisadas tecnicamente e pedagogicamente antes de serem marcadas como prontas para alunos.
+As Aulas 0–13 e os laboratórios complementares da Aula 13 já possuem material oficial no repositório e seguem em revisão técnica e pedagógica antes da marcação final de prontidão para alunos.
 
 ## Licenciamento
 
