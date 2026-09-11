@@ -1,0 +1,127 @@
+schema_version: "1.0"
+library_name: "TIL Living Reference Library"
+description: >
+  Catálogo canônico e computável de referências externas usadas no Text Intelligence Lab.
+  As referências devem conectar evidência, contexto, conceito e atividade pedagógica.
+
+reference_types:
+  - foundational
+  - official-doc
+  - research-paper
+  - industry-article
+  - case-study
+  - benchmark
+  - tutorial
+  - critical-analysis
+
+source_roles:
+  - primary
+  - secondary
+  - commentary
+
+review_statuses:
+  - candidate
+  - reviewed
+  - integrated
+  - archived
+
+editorial_principles:
+  - "Não usar artigo jornalístico como única fonte para uma afirmação técnica quando houver fonte primária disponível."
+  - "Distinguir explicitamente fonte primária, divulgação e análise crítica."
+  - "Registrar limitações, contexto de benchmark e possíveis conflitos de interesse."
+  - "Relacionar cada referência a conceitos, aulas ou atividades concretas do TIL."
+  - "Tratar resultados de benchmarks como evidência contextual, não como propriedades universais de um modelo ou sistema."
+
+references:
+  - id: ref-github-hydrafusion-2026
+    title: "Project HydraFusion: Frontier quality via multi-model orchestration"
+    authors:
+      - "GitHub Staff"
+    source: "GitHub Blog"
+    source_role: primary
+    type: official-doc
+    url: "https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/"
+    published_at: "2026-09-04"
+    accessed_at: "2026-09-11"
+    language: en
+    topics:
+      - model-routing
+      - multi-model-orchestration
+      - compound-ai-systems
+      - quality-gates
+      - cost-optimization
+      - latency
+      - evaluation
+    related_lessons:
+      - "13"
+      - "13B"
+      - "13C"
+    relevance: high
+    review_status: integrated
+    summary: >
+      Apresenta o Project HydraFusion, uma pesquisa do GitHub sobre orquestração em tempo de execução
+      que escolhe entre estratégias single, cascade e critique para equilibrar qualidade, custo e latência.
+    pedagogical_use:
+      - "fonte primária do estudo de caso HydraFusion"
+      - "exemplo de quality gate e escalonamento"
+      - "discussão sobre avaliação multiobjetivo"
+      - "base para exercício de utility e model routing"
+    caveats:
+      - "Os resultados divulgados são avaliações offline controladas."
+      - "Os resultados dependem dos benchmarks, configurações, modelos disponíveis e premissas de preço."
+      - "O HydraFusion está descrito como research preview e pode mudar."
+    local_assets:
+      - "docs/case-studies/github-hydrafusion-multi-model-orchestration.md"
+      - "course/13-metrics-and-indicators/13c-model-routing-and-orchestration.ipynb"
+
+  - id: ref-venturebeat-hydrafusion-2026
+    title: "GitHub's HydraFusion cuts AI coding costs in every benchmark. It only matches quality in one."
+    authors:
+      - "Sean Michael Kerner"
+    source: "VentureBeat"
+    source_role: secondary
+    type: critical-analysis
+    url: "https://venturebeat.com/orchestration/githubs-hydrafusion-cuts-ai-coding-costs-in-every-benchmark-it-only-matches-quality-in-one"
+    published_at: "2026-09-04"
+    accessed_at: "2026-09-11"
+    language: en
+    topics:
+      - model-routing
+      - multi-model-orchestration
+      - benchmark-interpretation
+      - cost-optimization
+      - evaluation
+      - critical-reading
+    related_lessons:
+      - "13"
+      - "13C"
+    relevance: high
+    review_status: integrated
+    summary: >
+      Analisa criticamente os resultados divulgados para o HydraFusion e chama atenção para a diferença
+      entre redução consistente de custo e ganhos de qualidade não uniformes entre benchmarks.
+    pedagogical_use:
+      - "contraponto à fonte oficial"
+      - "exercício de leitura crítica de benchmark"
+      - "discussão sobre marketing técnico versus evidência"
+      - "comparação entre fonte primária e interpretação jornalística"
+    caveats:
+      - "É uma análise jornalística e não substitui a fonte técnica primária."
+      - "A interpretação depende dos resultados e configurações publicados pelo fornecedor."
+    local_assets:
+      - "docs/case-studies/github-hydrafusion-multi-model-orchestration.md"
+      - "course/13-metrics-and-indicators/13c-model-routing-and-orchestration.ipynb"
+
+reference_sets:
+  - id: set-hydrafusion-2026
+    title: "HydraFusion — fonte primária + análise crítica"
+    purpose: >
+      Ensinar o aluno a triangular uma alegação técnica combinando anúncio oficial e análise externa.
+    reference_ids:
+      - ref-github-hydrafusion-2026
+      - ref-venturebeat-hydrafusion-2026
+    learning_questions:
+      - "Quais afirmações aparecem diretamente na fonte primária?"
+      - "Quais interpretações são introduzidas pela análise secundária?"
+      - "Os benchmarks sustentam a mesma conclusão para qualidade e custo?"
+      - "Que informações adicionais seriam necessárias antes de adotar a arquitetura em produção?"
