@@ -1,6 +1,6 @@
 # TIL Living Glossary — EN
 
-> Generated from `glossary.yaml`. Do not edit manually as the primary source.
+> Generated from `glossary.yaml` + curriculum extensions. Do not edit manually as the primary source.
 
 ## Data
 
@@ -468,7 +468,7 @@ The process of splitting text into smaller units called tokens.
 
 **In TIL:** In Lesson 2, we compare a simple split strategy with regular-expression tokenization.
 
-**Example:** "excellent service" becomes ["excellent", "service"].
+**Example:** '"excellent service" becomes ["excellent", "service"].'
 
 **First lesson:** 02
 
@@ -478,7 +478,7 @@ A set of transformations used to reduce superficial text variation while preserv
 
 **In TIL:** In Lesson 2, lowercasing and trimming whitespace are used as simple examples.
 
-**Example:** " SERVICE " becomes "service".
+**Example:** '" SERVICE " becomes "service".'
 
 **First lesson:** 02
 
@@ -492,6 +492,255 @@ A compact pattern language used to locate, validate, or extract character sequen
 
 **First lesson:** 02
 
+## N-gram
+
+A sequence of n consecutive tokens used as a unit of text representation.
+
+**In TIL:** In Lesson 8, n-grams preserve some local context that is lost when using only isolated words.
+
+**Example:** In "did not like", "not like" can be a bigram.
+
+**First lesson:** 08
+
+## Unigram
+
+An n-gram consisting of a single token.
+
+**In TIL:** In Lesson 8, unigrams represent the traditional isolated-word case.
+
+**Example:** "service" is a unigram.
+
+**First lesson:** 08
+
+## Bigram
+
+An n-gram consisting of two consecutive tokens.
+
+**In TIL:** In Lesson 8, bigrams show how combinations such as "not like" can become explicit features.
+
+**Example:** "not like" is a bigram.
+
+**First lesson:** 08
+
+## Trigram
+
+An n-gram consisting of three consecutive tokens.
+
+**In TIL:** In Lesson 8, trigrams illustrate the gain in context and the increase in dimensionality.
+
+**Example:** "did not like" is a trigram.
+
+**First lesson:** 08
+
+## Dimensionality
+
+The number of dimensions or features used to represent data.
+
+**In TIL:** In Lesson 8, adding bigrams and trigrams increases the number of columns in the text matrix.
+
+**Example:** A vocabulary with 5000 features produces a 5000-dimensional representation.
+
+**First lesson:** 08
+
+## Embedding
+
+A learned vector representation that maps entities such as words into a continuous numerical space.
+
+**In TIL:** In Lesson 9, words stop occupying exclusive dimensions and are represented by dense vectors.
+
+**Example:** service may be represented by [0.18, -0.42, 0.77, ...].
+
+**First lesson:** 09
+
+## Dense vector
+
+A vector in which most positions contain informative values, unlike sparse representations dominated by zeros.
+
+**In TIL:** In Lesson 9, word embeddings are relatively low-dimensional dense vectors.
+
+**Example:** "[0.18, -0.42, 0.77, 0.11]."
+
+**First lesson:** 09
+
+## Distributed representation
+
+A representation in which information is not concentrated in a single dimension but distributed across multiple vector dimensions.
+
+**In TIL:** In Lesson 9, lexical meaning is approximated by distributed patterns learned from context.
+
+**Example:** Similar words may share nearby patterns across many dimensions.
+
+**First lesson:** 09
+
+## Cosine similarity
+
+A similarity measure based on the angle between two vectors.
+
+**In TIL:** In Lesson 9, it is used to compare word embeddings.
+
+**Example:** Vectors pointing in very similar directions have similarity close to 1.
+
+**First lesson:** 09
+
+## Word2Vec
+
+A family of neural methods that learns word embeddings from occurrence contexts.
+
+**In TIL:** In Lesson 9, a small Word2Vec model is trained with gensim for observation.
+
+**Example:** Skip-gram predicts context words from a central word.
+
+**First lesson:** 09
+
+## FastText
+
+An embedding method that also represents words through subword units.
+
+**In TIL:** In Lesson 9, FastText is introduced as useful for morphological variation and rare words.
+
+**Example:** A word may be composed from several character fragments.
+
+**First lesson:** 09
+
+## Static embedding
+
+An embedding that essentially assigns the same representation to a word regardless of its context.
+
+**In TIL:** In Lesson 9, this limitation prepares the later transition to contextual embeddings.
+
+**Example:** bank receives the same representation in different senses.
+
+**First lesson:** 09
+
+## Contextual embedding
+
+A vector representation whose value depends on the context in which a token appears.
+
+**In TIL:** In Lesson 10, the same word receives different vectors in sentences with different meanings.
+
+**Example:** bank in a financial context and bank in a river context.
+
+**First lesson:** 10
+
+## Attention
+
+A mechanism that computes relevance weights between sequence elements to combine contextual information.
+
+**In TIL:** In Lesson 10, attention is introduced as a basis for contextualizing tokens in Transformers.
+
+**Example:** A token may assign greater weight to relevant surrounding words.
+
+**First lesson:** 10
+
+## Self-attention
+
+A form of attention in which elements of the same sequence interact with one another.
+
+**In TIL:** In Lesson 10, self-attention lets each token consider other tokens in the sentence.
+
+**Example:** bank considers river in a sentence when building its contextual representation.
+
+**First lesson:** 10
+
+## Transformer
+
+A neural architecture based on attention mechanisms for processing sequences and building contextual representations.
+
+**In TIL:** In Lesson 10, Transformers are introduced as the foundation of many modern language models.
+
+**Example:** BERT and many autoregressive models use Transformer architecture.
+
+**First lesson:** 10
+
+## Subword tokenization
+
+A strategy that splits words into smaller reusable units to reduce vocabulary and rare-word problems.
+
+**In TIL:** In Lesson 10, subwords are introduced as common units in Transformer tokenizers.
+
+**Example:** A rare word may be split into fragments known by the vocabulary.
+
+**First lesson:** 10
+
+## Pretrained model
+
+A model that has already been trained on a large dataset before being reused for another task.
+
+**In TIL:** In Lesson 10, a pretrained encoder is used only for inference and contextual embedding observation.
+
+**Example:** distilbert-base-uncased loaded to extract representations.
+
+**First lesson:** 10
+
+## Fine-tuning
+
+The process of adapting a pretrained model to a specific task using labeled data from the new task.
+
+**In TIL:** In Lesson 11, a multilingual Transformer is fine-tuned to classify messages into three categories.
+
+**Example:** Adapting a pretrained encoder to predict question, complaint, or praise.
+
+**First lesson:** 11
+
+## Transfer learning
+
+A strategy that reuses knowledge learned in one task or domain to accelerate or improve learning in another task.
+
+**In TIL:** In Lesson 11, pretrained linguistic knowledge is transferred to message classification.
+
+**Example:** Reusing BERT instead of training a language model from scratch.
+
+**First lesson:** 11
+
+## Sequence classification
+
+A task in which an entire text sequence receives a class or label.
+
+**In TIL:** In Lesson 11, each message receives one of the labels question, complaint, or praise.
+
+**Example:** Classifying a customer-service message into a category.
+
+**First lesson:** 11
+
+## Epoch
+
+One complete pass of the training algorithm through all examples in the training set.
+
+**In TIL:** In Lesson 11, a single epoch is used to keep the experiment lightweight and didactic.
+
+**Example:** num_train_epochs=1.
+
+**First lesson:** 11
+
+## Batch
+
+A small group of examples processed together during a training step.
+
+**In TIL:** In Lesson 11, batch size controls how many messages are processed in each step.
+
+**Example:** per_device_train_batch_size=4.
+
+**First lesson:** 11
+
+## Learning rate
+
+A hyperparameter that controls the size of weight updates during training.
+
+**In TIL:** In Lesson 11, a small rate is used for fine-tuning a pretrained model.
+
+**Example:** learning_rate=2e-5.
+
+**First lesson:** 11
+
+## Tokenizer
+
+A component that converts text into units and numerical identifiers compatible with a model vocabulary.
+
+**In TIL:** In Lesson 11, the tokenizer prepares messages for Transformer input.
+
+**Example:** AutoTokenizer.from_pretrained(...).
+
+**First lesson:** 11
 
 ## Baseline
 
@@ -542,7 +791,6 @@ A weight learned by a linear model indicating a feature's contribution to the de
 **Example:** A large positive coefficient may favor a specific class.
 
 **First lesson:** 12
-
 
 ## False Positive
 
@@ -613,3 +861,103 @@ The proportion of cases where a system avoids making an automatic decision and r
 **Example:** The model abstains on 8% of cases and sends them to human review.
 
 **First lesson:** 13
+
+## Didactic proxy
+
+A simplified representation used to approximate a real concept, cost, behavior, or consequence for learning purposes without claiming to reproduce the full complexity of the original phenomenon.
+
+**In TIL:** In Lesson 13 and the Metric Scenario Lab, monetary values assigned to errors may act as didactic proxies to make trade-offs visible and comparable. They should not be confused with a complete valuation of human, ethical, social, or regulatory consequences.
+
+**Example:** Assigning R$ 500 to a false negative in a medical simulation can help compare scenarios, but that amount does not represent the value of a human life or exhaust the impact of a missed diagnosis.
+
+**First lesson:** 13
+
+## Trade-off
+
+A situation in which improving one dimension of a decision tends to worsen another, requiring a balance between objectives that cannot all be maximized simultaneously.
+
+**In TIL:** In Lesson 13, lowering a decision threshold may increase recall and reduce false negatives, but it may also increase false positives and reduce precision. The best point depends on context, costs, and system goals.
+
+**Example:** In medical triage, accepting more false positives may be a reasonable trade-off if it significantly reduces the risk of missing seriously ill patients.
+
+**First lesson:** 13
+
+## Harmonic Mean
+
+A type of mean that gives relatively greater influence to smaller values and is therefore useful when a result should be considered strong only if all combined components are also strong.
+
+**In TIL:** In F1-score, the harmonic mean combines Precision and Recall and penalizes imbalance: one very high metric does not easily compensate for the other being very low.
+
+**Example:** With Precision 0.90 and Recall 0.30, the arithmetic mean is 0.60 while F1, based on the harmonic mean, is 0.45.
+
+**First lesson:** 13
+
+## Model Routing
+
+A strategy that decides which model, tool, or execution path should receive each input based on criteria such as difficulty, confidence, cost, latency, or risk.
+
+**In TIL:** In Lesson 13C, the router can keep simple cases on the economical model and send low-confidence cases to a stronger layer.
+
+**Example:** A short unambiguous message may be classified by the baseline while an ambiguous case is routed to the Transformer.
+
+**First lesson:** 13C
+
+## Model Orchestration
+
+Coordination of multiple models and processing stages in one workflow, including routing rules, evaluation, review, fallback, and escalation.
+
+**In TIL:** Lesson 13C compares single, cascade, and critique strategies to show that the system can matter more than an isolated model.
+
+**Example:** An economical model produces the first answer, a gate evaluates quality, and a premium model is invoked only when needed.
+
+**First lesson:** 13C
+
+## Quality Gate
+
+An evaluation rule or mechanism that decides whether an output has sufficient quality to be accepted or must be rejected, revised, or escalated.
+
+**In TIL:** In the 13C simulator, making the gate stricter increases the share of cases sent to the premium layer and changes quality, cost, and latency.
+
+**Example:** If classifier confidence falls below 0.70, the case may be sent to a stronger model or human review.
+
+**First lesson:** 13C
+
+## Escalation Rate
+
+The proportion of cases that leave the initial layer and are sent to a more expensive, slower, more specialized, or human stage.
+
+**In TIL:** In Lesson 13C, escalation rate is a key operational metric for understanding how much the cascade actually uses the premium layer.
+
+**Example:** A 25% escalation rate means one in four cases goes beyond the initial model.
+
+**First lesson:** 13C
+
+## Utility Function
+
+A function that combines different objectives into a common score to make the priorities used in a decision explicit.
+
+**In TIL:** The 13C simulator uses a simple function that rewards quality and penalizes cost and latency, with weights chosen by the learner.
+
+**Example:** U = wq·Q − wc·C − wl·L can compare systems when quality, cost, and latency have different importance.
+
+**First lesson:** 13C
+
+## Compound AI System
+
+An AI system composed of multiple coordinated components such as models, tools, retrievers, rules, verifiers, and human stages.
+
+**In TIL:** Lesson 13C expands evaluation from an isolated model to the whole system, including routing, gates, cost, latency, and review.
+
+**Example:** A baseline classifies first, a Transformer handles difficult cases, and a human reviews critical situations.
+
+**First lesson:** 13C
+
+## Cost per Inference
+
+The cost associated with processing one input through the system, potentially including compute, tokens, API calls, infrastructure, and human stages.
+
+**In TIL:** In 13C, cost may be provided as currency or a relative index as long as the unit is consistent across compared systems.
+
+**Example:** If one thousand classifications cost R$ 12 in compute resources, the average cost per inference is R$ 0.012.
+
+**First lesson:** 13C

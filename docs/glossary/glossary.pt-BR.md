@@ -1,6 +1,6 @@
 # Glossário Vivo do TIL — PT-BR
 
-> Gerado a partir de `glossary.yaml`. Não edite manualmente como fonte primária.
+> Gerado a partir de `glossary.yaml` + extensões curriculares. Não edite manualmente como fonte primária.
 
 ## Dado
 
@@ -562,7 +562,7 @@ Processo de dividir texto em unidades menores chamadas tokens.
 
 **No TIL:** Na Aula 2, comparamos uma estratégia simples com split e uma tokenização baseada em expressão regular.
 
-**Exemplo:** "atendimento excelente" se torna ["atendimento", "excelente"].
+**Exemplo:** '"atendimento excelente" se torna ["atendimento", "excelente"].'
 
 **Primeira aula:** 02
 
@@ -574,7 +574,7 @@ Conjunto de transformações aplicadas para reduzir variações superficiais do 
 
 **No TIL:** Na Aula 2, usamos minúsculas e remoção de espaços nas extremidades como exemplos simples.
 
-**Exemplo:** " ATENDIMENTO " se torna "atendimento".
+**Exemplo:** '" ATENDIMENTO " se torna "atendimento".'
 
 **Primeira aula:** 02
 
@@ -590,6 +590,305 @@ Linguagem compacta de padrões usada para localizar, validar ou extrair sequênc
 
 **Primeira aula:** 02
 
+## N-gram
+
+**English:** N-gram
+
+Sequência de n tokens consecutivos usada como unidade de representação textual.
+
+**No TIL:** Na Aula 8, n-grams preservam parte do contexto local que se perde quando usamos apenas palavras isoladas.
+
+**Exemplo:** Em "não gostei", "não gostei" é um bigrama.
+
+**Primeira aula:** 08
+
+## Unigrama
+
+**English:** Unigram
+
+N-gram formado por um único token.
+
+**No TIL:** Na Aula 8, unigramas representam o caso tradicional de palavras isoladas.
+
+**Exemplo:** "atendimento" é um unigrama.
+
+**Primeira aula:** 08
+
+## Bigrama
+
+**English:** Bigram
+
+N-gram formado por dois tokens consecutivos.
+
+**No TIL:** Na Aula 8, bigramas mostram como combinações como "não gostei" podem se tornar features explícitas.
+
+**Exemplo:** "não gostei" é um bigrama.
+
+**Primeira aula:** 08
+
+## Trigrama
+
+**English:** Trigram
+
+N-gram formado por três tokens consecutivos.
+
+**No TIL:** Na Aula 8, trigramas ilustram o ganho de contexto e o aumento da dimensionalidade.
+
+**Exemplo:** "não gostei do" é um trigrama.
+
+**Primeira aula:** 08
+
+## Dimensionalidade
+
+**English:** Dimensionality
+
+Número de dimensões ou features usadas para representar os dados.
+
+**No TIL:** Na Aula 8, adicionar bigramas e trigramas aumenta o número de colunas da matriz textual.
+
+**Exemplo:** Um vocabulário com 5000 features produz uma representação de dimensionalidade 5000.
+
+**Primeira aula:** 08
+
+## Embedding
+
+**English:** Embedding
+
+Representação vetorial aprendida que mapeia entidades, como palavras, para um espaço numérico contínuo.
+
+**No TIL:** Na Aula 9, palavras deixam de ocupar uma dimensão exclusiva e passam a ser representadas por vetores densos.
+
+**Exemplo:** atendimento pode ser representado por [0.18, -0.42, 0.77, ...].
+
+**Primeira aula:** 09
+
+## Vetor denso
+
+**English:** Dense vector
+
+Vetor em que a maior parte das posições contém valores informativos, em contraste com representações esparsas dominadas por zeros.
+
+**No TIL:** Na Aula 9, embeddings de palavras são vetores densos de baixa dimensionalidade relativa.
+
+**Exemplo:** "[0.18, -0.42, 0.77, 0.11]."
+
+**Primeira aula:** 09
+
+## Representação distribuída
+
+**English:** Distributed representation
+
+Representação em que a informação não está concentrada em uma única dimensão, mas distribuída por várias dimensões do vetor.
+
+**No TIL:** Na Aula 9, o significado lexical é aproximado por padrões distribuídos aprendidos a partir do contexto.
+
+**Exemplo:** Duas palavras semelhantes podem compartilhar padrões próximos em várias dimensões.
+
+**Primeira aula:** 09
+
+## Similaridade por cosseno
+
+**English:** Cosine similarity
+
+Medida de similaridade baseada no ângulo entre dois vetores.
+
+**No TIL:** Na Aula 9, é usada para comparar embeddings de palavras.
+
+**Exemplo:** Vetores com direções muito parecidas têm similaridade próxima de 1.
+
+**Primeira aula:** 09
+
+## Word2Vec
+
+**English:** Word2Vec
+
+Família de métodos neurais que aprende embeddings de palavras a partir de seus contextos de ocorrência.
+
+**No TIL:** Na Aula 9, treinamos um pequeno Word2Vec com gensim apenas para observar o mecanismo.
+
+**Exemplo:** Skip-gram tenta prever palavras de contexto a partir de uma palavra central.
+
+**Primeira aula:** 09
+
+## FastText
+
+**English:** FastText
+
+Método de embeddings que representa palavras também por unidades de subpalavras.
+
+**No TIL:** Na Aula 9, FastText é apresentado como evolução útil para variações morfológicas e palavras raras.
+
+**Exemplo:** Uma palavra pode ser composta por vários fragmentos de caracteres.
+
+**Primeira aula:** 09
+
+## Embedding estático
+
+**English:** Static embedding
+
+Embedding que atribui essencialmente a mesma representação a uma palavra independentemente do contexto em que ocorre.
+
+**No TIL:** Na Aula 9, essa limitação prepara a transição futura para embeddings contextuais.
+
+**Exemplo:** banco recebe a mesma representação em "banco aprovou" e "banco da praça".
+
+**Primeira aula:** 09
+
+## Embedding contextual
+
+**English:** Contextual embedding
+
+Representação vetorial cujo valor depende do contexto em que o token aparece.
+
+**No TIL:** Na Aula 10, a mesma palavra recebe vetores diferentes em frases com sentidos distintos.
+
+**Exemplo:** bank em contexto financeiro e bank em contexto geográfico.
+
+**Primeira aula:** 10
+
+## Atenção
+
+**English:** Attention
+
+Mecanismo que calcula pesos de relevância entre elementos de uma sequência para combinar informação contextual.
+
+**No TIL:** Na Aula 10, atenção é introduzida como base para contextualizar tokens em Transformers.
+
+**Exemplo:** Um token pode atribuir maior peso a palavras relevantes ao seu redor.
+
+**Primeira aula:** 10
+
+## Self-attention
+
+**English:** Self-attention
+
+Forma de atenção em que elementos da mesma sequência interagem entre si.
+
+**No TIL:** Na Aula 10, self-attention permite que cada token considere os demais tokens da frase.
+
+**Exemplo:** bank considera river em uma frase para construir sua representação contextual.
+
+**Primeira aula:** 10
+
+## Transformer
+
+**English:** Transformer
+
+Arquitetura neural baseada em mecanismos de atenção para processar sequências e construir representações contextualizadas.
+
+**No TIL:** Na Aula 10, Transformers são apresentados como base de grande parte dos modelos modernos de linguagem.
+
+**Exemplo:** BERT e muitos modelos autoregressivos usam arquitetura Transformer.
+
+**Primeira aula:** 10
+
+## Tokenização por subpalavras
+
+**English:** Subword tokenization
+
+Estratégia que divide palavras em unidades menores reutilizáveis para reduzir problemas de vocabulário e palavras raras.
+
+**No TIL:** Na Aula 10, subwords são apresentados como unidades comuns em tokenizadores de Transformers.
+
+**Exemplo:** Uma palavra rara pode ser dividida em fragmentos conhecidos pelo vocabulário.
+
+**Primeira aula:** 10
+
+## Modelo pré-treinado
+
+**English:** Pretrained model
+
+Modelo que já passou por treinamento em uma grande coleção de dados antes de ser reutilizado em outra tarefa.
+
+**No TIL:** Na Aula 10, um encoder pré-treinado é usado apenas para inferência e observação de embeddings contextuais.
+
+**Exemplo:** distilbert-base-uncased carregado para extrair representações.
+
+**Primeira aula:** 10
+
+## Fine-tuning
+
+**English:** Fine-tuning
+
+Processo de adaptar um modelo pré-treinado a uma tarefa específica usando dados rotulados da nova tarefa.
+
+**No TIL:** Na Aula 11, um Transformer multilíngue é ajustado para classificar mensagens em três categorias.
+
+**Exemplo:** Ajustar um encoder pré-treinado para prever duvida, reclamacao ou elogio.
+
+**Primeira aula:** 11
+
+## Transfer learning
+
+**English:** Transfer learning
+
+Estratégia de reutilizar conhecimento aprendido em uma tarefa ou domínio para acelerar ou melhorar o aprendizado em outra tarefa.
+
+**No TIL:** Na Aula 11, o conhecimento linguístico do modelo pré-treinado é transferido para classificação de mensagens.
+
+**Exemplo:** Reutilizar BERT em vez de treinar um modelo de linguagem do zero.
+
+**Primeira aula:** 11
+
+## Classificação de sequência
+
+**English:** Sequence classification
+
+Tarefa em que uma sequência textual inteira recebe uma classe ou rótulo.
+
+**No TIL:** Na Aula 11, cada mensagem recebe uma das classes duvida, reclamacao ou elogio.
+
+**Exemplo:** Classificar uma mensagem de atendimento em uma categoria.
+
+**Primeira aula:** 11
+
+## Época
+
+**English:** Epoch
+
+Uma passagem completa do algoritmo de treinamento por todos os exemplos do conjunto de treino.
+
+**No TIL:** Na Aula 11, usamos uma única época para manter o experimento leve e didático.
+
+**Exemplo:** num_train_epochs=1.
+
+**Primeira aula:** 11
+
+## Batch
+
+**English:** Batch
+
+Pequeno grupo de exemplos processados juntos durante uma etapa de treinamento.
+
+**No TIL:** Na Aula 11, o batch size controla quantas mensagens entram em cada passo.
+
+**Exemplo:** per_device_train_batch_size=4.
+
+**Primeira aula:** 11
+
+## Learning rate
+
+**English:** Learning rate
+
+Hiperparâmetro que controla o tamanho das atualizações aplicadas aos pesos durante o treinamento.
+
+**No TIL:** Na Aula 11, usamos uma taxa pequena adequada ao fine-tuning de um modelo pré-treinado.
+
+**Exemplo:** learning_rate=2e-5.
+
+**Primeira aula:** 11
+
+## Tokenizer
+
+**English:** Tokenizer
+
+Componente que converte texto em unidades e identificadores numéricos compatíveis com o vocabulário de um modelo.
+
+**No TIL:** Na Aula 11, o tokenizer prepara as mensagens para entrada no Transformer.
+
+**Exemplo:** AutoTokenizer.from_pretrained(...).
+
+**Primeira aula:** 11
 
 ## Baseline
 
@@ -650,7 +949,6 @@ Peso aprendido por um modelo linear para indicar a contribuição de uma feature
 **Exemplo:** Um coeficiente positivo alto pode favorecer uma classe específica.
 
 **Primeira aula:** 12
-
 
 ## Falso positivo
 
@@ -735,3 +1033,123 @@ Proporção de casos em que o sistema evita emitir uma decisão automática e en
 **Exemplo:** O modelo abstém em 8% dos casos e envia esses casos para revisão humana.
 
 **Primeira aula:** 13
+
+## Proxy didático
+
+**English:** Didactic proxy
+
+Representação simplificada usada para aproximar um conceito, custo, comportamento ou consequência real com finalidade de aprendizagem, sem pretender reproduzir toda a complexidade do fenômeno original.
+
+**No TIL:** Na Aula 13 e no Metric Scenario Lab, valores monetários atribuídos a erros podem funcionar como proxies didáticos para tornar trade-offs visíveis e comparáveis. Eles não devem ser confundidos com uma valoração completa de consequências humanas, éticas, sociais ou regulatórias.
+
+**Exemplo:** Atribuir R$ 500 a um falso negativo em uma simulação médica pode ajudar a comparar cenários, mas esse valor não representa o valor de uma vida nem esgota o impacto de um diagnóstico perdido.
+
+**Primeira aula:** 13
+
+## Trade-off
+
+**English:** Trade-off
+
+Situação em que melhorar uma dimensão de uma decisão tende a piorar outra, exigindo equilíbrio entre objetivos que não podem ser maximizados simultaneamente.
+
+**No TIL:** Na Aula 13, reduzir o threshold pode aumentar o recall e diminuir falsos negativos, mas também aumentar falsos positivos e reduzir a precisão. O melhor ponto depende do contexto, dos custos e do objetivo do sistema.
+
+**Exemplo:** Em triagem médica, aceitar mais falsos positivos pode ser um trade-off razoável se isso reduzir significativamente o risco de deixar pacientes graves sem encaminhamento.
+
+**Primeira aula:** 13
+
+## Média harmônica
+
+**English:** Harmonic Mean
+
+Tipo de média que dá influência relativamente maior aos valores menores e, por isso, é útil quando um resultado só deve ser considerado forte se todos os componentes combinados também forem fortes.
+
+**No TIL:** No F1-score, a média harmônica combina Precisão e Recall e penaliza desequilíbrios: uma métrica muito alta não compensa facilmente a outra muito baixa.
+
+**Exemplo:** Com Precisão de 0,90 e Recall de 0,30, a média aritmética é 0,60, enquanto o F1, baseado na média harmônica, é 0,45.
+
+**Primeira aula:** 13
+
+## Roteamento de modelos
+
+**English:** Model Routing
+
+Estratégia que decide qual modelo, ferramenta ou caminho de execução deve receber cada entrada com base em critérios como dificuldade, confiança, custo, latência ou risco.
+
+**No TIL:** Na Aula 13C, o roteador pode manter casos simples no modelo econômico e encaminhar casos de baixa confiança para uma camada mais forte.
+
+**Exemplo:** Uma mensagem curta e inequívoca pode ser classificada pelo baseline, enquanto um caso ambíguo é encaminhado ao Transformer.
+
+**Primeira aula:** 13C
+
+## Orquestração de modelos
+
+**English:** Model Orchestration
+
+Coordenação de múltiplos modelos e etapas de processamento em um fluxo único, incluindo regras de roteamento, avaliação, revisão, fallback e escalonamento.
+
+**No TIL:** A Aula 13C compara estratégias single, cascade e critique para mostrar que o sistema pode ser mais importante do que um modelo isolado.
+
+**Exemplo:** Um modelo econômico gera a primeira resposta, um gate avalia a qualidade e um modelo premium é acionado apenas quando necessário.
+
+**Primeira aula:** 13C
+
+## Quality gate
+
+**English:** Quality Gate
+
+Regra ou mecanismo de avaliação que decide se uma saída possui qualidade suficiente para ser aceita ou se precisa ser rejeitada, revisada ou escalada.
+
+**No TIL:** No simulador 13C, tornar o gate mais rigoroso aumenta a parcela de casos que segue para a camada premium e altera qualidade, custo e latência.
+
+**Exemplo:** Se a confiança do classificador ficar abaixo de 0,70, o caso pode ser encaminhado para um modelo mais forte ou revisão humana.
+
+**Primeira aula:** 13C
+
+## Taxa de escalonamento
+
+**English:** Escalation Rate
+
+Proporção de casos que deixa a camada inicial e é encaminhada para uma etapa mais cara, mais lenta, mais especializada ou humana.
+
+**No TIL:** Na Aula 13C, a taxa de escalonamento é uma métrica operacional central para entender quanto o cascade realmente usa a camada premium.
+
+**Exemplo:** Uma taxa de 25% significa que um em cada quatro casos segue além do modelo inicial.
+
+**Primeira aula:** 13C
+
+## Função de utilidade
+
+**English:** Utility Function
+
+Função que combina diferentes objetivos em uma pontuação comum para tornar explícitas as prioridades usadas em uma decisão.
+
+**No TIL:** O simulador 13C usa uma função simples que recompensa qualidade e penaliza custo e latência, com pesos definidos pelo aluno.
+
+**Exemplo:** U = wq·Q − wc·C − wl·L permite comparar sistemas quando qualidade, custo e latência têm importâncias diferentes.
+
+**Primeira aula:** 13C
+
+## Sistema composto de IA
+
+**English:** Compound AI System
+
+Sistema de IA formado por múltiplos componentes coordenados, como modelos, ferramentas, recuperadores, regras, verificadores e etapas humanas.
+
+**No TIL:** A Aula 13C amplia a avaliação do modelo isolado para a avaliação do sistema completo, incluindo roteamento, gates, custo, latência e revisão.
+
+**Exemplo:** Um baseline classifica primeiro, um Transformer trata casos difíceis e um humano revisa situações críticas.
+
+**Primeira aula:** 13C
+
+## Custo por inferência
+
+**English:** Cost per Inference
+
+Custo associado ao processamento de uma entrada pelo sistema, podendo incluir computação, tokens, chamadas de API, infraestrutura e etapas humanas.
+
+**No TIL:** No 13C, o custo pode ser informado em unidade monetária ou índice relativo, desde que a unidade seja consistente entre os sistemas comparados.
+
+**Exemplo:** Se mil classificações custam R$ 12 em recursos computacionais, o custo médio por inferência é R$ 0,012.
+
+**Primeira aula:** 13C

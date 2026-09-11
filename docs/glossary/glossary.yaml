@@ -709,12 +709,14 @@ terms:
       english_term: Token
       definition: Unidade resultante da segmentação de um texto para processamento computacional.
       til_context: Na Aula 2, começamos tratando palavras como tokens, embora outras técnicas possam usar subpalavras ou caracteres.
-      example: Na frase "atendimento excelente", atendimento e excelente podem ser tokens.
+      example: >-
+        Na frase "atendimento excelente", atendimento e excelente podem ser tokens.
     en:
       term: Token
       definition: A unit produced by segmenting text for computational processing.
       til_context: In Lesson 2, we begin by treating words as tokens, although other techniques may use subwords or characters.
-      example: In "excellent service", excellent and service may be tokens.
+      example: >-
+        In "excellent service", excellent and service may be tokens.
     related: [tokenization, raw-text]
 
   - id: tokenization
@@ -725,12 +727,14 @@ terms:
       english_term: Tokenization
       definition: Processo de dividir texto em unidades menores chamadas tokens.
       til_context: Na Aula 2, comparamos uma estratégia simples com split e uma tokenização baseada em expressão regular.
-      example: "atendimento excelente" se torna ["atendimento", "excelente"].
+      example: >-
+        '"atendimento excelente" se torna ["atendimento", "excelente"].'
     en:
       term: Tokenization
       definition: The process of splitting text into smaller units called tokens.
       til_context: In Lesson 2, we compare a simple split strategy with regular-expression tokenization.
-      example: "excellent service" becomes ["excellent", "service"].
+      example: >-
+        '"excellent service" becomes ["excellent", "service"].'
     related: [token, normalization, raw-text]
 
   - id: normalization
@@ -741,12 +745,14 @@ terms:
       english_term: Text normalization
       definition: Conjunto de transformações aplicadas para reduzir variações superficiais do texto preservando a informação relevante ao problema.
       til_context: Na Aula 2, usamos minúsculas e remoção de espaços nas extremidades como exemplos simples.
-      example: " ATENDIMENTO " se torna "atendimento".
+      example: >-
+        '" ATENDIMENTO " se torna "atendimento".'
     en:
       term: Text normalization
       definition: A set of transformations used to reduce superficial text variation while preserving information relevant to the problem.
       til_context: In Lesson 2, lowercasing and trimming whitespace are used as simple examples.
-      example: " SERVICE " becomes "service".
+      example: >-
+        '" SERVICE " becomes "service".'
     related: [tokenization, raw-text]
 
   - id: regular-expression
@@ -757,12 +763,14 @@ terms:
       english_term: Regular expression
       definition: Linguagem compacta de padrões usada para localizar, validar ou extrair sequências de caracteres.
       til_context: Na Aula 2, a biblioteca padrão re é usada para extrair tokens com um padrão simples.
-      example: re.findall(r"\\b\\w+\\b", text).
+      example: >-
+        re.findall(r"\\b\\w+\\b", text).
     en:
       term: Regular expression
       definition: A compact pattern language used to locate, validate, or extract character sequences.
       til_context: In Lesson 2, Python's standard re library is used to extract tokens with a simple pattern.
-      example: re.findall(r"\\b\\w+\\b", text).
+      example: >-
+        re.findall(r"\\b\\w+\\b", text).
     related: [tokenization]
 
   - id: n-gram
@@ -773,12 +781,14 @@ terms:
       english_term: N-gram
       definition: Sequência de n tokens consecutivos usada como unidade de representação textual.
       til_context: Na Aula 8, n-grams preservam parte do contexto local que se perde quando usamos apenas palavras isoladas.
-      example: Em "não gostei", "não gostei" é um bigrama.
+      example: >-
+        Em "não gostei", "não gostei" é um bigrama.
     en:
       term: N-gram
       definition: A sequence of n consecutive tokens used as a unit of text representation.
       til_context: In Lesson 8, n-grams preserve some local context that is lost when using only isolated words.
-      example: In "did not like", "not like" can be a bigram.
+      example: >-
+        In "did not like", "not like" can be a bigram.
     related: [unigram, bigram, trigram, token]
 
   - id: unigram
@@ -789,12 +799,14 @@ terms:
       english_term: Unigram
       definition: N-gram formado por um único token.
       til_context: Na Aula 8, unigramas representam o caso tradicional de palavras isoladas.
-      example: "atendimento" é um unigrama.
+      example: >-
+        "atendimento" é um unigrama.
     en:
       term: Unigram
       definition: An n-gram consisting of a single token.
       til_context: In Lesson 8, unigrams represent the traditional isolated-word case.
-      example: "service" is a unigram.
+      example: >-
+        "service" is a unigram.
     related: [n-gram, bigram]
 
   - id: bigram
@@ -805,12 +817,14 @@ terms:
       english_term: Bigram
       definition: N-gram formado por dois tokens consecutivos.
       til_context: Na Aula 8, bigramas mostram como combinações como "não gostei" podem se tornar features explícitas.
-      example: "não gostei" é um bigrama.
+      example: >-
+        "não gostei" é um bigrama.
     en:
       term: Bigram
       definition: An n-gram consisting of two consecutive tokens.
       til_context: In Lesson 8, bigrams show how combinations such as "not like" can become explicit features.
-      example: "not like" is a bigram.
+      example: >-
+        "not like" is a bigram.
     related: [n-gram, unigram, trigram]
 
   - id: trigram
@@ -821,12 +835,14 @@ terms:
       english_term: Trigram
       definition: N-gram formado por três tokens consecutivos.
       til_context: Na Aula 8, trigramas ilustram o ganho de contexto e o aumento da dimensionalidade.
-      example: "não gostei do" é um trigrama.
+      example: >-
+        "não gostei do" é um trigrama.
     en:
       term: Trigram
       definition: An n-gram consisting of three consecutive tokens.
       til_context: In Lesson 8, trigrams illustrate the gain in context and the increase in dimensionality.
-      example: "did not like" is a trigram.
+      example: >-
+        "did not like" is a trigram.
     related: [n-gram, bigram]
 
   - id: dimensionality
@@ -869,12 +885,14 @@ terms:
       english_term: Dense vector
       definition: Vetor em que a maior parte das posições contém valores informativos, em contraste com representações esparsas dominadas por zeros.
       til_context: Na Aula 9, embeddings de palavras são vetores densos de baixa dimensionalidade relativa.
-      example: [0.18, -0.42, 0.77, 0.11].
+      example: >-
+        "[0.18, -0.42, 0.77, 0.11]."
     en:
       term: Dense vector
       definition: A vector in which most positions contain informative values, unlike sparse representations dominated by zeros.
       til_context: In Lesson 9, word embeddings are relatively low-dimensional dense vectors.
-      example: [0.18, -0.42, 0.77, 0.11].
+      example: >-
+        "[0.18, -0.42, 0.77, 0.11]."
     related: [embedding, sparse-matrix, dimensionality]
 
   - id: distributed-representation
@@ -949,7 +967,8 @@ terms:
       english_term: Static embedding
       definition: Embedding que atribui essencialmente a mesma representação a uma palavra independentemente do contexto em que ocorre.
       til_context: Na Aula 9, essa limitação prepara a transição futura para embeddings contextuais.
-      example: banco recebe a mesma representação em "banco aprovou" e "banco da praça".
+      example: >-
+        banco recebe a mesma representação em "banco aprovou" e "banco da praça".
     en:
       term: Static embedding
       definition: An embedding that essentially assigns the same representation to a word regardless of its context.
