@@ -1,0 +1,27 @@
+# Copie este bloco para `references.yaml` e adapte os campos.
+# IDs devem ser estáveis, legíveis e únicos.
+
+- id: ref-exemplo-ano
+  title: "Título da referência"
+  authors:
+    - "Autor ou organização"
+  source: "Fonte / veículo / conferência"
+  source_role: primary # primary | secondary | commentary
+  type: industry-article # ver tipos permitidos em references.yaml
+  url: "https://example.org/reference"
+  published_at: "YYYY-MM-DD"
+  accessed_at: "YYYY-MM-DD"
+  language: pt-BR
+  topics:
+    - tema-principal
+  related_lessons:
+    - "00"
+  relevance: medium # low | medium | high
+  review_status: candidate # candidate | reviewed | integrated | archived
+  summary: >
+    Resumo objetivo do que a fonte acrescenta ao TIL.
+  pedagogical_use:
+    - "leitura complementar"
+  caveats:
+    - "Limitação, contexto ou alerta metodológico relevante."
+  local_assets: []
