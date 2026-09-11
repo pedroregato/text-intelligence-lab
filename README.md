@@ -93,7 +93,42 @@ Qual sistema entrega valor suficiente
 com qualidade, custo, latência e risco aceitáveis?
 ```
 
-O laboratório **13C — Model Routing, Orchestration e Utility** introduz `single`, `cascade`, `critique`, `quality gates`, funções de utilidade e métricas de sistemas orquestrados, usando o GitHub Project HydraFusion como estudo de caso contemporâneo.
+O laboratório **13C — Model Routing, Orchestration e Utility** introduz `single`, `cascade`, `quality gates`, funções de utilidade e métricas de sistemas orquestrados, usando o Project HydraFusion como estudo de caso contemporâneo.
+
+A Aula 13C foi validada em duas camadas: execução headless local via `nbconvert` e execução completa no Kaggle. A partir dessa validação, o TIL adotou oficialmente a regra **headless-first** para notebooks interativos.
+
+```text
+camada determinística
+        ↓
+Run All deve terminar sem intervenção humana
+        ↓
+camada interativa opcional
+```
+
+A decisão está registrada em `docs/decisions/ADR-009-headless-first-interactive-notebooks.md`.
+
+## Próximo marco experimental
+
+A Aula 13C já funciona em dois modos:
+
+- `DEMO` — proxies didáticos explicitamente sintéticos;
+- `EVIDENCE` — medições versionadas e comparáveis do próprio TIL.
+
+O próximo movimento do projeto é produzir evidências reais e comparáveis para alimentar o simulador:
+
+```text
+TF-IDF + classificador clássico
+        ↓
+DistilBERT multilíngue
+        ↓
+LLM e/ou revisão humana, quando houver metodologia reproduzível
+        ↓
+qualidade + latência + custo + proveniência
+        ↓
+data/model-evidence/til-model-evidence.csv
+```
+
+Nenhum valor deve ser incluído apenas para completar o simulador. As medições devem ser sustentadas por experimentos reproduzíveis e documentação de proveniência em `docs/experiments/`.
 
 ## Glossário Vivo
 
@@ -137,7 +172,8 @@ A política e o fluxo editorial estão documentados em `docs/references/README.m
 ```text
 Arquitetar
 → Implementar pequeno
-→ Executar
+→ Executar headless
+→ Executar no Kaggle
 → Observar
 → Avaliar
 → Corrigir
@@ -153,6 +189,8 @@ Os notebooks oficiais usam **internet desabilitada por padrão**. A internet é 
 
 Dados pequenos podem ser embutidos no notebook. Datasets maiores e modelos externos devem, quando apropriado, ser versionados ou anexados via recursos do Kaggle.
 
+A interatividade é uma camada pedagógica adicional: nenhum notebook oficial deve depender de cliques, callbacks ou widgets ativos para concluir uma execução `Run All`.
+
 ## Execução
 
 ```text
@@ -160,12 +198,14 @@ GitHub
   ↓
 Git local / PyCharm / Codex
   ↓
+validação headless local
+  ↓
 Kaggle CLI / Kaggle UI
   ↓
 Kaggle Notebooks
 ```
 
-Detalhes de infraestrutura, arquitetura de execução e runbooks estão em `docs/ENGINEERING.md`.
+Detalhes de infraestrutura, arquitetura de execução e políticas estão em `docs/ENGINEERING.md`.
 
 ## Estrutura do repositório
 
@@ -173,6 +213,7 @@ Detalhes de infraestrutura, arquitetura de execução e runbooks estão em `docs
 text-intelligence-lab/
 ├── course/
 ├── data/
+│   └── model-evidence/
 ├── docs/
 │   ├── case-studies/
 │   ├── decisions/
@@ -192,7 +233,7 @@ text-intelligence-lab/
 
 O curso está em construção ativa.
 
-As Aulas 0–13 e os laboratórios complementares da Aula 13 já possuem material oficial no repositório e seguem em revisão técnica e pedagógica antes da marcação final de prontidão para alunos.
+As Aulas 0–13 e os laboratórios 13B e 13C possuem material oficial no repositório. A 13C já possui execução Kaggle validada após a adoção do padrão headless-first. O próximo marco técnico é gerar evidência comparável de modelos para ativar o modo `EVIDENCE` com medições reais do TIL.
 
 ## Licenciamento
 
