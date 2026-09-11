@@ -27,6 +27,17 @@ def markdown_cell(cell_id: str, text: str) -> dict:
     }
 
 
+def code_cell(cell_id: str, text: str) -> dict:
+    return {
+        "cell_type": "code",
+        "execution_count": None,
+        "id": cell_id,
+        "metadata": {},
+        "outputs": [],
+        "source": text.splitlines(keepends=True),
+    }
+
+
 def upsert_after(nb: dict, after_id: str, cell: dict) -> None:
     cells = nb["cells"]
     for i, current in enumerate(cells):
@@ -67,6 +78,33 @@ def sync_13() -> None:
 
 def sync_13b() -> None:
     nb = load(LESSON_13B)
+
+    headless_note = (
+        "### Evidência estática antes da interação\n\n"
+        "O painel interativo é uma camada de exploração. Para manter o notebook **headless-first**, o cenário padrão abaixo também é calculado de forma determinística e deve aparecer em uma execução `Run All` sem qualquer clique.\n"
+    )
+    upsert_after(nb, "lab-05", markdown_cell("lab-headless-note", headless_note))
+
+    static_code = '''cfg = SCENARIOS['Fraude bancária']
+cm_default = simulate(cfg['prevalence'], cfg['separation'], cfg['threshold'])
+metrics_default = metrics_from_cm(cm_default)
+cost_default = expected_cost(
+    cm_default,
+    cfg['cost_fp'],
+    cfg['cost_fn'],
+    cfg['review_cost'],
+    cfg['inference_cost']
+)
+
+static_summary = pd.DataFrame({
+    'Indicador': list(metrics_default) + ['FP', 'FN', 'Custo esperado'],
+    'Valor': list(metrics_default.values()) + [cm_default['FP'], cm_default['FN'], cost_default]
+})
+
+display(static_summary)
+'''
+    upsert_after(nb, "lab-headless-note", code_cell("lab-headless-default", static_code))
+
     text = (
         "## Próximo passo — da métrica ao sistema\n\n"
         "Depois de explorar thresholds e custos de erro, avance para a **Aula 13C — Model Routing, Orchestration e Utility**.\n\n"
