@@ -8,6 +8,7 @@ NOTEBOOK = ROOT / "course/13-metrics-and-indicators/13c-model-routing-and-orches
 BASE = "https://github.com/pedroregato/text-intelligence-lab/blob/main/docs/glossary/glossary.pt-BR.md"
 
 LINKS = {
+    "Baseline": f"{BASE}#baseline",
     "Model Routing": f"{BASE}#roteamento-de-modelos",
     "Model Orchestration": f"{BASE}#orquestração-de-modelos",
     "Quality Gate": f"{BASE}#quality-gate",
@@ -43,12 +44,13 @@ def main() -> None:
 
 Use o Glossário Vivo durante o laboratório. Os conceitos abaixo formam a linguagem necessária para interpretar as decisões do simulador:
 
-**{md_link('Model Routing')} · {md_link('Model Orchestration')} · {md_link('Quality Gate')} · {md_link('Escalation Rate')} · {md_link('Utility Function')} · {md_link('Compound AI System')} · {md_link('Cost per Inference')} · {md_link('Trade-off')}**
+**{md_link('Baseline')} · {md_link('Model Routing')} · {md_link('Model Orchestration')} · {md_link('Quality Gate')} · {md_link('Escalation Rate')} · {md_link('Utility Function')} · {md_link('Compound AI System')} · {md_link('Cost per Inference')} · {md_link('Trade-off')}**
 
 ### 🧭 Durante o laboratório...
 
 | Quando você estiver pensando em... | Consulte |
 |---|---|
+| estabelecer uma referência simples para comparação | {md_link('Baseline')} |
 | escolher modelos diferentes conforme a tarefa | {md_link('Model Routing')} |
 | combinar modelos ou etapas | {md_link('Model Orchestration')} |
 | decidir quando aceitar ou escalar uma resposta | {md_link('Quality Gate')} |
@@ -59,6 +61,19 @@ Use o Glossário Vivo durante o laboratório. Os conceitos abaixo formam a lingu
 | aceitar ganhos em uma dimensão e perdas em outra | {md_link('Trade-off')} |
 
 > Não memorize os termos isoladamente. Use os links quando o comportamento do simulador levantar uma dúvida conceitual.
+""",
+    )
+
+    set_markdown(
+        nb,
+        "c03b-headless-status",
+        f"""### Estado de execução e evidência
+
+Este notebook segue o padrão **headless-first** do TIL: a execução completa (`Run All`) não depende de interação humana. Os widgets são uma camada opcional e o cenário interativo só é calculado quando o aluno clica em **Simular cenário**.
+
+O notebook foi validado em execução local headless e no Kaggle.
+
+O próximo marco experimental é substituir os proxies `DEMO` por medições comparáveis do experimento `EDU-ORCH-001`, começando pelo {md_link('Baseline')} **TF-IDF + classificador clássico** versus **DistilBERT multilíngue**.
 """,
     )
 
@@ -87,7 +102,7 @@ Os sliders mudam **prioridades**, não as medições. Ajuste qualidade, custo, l
     )
 
     NOTEBOOK.write_text(json.dumps(nb, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    print("Aula 13C: Glossário Vivo com links ativos aplicado.")
+    print("Aula 13C: Glossário Vivo com links ativos aplicado, incluindo Baseline.")
 
 
 if __name__ == "__main__":
