@@ -1,0 +1,43 @@
+name: Build TIL Living Glossary
+
+on:
+  push:
+    paths:
+      - 'docs/glossary/glossary.yaml'
+      - 'docs/glossary/glossary.extensions.yaml'
+      - 'docs/glossary/build_glossary.py'
+      - '.github/workflows/build-glossary.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-glossary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install generator dependency
+        run: python -m pip install pyyaml
+
+      - name: Generate PT-BR, EN and interactive HTML
+        run: python docs/glossary/build_glossary.py
+
+      - name: Commit generated glossary views
+        run: |
+          if git diff --quiet -- docs/glossary/glossary.pt-BR.md docs/glossary/glossary.en.md docs/glossary/web/index.html; then
+            echo "Glossary views already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/glossary/glossary.pt-BR.md docs/glossary/glossary.en.md docs/glossary/web/index.html
+          git commit -m "docs: regenerate TIL living glossary"
+          git push
