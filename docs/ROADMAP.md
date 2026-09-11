@@ -27,6 +27,35 @@
 
 ### Módulo VI — Métricas, indicadores e decisão
 - Aula 13 — Métricas e Indicadores: da fórmula à decisão
+- Aula 13B — Metric Scenario Lab: cenários, thresholds e custos de erro
+- Aula 13C — Model Routing, Orchestration e Utility: sistemas compostos de IA
+
+A Aula 13C já foi validada em execução headless local e no Kaggle. O simulador trabalha em modo `DEMO` quando não existem evidências versionadas e muda para `EVIDENCE` quando encontra medições comparáveis em `data/model-evidence/til-model-evidence.csv`.
+
+## Próximo movimento — Evidência comparável de modelos
+
+O próximo marco do curso é transformar a Aula 13C de simulador baseado em proxies didáticos em laboratório orientado por medições reais do TIL.
+
+Sequência planejada:
+
+```text
+baseline clássico
+TF-IDF + classificador linear/Naive Bayes
+        ↓
+Transformer compacto
+DistilBERT multilíngue
+        ↓
+camada premium
+LLM e/ou revisão humana, quando houver metodologia reproduzível
+        ↓
+qualidade + latência + custo + proveniência
+        ↓
+til-model-evidence.csv
+        ↓
+Aula 13C em modo EVIDENCE
+```
+
+A comparação deve usar definição de qualidade compatível, metodologia de latência documentada, unidade de custo consistente e contexto de hardware/dataset versionado.
 
 ## Próximos blocos planejados
 
