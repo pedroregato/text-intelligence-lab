@@ -49,6 +49,35 @@ Arquitetar
 → Expandir
 ```
 
+## Headless-first Notebook Policy
+
+Todo notebook oficial do TIL deve conseguir executar integralmente em `Run All` sem depender de cliques, callbacks, widgets ativos ou estado interativo do navegador.
+
+```text
+camada determinística
+        ↓
+execução completa em modo headless
+        ↓
+outputs mínimos observáveis
+        ↓
+camada interativa opcional
+```
+
+A interatividade deve enriquecer a experiência do aluno, nunca ser requisito para concluir a execução automática.
+
+Para notebooks com `ipywidgets`:
+
+- não disparar renderização automaticamente no final da célula quando isso puder bloquear a execução;
+- preferir botão explícito para ações interativas;
+- não depender de `observe()` para produzir a saída mínima da aula;
+- fechar figuras Matplotlib após exibição quando apropriado;
+- manter uma saída estática ou determinística que permita compreender a aula mesmo sem interação;
+- evitar buscas recursivas amplas em diretórios de entrada quando caminhos controlados forem suficientes.
+
+Antes de publicar no Kaggle, preferir um teste local de execução headless, por exemplo com `jupyter nbconvert --execute`, seguido de uma execução real no Kaggle.
+
+Esta regra foi consolidada após a validação da Aula 13C e está registrada em `docs/decisions/ADR-009-headless-first-interactive-notebooks.md`.
+
 ## Internet Policy
 
 Internet OFF por padrão.
@@ -77,10 +106,11 @@ Não assumir versões do ambiente. Registrar versões observadas em execução r
 
 Uma aula só deve ser considerada student-ready após:
 
-1. execução técnica bem-sucedida no Kaggle;
-2. warnings revisados;
-3. dependências documentadas;
-4. exercícios testados;
-5. glossário atualizado;
-6. revisão pedagógica;
-7. aceite em perspectiva de aluno.
+1. execução headless local bem-sucedida quando aplicável;
+2. execução técnica bem-sucedida no Kaggle;
+3. warnings revisados;
+4. dependências documentadas;
+5. exercícios testados;
+6. glossário atualizado;
+7. revisão pedagógica;
+8. aceite em perspectiva de aluno.
