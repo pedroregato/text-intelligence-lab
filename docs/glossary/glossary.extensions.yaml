@@ -47,3 +47,115 @@ terms:
       til_context: In F1-score, the harmonic mean combines Precision and Recall and penalizes imbalance: one very high metric does not easily compensate for the other being very low.
       example: With Precision 0.90 and Recall 0.30, the arithmetic mean is 0.60 while F1, based on the harmonic mean, is 0.45.
     related: [f1-score, precision, recall, trade-off]
+
+  - id: model-routing
+    category: engineering
+    lesson_first_seen: "13C"
+    pt-BR:
+      term: Roteamento de modelos
+      english_term: Model Routing
+      definition: Estratégia que decide qual modelo, ferramenta ou caminho de execução deve receber cada entrada com base em critérios como dificuldade, confiança, custo, latência ou risco.
+      til_context: Na Aula 13C, o roteador pode manter casos simples no modelo econômico e encaminhar casos de baixa confiança para uma camada mais forte.
+      example: Uma mensagem curta e inequívoca pode ser classificada pelo baseline, enquanto um caso ambíguo é encaminhado ao Transformer.
+    en:
+      term: Model Routing
+      definition: A strategy that decides which model, tool, or execution path should receive each input based on criteria such as difficulty, confidence, cost, latency, or risk.
+      til_context: In Lesson 13C, the router can keep simple cases on the economical model and send low-confidence cases to a stronger layer.
+      example: A short unambiguous message may be classified by the baseline while an ambiguous case is routed to the Transformer.
+    related: [quality-gate, model-orchestration, escalation-rate, trade-off]
+
+  - id: model-orchestration
+    category: engineering
+    lesson_first_seen: "13C"
+    pt-BR:
+      term: Orquestração de modelos
+      english_term: Model Orchestration
+      definition: Coordenação de múltiplos modelos e etapas de processamento em um fluxo único, incluindo regras de roteamento, avaliação, revisão, fallback e escalonamento.
+      til_context: A Aula 13C compara estratégias single, cascade e critique para mostrar que o sistema pode ser mais importante do que um modelo isolado.
+      example: Um modelo econômico gera a primeira resposta, um gate avalia a qualidade e um modelo premium é acionado apenas quando necessário.
+    en:
+      term: Model Orchestration
+      definition: Coordination of multiple models and processing stages in one workflow, including routing rules, evaluation, review, fallback, and escalation.
+      til_context: Lesson 13C compares single, cascade, and critique strategies to show that the system can matter more than an isolated model.
+      example: An economical model produces the first answer, a gate evaluates quality, and a premium model is invoked only when needed.
+    related: [model-routing, quality-gate, compound-ai-system, escalation-rate]
+
+  - id: quality-gate
+    category: evaluation
+    lesson_first_seen: "13C"
+    pt-BR:
+      term: Quality gate
+      english_term: Quality Gate
+      definition: Regra ou mecanismo de avaliação que decide se uma saída possui qualidade suficiente para ser aceita ou se precisa ser rejeitada, revisada ou escalada.
+      til_context: No simulador 13C, tornar o gate mais rigoroso aumenta a parcela de casos que segue para a camada premium e altera qualidade, custo e latência.
+      example: Se a confiança do classificador ficar abaixo de 0,70, o caso pode ser encaminhado para um modelo mais forte ou revisão humana.
+    en:
+      term: Quality Gate
+      definition: An evaluation rule or mechanism that decides whether an output has sufficient quality to be accepted or must be rejected, revised, or escalated.
+      til_context: In the 13C simulator, making the gate stricter increases the share of cases sent to the premium layer and changes quality, cost, and latency.
+      example: If classifier confidence falls below 0.70, the case may be sent to a stronger model or human review.
+    related: [decision-threshold, model-routing, escalation-rate, abstention]
+
+  - id: escalation-rate
+    category: evaluation
+    lesson_first_seen: "13C"
+    pt-BR:
+      term: Taxa de escalonamento
+      english_term: Escalation Rate
+      definition: Proporção de casos que deixa a camada inicial e é encaminhada para uma etapa mais cara, mais lenta, mais especializada ou humana.
+      til_context: Na Aula 13C, a taxa de escalonamento é uma métrica operacional central para entender quanto o cascade realmente usa a camada premium.
+      example: Uma taxa de 25% significa que um em cada quatro casos segue além do modelo inicial.
+    en:
+      term: Escalation Rate
+      definition: The proportion of cases that leave the initial layer and are sent to a more expensive, slower, more specialized, or human stage.
+      til_context: In Lesson 13C, escalation rate is a key operational metric for understanding how much the cascade actually uses the premium layer.
+      example: A 25% escalation rate means one in four cases goes beyond the initial model.
+    related: [quality-gate, model-routing, model-orchestration, latency]
+
+  - id: utility-function
+    category: evaluation
+    lesson_first_seen: "13C"
+    pt-BR:
+      term: Função de utilidade
+      english_term: Utility Function
+      definition: Função que combina diferentes objetivos em uma pontuação comum para tornar explícitas as prioridades usadas em uma decisão.
+      til_context: O simulador 13C usa uma função simples que recompensa qualidade e penaliza custo e latência, com pesos definidos pelo aluno.
+      example: U = wq·Q − wc·C − wl·L permite comparar sistemas quando qualidade, custo e latência têm importâncias diferentes.
+    en:
+      term: Utility Function
+      definition: A function that combines different objectives into a common score to make the priorities used in a decision explicit.
+      til_context: The 13C simulator uses a simple function that rewards quality and penalizes cost and latency, with weights chosen by the learner.
+      example: U = wq·Q − wc·C − wl·L can compare systems when quality, cost, and latency have different importance.
+    related: [trade-off, model-routing, latency, cost-per-inference]
+
+  - id: compound-ai-system
+    category: engineering
+    lesson_first_seen: "13C"
+    pt-BR:
+      term: Sistema composto de IA
+      english_term: Compound AI System
+      definition: Sistema de IA formado por múltiplos componentes coordenados, como modelos, ferramentas, recuperadores, regras, verificadores e etapas humanas.
+      til_context: A Aula 13C amplia a avaliação do modelo isolado para a avaliação do sistema completo, incluindo roteamento, gates, custo, latência e revisão.
+      example: Um baseline classifica primeiro, um Transformer trata casos difíceis e um humano revisa situações críticas.
+    en:
+      term: Compound AI System
+      definition: An AI system composed of multiple coordinated components such as models, tools, retrievers, rules, verifiers, and human stages.
+      til_context: Lesson 13C expands evaluation from an isolated model to the whole system, including routing, gates, cost, latency, and review.
+      example: A baseline classifies first, a Transformer handles difficult cases, and a human reviews critical situations.
+    related: [model-orchestration, model-routing, quality-gate, human-in-the-loop]
+
+  - id: cost-per-inference
+    category: production
+    lesson_first_seen: "13C"
+    pt-BR:
+      term: Custo por inferência
+      english_term: Cost per Inference
+      definition: Custo associado ao processamento de uma entrada pelo sistema, podendo incluir computação, tokens, chamadas de API, infraestrutura e etapas humanas.
+      til_context: No 13C, o custo pode ser informado em unidade monetária ou índice relativo, desde que a unidade seja consistente entre os sistemas comparados.
+      example: Se mil classificações custam R$ 12 em recursos computacionais, o custo médio por inferência é R$ 0,012.
+    en:
+      term: Cost per Inference
+      definition: The cost associated with processing one input through the system, potentially including compute, tokens, API calls, infrastructure, and human stages.
+      til_context: In 13C, cost may be provided as currency or a relative index as long as the unit is consistent across compared systems.
+      example: If one thousand classifications cost R$ 12 in compute resources, the average cost per inference is R$ 0.012.
+    related: [utility-function, latency, model-routing, trade-off]
