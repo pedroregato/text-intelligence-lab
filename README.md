@@ -108,6 +108,30 @@ docs/glossary/glossary.yaml
 
 Os notebooks apontam para o glossário nos conceitos centrais de cada aula.
 
+## Biblioteca Viva de Referências
+
+O TIL também mantém referências externas em uma fonte canônica estruturada:
+
+```text
+docs/references/references.yaml
+```
+
+Cada item registra tipo da fonte, papel (`primary`, `secondary` ou `commentary`), temas, aulas relacionadas, resumo, uso pedagógico, limitações e estado de revisão.
+
+O objetivo não é acumular links, mas transformar referências em uma cadeia de aprendizagem:
+
+```text
+Evidência
+→ contexto
+→ leitura crítica
+→ conceito
+→ experimento
+```
+
+Sempre que possível, o TIL combina **fonte primária + análise independente**. O primeiro conjunto oficial dessa abordagem usa o Project HydraFusion e conecta a fonte técnica do GitHub a uma análise crítica da VentureBeat.
+
+A política e o fluxo editorial estão documentados em `docs/references/README.md`.
+
 ## Princípio de engenharia
 
 ```text
@@ -150,9 +174,11 @@ text-intelligence-lab/
 ├── course/
 ├── data/
 ├── docs/
+│   ├── case-studies/
 │   ├── decisions/
 │   ├── experiments/
 │   ├── glossary/
+│   ├── references/
 │   ├── readiness/
 │   ├── runbooks/
 │   └── templates/
