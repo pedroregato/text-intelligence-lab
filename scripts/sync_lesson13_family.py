@@ -50,47 +50,252 @@ def upsert_last(nb: dict, cell: dict) -> None:
 
 def sync_13() -> None:
     nb = load(LESSON_13)
-    upsert_last(
-        nb,
-        markdown_cell(
-            "til13-next-labs",
-            """## Próximos laboratórios da Aula 13\n\n"
-            "A interpretação das métricas continua em dois laboratórios complementares:\n\n"
-            "- **Aula 13B — Metric Scenario Lab:** thresholds, cenários e custos de erro;\n"
-            "- **Aula 13C — Model Routing, Orchestration e Utility:** quality gates, custo, latência e sistemas compostos de IA.\n\n"
-            "```text\n"
-            "métrica → custo do erro → threshold → cenário → routing → orchestration\n"
-            "```\n\n"
-            "A 13C também introduz a distinção entre **DEMO** e **EVIDENCE**: proxies didáticos são úteis para aprender, mas decisões arquiteturais reais exigem medições versionadas e comparáveis.\n"
-            """,
-        ),
+    text = (
+        "## Próximos laboratórios da Aula 13\n\n"
+        "A interpretação das métricas continua em dois laboratórios complementares:\n\n"
+        "- **Aula 13B — Metric Scenario Lab:** thresholds, cenários e custos de erro;\n"
+        "- **Aula 13C — Model Routing, Orchestration e Utility:** quality gates, custo, latência e sistemas compostos de IA.\n\n"
+        "```text\n"
+        "métrica → custo do erro → threshold → cenário → routing → orchestration\n"
+        "```\n\n"
+        "A 13C também introduz a distinção entre **DEMO** e **EVIDENCE**: proxies didáticos são úteis para aprender, mas decisões arquiteturais reais exigem medições versionadas e comparáveis.\n"
     )
+    upsert_last(nb, markdown_cell("til13-next-labs", text))
     save(LESSON_13, nb)
     print(f"OK: {LESSON_13.relative_to(ROOT)}")
 
 
 def sync_13b() -> None:
     nb = load(LESSON_13B)
-    upsert_last(
-        nb,
-        markdown_cell(
-            "til13b-next-13c",
-            """## Próximo passo — da métrica ao sistema\n\n"
-            "Depois de explorar thresholds e custos de erro, avance para a **Aula 13C — Model Routing, Orchestration e Utility**.\n\n"
-            "A pergunta muda de:\n\n"
-            "> Qual threshold produz a melhor combinação de métricas?\n\n"
-            "para:\n\n"
-            "> Qual arquitetura entrega qualidade suficiente com custo, latência e risco aceitáveis?\n\n"
-            "Na 13C, a interatividade segue o padrão **headless-first**: `Run All` deve terminar sem intervenção humana e os controles interativos são uma camada opcional de exploração.\n"
-            """,
-        ),
+    text = (
+        "## Próximo passo — da métrica ao sistema\n\n"
+        "Depois de explorar thresholds e custos de erro, avance para a **Aula 13C — Model Routing, Orchestration e Utility**.\n\n"
+        "A pergunta muda de:\n\n"
+        "> Qual threshold produz a melhor combinação de métricas?\n\n"
+        "para:\n\n"
+        "> Qual arquitetura entrega qualidade suficiente com custo, latência e risco aceitáveis?\n\n"
+        "Na 13C, a interatividade segue o padrão **headless-first**: `Run All` deve terminar sem intervenção humana e os controles interativos são uma camada opcional de exploração.\n"
     )
+    upsert_last(nb, markdown_cell("til13b-next-13c", text))
     save(LESSON_13B, nb)
     print(f"OK: {LESSON_13B.relative_to(ROOT)}")
 
 
 def clean_c08() -> list[str]:
-    text = '''sty={"description_width":"140px"}\nlay=widgets.Layout(width="95%")\n\nq=widgets.IntSlider(\n    value=60,\n    min=0,\n    max=100,\n    step=5,\n    description="Qualidade",\n    style=sty,\n    layout=lay,\n    continuous_update=False\n)\n\nc=widgets.IntSlider(\n    value=25,\n    min=0,\n    max=100,\n    step=5,\n    description="Custo",\n    style=sty,\n    layout=lay,\n    continuous_update=False\n)\n\nl=widgets.IntSlider(\n    value=15,\n    min=0,\n    max=100,\n    step=5,\n    description="Latência",\n    style=sty,\n    layout=lay,\n    continuous_update=False\n)\n\ng=widgets.FloatSlider(\n    value=.45,\n    min=0,\n    max=1,\n    step=.05,\n    description="Quality gate",\n    style=sty,\n    layout=lay,\n    continuous_update=False\n)\n\npreset=widgets.ToggleButtons(\n    options=[\n        ("Equilibrado","b"),\n        ("Qualidade","q"),\n        ("Custo","c"),\n        ("Latência","l")\n    ],\n    value="b"\n)\n\nrun_button=widgets.Button(\n    description="Simular cenário",\n    button_style="primary",\n    icon="play"\n)\n\nout=widgets.Output()\n\n\ndef render(_=None):\n\n    d,x,w=evaluate(\n        q.value,\n        c.value,\n        l.value,\n        g.value\n    )\n\n    with out:\n\n        clear_output(wait=True)\n\n        win=d.iloc[0]\n\n        note=(\n            "evidência versionada"\n            if MODE=="EVIDENCE"\n            else "proxies sintéticos"\n        )\n\n        display(\n            Markdown(\n                f"**Vencedor do cenário:** `{win.system}` "\n                f"· dados: **{note}**  \\n"\n                f"**Cascade:** `{x['cheap']}` → "\n                f"`{x['premium']}` "\n                f"· escalonamento "\n                f"**{x['escalation_rate']:.0%}**"\n            )\n        )\n\n        z=d[\n            [\n                "system",\n                "architecture",\n                "quality",\n                "cost_per_1000",\n                "latency_ms",\n                "escalation_rate",\n                "utility"\n            ]\n        ].copy()\n\n        z.insert(\n            0,\n            "rank",\n            range(1,len(z)+1)\n        )\n\n        display(z.round(4))\n\n        fig,ax=plt.subplots(figsize=(8,5))\n\n        for _,r in d.iterrows():\n\n            ax.scatter(\n                r.cost_per_1000,\n                r.quality,\n                s=90\n            )\n\n            ax.annotate(\n                r.system,\n                (\n                    r.cost_per_1000,\n                    r.quality\n                ),\n                xytext=(5,5),\n                textcoords="offset points"\n            )\n\n        ax.set(\n            xlabel="Custo / 1.000 inferências",\n            ylabel="Qualidade",\n            title=f"Custo × qualidade — {MODE}"\n        )\n\n        ax.grid(alpha=.25)\n\n        plt.show()\n        plt.close(fig)\n\n        fig,ax=plt.subplots(figsize=(8,4))\n\n        ax.bar(\n            d.system,\n            d.utility\n        )\n\n        ax.axhline(\n            0,\n            lw=1\n        )\n\n        ax.set_ylabel("Utility")\n\n        plt.xticks(\n            rotation=25,\n            ha="right"\n        )\n\n        plt.show()\n        plt.close(fig)\n\n\ndef choose(ch):\n\n    if ch.get("name")!="value":\n        return\n\n    vals={\n        "b":(60,25,15),\n        "q":(85,10,5),\n        "c":(40,50,10),\n        "l":(40,10,50)\n    }\n\n    q.value,c.value,l.value=vals[ch["new"]]\n\n\npreset.observe(\n    choose,\n    names="value"\n)\n\nrun_button.on_click(render)\n\n\ndisplay(\n    widgets.VBox(\n        [\n            widgets.HTML(\n                f"<b>Dados:</b> {MODE}<br>"\n                "Ajuste os parâmetros e clique "\n                "em <b>Simular cenário</b>."\n            ),\n            preset,\n            q,\n            c,\n            l,\n            g,\n            run_button,\n            out\n        ]\n    )\n)\n'''
+    text = '''sty={"description_width":"140px"}
+lay=widgets.Layout(width="95%")
+
+q=widgets.IntSlider(
+    value=60,
+    min=0,
+    max=100,
+    step=5,
+    description="Qualidade",
+    style=sty,
+    layout=lay,
+    continuous_update=False
+)
+
+c=widgets.IntSlider(
+    value=25,
+    min=0,
+    max=100,
+    step=5,
+    description="Custo",
+    style=sty,
+    layout=lay,
+    continuous_update=False
+)
+
+l=widgets.IntSlider(
+    value=15,
+    min=0,
+    max=100,
+    step=5,
+    description="Latência",
+    style=sty,
+    layout=lay,
+    continuous_update=False
+)
+
+g=widgets.FloatSlider(
+    value=.45,
+    min=0,
+    max=1,
+    step=.05,
+    description="Quality gate",
+    style=sty,
+    layout=lay,
+    continuous_update=False
+)
+
+preset=widgets.ToggleButtons(
+    options=[
+        ("Equilibrado","b"),
+        ("Qualidade","q"),
+        ("Custo","c"),
+        ("Latência","l")
+    ],
+    value="b"
+)
+
+run_button=widgets.Button(
+    description="Simular cenário",
+    button_style="primary",
+    icon="play"
+)
+
+out=widgets.Output()
+
+
+def render(_=None):
+
+    d,x,w=evaluate(
+        q.value,
+        c.value,
+        l.value,
+        g.value
+    )
+
+    with out:
+
+        clear_output(wait=True)
+
+        win=d.iloc[0]
+
+        note=(
+            "evidência versionada"
+            if MODE=="EVIDENCE"
+            else "proxies sintéticos"
+        )
+
+        display(
+            Markdown(
+                f"**Vencedor do cenário:** `{win.system}` "
+                f"· dados: **{note}**  \\n"
+                f"**Cascade:** `{x['cheap']}` → "
+                f"`{x['premium']}` "
+                f"· escalonamento "
+                f"**{x['escalation_rate']:.0%}**"
+            )
+        )
+
+        z=d[
+            [
+                "system",
+                "architecture",
+                "quality",
+                "cost_per_1000",
+                "latency_ms",
+                "escalation_rate",
+                "utility"
+            ]
+        ].copy()
+
+        z.insert(
+            0,
+            "rank",
+            range(1,len(z)+1)
+        )
+
+        display(z.round(4))
+
+        fig,ax=plt.subplots(figsize=(8,5))
+
+        for _,r in d.iterrows():
+
+            ax.scatter(
+                r.cost_per_1000,
+                r.quality,
+                s=90
+            )
+
+            ax.annotate(
+                r.system,
+                (
+                    r.cost_per_1000,
+                    r.quality
+                ),
+                xytext=(5,5),
+                textcoords="offset points"
+            )
+
+        ax.set(
+            xlabel="Custo / 1.000 inferências",
+            ylabel="Qualidade",
+            title=f"Custo × qualidade — {MODE}"
+        )
+
+        ax.grid(alpha=.25)
+
+        plt.show()
+        plt.close(fig)
+
+        fig,ax=plt.subplots(figsize=(8,4))
+
+        ax.bar(
+            d.system,
+            d.utility
+        )
+
+        ax.axhline(
+            0,
+            lw=1
+        )
+
+        ax.set_ylabel("Utility")
+
+        plt.xticks(
+            rotation=25,
+            ha="right"
+        )
+
+        plt.show()
+        plt.close(fig)
+
+
+def choose(ch):
+
+    if ch.get("name")!="value":
+        return
+
+    vals={
+        "b":(60,25,15),
+        "q":(85,10,5),
+        "c":(40,50,10),
+        "l":(40,10,50)
+    }
+
+    q.value,c.value,l.value=vals[ch["new"]]
+
+
+preset.observe(
+    choose,
+    names="value"
+)
+
+run_button.on_click(render)
+
+
+display(
+    widgets.VBox(
+        [
+            widgets.HTML(
+                f"<b>Dados:</b> {MODE}<br>"
+                "Ajuste os parâmetros e clique "
+                "em <b>Simular cenário</b>."
+            ),
+            preset,
+            q,
+            c,
+            l,
+            g,
+            run_button,
+            out
+        ]
+    )
+)
+'''
     return text.splitlines(keepends=True)
 
 
@@ -102,39 +307,30 @@ def sync_13c() -> None:
 
     by_id["c08"]["source"] = clean_c08()
 
-    upsert_after(
-        nb,
-        "c03",
-        markdown_cell(
-            "c03b-headless-status",
-            """### Estado de execução e evidência\n\n"
-            "Este notebook segue o padrão **headless-first** do TIL: a execução completa (`Run All`) não depende de interação humana. Os widgets são uma camada opcional e o cenário interativo só é calculado quando o aluno clica em **Simular cenário**.\n\n"
-            "O notebook foi validado em execução local headless e no Kaggle.\n\n"
-            "O próximo marco experimental é substituir os proxies `DEMO` por medições comparáveis do experimento `EDU-ORCH-001`, começando por **TF-IDF + classificador clássico** versus **DistilBERT multilíngue**.\n"
-            """,
-        ),
+    status_text = (
+        "### Estado de execução e evidência\n\n"
+        "Este notebook segue o padrão **headless-first** do TIL: a execução completa (`Run All`) não depende de interação humana. Os widgets são uma camada opcional e o cenário interativo só é calculado quando o aluno clica em **Simular cenário**.\n\n"
+        "O notebook foi validado em execução local headless e no Kaggle.\n\n"
+        "O próximo marco experimental é substituir os proxies `DEMO` por medições comparáveis do experimento `EDU-ORCH-001`, começando por **TF-IDF + classificador clássico** versus **DistilBERT multilíngue**.\n"
     )
+    upsert_after(nb, "c03", markdown_cell("c03b-headless-status", status_text))
 
-    upsert_last(
-        nb,
-        markdown_cell(
-            "c13-next-evidence",
-            """## 7. Próximo experimento — ativar EVIDENCE com dados reais\n\n"
-            "A aula está pronta para consumir evidência real, mas não devemos preencher `til-model-evidence.csv` apenas para tornar o simulador mais convincente.\n\n"
-            "O experimento `docs/experiments/EDU-ORCH-001-model-evidence-baseline-vs-transformer.md` define o próximo passo:\n\n"
-            "```text\n"
-            "mesmo dataset/split\n"
-            "→ TF-IDF + classificador clássico\n"
-            "→ DistilBERT multilíngue\n"
-            "→ qualidade + latência + custo\n"
-            "→ proveniência\n"
-            "→ til-model-evidence.csv\n"
-            "→ modo EVIDENCE\n"
-            "```\n\n"
-            "Até que essas medições existam, **DEMO continua sendo a representação correta e honesta**.\n"
-            """,
-        ),
+    next_text = (
+        "## 7. Próximo experimento — ativar EVIDENCE com dados reais\n\n"
+        "A aula está pronta para consumir evidência real, mas não devemos preencher `til-model-evidence.csv` apenas para tornar o simulador mais convincente.\n\n"
+        "O experimento `docs/experiments/EDU-ORCH-001-model-evidence-baseline-vs-transformer.md` define o próximo passo:\n\n"
+        "```text\n"
+        "mesmo dataset/split\n"
+        "→ TF-IDF + classificador clássico\n"
+        "→ DistilBERT multilíngue\n"
+        "→ qualidade + latência + custo\n"
+        "→ proveniência\n"
+        "→ til-model-evidence.csv\n"
+        "→ modo EVIDENCE\n"
+        "```\n\n"
+        "Até que essas medições existam, **DEMO continua sendo a representação correta e honesta**.\n"
     )
+    upsert_last(nb, markdown_cell("c13-next-evidence", next_text))
 
     save(LESSON_13C, nb)
     print(f"OK: {LESSON_13C.relative_to(ROOT)}")
