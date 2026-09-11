@@ -9,6 +9,23 @@ LESSON_13 = ROOT / "course/13-metrics-and-indicators/13-til-metrics-and-indicato
 LESSON_13B = ROOT / "course/13-metrics-and-indicators/metric-scenario-lab/13b-til-metric-scenario-lab.ipynb"
 LESSON_13C = ROOT / "course/13-metrics-and-indicators/13c-model-routing-and-orchestration.ipynb"
 
+GLOSSARY_BASE = "https://github.com/pedroregato/text-intelligence-lab/blob/main/docs/glossary/glossary.pt-BR.md"
+GLOSSARY_LINKS = {
+    "Baseline": f"{GLOSSARY_BASE}#baseline",
+    "Model Routing": f"{GLOSSARY_BASE}#roteamento-de-modelos",
+    "Model Orchestration": f"{GLOSSARY_BASE}#orquestração-de-modelos",
+    "Quality Gate": f"{GLOSSARY_BASE}#quality-gate",
+    "Escalation Rate": f"{GLOSSARY_BASE}#taxa-de-escalonamento",
+    "Utility Function": f"{GLOSSARY_BASE}#função-de-utilidade",
+    "Compound AI System": f"{GLOSSARY_BASE}#sistema-composto-de-ia",
+    "Cost per Inference": f"{GLOSSARY_BASE}#custo-por-inferência",
+    "Trade-off": f"{GLOSSARY_BASE}#trade-off",
+}
+
+
+def glossary_link(label: str) -> str:
+    return f"[{label}]({GLOSSARY_LINKS[label]})"
+
 
 def load(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -57,6 +74,14 @@ def upsert_last(nb: dict, cell: dict) -> None:
             nb["cells"][i] = cell
             return
     nb["cells"].append(cell)
+
+
+def replace_markdown(nb: dict, cell_id: str, text: str) -> None:
+    for i, cell in enumerate(nb["cells"]):
+        if cell.get("id") == cell_id:
+            nb["cells"][i] = markdown_cell(cell_id, text)
+            return
+    raise RuntimeError(f"Cell {cell_id} not found")
 
 
 def sync_13() -> None:
@@ -123,216 +148,62 @@ def clean_c08() -> list[str]:
     text = '''sty={"description_width":"140px"}
 lay=widgets.Layout(width="95%")
 
-q=widgets.IntSlider(
-    value=60,
-    min=0,
-    max=100,
-    step=5,
-    description="Qualidade",
-    style=sty,
-    layout=lay,
-    continuous_update=False
-)
+q=widgets.IntSlider(value=60,min=0,max=100,step=5,description="Qualidade",style=sty,layout=lay,continuous_update=False)
+c=widgets.IntSlider(value=25,min=0,max=100,step=5,description="Custo",style=sty,layout=lay,continuous_update=False)
+l=widgets.IntSlider(value=15,min=0,max=100,step=5,description="Latência",style=sty,layout=lay,continuous_update=False)
+g=widgets.FloatSlider(value=.45,min=0,max=1,step=.05,description="Quality gate",style=sty,layout=lay,continuous_update=False)
 
-c=widgets.IntSlider(
-    value=25,
-    min=0,
-    max=100,
-    step=5,
-    description="Custo",
-    style=sty,
-    layout=lay,
-    continuous_update=False
-)
-
-l=widgets.IntSlider(
-    value=15,
-    min=0,
-    max=100,
-    step=5,
-    description="Latência",
-    style=sty,
-    layout=lay,
-    continuous_update=False
-)
-
-g=widgets.FloatSlider(
-    value=.45,
-    min=0,
-    max=1,
-    step=.05,
-    description="Quality gate",
-    style=sty,
-    layout=lay,
-    continuous_update=False
-)
-
-preset=widgets.ToggleButtons(
-    options=[
-        ("Equilibrado","b"),
-        ("Qualidade","q"),
-        ("Custo","c"),
-        ("Latência","l")
-    ],
-    value="b"
-)
-
-run_button=widgets.Button(
-    description="Simular cenário",
-    button_style="primary",
-    icon="play"
-)
-
+preset=widgets.ToggleButtons(options=[("Equilibrado","b"),("Qualidade","q"),("Custo","c"),("Latência","l")],value="b")
+run_button=widgets.Button(description="Simular cenário",button_style="primary",icon="play")
 out=widgets.Output()
 
 
 def render(_=None):
-
-    d,x,w=evaluate(
-        q.value,
-        c.value,
-        l.value,
-        g.value
-    )
-
+    d,x,w=evaluate(q.value,c.value,l.value,g.value)
     with out:
-
         clear_output(wait=True)
-
         win=d.iloc[0]
-
-        note=(
-            "evidência versionada"
-            if MODE=="EVIDENCE"
-            else "proxies sintéticos"
-        )
-
-        display(
-            Markdown(
-                f"**Vencedor do cenário:** `{win.system}` "
-                f"· dados: **{note}**  \\n"
-                f"**Cascade:** `{x['cheap']}` → "
-                f"`{x['premium']}` "
-                f"· escalonamento "
-                f"**{x['escalation_rate']:.0%}**"
-            )
-        )
-
-        z=d[
-            [
-                "system",
-                "architecture",
-                "quality",
-                "cost_per_1000",
-                "latency_ms",
-                "escalation_rate",
-                "utility"
-            ]
-        ].copy()
-
-        z.insert(
-            0,
-            "rank",
-            range(1,len(z)+1)
-        )
-
+        note="evidência versionada" if MODE=="EVIDENCE" else "proxies sintéticos"
+        display(Markdown(
+            f"**Vencedor do cenário:** `{win.system}` · dados: **{note}**  \\n"
+            f"**Cascade:** `{x['cheap']}` → `{x['premium']}` · escalonamento **{x['escalation_rate']:.0%}**"
+        ))
+        z=d[["system","architecture","quality","cost_per_1000","latency_ms","escalation_rate","utility"]].copy()
+        z.insert(0,"rank",range(1,len(z)+1))
         display(z.round(4))
 
         fig,ax=plt.subplots(figsize=(8,5))
-
         for _,r in d.iterrows():
-
-            ax.scatter(
-                r.cost_per_1000,
-                r.quality,
-                s=90
-            )
-
-            ax.annotate(
-                r.system,
-                (
-                    r.cost_per_1000,
-                    r.quality
-                ),
-                xytext=(5,5),
-                textcoords="offset points"
-            )
-
-        ax.set(
-            xlabel="Custo / 1.000 inferências",
-            ylabel="Qualidade",
-            title=f"Custo × qualidade — {MODE}"
-        )
-
+            ax.scatter(r.cost_per_1000,r.quality,s=90)
+            ax.annotate(r.system,(r.cost_per_1000,r.quality),xytext=(5,5),textcoords="offset points")
+        ax.set(xlabel="Custo / 1.000 inferências",ylabel="Qualidade",title=f"Custo × qualidade — {MODE}")
         ax.grid(alpha=.25)
-
         plt.show()
         plt.close(fig)
 
         fig,ax=plt.subplots(figsize=(8,4))
-
-        ax.bar(
-            d.system,
-            d.utility
-        )
-
-        ax.axhline(
-            0,
-            lw=1
-        )
-
+        ax.bar(d.system,d.utility)
+        ax.axhline(0,lw=1)
         ax.set_ylabel("Utility")
-
-        plt.xticks(
-            rotation=25,
-            ha="right"
-        )
-
+        plt.xticks(rotation=25,ha="right")
         plt.show()
         plt.close(fig)
 
 
 def choose(ch):
-
     if ch.get("name")!="value":
         return
-
-    vals={
-        "b":(60,25,15),
-        "q":(85,10,5),
-        "c":(40,50,10),
-        "l":(40,10,50)
-    }
-
+    vals={"b":(60,25,15),"q":(85,10,5),"c":(40,50,10),"l":(40,10,50)}
     q.value,c.value,l.value=vals[ch["new"]]
 
 
-preset.observe(
-    choose,
-    names="value"
-)
-
+preset.observe(choose,names="value")
 run_button.on_click(render)
 
-
-display(
-    widgets.VBox(
-        [
-            widgets.HTML(
-                f"<b>Dados:</b> {MODE}<br>"
-                "Ajuste os parâmetros e clique "
-                "em <b>Simular cenário</b>."
-            ),
-            preset,
-            q,
-            c,
-            l,
-            g,
-            run_button,
-            out
-        ]
-    )
-)
+display(widgets.VBox([
+    widgets.HTML(f"<b>Dados:</b> {MODE}<br>Ajuste os parâmetros e clique em <b>Simular cenário</b>."),
+    preset,q,c,l,g,run_button,out
+]))
 '''
     return text.splitlines(keepends=True)
 
@@ -345,29 +216,76 @@ def sync_13c() -> None:
 
     by_id["c08"]["source"] = clean_c08()
 
-    status_text = (
-        "### Estado de execução e evidência\n\n"
-        "Este notebook segue o padrão **headless-first** do TIL: a execução completa (`Run All`) não depende de interação humana. Os widgets são uma camada opcional e o cenário interativo só é calculado quando o aluno clica em **Simular cenário**.\n\n"
-        "O notebook foi validado em execução local headless e no Kaggle.\n\n"
-        "O próximo marco experimental é substituir os proxies `DEMO` por medições comparáveis do experimento `EDU-ORCH-001`, começando por **TF-IDF + classificador clássico** versus **DistilBERT multilíngue**.\n"
-    )
+    glossary_text = f"""## 📘 Glossário Vivo — conceitos-chave da Aula 13C
+
+Use o Glossário Vivo durante o laboratório. Os conceitos abaixo formam a linguagem necessária para interpretar as decisões do simulador:
+
+**{glossary_link('Baseline')} · {glossary_link('Model Routing')} · {glossary_link('Model Orchestration')} · {glossary_link('Quality Gate')} · {glossary_link('Escalation Rate')} · {glossary_link('Utility Function')} · {glossary_link('Compound AI System')} · {glossary_link('Cost per Inference')} · {glossary_link('Trade-off')}**
+
+### 🧭 Durante o laboratório...
+
+| Quando você estiver pensando em... | Consulte |
+|---|---|
+| estabelecer uma referência simples para comparação | {glossary_link('Baseline')} |
+| escolher modelos diferentes conforme a tarefa | {glossary_link('Model Routing')} |
+| combinar modelos ou etapas | {glossary_link('Model Orchestration')} |
+| decidir quando aceitar ou escalar uma resposta | {glossary_link('Quality Gate')} |
+| entender quantos casos chegam à camada premium | {glossary_link('Escalation Rate')} |
+| equilibrar qualidade, custo e latência | {glossary_link('Utility Function')} |
+| analisar vários componentes trabalhando juntos | {glossary_link('Compound AI System')} |
+| estimar o impacto econômico das chamadas | {glossary_link('Cost per Inference')} |
+| aceitar ganhos em uma dimensão e perdas em outra | {glossary_link('Trade-off')} |
+
+> Não memorize os termos isoladamente. Use os links quando o comportamento do simulador levantar uma dúvida conceitual.
+"""
+    replace_markdown(nb, "c02", glossary_text)
+
+    status_text = f"""### Estado de execução e evidência
+
+Este notebook segue o padrão **headless-first** do TIL: a execução completa (`Run All`) não depende de interação humana. Os widgets são uma camada opcional e o cenário interativo só é calculado quando o aluno clica em **Simular cenário**.
+
+O notebook foi validado em execução local headless e no Kaggle.
+
+O próximo marco experimental é substituir os proxies `DEMO` por medições comparáveis do experimento `EDU-ORCH-001`, começando pelo {glossary_link('Baseline')} **TF-IDF + classificador clássico** versus **DistilBERT multilíngue**.
+"""
     upsert_after(nb, "c03", markdown_cell("c03b-headless-status", status_text))
 
-    next_text = (
-        "## 7. Próximo experimento — ativar EVIDENCE com dados reais\n\n"
-        "A aula está pronta para consumir evidência real, mas não devemos preencher `til-model-evidence.csv` apenas para tornar o simulador mais convincente.\n\n"
-        "O experimento `docs/experiments/EDU-ORCH-001-model-evidence-baseline-vs-transformer.md` define o próximo passo:\n\n"
-        "```text\n"
-        "mesmo dataset/split\n"
-        "→ TF-IDF + classificador clássico\n"
-        "→ DistilBERT multilíngue\n"
-        "→ qualidade + latência + custo\n"
-        "→ proveniência\n"
-        "→ til-model-evidence.csv\n"
-        "→ modo EVIDENCE\n"
-        "```\n\n"
-        "Até que essas medições existam, **DEMO continua sendo a representação correta e honesta**.\n"
-    )
+    system_text = f"""## 2. Sistema composto
+
+As linhas carregadas são candidatos `single`. O `cascade` usa a camada de menor custo como inicial e a de maior qualidade como premium. O **quality gate** controla uma **taxa de escalonamento simulada**.
+
+Mesmo em modo EVIDENCE, o ponto intermediário do cascade é uma hipótese de engenharia até ser medido diretamente.
+
+📚 Glossário: {glossary_link('Quality Gate')} · {glossary_link('Escalation Rate')} · {glossary_link('Model Routing')} · {glossary_link('Trade-off')}.
+"""
+    replace_markdown(nb, "c05", system_text)
+
+    simulator_text = f"""## 3. 🎛️ Simulador
+
+Os sliders mudam **prioridades**, não as medições. Ajuste qualidade, custo, latência e gate; observe ranking, escalonamento e o mapa custo × qualidade.
+
+📚 Glossário: {glossary_link('Utility Function')} · {glossary_link('Cost per Inference')} · {glossary_link('Compound AI System')}.
+"""
+    replace_markdown(nb, "c07", simulator_text)
+
+    next_text = f"""## 7. Próximo experimento — ativar EVIDENCE com dados reais
+
+A aula está pronta para consumir evidência real, mas não devemos preencher `til-model-evidence.csv` apenas para tornar o simulador mais convincente.
+
+O experimento `docs/experiments/EDU-ORCH-001-model-evidence-baseline-vs-transformer.md` define o próximo passo:
+
+```text
+mesmo dataset/split
+→ {glossary_link('Baseline')} TF-IDF + classificador clássico
+→ DistilBERT multilíngue
+→ qualidade + latência + custo
+→ proveniência
+→ til-model-evidence.csv
+→ modo EVIDENCE
+```
+
+Até que essas medições existam, **DEMO continua sendo a representação correta e honesta**.
+"""
     upsert_last(nb, markdown_cell("c13-next-evidence", next_text))
 
     save(LESSON_13C, nb)
