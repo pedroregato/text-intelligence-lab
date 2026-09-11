@@ -30,6 +30,28 @@ jobs:
       - name: Generate PT-BR, EN and interactive HTML
         run: python docs/glossary/build_glossary.py
 
+      - name: Validate Lesson 13C glossary coverage
+        shell: bash
+        run: |
+          set -euo pipefail
+          glossary='docs/glossary/glossary.pt-BR.md'
+          for term in \
+            '## Roteamento de modelos' \
+            '## Orquestração de modelos' \
+            '## Quality gate' \
+            '## Taxa de escalonamento' \
+            '## Função de utilidade' \
+            '## Sistema composto de IA' \
+            '## Custo por inferência' \
+            '## Trade-off'
+          do
+            grep -Fq "$term" "$glossary" || {
+              echo "Missing Lesson 13C glossary term: $term"
+              exit 1
+            }
+          done
+          echo 'Lesson 13C glossary coverage: OK'
+
       - name: Commit generated glossary views
         run: |
           if git diff --quiet -- docs/glossary/glossary.pt-BR.md docs/glossary/glossary.en.md docs/glossary/web/index.html; then
