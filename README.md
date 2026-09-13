@@ -107,28 +107,43 @@ camada interativa opcional
 
 A decisão está registrada em `docs/decisions/ADR-009-headless-first-interactive-notebooks.md`.
 
-## Próximo marco experimental
+## Evidência real para a Aula 13C
 
-A Aula 13C já funciona em dois modos:
+A Aula 13C funciona em dois modos:
 
 - `DEMO` — proxies didáticos explicitamente sintéticos;
 - `EVIDENCE` — medições versionadas e comparáveis do próprio TIL.
 
-O próximo movimento do projeto é produzir evidências reais e comparáveis para alimentar o simulador:
+O experimento **EDU-ORCH-001 — Baseline vs Transformer Evidence Lab** está em execução para produzir o primeiro conjunto real de evidências do curso:
 
 ```text
-TF-IDF + classificador clássico
+Olist / Polarity
         ↓
-DistilBERT multilíngue
+TF-IDF + Multinomial Naive Bayes
+        ↕
+DistilBERT multilingual
         ↓
-LLM e/ou revisão humana, quando houver metodologia reproduzível
-        ↓
-qualidade + latência + custo + proveniência
+F1 macro + accuracy
++ latência média/p50/p95
++ proxy de custo computacional
++ hardware + versões + proveniência
         ↓
 data/model-evidence/til-model-evidence.csv
+        ↓
+Aula 13C em modo EVIDENCE
 ```
 
-Nenhum valor deve ser incluído apenas para completar o simulador. As medições devem ser sustentadas por experimentos reproduzíveis e documentação de proveniência em `docs/experiments/`.
+O notebook experimental está em:
+
+```text
+experiments/edu-orch-001-baseline-vs-transformer/
+```
+
+A execução GPU inicial revelou um caso real de incompatibilidade de runtime: a Tesla P100 atribuída pelo Kaggle possui compute capability `sm_60`, enquanto o build observado do PyTorch 2.10.0+cu128 suportava `sm_70` ou superior. A falha foi reproduzida com uma operação CUDA mínima, isolando o problema do `Trainer` e do DistilBERT.
+
+A coleta de evidência segue temporariamente em CPU, com a decisão documentada em `docs/experiments/EDU-ORCH-001-model-evidence-baseline-vs-transformer.md`. Nenhuma métrica comparativa é publicada antes da conclusão e revisão da execução.
+
+Esse episódio também refinou a política de engenharia do TIL: **GPU detectada não significa GPU operacional**. Experimentos acelerados devem validar compute capability, build do framework e uma operação mínima antes do treinamento principal.
 
 ## Glossário Vivo
 
@@ -185,7 +200,7 @@ Arquitetar
 
 O GitHub é a fonte de verdade do projeto.
 
-Os notebooks oficiais usam **internet desabilitada por padrão**. A internet é habilitada apenas quando uma dependência externa fizer parte intencional do objetivo pedagógico.
+Os notebooks oficiais usam **internet desabilitada por padrão**. A internet é habilitada apenas quando uma dependência externa fizer parte intencionalmente do objetivo pedagógico.
 
 Dados pequenos podem ser embutidos no notebook. Datasets maiores e modelos externos devem, quando apropriado, ser versionados ou anexados via recursos do Kaggle.
 
@@ -224,6 +239,7 @@ text-intelligence-lab/
 │   ├── runbooks/
 │   └── templates/
 ├── experiments/
+│   └── edu-orch-001-baseline-vs-transformer/
 ├── requirements/
 ├── README.md
 └── setup_structure.py
@@ -233,7 +249,9 @@ text-intelligence-lab/
 
 O curso está em construção ativa.
 
-As Aulas 0–13 e os laboratórios 13B e 13C possuem material oficial no repositório. A 13C já possui execução Kaggle validada após a adoção do padrão headless-first. O próximo marco técnico é gerar evidência comparável de modelos para ativar o modo `EVIDENCE` com medições reais do TIL.
+As Aulas 0–13 e os laboratórios 13B e 13C possuem material oficial no repositório. A 13C possui execução Kaggle validada e segue o padrão headless-first.
+
+O marco técnico atual é o **EDU-ORCH-001**, que está coletando evidência comparável entre um baseline clássico e um Transformer para ativar o modo `EVIDENCE` da Aula 13C com medições reais do TIL.
 
 ## Licenciamento
 
