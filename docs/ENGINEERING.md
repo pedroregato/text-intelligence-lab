@@ -102,6 +102,39 @@ Internet ON apenas quando o acesso externo fizer parte do objetivo pedagógico e
 
 Não assumir versões do ambiente. Registrar versões observadas em execução real do Kaggle quando forem relevantes.
 
+Para experimentos com acelerador, `torch.cuda.is_available()` não deve ser tratado isoladamente como prova de compatibilidade operacional.
+
+O mínimo recomendado antes de iniciar um treinamento GPU é registrar e validar:
+
+```text
+PyTorch version
+→ CUDA runtime
+→ GPU model
+→ GPU compute capability
+→ architectures suportadas pelo build do PyTorch
+→ operação CUDA mínima executável
+```
+
+Exemplo de smoke test:
+
+```python
+import torch
+
+print("torch:", torch.__version__)
+print("cuda available:", torch.cuda.is_available())
+print("cuda runtime:", torch.version.cuda)
+
+if torch.cuda.is_available():
+    print("gpu:", torch.cuda.get_device_name(0))
+    print("capability:", torch.cuda.get_device_capability(0))
+    x = torch.tensor([1.0, 2.0, 3.0], device="cuda")
+    print(x * 2)
+```
+
+O experimento `EDU-ORCH-001` mostrou um caso concreto em que a GPU era detectada, mas não utilizável: Tesla P100 com capability `sm_60` e um build PyTorch que suportava apenas `sm_70` ou superior. Esse tipo de incompatibilidade deve ser identificado antes do treinamento principal.
+
+Quando houver incompatibilidade de runtime, a decisão de fallback para CPU, troca de runtime ou troca de acelerador deve ser registrada como parte da proveniência do experimento.
+
 ## Lesson Release Gates
 
 Uma aula só deve ser considerada student-ready após:
