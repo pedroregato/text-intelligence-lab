@@ -93,7 +93,24 @@ Qual sistema entrega valor suficiente
 com qualidade, custo, latência e risco aceitáveis?
 ```
 
-O laboratório **13C — Model Routing, Orchestration e Utility** introduz `single`, `cascade`, `quality gates`, funções de utilidade e métricas de sistemas orquestrados, usando o Project HydraFusion como estudo de caso contemporâneo.
+O laboratório **13C — Model Routing, Orchestration e Utility** introduz `single`, `cascade`, `quality gates`, funções de utilidade e métricas de sistemas orquestrados.
+
+A aula agora também inclui um estudo de caso sobre a transição de **Model Intelligence para Agentic Systems**, usando o GPT-6 Astra como exemplo contemporâneo para separar `benchmark`, `capability`, `autonomy`, `utility`, `risk` e `marketing`.
+
+```text
+Model
+→ Selection
+→ Routing
+→ Orchestration
+→ Tools
+→ Computer Use
+→ Agentic Execution
+→ Observability
+→ Human Oversight
+→ Utility
+```
+
+O Project HydraFusion permanece como referência de sistemas compostos, enquanto o case Astra amplia a discussão para sistemas agentes com ferramentas e execução.
 
 A Aula 13C foi validada em duas camadas: execução headless local via `nbconvert` e execução completa no Kaggle. A partir dessa validação, o TIL adotou oficialmente a regra **headless-first** para notebooks interativos.
 
@@ -114,7 +131,7 @@ A Aula 13C funciona em dois modos:
 - `DEMO` — proxies didáticos explicitamente sintéticos;
 - `EVIDENCE` — medições versionadas e comparáveis do próprio TIL.
 
-O experimento **EDU-ORCH-001 — Baseline vs Transformer Evidence Lab** está em execução para produzir o primeiro conjunto real de evidências do curso:
+O experimento **EDU-ORCH-001 — Baseline vs Transformer Evidence Lab** foi concluído e produziu o primeiro conjunto real de evidências do curso:
 
 ```text
 Olist / Polarity
@@ -133,6 +150,15 @@ data/model-evidence/til-model-evidence.csv
 Aula 13C em modo EVIDENCE
 ```
 
+Resultados medidos no conjunto de teste (`n = 3807`):
+
+| Métrica | TF-IDF + MultinomialNB | DistilBERT multilingual |
+| --- | ---: | ---: |
+| F1 macro | 0.9099 | 0.9300 |
+| Accuracy | 0.9241 | 0.9406 |
+| Latência média | 1.09 ms | 34.38 ms |
+| Runtime proxy / 1000 | 0.030 s | 52.00 s |
+
 O notebook experimental está em:
 
 ```text
@@ -141,7 +167,7 @@ experiments/edu-orch-001-baseline-vs-transformer/
 
 A execução GPU inicial revelou um caso real de incompatibilidade de runtime: a Tesla P100 atribuída pelo Kaggle possui compute capability `sm_60`, enquanto o build observado do PyTorch 2.10.0+cu128 suportava `sm_70` ou superior. A falha foi reproduzida com uma operação CUDA mínima, isolando o problema do `Trainer` e do DistilBERT.
 
-A coleta de evidência segue temporariamente em CPU, com a decisão documentada em `docs/experiments/EDU-ORCH-001-model-evidence-baseline-vs-transformer.md`. Nenhuma métrica comparativa é publicada antes da conclusão e revisão da execução.
+A coleta oficial foi concluída em CPU. Por isso, os valores absolutos de latência e runtime não devem ser generalizados para outros hardwares ou GPUs compatíveis.
 
 Esse episódio também refinou a política de engenharia do TIL: **GPU detectada não significa GPU operacional**. Experimentos acelerados devem validar compute capability, build do framework e uma operação mínima antes do treinamento principal.
 
@@ -249,9 +275,13 @@ text-intelligence-lab/
 
 O curso está em construção ativa.
 
-As Aulas 0–13 e os laboratórios 13B e 13C possuem material oficial no repositório. A 13C possui execução Kaggle validada e segue o padrão headless-first.
+As Aulas 0–13 e os laboratórios 13B e 13C possuem material oficial no repositório. A 13C possui execução Kaggle validada, segue o padrão headless-first e já opera em modo `EVIDENCE` com medições reais do TIL.
 
-O marco técnico atual é o **EDU-ORCH-001**, que está coletando evidência comparável entre um baseline clássico e um Transformer para ativar o modo `EVIDENCE` da Aula 13C com medições reais do TIL.
+O **EDU-ORCH-001** foi concluído e versionou a primeira comparação medida entre um baseline clássico e um Transformer.
+
+A Aula 13C também passou a cobrir a transição de **Model Intelligence para Agentic Systems**, conectando routing, orchestration, tools, computer use, observability, human oversight e utility.
+
+O próximo marco técnico é ampliar a matriz de evidências com novos modelos, hardwares, tarefas e arquiteturas compostas medidas diretamente.
 
 ## Licenciamento
 
