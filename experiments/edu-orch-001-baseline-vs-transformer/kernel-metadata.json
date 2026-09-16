@@ -1,0 +1,22 @@
+{
+    "id":  "pedrogentil/til-edu-orch-001-baseline-vs-transformer",
+    "title":  "TIL EDU ORCH 001 Baseline vs Transformer",
+    "code_file":  "edu-orch-001-baseline-vs-transformer.ipynb",
+    "language":  "python",
+    "kernel_type":  "notebook",
+    "is_private":  false,
+    "enable_gpu":  false,
+    "enable_internet":  false,
+    "dataset_sources":  [
+                            "fredericods/ptbr-sentiment-analysis-datasets"
+                        ],
+    "competition_sources":  [
+
+                            ],
+    "kernel_sources":  [
+
+                       ],
+    "model_sources":  [
+                          "goddiao/distilbert-base-multilingual-cased/pyTorch/default/1"
+                      ]
+}
