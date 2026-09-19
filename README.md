@@ -171,6 +171,41 @@ A coleta oficial foi concluída em CPU. Por isso, os valores absolutos de latên
 
 Esse episódio também refinou a política de engenharia do TIL: **GPU detectada não significa GPU operacional**. Experimentos acelerados devem validar compute capability, build do framework e uma operação mínima antes do treinamento principal.
 
+## Routing medido — EDU-ORCH-002
+
+O **EDU-ORCH-002 — Routing Evidence Matrix** mediu diretamente uma arquitetura cascade entre o baseline clássico e o DistilBERT, usando thresholds de confiança do baseline.
+
+Resultados no mesmo conjunto de teste (`n = 3807`):
+
+| Threshold | F1 macro | Accuracy | Escalation rate | Runtime proxy / 1000 | Latência média |
+| ---: | ---: | ---: | ---: | ---: | ---: |
+| 0.60 | 0.9178 | 0.9307 | 3.94% | 4.49 s | 5.13 ms |
+| 0.70 | 0.9248 | 0.9364 | 8.25% | 8.97 s | 12.20 ms |
+| 0.80 | 0.9330 | 0.9433 | 14.42% | 15.42 s | 22.28 ms |
+| 0.90 | 0.9318 | 0.9422 | 23.46% | 25.15 s | 34.01 ms |
+
+O threshold `0.80` apresentou o maior F1 observado entre os quatro cenários medidos. O threshold `0.90` escalou mais casos e consumiu mais runtime, sem melhorar a qualidade observada.
+
+A evidência está versionada em:
+
+```text
+data/model-evidence/til-routing-evidence.csv
+```
+
+As linhas usam `evidence_status = measured-recovered`: os valores vieram da execução medida do Kaggle, mas o CSV precisou ser reconstruído a partir do output observado após perda do artefato original da sessão. Essa distinção preserva a proveniência e evita apresentar dados recuperados como se o artefato original estivesse intacto.
+
+A arquitetura pedagógica também foi refinada:
+
+```text
+experimentos
+→ produzem evidência
+
+aulas
+→ consomem evidência
+```
+
+O `EDU-ORCH-002` permanece como trilha **AUTHOR / EVIDENCE**, enquanto a Aula 13C funciona como trilha **STUDENT** e não exige treinamento longo do Transformer para explorar routing, escalation rate, latência, custo e utility.
+
 ## Glossário Vivo
 
 O curso possui um glossário bilíngue PT-BR/EN, mantido a partir de uma fonte canônica estruturada:
@@ -279,9 +314,11 @@ As Aulas 0–13 e os laboratórios 13B e 13C possuem material oficial no reposit
 
 O **EDU-ORCH-001** foi concluído e versionou a primeira comparação medida entre um baseline clássico e um Transformer.
 
+O **EDU-ORCH-002** também foi concluído, medindo diretamente quatro configurações de routing/cascade. A Aula 13C agora pode consumir evidência de modelos isolados e de arquiteturas compostas.
+
 A Aula 13C também passou a cobrir a transição de **Model Intelligence para Agentic Systems**, conectando routing, orchestration, tools, computer use, observability, human oversight e utility.
 
-O próximo marco técnico é ampliar a matriz de evidências com novos modelos, hardwares, tarefas e arquiteturas compostas medidas diretamente.
+O próximo marco técnico é ampliar a matriz de evidências com novos modelos, hardwares e tarefas, preservando a separação entre produção autoral de evidência e consumo pedagógico rápido.
 
 ## Licenciamento
 
