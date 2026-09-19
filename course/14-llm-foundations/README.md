@@ -1,6 +1,6 @@
 # Aula 14 — LLM Foundations
 
-Status: `Draft`
+Status: `Available`
 
 Esta aula inaugura o bloco LLM Foundations do TIL e cobre a transição de classificação/representação para geração autoregressiva.
 
@@ -34,9 +34,9 @@ Esta aula inaugura o bloco LLM Foundations do TIL e cobre a transição de class
 - [x] completar os conceitos novos no Glossário Vivo;
 - [x] regenerar PT-BR, EN e HTML do glossário;
 - [x] validar execução headless do código do notebook com `nbconvert`;
-- [ ] publicar/executar no Kaggle;
+- [x] publicar/executar no Kaggle;
 - [x] revisar warnings da execução local;
-- [ ] revisar pedagogicamente em perspectiva de aluno.
+- [x] revisar pedagogicamente em perspectiva de aluno.
 
 Os experimentos determinísticos centrais (softmax, temperature, top-k, top-p e validação de structured output) já passaram por **execução sequencial local do código** sem erros.
 
@@ -68,4 +68,43 @@ python -m jupyter nbconvert
 
 A primeira execução revelou `MissingIDFieldWarning`. O notebook canônico foi corrigido com IDs estáveis em todas as 26 células e o teste foi repetido sem warnings.
 
-A validação local confirma o caminho de código e a compatibilidade headless. O gate final continua sendo uma execução `Run All` do artefato oficial no Kaggle.
+A validação local confirma o caminho de código e a compatibilidade headless. A execução `Run All` do artefato oficial no Kaggle foi confirmada com sucesso em 2026-09-19.
+
+
+## Kaggle validation — 2026-09-19
+
+Notebook: `TIL 14 LLM Foundations`
+
+Resultado informado da execução oficial no Kaggle:
+
+```text
+Run All
+→ COMPLETE
+→ notebook OK
+```
+
+Configuração publicada:
+
+```text
+Internet OFF
+GPU OFF
+sem datasets externos
+sem modelos externos
+```
+
+## Pedagogical review — PASS
+
+A revisão final em perspectiva de aluno confirmou:
+
+- objetivos explícitos;
+- motivação clara para a transição classificação → geração;
+- progressão conceitual sem introduzir RAG ou agentes prematuramente;
+- experimentos pequenos e observáveis;
+- exercícios coerentes com os conceitos apresentados;
+- padrão answer → hint → executable solution nos exercícios de código;
+- Glossário Vivo integrado;
+- seção de reprodutibilidade;
+- síntese e ponte explícita para Retrieval and Grounding;
+- possibilidade de concluir a aula sem instruções externas.
+
+Com os gates técnicos e pedagógicos concluídos, a Aula 14 passa a ser considerada **student-ready / Available**.
