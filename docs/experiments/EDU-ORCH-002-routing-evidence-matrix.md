@@ -253,7 +253,7 @@ Registrar:
 
 ## Acceptance Criteria
 1. pelo menos quatro thresholds executados;
-2. todas as linhas com `evidence_status = measured`;
+2. todas as linhas com `evidence_status = measured` quando o artefato original e a proveniência completa forem preservados; usar `measured-recovered` quando os valores forem recuperados de uma execução medida conforme o contrato de evidência;
 3. mesmo conjunto de teste do `EDU-ORCH-001`;
 4. F1 macro e accuracy calculados sobre a decisão final do cascade;
 5. escalation rate medido diretamente;
