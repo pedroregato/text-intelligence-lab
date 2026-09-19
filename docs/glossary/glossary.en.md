@@ -961,3 +961,143 @@ The cost associated with processing one input through the system, potentially in
 **Example:** If one thousand classifications cost R$ 12 in compute resources, the average cost per inference is R$ 0.012.
 
 **First lesson:** 13C
+
+## Large Language Model (LLM)
+
+A large-scale language model trained on large amounts of data to learn statistical language patterns and perform tasks such as text generation, transformation, and analysis.
+
+**In TIL:** In Lesson 14, an LLM is treated as a model class with broad generative capability, not as an automatic replacement for classifiers, encoders, or rules.
+
+**Example:** An LLM can receive an instruction and produce a natural-language summary.
+
+**First lesson:** 14
+
+## Autoregressive Model
+
+A model that produces a sequence by estimating the distribution of the next element from the elements already present in the context.
+
+**In TIL:** In Lesson 14, text generation is introduced as repeated next-token prediction: the selected token becomes part of the context for the next step.
+
+**Example:** After the context “The service was”, the model estimates probabilities for possible next tokens.
+
+**First lesson:** 14
+
+## Prompt
+
+Text or a set of instructions and data provided to a model as part of the context to guide a response or generation.
+
+**In TIL:** In Lesson 14, a prompt is treated as contextual model input, not as a guarantee of correct behavior.
+
+**Example:** “Summarize the support interaction in three sentences” is an instruction that can be part of a prompt.
+
+**First lesson:** 14
+
+## Context
+
+The set of tokens and information available to the model when it computes its next output.
+
+**In TIL:** In Lesson 14, context may include instructions, examples, user text, and tokens already generated.
+
+**Example:** An instruction, a document excerpt, and a partial answer can coexist in the context.
+
+**First lesson:** 14
+
+## Context Window
+
+The amount of context a model can consider in one execution, usually expressed as a number of tokens.
+
+**In TIL:** In Lesson 14, context window connects model capability with cost, latency, and the need to select relevant information.
+
+**Example:** A text longer than the available context window must be reduced, chunked, or handled through another strategy.
+
+**First lesson:** 14
+
+## Logits
+
+Unnormalized numerical scores produced by a model before being converted into probabilities.
+
+**In TIL:** In Lesson 14, didactic logits are transformed with softmax to visualize a distribution over possible next tokens.
+
+**Example:** The values 2.2, 1.5, and 0.7 can be logits associated with three candidate tokens.
+
+**First lesson:** 14
+
+## Generation
+
+The process of producing an output sequence from a model, often by choosing successive tokens conditioned on context.
+
+**In TIL:** In Lesson 14, generation is contrasted with classification to show that producing new text is a different capability from choosing a class.
+
+**Example:** Producing a free-form summary from a conversation is a generation task.
+
+**First lesson:** 14
+
+## Greedy Decoding
+
+A decoding strategy that selects the highest-probability token at each step.
+
+**In TIL:** In Lesson 14, greedy decoding provides a deterministic reference for comparison with sampling strategies.
+
+**Example:** If “great” has the highest probability, greedy decoding selects “great” as the next token.
+
+**First lesson:** 14
+
+## Sampling
+
+A selection strategy in which the next token is drawn from a probability distribution, possibly modified by decoding parameters.
+
+**In TIL:** In Lesson 14, sampling is used to show why two generations can diverge even from the same context.
+
+**Example:** Tokens with probabilities 0.6 and 0.3 can both be selected in different runs.
+
+**First lesson:** 14
+
+## Temperature
+
+A decoding parameter that changes the concentration of the distribution used to select tokens.
+
+**In TIL:** In Lesson 14, temperature is interpreted probabilistically: lower values tend to concentrate the distribution while higher values tend to spread it.
+
+**Example:** Applying softmax(logits / temperature) with a lower temperature can increase the dominance of the most likely token.
+
+**First lesson:** 14
+
+## Top-k
+
+A decoding strategy that restricts selection to the k highest-probability tokens at a generation step.
+
+**In TIL:** In Lesson 14, top-k shows how to limit the candidate set without confusing sampling restriction with a quality guarantee.
+
+**Example:** With top-k = 2, only the two most likely tokens remain candidates for the next step.
+
+**First lesson:** 14
+
+## Top-p
+
+A decoding strategy that keeps the smallest set of tokens whose cumulative probability reaches a threshold p.
+
+**In TIL:** In Lesson 14, top-p is introduced as an adaptive candidate filter, also known as nucleus sampling.
+
+**Example:** With top-p = 0.80, the set grows until cumulative probability reaches at least 80%.
+
+**First lesson:** 14
+
+## Structured Output
+
+An output generated according to an explicit structure or contract of fields, types, or format that can be validated programmatically.
+
+**In TIL:** In Lesson 14, structured output separates the ability to generate content from the need to verify that a response satisfies an expected schema.
+
+**Example:** A JSON object with sentiment and confidence fields can be validated after generation.
+
+**First lesson:** 14
+
+## Hallucination
+
+A term used for generated outputs that contain claims unsupported by the context, available evidence, or relevant facts, even when they sound plausible.
+
+**In TIL:** In Lesson 14, the term is used cautiously and does not replace analysis of specific failure types such as invalid format, constraint loss, or factual error.
+
+**Example:** A model stating a fact that is absent from a provided document can be treated as a form of hallucination.
+
+**First lesson:** 14

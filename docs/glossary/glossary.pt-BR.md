@@ -1153,3 +1153,171 @@ Custo associado ao processamento de uma entrada pelo sistema, podendo incluir co
 **Exemplo:** Se mil classificações custam R$ 12 em recursos computacionais, o custo médio por inferência é R$ 0,012.
 
 **Primeira aula:** 13C
+
+## Large Language Model (LLM)
+
+**English:** Large Language Model (LLM)
+
+Modelo de linguagem de grande escala treinado em grandes volumes de dados para aprender padrões estatísticos de linguagem e executar tarefas como geração, transformação e análise de texto.
+
+**No TIL:** Na Aula 14, LLM é tratado como uma classe de modelo com capacidade generativa ampla, não como substituto automático de classificadores, encoders ou regras.
+
+**Exemplo:** Um LLM pode receber uma instrução e produzir um resumo em linguagem natural.
+
+**Primeira aula:** 14
+
+## Modelo autoregressivo
+
+**English:** Autoregressive Model
+
+Modelo que produz uma sequência estimando a distribuição do próximo elemento com base nos elementos anteriores já presentes no contexto.
+
+**No TIL:** Na Aula 14, a geração textual é apresentada como repetição de next-token prediction: o token escolhido passa a integrar o contexto da próxima etapa.
+
+**Exemplo:** Após o contexto “O atendimento foi”, o modelo estima probabilidades para possíveis próximos tokens.
+
+**Primeira aula:** 14
+
+## Prompt
+
+**English:** Prompt
+
+Texto ou conjunto de instruções e dados fornecidos ao modelo como parte do contexto para orientar uma resposta ou geração.
+
+**No TIL:** Na Aula 14, prompt é tratado como entrada contextual do modelo, não como garantia de comportamento correto.
+
+**Exemplo:** “Resuma o atendimento em três frases” é uma instrução que pode compor um prompt.
+
+**Primeira aula:** 14
+
+## Contexto
+
+**English:** Context
+
+Conjunto de tokens e informações disponíveis ao modelo no momento em que ele calcula sua próxima saída.
+
+**No TIL:** Na Aula 14, o contexto pode incluir instruções, exemplos, texto do usuário e tokens já gerados.
+
+**Exemplo:** Uma instrução, um trecho de documento e a resposta parcial podem coexistir no contexto.
+
+**Primeira aula:** 14
+
+## Janela de contexto
+
+**English:** Context Window
+
+Limite de contexto que um modelo consegue considerar em uma execução, normalmente expresso em quantidade de tokens.
+
+**No TIL:** Na Aula 14, a janela de contexto conecta capacidade do modelo a custo, latência e necessidade de selecionar informação relevante.
+
+**Exemplo:** Um texto maior do que a janela disponível precisa ser reduzido, segmentado ou tratado por outra estratégia.
+
+**Primeira aula:** 14
+
+## Logits
+
+**English:** Logits
+
+Valores numéricos não normalizados produzidos por um modelo antes de serem convertidos em probabilidades.
+
+**No TIL:** Na Aula 14, logits didáticos são transformados por softmax para visualizar uma distribuição sobre possíveis próximos tokens.
+
+**Exemplo:** Os valores 2.2, 1.5 e 0.7 podem ser logits associados a três tokens candidatos.
+
+**Primeira aula:** 14
+
+## Geração
+
+**English:** Generation
+
+Processo de produzir uma sequência de saída a partir de um modelo, frequentemente escolhendo tokens sucessivos condicionados ao contexto.
+
+**No TIL:** Na Aula 14, geração é contrastada com classificação para mostrar que produzir texto novo é uma capacidade diferente de escolher uma classe.
+
+**Exemplo:** Produzir um resumo livre a partir de uma conversa é uma tarefa de geração.
+
+**Primeira aula:** 14
+
+## Greedy decoding
+
+**English:** Greedy Decoding
+
+Estratégia de decodificação que escolhe, em cada etapa, o token de maior probabilidade disponível.
+
+**No TIL:** Na Aula 14, greedy decoding serve como referência determinística para comparar com estratégias de sampling.
+
+**Exemplo:** Se “ótimo” tem a maior probabilidade, greedy decoding escolhe “ótimo” como próximo token.
+
+**Primeira aula:** 14
+
+## Sampling
+
+**English:** Sampling
+
+Estratégia de seleção em que o próximo token é sorteado de acordo com uma distribuição de probabilidades, possivelmente modificada por parâmetros de decodificação.
+
+**No TIL:** Na Aula 14, sampling é usado para mostrar por que duas gerações podem divergir mesmo a partir do mesmo contexto.
+
+**Exemplo:** Tokens com probabilidades 0,6 e 0,3 podem ambos ser escolhidos em execuções diferentes.
+
+**Primeira aula:** 14
+
+## Temperature
+
+**English:** Temperature
+
+Parâmetro de decodificação que altera a concentração da distribuição usada para selecionar tokens.
+
+**No TIL:** Na Aula 14, temperature é interpretada probabilisticamente: valores menores tendem a concentrar a distribuição e valores maiores tendem a espalhá-la.
+
+**Exemplo:** Aplicar softmax(logits / temperature) com temperature menor pode aumentar a dominância do token mais provável.
+
+**Primeira aula:** 14
+
+## Top-k
+
+**English:** Top-k
+
+Estratégia de decodificação que restringe a escolha aos k tokens de maior probabilidade em uma etapa de geração.
+
+**No TIL:** Na Aula 14, top-k mostra como limitar o conjunto de candidatos sem confundir restrição de amostragem com garantia de qualidade.
+
+**Exemplo:** Com top-k = 2, apenas os dois tokens mais prováveis permanecem candidatos ao próximo passo.
+
+**Primeira aula:** 14
+
+## Top-p
+
+**English:** Top-p
+
+Estratégia de decodificação que mantém o menor conjunto de tokens cuja probabilidade acumulada atinge um limiar p.
+
+**No TIL:** Na Aula 14, top-p é apresentado como filtro adaptativo de candidatos, também conhecido como nucleus sampling.
+
+**Exemplo:** Com top-p = 0,80, o conjunto é ampliado até que a soma das probabilidades alcance pelo menos 80%.
+
+**Primeira aula:** 14
+
+## Saída estruturada
+
+**English:** Structured Output
+
+Saída gerada segundo uma estrutura ou contrato explícito de campos, tipos ou formato que pode ser validado programaticamente.
+
+**No TIL:** Na Aula 14, structured output separa a capacidade de gerar conteúdo da necessidade de verificar se a resposta cumpre um schema esperado.
+
+**Exemplo:** Um objeto JSON com os campos sentiment e confidence pode ser validado após a geração.
+
+**Primeira aula:** 14
+
+## Alucinação
+
+**English:** Hallucination
+
+Termo usado para descrever saídas geradas que apresentam conteúdo não sustentado pelo contexto, pela evidência disponível ou pelos fatos relevantes, apesar de poderem parecer plausíveis.
+
+**No TIL:** Na Aula 14, o termo é usado com cautela e não substitui a análise de tipos específicos de falha, como formato inválido, perda de restrição ou erro factual.
+
+**Exemplo:** O modelo afirmar um dado inexistente em um documento fornecido pode ser tratado como uma forma de alucinação.
+
+**Primeira aula:** 14
