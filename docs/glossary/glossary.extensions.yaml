@@ -385,3 +385,195 @@ terms:
       til_context: "In Lesson 14, the term is used cautiously and does not replace analysis of specific failure types such as invalid format, constraint loss, or factual error."
       example: "A model stating a fact that is absent from a provided document can be treated as a form of hallucination."
     related: [generation, context, structured-output, evidence]
+
+  - id: information-retrieval
+    category: text-intelligence
+    lesson_first_seen: "15"
+    pt-BR:
+      term: "Retrieval"
+      english_term: "Information Retrieval"
+      definition: "Processo de localizar e ordenar itens potencialmente relevantes para uma consulta dentro de uma coleção."
+      til_context: "Na Aula 15, retrieval é estudado separadamente de generation para tornar observável como evidências são encontradas antes de qualquer resposta ser gerada."
+      example: "Buscar os documentos mais relevantes para a consulta “como solicitar reembolso”."
+    en:
+      term: "Information Retrieval"
+      definition: "The process of locating and ranking potentially relevant items for a query within a collection."
+      til_context: "In Lesson 15, retrieval is studied separately from generation so learners can observe how evidence is found before any response is generated."
+      example: "Finding the most relevant documents for the query “how to request a refund”."
+    related: [query, ranking, retrieval-score, evidence]
+
+  - id: query
+    category: text-intelligence
+    lesson_first_seen: "15"
+    pt-BR:
+      term: "Consulta"
+      english_term: "Query"
+      definition: "Representação da necessidade de informação usada para pesquisar uma coleção."
+      til_context: "Na Aula 15, a query é comparada com documentos ou chunks para produzir scores e um ranking."
+      example: "“qual é o prazo do reembolso” é uma query sobre o corpus."
+    en:
+      term: "Query"
+      definition: "A representation of an information need used to search a collection."
+      til_context: "In Lesson 15, a query is compared with documents or chunks to produce scores and a ranking."
+      example: "“what is the refund deadline” is a query over the corpus."
+    related: [information-retrieval, ranking, document, corpus]
+
+  - id: lexical-search
+    category: text-intelligence
+    lesson_first_seen: "15"
+    pt-BR:
+      term: "Busca lexical"
+      english_term: "Lexical Search"
+      definition: "Busca baseada principalmente na correspondência e ponderação de termos presentes na consulta e nos documentos."
+      til_context: "Na Aula 15, TF-IDF e cosine similarity formam a referência lexical para comparar query e documentos."
+      example: "Uma consulta contendo “reembolso” tende a recuperar documentos que também contêm esse termo."
+    en:
+      term: "Lexical Search"
+      definition: "Search based mainly on matching and weighting terms present in the query and documents."
+      til_context: "In Lesson 15, TF-IDF and cosine similarity provide the lexical reference for comparing a query with documents."
+      example: "A query containing “refund” tends to retrieve documents that also contain that term."
+    related: [information-retrieval, semantic-search, tf-idf, cosine-similarity]
+
+  - id: semantic-search
+    category: text-intelligence
+    lesson_first_seen: "15"
+    pt-BR:
+      term: "Busca semântica"
+      english_term: "Semantic Search"
+      definition: "Busca que compara representações vetoriais com o objetivo de aproximar itens por significado, não apenas por coincidência literal de termos."
+      til_context: "Na Aula 15, vetores densos didáticos ilustram como expressões lexicalmente diferentes podem ficar próximas em um espaço semântico."
+      example: "“recuperar senha” e “esqueci minha credencial” podem receber alta similaridade mesmo usando palavras diferentes."
+    en:
+      term: "Semantic Search"
+      definition: "Search that compares vector representations to bring items together by meaning rather than only by literal term overlap."
+      til_context: "In Lesson 15, didactic dense vectors illustrate how lexically different expressions can be close in a semantic space."
+      example: "“reset password” and “forgot my credential” can have high similarity even with different wording."
+    related: [information-retrieval, lexical-search, embedding, cosine-similarity]
+
+  - id: ranking
+    category: evaluation
+    lesson_first_seen: "15"
+    pt-BR:
+      term: "Ranking"
+      english_term: "Ranking"
+      definition: "Ordenação de candidatos segundo um score ou critério de relevância para uma consulta."
+      til_context: "Na Aula 15, o ranking torna visível quais documentos ou chunks são priorizados por um método de retrieval."
+      example: "D2 pode ocupar a posição 1 porque obteve o maior score para a query de reembolso."
+    en:
+      term: "Ranking"
+      definition: "An ordering of candidates according to a score or relevance criterion for a query."
+      til_context: "In Lesson 15, ranking makes visible which documents or chunks are prioritized by a retrieval method."
+      example: "D2 may rank first because it received the highest score for the refund query."
+    related: [retrieval-score, top-k-retrieval, information-retrieval, query]
+
+  - id: retrieval-score
+    category: evaluation
+    lesson_first_seen: "15"
+    pt-BR:
+      term: "Score de retrieval"
+      english_term: "Retrieval Score"
+      definition: "Valor produzido por um método de retrieval para representar a proximidade ou relevância relativa entre uma consulta e um item."
+      til_context: "Na Aula 15, cosine similarity é usada como score em exemplos lexicais e semânticos."
+      example: "Um score de 0,62 pode posicionar um documento acima de outro com 0,31 para a mesma query."
+    en:
+      term: "Retrieval Score"
+      definition: "A value produced by a retrieval method to represent the relative proximity or relevance between a query and an item."
+      til_context: "In Lesson 15, cosine similarity is used as a score in lexical and semantic examples."
+      example: "A score of 0.62 may rank a document above another with 0.31 for the same query."
+    related: [ranking, cosine-similarity, query, information-retrieval]
+
+  - id: top-k-retrieval
+    category: evaluation
+    lesson_first_seen: "15"
+    pt-BR:
+      term: "Top-k de retrieval"
+      english_term: "Top-k Retrieval"
+      definition: "Seleção dos k itens mais bem ranqueados por um sistema de retrieval."
+      til_context: "Na Aula 15, top-k de retrieval é explicitamente diferenciado do top-k usado na decodificação de geração."
+      example: "Top-k = 3 devolve os três documentos com maior score para a consulta."
+    en:
+      term: "Top-k Retrieval"
+      definition: "Selection of the k highest-ranked items returned by a retrieval system."
+      til_context: "In Lesson 15, retrieval top-k is explicitly distinguished from top-k used in generation decoding."
+      example: "Top-k = 3 returns the three documents with the highest scores for the query."
+    related: [ranking, retrieval-score, information-retrieval]
+
+  - id: chunk
+    category: text-intelligence
+    lesson_first_seen: "15"
+    pt-BR:
+      term: "Chunk"
+      english_term: "Chunk"
+      definition: "Unidade segmentada de um documento usada como item independente para processamento ou recuperação."
+      til_context: "Na Aula 15, sentenças são usadas como chunks para observar como a granularidade altera o ranking."
+      example: "Uma sentença sobre prazo de reembolso pode ser um chunk separado de outras informações do mesmo documento."
+    en:
+      term: "Chunk"
+      definition: "A segmented unit of a document used as an independent item for processing or retrieval."
+      til_context: "In Lesson 15, sentences are used as chunks to observe how granularity changes ranking."
+      example: "A sentence about a refund deadline can be a chunk separate from other information in the same document."
+    related: [chunking, overlap, document, information-retrieval]
+
+  - id: chunking
+    category: engineering
+    lesson_first_seen: "15"
+    pt-BR:
+      term: "Chunking"
+      english_term: "Chunking"
+      definition: "Processo de dividir documentos em unidades menores para indexação, recuperação ou processamento."
+      til_context: "Na Aula 15, chunking mostra o trade-off entre contexto amplo e precisão local na recuperação."
+      example: "Dividir um documento longo em sentenças antes de calcular scores de retrieval."
+    en:
+      term: "Chunking"
+      definition: "The process of splitting documents into smaller units for indexing, retrieval, or processing."
+      til_context: "In Lesson 15, chunking shows the trade-off between broad context and local retrieval precision."
+      example: "Splitting a long document into sentences before calculating retrieval scores."
+    related: [chunk, overlap, information-retrieval, trade-off]
+
+  - id: overlap
+    category: engineering
+    lesson_first_seen: "15"
+    pt-BR:
+      term: "Overlap"
+      english_term: "Overlap"
+      definition: "Trecho compartilhado entre chunks adjacentes para reduzir perda de contexto nas fronteiras de segmentação."
+      til_context: "Na Aula 15, overlap é introduzido conceitualmente como uma decisão de chunking que aumenta redundância e custo do índice."
+      example: "Dois chunks consecutivos podem compartilhar a última sentença do primeiro como primeira sentença do segundo."
+    en:
+      term: "Overlap"
+      definition: "Content shared between adjacent chunks to reduce context loss at segmentation boundaries."
+      til_context: "In Lesson 15, overlap is introduced conceptually as a chunking decision that increases redundancy and index cost."
+      example: "Two consecutive chunks may share the last sentence of the first as the first sentence of the second."
+    related: [chunk, chunking, cost-per-inference, trade-off]
+
+  - id: grounding
+    category: engineering
+    lesson_first_seen: "15"
+    pt-BR:
+      term: "Grounding"
+      english_term: "Grounding"
+      definition: "Prática de vincular uma resposta, afirmação ou decisão a evidências explicitamente disponíveis e recuperáveis."
+      til_context: "Na Aula 15, grounding é demonstrado sem LLM: a resposta determinística é construída apenas a partir do evidence pack recuperado."
+      example: "Responder o prazo de reembolso citando o chunk que contém exatamente essa informação."
+    en:
+      term: "Grounding"
+      definition: "The practice of tying a response, claim, or decision to explicitly available and retrievable evidence."
+      til_context: "In Lesson 15, grounding is demonstrated without an LLM: the deterministic answer is built only from the retrieved evidence pack."
+      example: "Answering the refund deadline while pointing to the chunk that explicitly contains that information."
+    related: [evidence-pack, evidence, information-retrieval, chunk]
+
+  - id: evidence-pack
+    category: engineering
+    lesson_first_seen: "15"
+    pt-BR:
+      term: "Evidence pack"
+      english_term: "Evidence Pack"
+      definition: "Conjunto organizado de evidências recuperadas e seus metadados preparado para sustentar uma resposta, decisão ou etapa posterior do sistema."
+      til_context: "Na Aula 15, o evidence pack contém query, identificador do trecho, texto recuperado e retrieval score."
+      example: "Um objeto com query, C3, o texto do chunk e seu score de similaridade."
+    en:
+      term: "Evidence Pack"
+      definition: "An organized set of retrieved evidence and metadata prepared to support a response, decision, or later system stage."
+      til_context: "In Lesson 15, the evidence pack contains the query, chunk identifier, retrieved text, and retrieval score."
+      example: "An object containing the query, C3, the chunk text, and its similarity score."
+    related: [grounding, evidence, retrieval-score, information-retrieval]
