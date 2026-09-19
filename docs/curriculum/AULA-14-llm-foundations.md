@@ -301,7 +301,7 @@ Antes de a aula ser marcada como student-ready, o Glossário Vivo deve conter, n
 
 Termos já existentes devem ser reutilizados; não criar duplicatas semânticas.
 
-Após atualizar `docs/glossary/glossary.yaml`, regenerar:
+Após atualizar a base estruturada ou as extensões curriculares (`docs/glossary/glossary.yaml` / `docs/glossary/glossary.extensions.yaml`), regenerar:
 
 ```text
 glossary.pt-BR.md
