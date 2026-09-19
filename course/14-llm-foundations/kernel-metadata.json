@@ -1,0 +1,14 @@
+{
+  "id": "pedrogentil/til-14-llm-foundations",
+  "title": "TIL 14 LLM Foundations",
+  "code_file": "14-til-llm-foundations.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "false",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
