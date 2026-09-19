@@ -29,13 +29,15 @@ Esta aula inaugura o bloco LLM Foundations do TIL e cobre a transição de class
 - frameworks de orquestração;
 - APIs proprietárias.
 
-## Gates pendentes antes de student-ready
+## Gates antes de student-ready
 
-1. completar os conceitos novos no Glossário Vivo;
-2. regenerar PT-BR, EN e HTML do glossário;
-3. validar execução headless;
-4. publicar/executar no Kaggle;
-5. revisar warnings;
-6. revisar pedagogicamente em perspectiva de aluno.
+- [x] completar os conceitos novos no Glossário Vivo;
+- [x] regenerar PT-BR, EN e HTML do glossário;
+- [ ] validar execução headless do notebook completo;
+- [ ] publicar/executar no Kaggle;
+- [ ] revisar warnings da execução;
+- [ ] revisar pedagogicamente em perspectiva de aluno.
+
+Os experimentos determinísticos centrais (softmax, temperature, top-k, top-p e validação de structured output) já passaram por validação lógica isolada. Isso não substitui a execução headless integral do notebook.
 
 Especificação: `docs/curriculum/AULA-14-llm-foundations.md`.
