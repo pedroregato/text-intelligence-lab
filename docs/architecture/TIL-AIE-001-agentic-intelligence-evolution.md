@@ -194,7 +194,7 @@ A sequência abaixo é arquitetural e pode ser refinada antes da criação dos n
 
 ### Bloco A — LLM Foundations
 
-Primeira unidade: **Aula 14 — LLM Foundations: da classificação à geração** (`Draft`).
+Primeira unidade: **Aula 14 — LLM Foundations: da classificação à geração** (`Available`).
 
 Especificação: `docs/curriculum/AULA-14-llm-foundations.md`.
 
