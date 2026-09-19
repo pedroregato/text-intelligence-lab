@@ -103,4 +103,6 @@ Foram produzidas duas linhas com `evidence_status = measured`:
 Resultado central: o Transformer apresentou maior qualidade, enquanto o baseline clássico apresentou latência e proxy computacional muito menores no ambiente medido.
 
 ## Next Step
-Executar a Aula 13C com `data/model-evidence/til-model-evidence.csv` e confirmar a transição de `DEMO` para `EVIDENCE`.
+O papel do `EDU-ORCH-001` está concluído: produzir evidência medida de modelos isolados. A Aula 13C já consome `data/model-evidence/til-model-evidence.csv` em modo `EVIDENCE`.
+
+A evolução passa a ocorrer na trilha AUTHOR / EVIDENCE, ampliando a matriz de modelos e condições de execução sem transferir treinamento longo para a aula do aluno.
