@@ -207,14 +207,18 @@ O `EDU-ORCH-002` permanece como trilha **AUTHOR / EVIDENCE**, enquanto a Aula 13
 
 ## Glossário Vivo
 
-O curso possui um glossário bilíngue PT-BR/EN, mantido a partir de uma fonte canônica estruturada:
+O curso possui um glossário bilíngue PT-BR/EN, mantido a partir de fontes estruturadas:
 
 ```text
-docs/glossary/glossary.yaml
-→ glossary.pt-BR.md
-→ glossary.en.md
-→ web/index.html
+glossary.yaml
++ glossary.extensions.yaml
+        ↓
+glossary.pt-BR.md
+glossary.en.md
+web/index.html
 ```
+
+`glossary.yaml` mantém a base estável; `glossary.extensions.yaml` recebe pequenas adições curriculares. O gerador mescla as duas fontes e rejeita IDs duplicados.
 
 Os notebooks apontam para o glossário nos conceitos centrais de cada aula.
 
