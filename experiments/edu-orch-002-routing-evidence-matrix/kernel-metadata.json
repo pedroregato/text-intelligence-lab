@@ -1,0 +1,18 @@
+{
+    "id": "pedrogentil/til-edu-orch-002-routing-evidence-matrix",
+    "title": "TIL EDU ORCH 002 Routing Evidence Matrix",
+    "code_file": "edu-orch-002-routing-evidence-matrix.ipynb",
+    "language": "python",
+    "kernel_type": "notebook",
+    "is_private": false,
+    "enable_gpu": false,
+    "enable_internet": false,
+    "dataset_sources": [
+        "fredericods/ptbr-sentiment-analysis-datasets"
+    ],
+    "competition_sources": [],
+    "kernel_sources": [],
+    "model_sources": [
+        "goddiao/distilbert-base-multilingual-cased/pyTorch/default/1"
+    ]
+}
