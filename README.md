@@ -51,7 +51,7 @@ Ler
 | 13 | Métricas e indicadores: da fórmula à decisão |
 | 13B | Metric Scenario Lab: cenários, thresholds e custos de erro |
 | 13C | Model Routing, Orchestration e Utility: sistemas compostos de IA |
-| 14 | LLM Foundations: da classificação à geração — `Draft` |
+| 14 | LLM Foundations: da classificação à geração — `Available` |
 
 A próxima unidade especificada é a **Aula 14 — LLM Foundations: da classificação à geração**. Depois dela, a trilha avança para Retrieval/Grounding, Tools/Workflows e Agentic Systems.
 
