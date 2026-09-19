@@ -1,7 +1,11 @@
 # EDU-ORCH-002 — Routing Evidence Matrix
 
 ## Status
-**Planned**
+**Completed — recovered evidence artifact**
+
+A execução experimental foi concluída no Kaggle e produziu quatro cascades medidos. O CSV canônico foi posteriormente reconstruído a partir do output observado da execução porque o artefato original em `/kaggle/working` não permaneceu disponível após o timeout da sessão.
+
+Por isso, as linhas versionadas usam `evidence_status = measured-recovered`: os valores são oriundos da execução medida, mas `measured_at` e a identificação exata de hardware não puderam ser recuperados do artefato original.
 
 ## Objective
 Medir, de forma reproduzível, uma arquitetura de routing/cascade que combine os dois sistemas já medidos no `EDU-ORCH-001`:
@@ -269,7 +273,7 @@ O experimento não deve ser considerado concluído se:
 - o CSV não distinguir evidência medida de estimativa.
 
 ## Experimental Notebook
-Planejado:
+Implementado e versionado:
 
 ```text
 experiments/edu-orch-002-routing-evidence-matrix/
@@ -297,5 +301,80 @@ taxa de escalonamento
 utility
 ```
 
+## Results
+
+A execução medida no conjunto de teste (`n = 3807`) produziu:
+
+| Sistema | Threshold | F1 macro | Accuracy | Escalation rate | Runtime proxy / 1000 | Latência média |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| `cascade_t060` | 0.60 | 0.917769 | 0.930654 | 3.94% | 4.49 s | 5.13 ms |
+| `cascade_t070` | 0.70 | 0.924769 | 0.936433 | 8.25% | 8.97 s | 12.20 ms |
+| `cascade_t080` | 0.80 | 0.932983 | 0.943262 | 14.42% | 15.42 s | 22.28 ms |
+| `cascade_t090` | 0.90 | 0.931841 | 0.942212 | 23.46% | 25.15 s | 34.01 ms |
+
+O melhor F1 observado entre os quatro thresholds ocorreu em `0.80`. O aumento de `0.80` para `0.90` elevou escalonamento, runtime e latência, mas não melhorou a qualidade observada.
+
+Isso confirma empiricamente um ponto central da Aula 13C:
+
+```text
+mais escalonamento
+≠
+mais qualidade
+≠
+mais utility automaticamente
+```
+
+A distribuição de latência também mostrou comportamento bimodal: a maioria dos casos atendidos pelo baseline permaneceu rápida, enquanto os casos escalados incorporaram o custo do Transformer.
+
+## Evidence Artifact
+
+Arquivo canônico:
+
+```text
+data/model-evidence/til-routing-evidence.csv
+```
+
+Status das linhas:
+
+```text
+measured-recovered
+```
+
+Esse status é intencional. Ele diferencia:
+
+- a origem dos números, que foi uma execução medida;
+- a forma de recuperação do artefato, reconstruído a partir do output observado;
+- a perda de parte da proveniência originalmente planejada, especialmente `measured_at` e hardware exato.
+
+Nenhuma métrica foi interpolada para compor o CSV recuperado.
+
+## Pedagogical Architecture
+
+O experimento permanece como trilha **AUTHOR / EVIDENCE**. A Aula 13C opera como trilha **STUDENT** e consome a evidência pronta.
+
+```text
+EDU-ORCH-002
+→ produz evidência
+→ execução longa e auditável
+
+Aula 13C
+→ consome evidência
+→ execução rápida
+→ interpretação e decisão
+```
+
+Princípio adotado:
+
+> **Experimentos produzem evidência; aulas consomem evidência.**
+
+O treinamento longo não é requisito para o aluno. Ele permanece disponível para reprodução científica e manutenção da evidência.
+
+## Acceptance Criteria — Outcome
+
+A execução satisfez os critérios funcionais centrais: quatro thresholds, mesmo conjunto de teste, F1 macro, accuracy, escalation rate, latência end-to-end e runtime proxy medidos sem interpolação.
+
+A ressalva de proveniência é explicitamente registrada no artefato recuperado: o timestamp da medição e o hardware exato não foram preservados no CSV final. Por isso o status é `measured-recovered`, e não `measured`.
+
 ## Next Step
-Construir o notebook experimental headless-first, reutilizando a preparação de dados, o baseline e o Transformer do `EDU-ORCH-001`, sem copiar resultados como se fossem novas medições.
+
+Usar a matriz medida na Aula 13C e, em uma futura execução autoral, persistir também o Transformer fine-tuned e os artefatos redundantes de evidência para eliminar a necessidade de repetir treinamento apenas para recuperar outputs.
