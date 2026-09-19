@@ -56,31 +56,29 @@ A trilha continua em desenvolvimento com tarefas aplicadas de NLP, LLMs, RAG, ag
 
 ## Organização conceitual
 
+O TIL passa a organizar sua evolução em quatro macrocamadas:
+
 ```text
-Módulo I — Texto como dado
-Aulas 0–2
+I — Text Intelligence
+→ texto, representações, features e tarefas
 
-Módulo II — Representações clássicas e classificação
-Aulas 3–8
+II — Model Engineering
+→ modelos, treinamento, comparação e avaliação
 
-Módulo III — Representações distribuídas
-Aula 9
+III — Intelligent Orchestration
+→ routing, quality gates, cascades e utility
 
-Módulo IV — Transformers aplicados
-Aulas 10–12
-
-Módulo V — Avaliação, métricas e decisões de engenharia
-Aula 13 + Labs 13B e 13C
-
-Módulo VI — LLMs, RAG, agentes e sistemas compostos
-Em desenvolvimento
-
-Módulo VII — Engenharia, observabilidade e produção
-Em planejamento
-
-Capstone — Kaggle
-Em planejamento
+IV — Agentic Systems
+→ tools, workflows, execução e autonomia
 ```
+
+A **Aula 13C** é o ponto formal de transição entre Model Engineering e Intelligent Orchestration e prepara a entrada em Agentic Systems.
+
+Observabilidade, segurança, governança, reprodutibilidade, custo, latência, avaliação e supervisão humana são dimensões transversais, não apenas um módulo final.
+
+A especificação arquitetural está registrada em `docs/architecture/TIL-AIE-001-agentic-intelligence-evolution.md`.
+
+Capstone — Kaggle permanece como etapa integradora futura.
 
 ## Da avaliação de modelos à avaliação de sistemas
 
@@ -318,7 +316,7 @@ O **EDU-ORCH-002** também foi concluído, medindo diretamente quatro configura�
 
 A Aula 13C também passou a cobrir a transição de **Model Intelligence para Agentic Systems**, conectando routing, orchestration, tools, computer use, observability, human oversight e utility.
 
-O próximo marco técnico é ampliar a matriz de evidências com novos modelos, hardwares e tarefas, preservando a separação entre produção autoral de evidência e consumo pedagógico rápido.
+O próximo movimento curricular é avançar de Intelligent Orchestration para LLM Foundations, Retrieval/Grounding, Tools/Workflows e Agentic Systems, preservando o princípio de que toda complexidade adicional deve ser justificada por evidência.
 
 ## Licenciamento
 
