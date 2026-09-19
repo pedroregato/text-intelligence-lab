@@ -135,17 +135,25 @@ O núcleo da primeira versão deve ser executável com `Internet OFF` e sem API 
 
 ### Bloco B — Retrieval and Grounding
 
-Objetivo: separar conhecimento paramétrico, recuperação e geração.
+**Próxima unidade oficial: Aula 15 — Retrieval, Semantic Search and Grounding**  
+Status: `Draft`  
+Especificação: `docs/curriculum/AULA-15-retrieval-semantic-search-grounding.md`
 
-Tópicos candidatos:
+Objetivo: separar retrieval de generation antes de construir RAG.
 
-- embeddings de sentença;
+A Aula 15 cobre:
+
+- query, corpus, score e ranking;
+- lexical retrieval com TF-IDF;
 - semantic search;
-- retrieval;
+- cosine similarity;
+- top-k de retrieval;
 - chunking;
-- RAG;
 - grounding;
-- avaliação de retrieval e resposta.
+- evidence pack;
+- failure modes de retrieval.
+
+A primeira versão usa `Internet OFF`, TF-IDF real e vetores semânticos didáticos explicitamente marcados como proxies. RAG completo fica para a Aula 16.
 
 ### Bloco C — Tools and Workflows
 
