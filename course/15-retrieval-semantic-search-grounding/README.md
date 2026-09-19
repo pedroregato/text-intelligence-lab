@@ -33,11 +33,55 @@ GPU OFF
 
 ## Gates antes de student-ready
 
-- [ ] Glossário Vivo atualizado;
-- [ ] PT-BR / EN / HTML regenerados;
-- [ ] execução headless integral;
-- [ ] warnings revisados;
+- [x] Glossário Vivo atualizado;
+- [x] PT-BR / EN / HTML regenerados;
+- [x] execução headless integral;
+- [x] warnings revisados;
 - [ ] execução Kaggle;
-- [ ] revisão pedagógica final.
+- [x] revisão pedagógica final.
 
 Especificação: `docs/curriculum/AULA-15-retrieval-semantic-search-grounding.md`.
+
+
+## Headless validation — 2026-09-19
+
+O notebook canônico da `main` foi executado integralmente com `nbconvert ExecutePreprocessor`.
+
+Resultado:
+
+```text
+34 células
+→ COMPLETE
+→ 0 erros
+→ 0 warnings do notebook
+```
+
+A execução confirmou:
+
+- lexical retrieval com TF-IDF;
+- cosine similarity;
+- ranking e top-k;
+- semantic search com vetores didáticos;
+- chunking;
+- evidence pack;
+- grounding determinístico;
+- soluções executáveis dos exercícios.
+
+## Pedagogical review — PASS
+
+A revisão em perspectiva de aluno confirmou:
+
+- ponte clara entre Aula 14 e retrieval;
+- retrieval separado de generation;
+- distinção explícita entre lexical search e semantic search;
+- vetores semânticos identificados como proxies didáticos;
+- top-k de retrieval diferenciado de top-k de geração;
+- chunking introduzido antes de RAG;
+- grounding demonstrado sem LLM;
+- failure modes discutidos;
+- exercícios coerentes e progressivos;
+- Glossário Vivo integrado;
+- seção de reprodutibilidade;
+- ponte explícita para a futura Aula 16 — RAG.
+
+A aula permanece `Draft` até a execução oficial no Kaggle.
