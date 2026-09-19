@@ -161,3 +161,227 @@ terms:
       til_context: In 13C, cost may be provided as currency or a relative index as long as the unit is consistent across compared systems.
       example: If one thousand classifications cost R$ 12 in compute resources, the average cost per inference is R$ 0.012.
     related: [utility-function, latency, model-routing, trade-off]
+
+  - id: large-language-model
+    category: machine-learning
+    lesson_first_seen: "14"
+    pt-BR:
+      term: "Large Language Model (LLM)"
+      english_term: "Large Language Model (LLM)"
+      definition: "Modelo de linguagem de grande escala treinado em grandes volumes de dados para aprender padrões estatísticos de linguagem e executar tarefas como geração, transformação e análise de texto."
+      til_context: "Na Aula 14, LLM é tratado como uma classe de modelo com capacidade generativa ampla, não como substituto automático de classificadores, encoders ou regras."
+      example: "Um LLM pode receber uma instrução e produzir um resumo em linguagem natural."
+    en:
+      term: "Large Language Model (LLM)"
+      definition: "A large-scale language model trained on large amounts of data to learn statistical language patterns and perform tasks such as text generation, transformation, and analysis."
+      til_context: "In Lesson 14, an LLM is treated as a model class with broad generative capability, not as an automatic replacement for classifiers, encoders, or rules."
+      example: "An LLM can receive an instruction and produce a natural-language summary."
+    related: [autoregressive-model, generation, prompt, context-window]
+
+  - id: autoregressive-model
+    category: machine-learning
+    lesson_first_seen: "14"
+    pt-BR:
+      term: "Modelo autoregressivo"
+      english_term: "Autoregressive Model"
+      definition: "Modelo que produz uma sequência estimando a distribuição do próximo elemento com base nos elementos anteriores já presentes no contexto."
+      til_context: "Na Aula 14, a geração textual é apresentada como repetição de next-token prediction: o token escolhido passa a integrar o contexto da próxima etapa."
+      example: "Após o contexto “O atendimento foi”, o modelo estima probabilidades para possíveis próximos tokens."
+    en:
+      term: "Autoregressive Model"
+      definition: "A model that produces a sequence by estimating the distribution of the next element from the elements already present in the context."
+      til_context: "In Lesson 14, text generation is introduced as repeated next-token prediction: the selected token becomes part of the context for the next step."
+      example: "After the context “The service was”, the model estimates probabilities for possible next tokens."
+    related: [large-language-model, generation, token, context]
+
+  - id: prompt
+    category: text-intelligence
+    lesson_first_seen: "14"
+    pt-BR:
+      term: "Prompt"
+      english_term: "Prompt"
+      definition: "Texto ou conjunto de instruções e dados fornecidos ao modelo como parte do contexto para orientar uma resposta ou geração."
+      til_context: "Na Aula 14, prompt é tratado como entrada contextual do modelo, não como garantia de comportamento correto."
+      example: "“Resuma o atendimento em três frases” é uma instrução que pode compor um prompt."
+    en:
+      term: "Prompt"
+      definition: "Text or a set of instructions and data provided to a model as part of the context to guide a response or generation."
+      til_context: "In Lesson 14, a prompt is treated as contextual model input, not as a guarantee of correct behavior."
+      example: "“Summarize the support interaction in three sentences” is an instruction that can be part of a prompt."
+    related: [context, context-window, generation, large-language-model]
+
+  - id: context
+    category: text-intelligence
+    lesson_first_seen: "14"
+    pt-BR:
+      term: "Contexto"
+      english_term: "Context"
+      definition: "Conjunto de tokens e informações disponíveis ao modelo no momento em que ele calcula sua próxima saída."
+      til_context: "Na Aula 14, o contexto pode incluir instruções, exemplos, texto do usuário e tokens já gerados."
+      example: "Uma instrução, um trecho de documento e a resposta parcial podem coexistir no contexto."
+    en:
+      term: "Context"
+      definition: "The set of tokens and information available to the model when it computes its next output."
+      til_context: "In Lesson 14, context may include instructions, examples, user text, and tokens already generated."
+      example: "An instruction, a document excerpt, and a partial answer can coexist in the context."
+    related: [prompt, context-window, token, autoregressive-model]
+
+  - id: context-window
+    category: production
+    lesson_first_seen: "14"
+    pt-BR:
+      term: "Janela de contexto"
+      english_term: "Context Window"
+      definition: "Limite de contexto que um modelo consegue considerar em uma execução, normalmente expresso em quantidade de tokens."
+      til_context: "Na Aula 14, a janela de contexto conecta capacidade do modelo a custo, latência e necessidade de selecionar informação relevante."
+      example: "Um texto maior do que a janela disponível precisa ser reduzido, segmentado ou tratado por outra estratégia."
+    en:
+      term: "Context Window"
+      definition: "The amount of context a model can consider in one execution, usually expressed as a number of tokens."
+      til_context: "In Lesson 14, context window connects model capability with cost, latency, and the need to select relevant information."
+      example: "A text longer than the available context window must be reduced, chunked, or handled through another strategy."
+    related: [context, token, cost-per-inference, latency]
+
+  - id: logits
+    category: machine-learning
+    lesson_first_seen: "14"
+    pt-BR:
+      term: "Logits"
+      english_term: "Logits"
+      definition: "Valores numéricos não normalizados produzidos por um modelo antes de serem convertidos em probabilidades."
+      til_context: "Na Aula 14, logits didáticos são transformados por softmax para visualizar uma distribuição sobre possíveis próximos tokens."
+      example: "Os valores 2.2, 1.5 e 0.7 podem ser logits associados a três tokens candidatos."
+    en:
+      term: "Logits"
+      definition: "Unnormalized numerical scores produced by a model before being converted into probabilities."
+      til_context: "In Lesson 14, didactic logits are transformed with softmax to visualize a distribution over possible next tokens."
+      example: "The values 2.2, 1.5, and 0.7 can be logits associated with three candidate tokens."
+    related: [generation, sampling, temperature, token]
+
+  - id: generation
+    category: text-intelligence
+    lesson_first_seen: "14"
+    pt-BR:
+      term: "Geração"
+      english_term: "Generation"
+      definition: "Processo de produzir uma sequência de saída a partir de um modelo, frequentemente escolhendo tokens sucessivos condicionados ao contexto."
+      til_context: "Na Aula 14, geração é contrastada com classificação para mostrar que produzir texto novo é uma capacidade diferente de escolher uma classe."
+      example: "Produzir um resumo livre a partir de uma conversa é uma tarefa de geração."
+    en:
+      term: "Generation"
+      definition: "The process of producing an output sequence from a model, often by choosing successive tokens conditioned on context."
+      til_context: "In Lesson 14, generation is contrasted with classification to show that producing new text is a different capability from choosing a class."
+      example: "Producing a free-form summary from a conversation is a generation task."
+    related: [autoregressive-model, large-language-model, sampling, greedy-decoding]
+
+  - id: greedy-decoding
+    category: machine-learning
+    lesson_first_seen: "14"
+    pt-BR:
+      term: "Greedy decoding"
+      english_term: "Greedy Decoding"
+      definition: "Estratégia de decodificação que escolhe, em cada etapa, o token de maior probabilidade disponível."
+      til_context: "Na Aula 14, greedy decoding serve como referência determinística para comparar com estratégias de sampling."
+      example: "Se “ótimo” tem a maior probabilidade, greedy decoding escolhe “ótimo” como próximo token."
+    en:
+      term: "Greedy Decoding"
+      definition: "A decoding strategy that selects the highest-probability token at each step."
+      til_context: "In Lesson 14, greedy decoding provides a deterministic reference for comparison with sampling strategies."
+      example: "If “great” has the highest probability, greedy decoding selects “great” as the next token."
+    related: [generation, sampling, logits, temperature]
+
+  - id: sampling
+    category: machine-learning
+    lesson_first_seen: "14"
+    pt-BR:
+      term: "Sampling"
+      english_term: "Sampling"
+      definition: "Estratégia de seleção em que o próximo token é sorteado de acordo com uma distribuição de probabilidades, possivelmente modificada por parâmetros de decodificação."
+      til_context: "Na Aula 14, sampling é usado para mostrar por que duas gerações podem divergir mesmo a partir do mesmo contexto."
+      example: "Tokens com probabilidades 0,6 e 0,3 podem ambos ser escolhidos em execuções diferentes."
+    en:
+      term: "Sampling"
+      definition: "A selection strategy in which the next token is drawn from a probability distribution, possibly modified by decoding parameters."
+      til_context: "In Lesson 14, sampling is used to show why two generations can diverge even from the same context."
+      example: "Tokens with probabilities 0.6 and 0.3 can both be selected in different runs."
+    related: [generation, temperature, top-k, top-p]
+
+  - id: temperature
+    category: machine-learning
+    lesson_first_seen: "14"
+    pt-BR:
+      term: "Temperature"
+      english_term: "Temperature"
+      definition: "Parâmetro de decodificação que altera a concentração da distribuição usada para selecionar tokens."
+      til_context: "Na Aula 14, temperature é interpretada probabilisticamente: valores menores tendem a concentrar a distribuição e valores maiores tendem a espalhá-la."
+      example: "Aplicar softmax(logits / temperature) com temperature menor pode aumentar a dominância do token mais provável."
+    en:
+      term: "Temperature"
+      definition: "A decoding parameter that changes the concentration of the distribution used to select tokens."
+      til_context: "In Lesson 14, temperature is interpreted probabilistically: lower values tend to concentrate the distribution while higher values tend to spread it."
+      example: "Applying softmax(logits / temperature) with a lower temperature can increase the dominance of the most likely token."
+    related: [sampling, logits, greedy-decoding, top-p]
+
+  - id: top-k
+    category: machine-learning
+    lesson_first_seen: "14"
+    pt-BR:
+      term: "Top-k"
+      english_term: "Top-k"
+      definition: "Estratégia de decodificação que restringe a escolha aos k tokens de maior probabilidade em uma etapa de geração."
+      til_context: "Na Aula 14, top-k mostra como limitar o conjunto de candidatos sem confundir restrição de amostragem com garantia de qualidade."
+      example: "Com top-k = 2, apenas os dois tokens mais prováveis permanecem candidatos ao próximo passo."
+    en:
+      term: "Top-k"
+      definition: "A decoding strategy that restricts selection to the k highest-probability tokens at a generation step."
+      til_context: "In Lesson 14, top-k shows how to limit the candidate set without confusing sampling restriction with a quality guarantee."
+      example: "With top-k = 2, only the two most likely tokens remain candidates for the next step."
+    related: [sampling, top-p, temperature, generation]
+
+  - id: top-p
+    category: machine-learning
+    lesson_first_seen: "14"
+    pt-BR:
+      term: "Top-p"
+      english_term: "Top-p"
+      definition: "Estratégia de decodificação que mantém o menor conjunto de tokens cuja probabilidade acumulada atinge um limiar p."
+      til_context: "Na Aula 14, top-p é apresentado como filtro adaptativo de candidatos, também conhecido como nucleus sampling."
+      example: "Com top-p = 0,80, o conjunto é ampliado até que a soma das probabilidades alcance pelo menos 80%."
+    en:
+      term: "Top-p"
+      definition: "A decoding strategy that keeps the smallest set of tokens whose cumulative probability reaches a threshold p."
+      til_context: "In Lesson 14, top-p is introduced as an adaptive candidate filter, also known as nucleus sampling."
+      example: "With top-p = 0.80, the set grows until cumulative probability reaches at least 80%."
+    related: [sampling, top-k, temperature, generation]
+
+  - id: structured-output
+    category: engineering
+    lesson_first_seen: "14"
+    pt-BR:
+      term: "Saída estruturada"
+      english_term: "Structured Output"
+      definition: "Saída gerada segundo uma estrutura ou contrato explícito de campos, tipos ou formato que pode ser validado programaticamente."
+      til_context: "Na Aula 14, structured output separa a capacidade de gerar conteúdo da necessidade de verificar se a resposta cumpre um schema esperado."
+      example: "Um objeto JSON com os campos sentiment e confidence pode ser validado após a geração."
+    en:
+      term: "Structured Output"
+      definition: "An output generated according to an explicit structure or contract of fields, types, or format that can be validated programmatically."
+      til_context: "In Lesson 14, structured output separates the ability to generate content from the need to verify that a response satisfies an expected schema."
+      example: "A JSON object with sentiment and confidence fields can be validated after generation."
+    related: [generation, large-language-model, prompt]
+
+  - id: hallucination
+    category: evaluation
+    lesson_first_seen: "14"
+    pt-BR:
+      term: "Alucinação"
+      english_term: "Hallucination"
+      definition: "Termo usado para descrever saídas geradas que apresentam conteúdo não sustentado pelo contexto, pela evidência disponível ou pelos fatos relevantes, apesar de poderem parecer plausíveis."
+      til_context: "Na Aula 14, o termo é usado com cautela e não substitui a análise de tipos específicos de falha, como formato inválido, perda de restrição ou erro factual."
+      example: "O modelo afirmar um dado inexistente em um documento fornecido pode ser tratado como uma forma de alucinação."
+    en:
+      term: "Hallucination"
+      definition: "A term used for generated outputs that contain claims unsupported by the context, available evidence, or relevant facts, even when they sound plausible."
+      til_context: "In Lesson 14, the term is used cautiously and does not replace analysis of specific failure types such as invalid format, constraint loss, or factual error."
+      example: "A model stating a fact that is absent from a provided document can be treated as a form of hallucination."
+    related: [generation, context, structured-output, evidence]
