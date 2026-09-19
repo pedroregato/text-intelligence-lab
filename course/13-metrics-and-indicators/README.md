@@ -37,33 +37,35 @@ A versão atual foi validada com sucesso em:
 
 A interatividade é opcional e acionada explicitamente pelo aluno. O notebook não depende de cliques ou callbacks para concluir `Run All`.
 
-## DEMO → EVIDENCE
+## STUDENT MODE — evidência pronta
 
-A Aula 13C começa em modo `DEMO` quando não há medições comparáveis disponíveis. Nesse modo, os valores são proxies didáticos e não benchmarks reais.
+A Aula 13C consome evidências versionadas produzidas pelos experimentos autorais. Quando os artefatos estão disponíveis, a aula opera em modo `EVIDENCE`; o fallback `DEMO` existe apenas para manter o notebook executável quando a evidência não estiver acessível.
 
-O próximo marco é ativar o modo `EVIDENCE` com medições produzidas pelo experimento:
+Artefatos canônicos:
 
-`docs/experiments/EDU-ORCH-001-model-evidence-baseline-vs-transformer.md`
+- `data/model-evidence/til-model-evidence.csv` — modelos isolados medidos pelo `EDU-ORCH-001`;
+- `data/model-evidence/til-routing-evidence.csv` — cascades medidos pelo `EDU-ORCH-002`.
+
+As linhas de routing usam `evidence_status = measured-recovered`: os números vieram de execução real no Kaggle, mas o CSV original precisou ser reconstruído a partir do output observado após perda do artefato da sessão. Esse status não deve ser convertido para `measured`.
 
 Contrato dos dados:
 
 `data/model-evidence/README.md`
 
-Fluxo esperado:
+Arquitetura pedagógica:
 
 ```text
-TF-IDF + classificador clássico
-        ↓
-DistilBERT multilíngue
-        ↓
-medir qualidade + latência + custo
-        ↓
-registrar proveniência
-        ↓
-til-model-evidence.csv
-        ↓
-13C em modo EVIDENCE
+AUTHOR / EVIDENCE
+→ experimentos executam treinamento e medição
+→ produzem evidência
+
+STUDENT
+→ Aula 13C consome evidência pronta
+→ execução rápida
+→ interpretação e decisão
 ```
+
+Princípio: **experimentos produzem evidência; aulas consomem evidência.**
 
 ## Regra de engenharia
 
