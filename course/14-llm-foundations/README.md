@@ -38,6 +38,18 @@ Esta aula inaugura o bloco LLM Foundations do TIL e cobre a transição de class
 - [ ] revisar warnings da execução;
 - [ ] revisar pedagogicamente em perspectiva de aluno.
 
-Os experimentos determinísticos centrais (softmax, temperature, top-k, top-p e validação de structured output) já passaram por validação lógica isolada. Isso não substitui a execução headless integral do notebook.
+Os experimentos determinísticos centrais (softmax, temperature, top-k, top-p e validação de structured output) já passaram por **execução sequencial local do código** sem erros.
+
+Resultado observado:
+
+```text
+status: PASS
+softmax: distribuição normalizada
+greedy: ótimo
+top-k=2: [ótimo, bom]
+structured output: [válido, inválido, inválido, inválido]
+```
+
+Essa validação testa o código substantivo, mas **não substitui** a execução headless integral do arquivo `.ipynb` via `nbconvert` nem a execução real no Kaggle.
 
 Especificação: `docs/curriculum/AULA-14-llm-foundations.md`.
