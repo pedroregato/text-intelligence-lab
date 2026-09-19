@@ -52,8 +52,9 @@ Ler
 | 13B | Metric Scenario Lab: cenários, thresholds e custos de erro |
 | 13C | Model Routing, Orchestration e Utility: sistemas compostos de IA |
 | 14 | LLM Foundations: da classificação à geração — `Available` |
+| 15 | Retrieval, Semantic Search and Grounding — `Draft` |
 
-A próxima unidade especificada é a **Aula 14 — LLM Foundations: da classificação à geração**. Depois dela, a trilha avança para Retrieval/Grounding, Tools/Workflows e Agentic Systems.
+A **Aula 14 — LLM Foundations: da classificação à geração** está `Available`. A próxima unidade em desenvolvimento é a **Aula 15 — Retrieval, Semantic Search and Grounding**, que separa retrieval de generation antes da introdução de RAG.
 
 ## Organização conceitual
 
