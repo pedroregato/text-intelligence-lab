@@ -237,7 +237,7 @@ Minimum requirements:
 - list the central concepts introduced or reinforced in the lesson;
 - link to the PT-BR and EN glossary views;
 - use contextual glossary callouts when a concept benefits from formal clarification;
-- register new concepts in `docs/glossary/glossary.yaml` before the lesson is considered student-ready;
+- register new concepts in the structured glossary sources before the lesson is considered student-ready: use `docs/glossary/glossary.yaml` for the stable base and `docs/glossary/glossary.extensions.yaml` for small curricular additions;
 - regenerate the PT-BR, EN, and HTML glossary views whenever the canonical YAML changes.
 
 Glossary integration should support the learning flow without turning every technical term into a distracting link.
