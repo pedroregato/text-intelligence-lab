@@ -2,11 +2,15 @@
 
 Este diretório define o contrato de evidências consumido pela Aula 13C.
 
-## Arquivo esperado
+## Arquivos esperados
 
-`til-model-evidence.csv`
+### `til-model-evidence.csv`
 
-Cada linha representa um modelo ou sistema medido em condições documentadas.
+Cada linha representa um modelo isolado medido em condições documentadas.
+
+### `til-routing-evidence.csv`
+
+Cada linha representa uma configuração medida de routing/cascade, incluindo threshold e taxa de escalonamento.
 
 ### Campos mínimos
 
@@ -24,7 +28,7 @@ Cada linha representa um modelo ou sistema medido em condições documentadas.
 | `quality_metric` | nome da métrica, por exemplo `f1_macro` |
 | `source` | experimento, notebook ou relatório de origem |
 | `measured_at` | data/hora da medição |
-| `evidence_status` | `measured`, `estimated` ou `demo` |
+| `evidence_status` | `measured`, `measured-recovered`, `estimated` ou `demo` |
 | `dataset` | dataset/split usado |
 | `hardware` | ambiente de execução |
 | `sample_size` | número de exemplos avaliados |
@@ -50,20 +54,49 @@ Uma linha marcada como `measured` deve ter suporte em um experimento reproduzív
 
 Para latência, preferir registrar média e, no relatório completo, também p50/p95 quando isso trouxer valor. Para custo, declarar explicitamente se o valor representa preço monetário observado, estimativa ou proxy computacional.
 
+
+
+### Evidência recuperada
+
+`measured-recovered` deve ser usado quando:
+
+- a métrica veio de uma execução realmente medida;
+- o artefato original não permaneceu disponível;
+- os valores foram reconstruídos a partir de output, log ou outra evidência observável;
+- alguma parte da proveniência planejada não pôde ser recuperada integralmente.
+
+Esse status não equivale a `estimated`: os números não são inferidos nem interpolados. Ele também não equivale a `measured` pleno, porque o artefato original e/ou parte da proveniência foi perdida.
+
+O motivo da recuperação deve ser registrado em `notes` e no relatório do experimento.
+
 ## Proveniência
 
 O CSV é um resumo para consumo pelo simulador. A medição completa deve permanecer registrada em `docs/experiments/` com dataset/split, configuração, hardware, versão do código/modelo e metodologia de custo.
 
 ## Modos da Aula 13C
 
-- **EVIDENCE**: o notebook encontrou pelo menos duas linhas válidas em `til-model-evidence.csv`.
+- **EVIDENCE**: o notebook encontrou evidência válida em `til-model-evidence.csv` e, quando disponível, em `til-routing-evidence.csv`.
 - **DEMO**: não há evidência suficiente; o notebook usa proxies sintéticos explicitamente rotulados.
+
+Aula e experimento têm papéis diferentes:
+
+```text
+AUTHOR / EVIDENCE
+→ executa treino e medição
+→ produz artefatos
+
+STUDENT
+→ carrega artefatos versionados
+→ explora e interpreta
+```
+
+Princípio: **experimentos produzem evidência; aulas consomem evidência**.
 
 Valores `demo` nunca devem ser apresentados como benchmark real do TIL.
 
-## Próximo conjunto de evidências
+## Evolução da matriz de evidências
 
-O próximo experimento do TIL deve produzir medições comparáveis para pelo menos duas camadas da arquitetura abaixo:
+O `EDU-ORCH-001` mediu modelos isolados e o `EDU-ORCH-002` mediu routing/cascade. Expansões futuras podem acrescentar novas camadas da arquitetura abaixo:
 
 ```text
 TF-IDF + classificador clássico
