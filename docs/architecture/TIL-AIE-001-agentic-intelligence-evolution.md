@@ -212,7 +212,11 @@ Tópicos candidatos:
 
 ### Bloco B — Retrieval and Grounding
 
-Objetivo: separar conhecimento paramétrico, recuperação e geração.
+Primeira unidade: **Aula 15 — Retrieval, Semantic Search and Grounding** (`Draft`).
+
+Especificação: `docs/curriculum/AULA-15-retrieval-semantic-search-grounding.md`.
+
+Objetivo: separar conhecimento paramétrico, recuperação e geração antes de combiná-los em RAG.
 
 Tópicos candidatos:
 
