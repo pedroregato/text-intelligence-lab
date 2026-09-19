@@ -113,17 +113,25 @@ A numeração das próximas aulas será definida quando cada unidade estiver suf
 
 ### Bloco A — LLM Foundations
 
-Objetivo: entender o que muda quando o sistema passa de modelos discriminativos/encoders para modelos generativos.
+**Próxima unidade oficial: Aula 14 — LLM Foundations: da classificação à geração**  
+Status: `Proposed`  
+Especificação: `docs/curriculum/AULA-14-llm-foundations.md`
 
-Tópicos candidatos:
+Objetivo: entender o que muda quando o sistema passa de modelos discriminativos/encoders para modelos generativos, sem assumir que a capacidade generativa substitui automaticamente soluções mais simples.
+
+A Aula 14 deve cobrir:
 
 - modelos autoregressivos;
-- tokens, contexto e geração;
-- prompting;
+- next-token prediction;
+- tokens, contexto e janela de contexto;
+- logits e probabilidades em nível conceitual;
+- greedy decoding e sampling;
+- temperature, top-k e top-p;
 - structured outputs;
-- sampling;
 - failure modes;
-- custo e latência de geração.
+- custo, latência e utility da geração.
+
+O núcleo da primeira versão deve ser executável com `Internet OFF` e sem API proprietária. Retrieval, RAG, tools e agentes ficam explicitamente para blocos posteriores.
 
 ### Bloco B — Retrieval and Grounding
 
