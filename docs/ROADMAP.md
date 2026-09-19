@@ -114,7 +114,7 @@ A numeração das próximas aulas será definida quando cada unidade estiver suf
 ### Bloco A — LLM Foundations
 
 **Próxima unidade oficial: Aula 14 — LLM Foundations: da classificação à geração**  
-Status: `Proposed`  
+Status: `Draft`  
 Especificação: `docs/curriculum/AULA-14-llm-foundations.md`
 
 Objetivo: entender o que muda quando o sistema passa de modelos discriminativos/encoders para modelos generativos, sem assumir que a capacidade generativa substitui automaticamente soluções mais simples.
