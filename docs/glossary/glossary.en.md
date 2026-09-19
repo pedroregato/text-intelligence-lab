@@ -1101,3 +1101,123 @@ A term used for generated outputs that contain claims unsupported by the context
 **Example:** A model stating a fact that is absent from a provided document can be treated as a form of hallucination.
 
 **First lesson:** 14
+
+## Information Retrieval
+
+The process of locating and ranking potentially relevant items for a query within a collection.
+
+**In TIL:** In Lesson 15, retrieval is studied separately from generation so learners can observe how evidence is found before any response is generated.
+
+**Example:** Finding the most relevant documents for the query “how to request a refund”.
+
+**First lesson:** 15
+
+## Query
+
+A representation of an information need used to search a collection.
+
+**In TIL:** In Lesson 15, a query is compared with documents or chunks to produce scores and a ranking.
+
+**Example:** “what is the refund deadline” is a query over the corpus.
+
+**First lesson:** 15
+
+## Lexical Search
+
+Search based mainly on matching and weighting terms present in the query and documents.
+
+**In TIL:** In Lesson 15, TF-IDF and cosine similarity provide the lexical reference for comparing a query with documents.
+
+**Example:** A query containing “refund” tends to retrieve documents that also contain that term.
+
+**First lesson:** 15
+
+## Semantic Search
+
+Search that compares vector representations to bring items together by meaning rather than only by literal term overlap.
+
+**In TIL:** In Lesson 15, didactic dense vectors illustrate how lexically different expressions can be close in a semantic space.
+
+**Example:** “reset password” and “forgot my credential” can have high similarity even with different wording.
+
+**First lesson:** 15
+
+## Ranking
+
+An ordering of candidates according to a score or relevance criterion for a query.
+
+**In TIL:** In Lesson 15, ranking makes visible which documents or chunks are prioritized by a retrieval method.
+
+**Example:** D2 may rank first because it received the highest score for the refund query.
+
+**First lesson:** 15
+
+## Retrieval Score
+
+A value produced by a retrieval method to represent the relative proximity or relevance between a query and an item.
+
+**In TIL:** In Lesson 15, cosine similarity is used as a score in lexical and semantic examples.
+
+**Example:** A score of 0.62 may rank a document above another with 0.31 for the same query.
+
+**First lesson:** 15
+
+## Top-k Retrieval
+
+Selection of the k highest-ranked items returned by a retrieval system.
+
+**In TIL:** In Lesson 15, retrieval top-k is explicitly distinguished from top-k used in generation decoding.
+
+**Example:** Top-k = 3 returns the three documents with the highest scores for the query.
+
+**First lesson:** 15
+
+## Chunk
+
+A segmented unit of a document used as an independent item for processing or retrieval.
+
+**In TIL:** In Lesson 15, sentences are used as chunks to observe how granularity changes ranking.
+
+**Example:** A sentence about a refund deadline can be a chunk separate from other information in the same document.
+
+**First lesson:** 15
+
+## Chunking
+
+The process of splitting documents into smaller units for indexing, retrieval, or processing.
+
+**In TIL:** In Lesson 15, chunking shows the trade-off between broad context and local retrieval precision.
+
+**Example:** Splitting a long document into sentences before calculating retrieval scores.
+
+**First lesson:** 15
+
+## Overlap
+
+Content shared between adjacent chunks to reduce context loss at segmentation boundaries.
+
+**In TIL:** In Lesson 15, overlap is introduced conceptually as a chunking decision that increases redundancy and index cost.
+
+**Example:** Two consecutive chunks may share the last sentence of the first as the first sentence of the second.
+
+**First lesson:** 15
+
+## Grounding
+
+The practice of tying a response, claim, or decision to explicitly available and retrievable evidence.
+
+**In TIL:** In Lesson 15, grounding is demonstrated without an LLM: the deterministic answer is built only from the retrieved evidence pack.
+
+**Example:** Answering the refund deadline while pointing to the chunk that explicitly contains that information.
+
+**First lesson:** 15
+
+## Evidence Pack
+
+An organized set of retrieved evidence and metadata prepared to support a response, decision, or later system stage.
+
+**In TIL:** In Lesson 15, the evidence pack contains the query, chunk identifier, retrieved text, and retrieval score.
+
+**Example:** An object containing the query, C3, the chunk text, and its similarity score.
+
+**First lesson:** 15

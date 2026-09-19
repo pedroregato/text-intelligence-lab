@@ -1321,3 +1321,147 @@ Termo usado para descrever saídas geradas que apresentam conteúdo não sustent
 **Exemplo:** O modelo afirmar um dado inexistente em um documento fornecido pode ser tratado como uma forma de alucinação.
 
 **Primeira aula:** 14
+
+## Retrieval
+
+**English:** Information Retrieval
+
+Processo de localizar e ordenar itens potencialmente relevantes para uma consulta dentro de uma coleção.
+
+**No TIL:** Na Aula 15, retrieval é estudado separadamente de generation para tornar observável como evidências são encontradas antes de qualquer resposta ser gerada.
+
+**Exemplo:** Buscar os documentos mais relevantes para a consulta “como solicitar reembolso”.
+
+**Primeira aula:** 15
+
+## Consulta
+
+**English:** Query
+
+Representação da necessidade de informação usada para pesquisar uma coleção.
+
+**No TIL:** Na Aula 15, a query é comparada com documentos ou chunks para produzir scores e um ranking.
+
+**Exemplo:** “qual é o prazo do reembolso” é uma query sobre o corpus.
+
+**Primeira aula:** 15
+
+## Busca lexical
+
+**English:** Lexical Search
+
+Busca baseada principalmente na correspondência e ponderação de termos presentes na consulta e nos documentos.
+
+**No TIL:** Na Aula 15, TF-IDF e cosine similarity formam a referência lexical para comparar query e documentos.
+
+**Exemplo:** Uma consulta contendo “reembolso” tende a recuperar documentos que também contêm esse termo.
+
+**Primeira aula:** 15
+
+## Busca semântica
+
+**English:** Semantic Search
+
+Busca que compara representações vetoriais com o objetivo de aproximar itens por significado, não apenas por coincidência literal de termos.
+
+**No TIL:** Na Aula 15, vetores densos didáticos ilustram como expressões lexicalmente diferentes podem ficar próximas em um espaço semântico.
+
+**Exemplo:** “recuperar senha” e “esqueci minha credencial” podem receber alta similaridade mesmo usando palavras diferentes.
+
+**Primeira aula:** 15
+
+## Ranking
+
+**English:** Ranking
+
+Ordenação de candidatos segundo um score ou critério de relevância para uma consulta.
+
+**No TIL:** Na Aula 15, o ranking torna visível quais documentos ou chunks são priorizados por um método de retrieval.
+
+**Exemplo:** D2 pode ocupar a posição 1 porque obteve o maior score para a query de reembolso.
+
+**Primeira aula:** 15
+
+## Score de retrieval
+
+**English:** Retrieval Score
+
+Valor produzido por um método de retrieval para representar a proximidade ou relevância relativa entre uma consulta e um item.
+
+**No TIL:** Na Aula 15, cosine similarity é usada como score em exemplos lexicais e semânticos.
+
+**Exemplo:** Um score de 0,62 pode posicionar um documento acima de outro com 0,31 para a mesma query.
+
+**Primeira aula:** 15
+
+## Top-k de retrieval
+
+**English:** Top-k Retrieval
+
+Seleção dos k itens mais bem ranqueados por um sistema de retrieval.
+
+**No TIL:** Na Aula 15, top-k de retrieval é explicitamente diferenciado do top-k usado na decodificação de geração.
+
+**Exemplo:** Top-k = 3 devolve os três documentos com maior score para a consulta.
+
+**Primeira aula:** 15
+
+## Chunk
+
+**English:** Chunk
+
+Unidade segmentada de um documento usada como item independente para processamento ou recuperação.
+
+**No TIL:** Na Aula 15, sentenças são usadas como chunks para observar como a granularidade altera o ranking.
+
+**Exemplo:** Uma sentença sobre prazo de reembolso pode ser um chunk separado de outras informações do mesmo documento.
+
+**Primeira aula:** 15
+
+## Chunking
+
+**English:** Chunking
+
+Processo de dividir documentos em unidades menores para indexação, recuperação ou processamento.
+
+**No TIL:** Na Aula 15, chunking mostra o trade-off entre contexto amplo e precisão local na recuperação.
+
+**Exemplo:** Dividir um documento longo em sentenças antes de calcular scores de retrieval.
+
+**Primeira aula:** 15
+
+## Overlap
+
+**English:** Overlap
+
+Trecho compartilhado entre chunks adjacentes para reduzir perda de contexto nas fronteiras de segmentação.
+
+**No TIL:** Na Aula 15, overlap é introduzido conceitualmente como uma decisão de chunking que aumenta redundância e custo do índice.
+
+**Exemplo:** Dois chunks consecutivos podem compartilhar a última sentença do primeiro como primeira sentença do segundo.
+
+**Primeira aula:** 15
+
+## Grounding
+
+**English:** Grounding
+
+Prática de vincular uma resposta, afirmação ou decisão a evidências explicitamente disponíveis e recuperáveis.
+
+**No TIL:** Na Aula 15, grounding é demonstrado sem LLM: a resposta determinística é construída apenas a partir do evidence pack recuperado.
+
+**Exemplo:** Responder o prazo de reembolso citando o chunk que contém exatamente essa informação.
+
+**Primeira aula:** 15
+
+## Evidence pack
+
+**English:** Evidence Pack
+
+Conjunto organizado de evidências recuperadas e seus metadados preparado para sustentar uma resposta, decisão ou etapa posterior do sistema.
+
+**No TIL:** Na Aula 15, o evidence pack contém query, identificador do trecho, texto recuperado e retrieval score.
+
+**Exemplo:** Um objeto com query, C3, o texto do chunk e seu score de similaridade.
+
+**Primeira aula:** 15
