@@ -737,3 +737,67 @@ terms:
       til_context: "In Lesson 16, the system should recognize this condition and prefer abstention, broader search, or escalation."
       example: "No retrieved chunk contains information about the requested deadline."
     related: [abstention, groundedness, evidence-pack, retrieval-failure]
+
+  - id: factuality
+    category: evaluation
+    lesson_first_seen: "16"
+    pt-BR:
+      term: "Factualidade"
+      english_term: "Factuality"
+      definition: "Grau em que uma afirmação ou resposta corresponde aos fatos ou à realidade relevante."
+      til_context: "Na Aula 16, factualidade é diferenciada de groundedness: uma resposta pode estar apoiada em uma fonte e ainda estar errada se a fonte estiver incorreta ou desatualizada."
+      example: "A resposta cita corretamente um documento antigo que afirma prazo de dez dias, embora a regra atual seja cinco."
+    en:
+      term: "Factuality"
+      definition: "The degree to which a claim or answer corresponds to relevant facts or reality."
+      til_context: "In Lesson 16, factuality is distinguished from groundedness: an answer can be supported by a source and still be wrong if that source is incorrect or outdated."
+      example: "The answer correctly cites an old document stating ten days even though the current rule is five."
+    related: [groundedness, attribution, provenance, freshness]
+
+  - id: evidence-governance
+    category: production
+    lesson_first_seen: "16"
+    pt-BR:
+      term: "Governança da evidência"
+      english_term: "Evidence Governance"
+      definition: "Conjunto de práticas para controlar origem, autoridade, validade, atualização, versionamento e uso de evidências em um sistema."
+      til_context: "Na Aula 16, governança da evidência explica por que retrieval e grounding tecnicamente corretos não garantem factualidade."
+      example: "O sistema só considera documentos vigentes, aprovados e com fonte identificada."
+    en:
+      term: "Evidence Governance"
+      definition: "A set of practices for controlling the origin, authority, validity, freshness, versioning, and use of evidence in a system."
+      til_context: "In Lesson 16, evidence governance explains why technically correct retrieval and grounding do not guarantee factuality."
+      example: "The system only considers current, approved documents with identified sources."
+    related: [provenance, freshness, authority-level, groundedness]
+
+  - id: freshness
+    category: production
+    lesson_first_seen: "16"
+    pt-BR:
+      term: "Atualidade da evidência"
+      english_term: "Freshness"
+      definition: "Propriedade que indica quão atual e ainda vigente é uma evidência para a decisão ou pergunta em análise."
+      til_context: "Na Aula 16, freshness aparece como fator de governança capaz de tornar uma resposta grounded porém factualmente incorreta quando a fonte está desatualizada."
+      example: "Uma política publicada em 2024 foi substituída por uma versão de 2026."
+    en:
+      term: "Freshness"
+      definition: "A property indicating how current and still valid an item of evidence is for the question or decision being considered."
+      til_context: "In Lesson 16, freshness is a governance factor that can make a grounded answer factually wrong when the source is outdated."
+      example: "A policy published in 2024 was replaced by a 2026 version."
+    related: [evidence-governance, provenance, authority-level]
+
+  - id: authority-level
+    category: production
+    lesson_first_seen: "16"
+    pt-BR:
+      term: "Nível de autoridade"
+      english_term: "Authority Level"
+      definition: "Indicação da força ou prioridade de uma fonte para sustentar uma afirmação, decisão ou política."
+      til_context: "Na Aula 16, authority level ajuda a diferenciar fontes oficiais, secundárias ou informais quando há evidências conflitantes."
+      example: "Uma norma oficial vigente tem prioridade sobre uma FAQ antiga não revisada."
+    en:
+      term: "Authority Level"
+      definition: "An indication of the strength or priority of a source for supporting a claim, decision, or policy."
+      til_context: "In Lesson 16, authority level helps distinguish official, secondary, or informal sources when evidence conflicts."
+      example: "A current official policy has priority over an old unreviewed FAQ."
+    related: [evidence-governance, freshness, provenance]
