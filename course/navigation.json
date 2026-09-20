@@ -5,7 +5,7 @@
   },
   "roadmap_url": "https://github.com/pedroregato/text-intelligence-lab/blob/main/docs/ROADMAP.md",
   "next_planned": {
-    "label": "Aula 17 — Tool Use, Function Calling and Contracts",
+    "label": "Aula 18 — Deterministic Workflows",
     "status": "in preparation"
   },
   "lessons": [
@@ -123,6 +123,13 @@
       "path": "course/16-rag/16-til-retrieval-augmented-generation.ipynb",
       "url": "https://www.kaggle.com/code/pedrogentil/til-16-retrieval-augmented-generation",
       "published": true
+    },
+    {
+      "id": "17",
+      "title": "Aula 17 — Tool Use, Function Calling and Contracts",
+      "path": "course/17-tool-use-function-calling/17-til-tool-use-function-calling.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-17-tool-use-function-calling",
+      "published": false
     }
   ]
 }
