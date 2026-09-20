@@ -214,6 +214,8 @@ Tópicos candidatos:
 
 Primeira unidade: **Aula 15 — Retrieval, Semantic Search and Grounding** (`Available`).
 
+Segunda unidade: **Aula 16 — Retrieval-Augmented Generation (RAG)** (`Draft`).
+
 Especificação: `docs/curriculum/AULA-15-retrieval-semantic-search-grounding.md`.
 
 Objetivo: separar conhecimento paramétrico, recuperação e geração antes de combiná-los em RAG.
