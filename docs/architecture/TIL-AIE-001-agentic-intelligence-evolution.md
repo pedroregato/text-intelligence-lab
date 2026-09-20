@@ -212,7 +212,7 @@ Tópicos candidatos:
 
 ### Bloco B — Retrieval and Grounding
 
-Primeira unidade: **Aula 15 — Retrieval, Semantic Search and Grounding** (`Draft`).
+Primeira unidade: **Aula 15 — Retrieval, Semantic Search and Grounding** (`Available`).
 
 Especificação: `docs/curriculum/AULA-15-retrieval-semantic-search-grounding.md`.
 
