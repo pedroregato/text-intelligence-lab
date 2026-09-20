@@ -53,3 +53,23 @@ GPU OFF
 - [ ] revisão pedagógica final.
 
 Especificação: `docs/curriculum/AULA-16-rag.md`.
+
+
+## Logic validation — 2026-09-20
+
+Os componentes determinísticos centrais foram executados em sequência fora da interface do notebook.
+
+Resultado:
+
+```text
+status: PASS
+retrieval top-1: C1
+grounded answer source: C1
+grounded answer: true
+missing-evidence source: None
+missing-evidence grounded: false
+```
+
+A validação também detectou e corrigiu um caso de attribution inadequada: uma evidência irrelevante recuperada não deve ser apresentada como fonte de uma resposta sem suporte.
+
+Essa validação lógica não substitui o gate de execução headless integral do `.ipynb` nem a execução oficial no Kaggle.
