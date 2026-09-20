@@ -2,7 +2,7 @@
 
 ## Status
 
-Draft
+Available — student-ready; headless and Kaggle execution validated on 2026-09-20.
 
 ## Role in the TIL
 

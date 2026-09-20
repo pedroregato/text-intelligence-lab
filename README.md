@@ -52,9 +52,10 @@ Ler
 | 13B | Metric Scenario Lab: cenários, thresholds e custos de erro |
 | 13C | Model Routing, Orchestration e Utility: sistemas compostos de IA |
 | 14 | LLM Foundations: da classificação à geração — `Available` |
-| 15 | Retrieval, Semantic Search and Grounding — `Draft` |
+| 15 | Retrieval, Semantic Search and Grounding — `Available` |
+| 16 | Retrieval-Augmented Generation (RAG) — `Draft` |
 
-A **Aula 14 — LLM Foundations: da classificação à geração** está `Available`. A próxima unidade em desenvolvimento é a **Aula 15 — Retrieval, Semantic Search and Grounding**, que separa retrieval de generation antes da introdução de RAG.
+As **Aulas 14 e 15** estão `Available`. A próxima unidade em desenvolvimento é a **Aula 16 — Retrieval-Augmented Generation (RAG)**, que combina generation, retrieval e grounding mantendo cada estágio observável.
 
 ## Organização conceitual
 
@@ -309,6 +310,32 @@ text-intelligence-lab/
 ├── README.md
 └── setup_structure.py
 ```
+
+## Navegação entre aulas
+
+Cada notebook oficial termina com um bloco de navegação:
+
+```text
+← Aula anterior
+| Apresentação do curso |
+Próxima aula →
+```
+
+Os links priorizam os notebooks oficiais no Kaggle, mantendo o aluno dentro do fluxo do curso.
+
+A ordem canônica está em:
+
+`course/navigation.json`
+
+e pode ser sincronizada nos notebooks com:
+
+```bash
+python scripts/sync_course_navigation.py
+```
+
+O sincronizador é idempotente: atualiza o rodapé existente ou cria um novo sem duplicá-lo. Quando a próxima aula ainda não foi publicada, o link aponta para o roadmap e é marcado como **em preparação**.
+
+---
 
 ## Status
 

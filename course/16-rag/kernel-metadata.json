@@ -1,0 +1,14 @@
+{
+  "id": "pedrogentil/til-16-retrieval-augmented-generation",
+  "title": "TIL 16 Retrieval-Augmented Generation",
+  "code_file": "16-til-retrieval-augmented-generation.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "true",
+  "enable_gpu": "false",
+  "enable_internet": "false",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

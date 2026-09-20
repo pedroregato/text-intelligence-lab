@@ -1221,3 +1221,103 @@ An organized set of retrieved evidence and metadata prepared to support a respon
 **Example:** An object containing the query, C3, the chunk text, and its similarity score.
 
 **First lesson:** 15
+
+## Retrieval-Augmented Generation (RAG)
+
+An architecture that combines evidence retrieval with generation by placing retrieved information into the context used to produce an answer.
+
+**In TIL:** In Lesson 16, RAG is decomposed into retrieval, evidence selection, context construction, generation, grounding, and evaluation.
+
+**Example:** A question retrieves two relevant passages and the generator produces an answer using only those passages.
+
+**First lesson:** 16
+
+## Generation-only
+
+A configuration in which an answer is produced without an explicit retrieval step over external evidence.
+
+**In TIL:** In Lesson 16, generation-only is used as an architectural baseline for comparison with the RAG flow.
+
+**Example:** Answering a question directly from the prompt without consulting the didactic corpus.
+
+**First lesson:** 16
+
+## Context Construction
+
+The stage that organizes instructions, the query, and retrieved evidence into a structured input for the generator.
+
+**In TIL:** In Lesson 16, the context is shown explicitly so learners can see which passages reach the generation stage.
+
+**Example:** Combining an instruction, retrieved C1 and C2, and the question into one input block.
+
+**First lesson:** 16
+
+## Grounded Answer
+
+An answer whose claim can be traced back to evidence explicitly available in the context or evidence pack.
+
+**In TIL:** In Lesson 16, an answer is considered grounded only when the information used appears in the retrieved evidence.
+
+**Example:** Answering “five business days” and identifying C3 as the source.
+
+**First lesson:** 16
+
+## Groundedness
+
+The degree to which claims in an answer are supported by evidence provided to the system.
+
+**In TIL:** In Lesson 16, groundedness is treated as distinct from fluency or plausibility.
+
+**Example:** An answer may sound good but have low groundedness if it adds facts absent from the evidence pack.
+
+**First lesson:** 16
+
+## Source Attribution
+
+An explicit association between a claim in an answer and the source or passage that supports it.
+
+**In TIL:** In Lesson 16, attribution makes answer provenance auditable and separates correctness from traceability.
+
+**Example:** The answer includes “[C2]” next to the information it uses.
+
+**First lesson:** 16
+
+## Retrieval Failure
+
+A failure in which the retrieval stage does not retrieve the needed evidence or prioritizes unsuitable evidence.
+
+**In TIL:** In Lesson 16, this failure type is separated from later context or generation errors.
+
+**Example:** The corpus contains the answer, but the correct passage does not appear in top-k.
+
+**First lesson:** 16
+
+## Context Failure
+
+A failure in which suitable evidence was retrieved but is organized, truncated, or presented in a way that harms the next stage.
+
+**In TIL:** In Lesson 16, context failure shows that correct retrieval does not guarantee useful context.
+
+**Example:** The correct passage is retrieved but left out of the block given to the generator.
+
+**First lesson:** 16
+
+## Generation Failure
+
+A failure in which the context contains sufficient evidence but the generated output ignores, distorts, or extrapolates beyond that evidence.
+
+**In TIL:** In Lesson 16, generation failure is isolated from retrieval failures to support diagnosis and observability.
+
+**Example:** The context states five business days, but the answer says ten days.
+
+**First lesson:** 16
+
+## Insufficient Evidence
+
+A condition in which the available evidence does not adequately support a specific answer.
+
+**In TIL:** In Lesson 16, the system should recognize this condition and prefer abstention, broader search, or escalation.
+
+**Example:** No retrieved chunk contains information about the requested deadline.
+
+**First lesson:** 16

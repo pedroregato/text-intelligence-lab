@@ -1,0 +1,128 @@
+{
+  "course_home": {
+    "title": "TIL Course Home",
+    "url": "https://www.kaggle.com/code/pedrogentil/text-intelligence-lab-course"
+  },
+  "roadmap_url": "https://github.com/pedroregato/text-intelligence-lab/blob/main/docs/ROADMAP.md",
+  "next_planned": {
+    "label": "Tools and Workflows",
+    "status": "in preparation"
+  },
+  "lessons": [
+    {
+      "id": "00",
+      "title": "Aula 0 — Environment Validation",
+      "path": "course/00-til-environment-validation/00-til-environment-validation.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-00-environment-validation"
+    },
+    {
+      "id": "01",
+      "title": "Aula 1 — Texto como dado",
+      "path": "course/01-text-as-data/01-til-text-as-data.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-01-text-as-data"
+    },
+    {
+      "id": "02",
+      "title": "Aula 2 — Tokenização e normalização",
+      "path": "course/02-tokenization-and-normalization/02-til-tokenization-and-normalization.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-02-tokenization-and-normalization"
+    },
+    {
+      "id": "03",
+      "title": "Aula 3 — Bag-of-Words",
+      "path": "course/03-bag-of-words/03-til-bag-of-words.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-03-bag-of-words"
+    },
+    {
+      "id": "04",
+      "title": "Aula 4 — TF-IDF",
+      "path": "course/04-tfidf/04-til-tfidf.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-04-tfidf"
+    },
+    {
+      "id": "05",
+      "title": "Aula 5 — Primeiro classificador de textos",
+      "path": "course/05-first-text-classifier/05-til-first-text-classifier.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-05-first-text-classifier"
+    },
+    {
+      "id": "06",
+      "title": "Aula 6 — Avaliação de classificadores",
+      "path": "course/06-classification-evaluation/06-til-classification-evaluation.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-06-classification-evaluation"
+    },
+    {
+      "id": "07",
+      "title": "Aula 7 — Seleção de modelos e tuning",
+      "path": "course/07-model-selection-and-tuning/07-til-model-selection-and-tuning.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-07-model-selection-and-tuning"
+    },
+    {
+      "id": "08",
+      "title": "Aula 8 — N-grams e features textuais",
+      "path": "course/08-ngrams-and-text-features/08-til-ngrams-and-text-features.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-08-ngrams-and-text-features"
+    },
+    {
+      "id": "09",
+      "title": "Aula 9 — Word Embeddings",
+      "path": "course/09-word-embeddings/09-til-word-embeddings.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-09-word-embeddings"
+    },
+    {
+      "id": "10",
+      "title": "Aula 10 — Embeddings contextuais e Transformers",
+      "path": "course/10-contextual-embeddings-and-transformers/10-til-contextual-embeddings-and-transformers.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-10-contextual-embeddings-and-transformers"
+    },
+    {
+      "id": "11",
+      "title": "Aula 11 — BERT para classificação de texto",
+      "path": "course/11-bert-text-classification/11-til-bert-text-classification.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-11-bert-text-classification"
+    },
+    {
+      "id": "12",
+      "title": "Aula 12 — Baselines clássicos fortes",
+      "path": "course/12-strong-classical-baselines/12-til-strong-classical-baselines.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-12-strong-classical-baselines"
+    },
+    {
+      "id": "13",
+      "title": "Aula 13 — Métricas e Indicadores",
+      "path": "course/13-metrics-and-indicators/13-til-metrics-and-indicators.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-13-metrics-and-indicators"
+    },
+    {
+      "id": "13B",
+      "title": "Aula 13B — Metric Scenario Lab",
+      "path": "course/13-metrics-and-indicators/metric-scenario-lab/13b-til-metric-scenario-lab.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-13-metric-scenario-lab"
+    },
+    {
+      "id": "13C",
+      "title": "Aula 13C — Model Routing, Orchestration e Utility",
+      "path": "course/13-metrics-and-indicators/13c-model-routing-and-orchestration.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-13c-model-routing-orchestration-and-utility"
+    },
+    {
+      "id": "14",
+      "title": "Aula 14 — LLM Foundations",
+      "path": "course/14-llm-foundations/14-til-llm-foundations.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-14-llm-foundations"
+    },
+    {
+      "id": "15",
+      "title": "Aula 15 — Retrieval, Semantic Search and Grounding",
+      "path": "course/15-retrieval-semantic-search-grounding/15-til-retrieval-semantic-search-grounding.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-15-retrieval-semantic-search-grounding"
+    },
+    {
+      "id": "16",
+      "title": "Aula 16 — Retrieval-Augmented Generation (RAG)",
+      "path": "course/16-rag/16-til-retrieval-augmented-generation.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-16-retrieval-augmented-generation",
+      "published": false
+    }
+  ]
+}

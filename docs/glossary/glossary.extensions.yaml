@@ -577,3 +577,163 @@ terms:
       til_context: "In Lesson 15, the evidence pack contains the query, chunk identifier, retrieved text, and retrieval score."
       example: "An object containing the query, C3, the chunk text, and its similarity score."
     related: [grounding, evidence, retrieval-score, information-retrieval]
+
+  - id: retrieval-augmented-generation
+    category: engineering
+    lesson_first_seen: "16"
+    pt-BR:
+      term: "Retrieval-Augmented Generation (RAG)"
+      english_term: "Retrieval-Augmented Generation (RAG)"
+      definition: "Arquitetura que combina recuperação de evidências com geração, inserindo informação recuperada no contexto usado para produzir a resposta."
+      til_context: "Na Aula 16, RAG é decomposto em retrieval, seleção de evidência, construção de contexto, geração, grounding e avaliação."
+      example: "Uma pergunta recupera dois trechos relevantes e o gerador produz a resposta usando apenas esses trechos."
+    en:
+      term: "Retrieval-Augmented Generation (RAG)"
+      definition: "An architecture that combines evidence retrieval with generation by placing retrieved information into the context used to produce an answer."
+      til_context: "In Lesson 16, RAG is decomposed into retrieval, evidence selection, context construction, generation, grounding, and evaluation."
+      example: "A question retrieves two relevant passages and the generator produces an answer using only those passages."
+    related: [information-retrieval, generation, grounding, evidence-pack]
+
+  - id: generation-only
+    category: engineering
+    lesson_first_seen: "16"
+    pt-BR:
+      term: "Generation-only"
+      english_term: "Generation-only"
+      definition: "Configuração em que a resposta é produzida sem uma etapa explícita de retrieval de evidências externas."
+      til_context: "Na Aula 16, generation-only funciona como baseline arquitetural para comparar com o fluxo RAG."
+      example: "Responder uma pergunta diretamente a partir do prompt sem consultar o corpus didático."
+    en:
+      term: "Generation-only"
+      definition: "A configuration in which an answer is produced without an explicit retrieval step over external evidence."
+      til_context: "In Lesson 16, generation-only is used as an architectural baseline for comparison with the RAG flow."
+      example: "Answering a question directly from the prompt without consulting the didactic corpus."
+    related: [generation, retrieval-augmented-generation, grounded-answer]
+
+  - id: context-construction
+    category: engineering
+    lesson_first_seen: "16"
+    pt-BR:
+      term: "Construção de contexto"
+      english_term: "Context Construction"
+      definition: "Etapa que organiza instruções, consulta e evidências recuperadas em uma entrada estruturada para o gerador."
+      til_context: "Na Aula 16, o contexto é mostrado explicitamente para que o aluno veja quais trechos chegam à etapa de geração."
+      example: "Combinar instrução, C1 e C2 recuperados e a pergunta em um único bloco de entrada."
+    en:
+      term: "Context Construction"
+      definition: "The stage that organizes instructions, the query, and retrieved evidence into a structured input for the generator."
+      til_context: "In Lesson 16, the context is shown explicitly so learners can see which passages reach the generation stage."
+      example: "Combining an instruction, retrieved C1 and C2, and the question into one input block."
+    related: [context, evidence-pack, retrieval-augmented-generation]
+
+  - id: grounded-answer
+    category: evaluation
+    lesson_first_seen: "16"
+    pt-BR:
+      term: "Resposta fundamentada"
+      english_term: "Grounded Answer"
+      definition: "Resposta cuja afirmação pode ser rastreada até evidências explicitamente disponíveis no contexto ou no evidence pack."
+      til_context: "Na Aula 16, uma resposta só é considerada grounded quando a informação usada aparece nas evidências recuperadas."
+      example: "Responder “cinco dias úteis” e indicar C3 como fonte."
+    en:
+      term: "Grounded Answer"
+      definition: "An answer whose claim can be traced back to evidence explicitly available in the context or evidence pack."
+      til_context: "In Lesson 16, an answer is considered grounded only when the information used appears in the retrieved evidence."
+      example: "Answering “five business days” and identifying C3 as the source."
+    related: [grounding, evidence-pack, attribution, groundedness]
+
+  - id: groundedness
+    category: evaluation
+    lesson_first_seen: "16"
+    pt-BR:
+      term: "Groundedness"
+      english_term: "Groundedness"
+      definition: "Grau em que as afirmações de uma resposta são sustentadas pelas evidências fornecidas ao sistema."
+      til_context: "Na Aula 16, groundedness é tratada como propriedade distinta de fluência ou plausibilidade."
+      example: "Uma resposta pode soar bem, mas ter groundedness baixa se incluir fatos ausentes do evidence pack."
+    en:
+      term: "Groundedness"
+      definition: "The degree to which claims in an answer are supported by evidence provided to the system."
+      til_context: "In Lesson 16, groundedness is treated as distinct from fluency or plausibility."
+      example: "An answer may sound good but have low groundedness if it adds facts absent from the evidence pack."
+    related: [grounded-answer, grounding, attribution]
+
+  - id: attribution
+    category: evaluation
+    lesson_first_seen: "16"
+    pt-BR:
+      term: "Atribuição de fonte"
+      english_term: "Source Attribution"
+      definition: "Associação explícita entre uma afirmação da resposta e a fonte ou trecho que a sustenta."
+      til_context: "Na Aula 16, attribution torna a origem da resposta auditável e separa resposta correta de resposta rastreável."
+      example: "A resposta indica “[C2]” ao lado da informação usada."
+    en:
+      term: "Source Attribution"
+      definition: "An explicit association between a claim in an answer and the source or passage that supports it."
+      til_context: "In Lesson 16, attribution makes answer provenance auditable and separates correctness from traceability."
+      example: "The answer includes “[C2]” next to the information it uses."
+    related: [grounded-answer, groundedness, evidence-pack]
+
+  - id: retrieval-failure
+    category: evaluation
+    lesson_first_seen: "16"
+    pt-BR:
+      term: "Falha de retrieval"
+      english_term: "Retrieval Failure"
+      definition: "Falha em que a etapa de retrieval não recupera a evidência necessária ou prioriza evidência inadequada."
+      til_context: "Na Aula 16, esse tipo de falha é separado de erros posteriores de contexto ou geração."
+      example: "O corpus contém a resposta, mas o trecho correto não aparece no top-k."
+    en:
+      term: "Retrieval Failure"
+      definition: "A failure in which the retrieval stage does not retrieve the needed evidence or prioritizes unsuitable evidence."
+      til_context: "In Lesson 16, this failure type is separated from later context or generation errors."
+      example: "The corpus contains the answer, but the correct passage does not appear in top-k."
+    related: [information-retrieval, top-k-retrieval, retrieval-score]
+
+  - id: context-failure
+    category: evaluation
+    lesson_first_seen: "16"
+    pt-BR:
+      term: "Falha de contexto"
+      english_term: "Context Failure"
+      definition: "Falha em que evidências adequadas foram recuperadas, mas são organizadas, truncadas ou apresentadas de forma que prejudica a etapa seguinte."
+      til_context: "Na Aula 16, context failure mostra que retrieval correto não garante um contexto útil."
+      example: "O trecho correto é recuperado, mas fica fora do bloco entregue ao gerador."
+    en:
+      term: "Context Failure"
+      definition: "A failure in which suitable evidence was retrieved but is organized, truncated, or presented in a way that harms the next stage."
+      til_context: "In Lesson 16, context failure shows that correct retrieval does not guarantee useful context."
+      example: "The correct passage is retrieved but left out of the block given to the generator."
+    related: [context-construction, retrieval-failure, generation-failure]
+
+  - id: generation-failure
+    category: evaluation
+    lesson_first_seen: "16"
+    pt-BR:
+      term: "Falha de geração"
+      english_term: "Generation Failure"
+      definition: "Falha em que o contexto contém evidência suficiente, mas a saída gerada ignora, distorce ou extrapola essa evidência."
+      til_context: "Na Aula 16, generation failure é isolada das falhas de retrieval para facilitar diagnóstico e observabilidade."
+      example: "O contexto informa cinco dias úteis, mas a resposta afirma dez dias."
+    en:
+      term: "Generation Failure"
+      definition: "A failure in which the context contains sufficient evidence but the generated output ignores, distorts, or extrapolates beyond that evidence."
+      til_context: "In Lesson 16, generation failure is isolated from retrieval failures to support diagnosis and observability."
+      example: "The context states five business days, but the answer says ten days."
+    related: [generation, context-failure, groundedness]
+
+  - id: insufficient-evidence
+    category: evaluation
+    lesson_first_seen: "16"
+    pt-BR:
+      term: "Evidência insuficiente"
+      english_term: "Insufficient Evidence"
+      definition: "Condição em que as evidências disponíveis não sustentam de forma adequada uma resposta específica."
+      til_context: "Na Aula 16, o sistema deve reconhecer essa condição e preferir abstention, ampliar a busca ou escalar."
+      example: "Nenhum chunk recuperado contém informação sobre o prazo solicitado."
+    en:
+      term: "Insufficient Evidence"
+      definition: "A condition in which the available evidence does not adequately support a specific answer."
+      til_context: "In Lesson 16, the system should recognize this condition and prefer abstention, broader search, or escalation."
+      example: "No retrieved chunk contains information about the requested deadline."
+    related: [abstention, groundedness, evidence-pack, retrieval-failure]

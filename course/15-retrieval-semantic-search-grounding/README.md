@@ -1,6 +1,6 @@
 # Aula 15 — Retrieval, Semantic Search and Grounding
 
-Status: `Draft`
+Status: `Available`
 
 Esta aula inaugura o bloco Retrieval and Grounding do TIL e mantém retrieval separado de generation antes da introdução de RAG.
 
@@ -37,7 +37,7 @@ GPU OFF
 - [x] PT-BR / EN / HTML regenerados;
 - [x] execução headless integral;
 - [x] warnings revisados;
-- [ ] execução Kaggle;
+- [x] execução Kaggle;
 - [x] revisão pedagógica final.
 
 Especificação: `docs/curriculum/AULA-15-retrieval-semantic-search-grounding.md`.
@@ -85,3 +85,18 @@ A revisão em perspectiva de aluno confirmou:
 - ponte explícita para a futura Aula 16 — RAG.
 
 A aula permanece `Draft` até a execução oficial no Kaggle.
+
+
+## Kaggle validation — 2026-09-20
+
+Notebook: `TIL 15 Retrieval Semantic Search and Grounding`
+
+Resultado informado da execução oficial no Kaggle:
+
+```text
+Run All
+→ COMPLETE
+→ notebook OK
+```
+
+Com a execução Kaggle concluída e os demais gates já validados, a Aula 15 passa a ser considerada **student-ready / Available**.
