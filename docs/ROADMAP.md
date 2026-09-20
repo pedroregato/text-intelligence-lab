@@ -176,16 +176,33 @@ O foco será tornar observáveis retrieval, evidence pack, context construction,
 
 Objetivo: introduzir ação externa antes de autonomia ampla.
 
-Tópicos candidatos:
+Sequência formal:
 
-- function/tool calling;
-- contratos de ferramenta;
-- validação de argumentos;
-- workflows determinísticos;
-- estado;
-- retries;
-- idempotência;
-- observabilidade.
+```text
+Aula 17 — Tool Use, Function Calling and Contracts
+→ Aula 18 — Deterministic Workflows
+→ Aula 19 — Model Context Protocol (MCP)
+```
+
+**Aula 17 — Tool Use, Function Calling and Contracts**  
+Status: `Proposed`  
+Especificação: `docs/curriculum/AULA-17-tool-use-function-calling.md`
+
+A Aula 17 introduz contratos de ferramenta, schemas, validação, execução, resultados, failure taxonomy, efeitos colaterais, safety e observabilidade.
+
+A Aula 18 deverá tratar composição determinística de ferramentas, estado, retries, idempotência, checkpoints e approval gates.
+
+A Aula 19 introduzirá **Model Context Protocol (MCP)** depois que o aluno já dominar tools e workflows. O foco será:
+
+- host / client / server;
+- tools, resources e prompts;
+- capability discovery;
+- transporte;
+- authorization;
+- segurança e governança;
+- exposição padronizada de capacidades.
+
+A progressão evita transformar MCP em simples configuração: primeiro o aluno compreende o problema de integração que o protocolo resolve.
 
 ### Bloco D — Agentic Systems
 
