@@ -104,3 +104,19 @@ e justifica a escolha considerando:
 - governança.
 
 O objetivo é reforçar o princípio do TIL de escolher a arquitetura mínima suficiente e exigir evidência antes de adicionar complexidade.
+
+
+## Glossário Vivo integrado
+
+A Aula 17 passou a usar o Glossário Vivo no próprio fluxo pedagógico, não apenas como lista de termos.
+
+Integrações incluídas:
+
+- barra inicial de conceitos com links clicáveis;
+- links contextuais em Tool Contract;
+- links contextuais em Input Schema;
+- links em Side Effects e Approval Gate;
+- link em Tool Observability;
+- revisão de conceitos antes da ponte para MCP.
+
+Isso mantém o glossário como recurso ativo de aprendizagem ao longo da aula.
