@@ -136,7 +136,7 @@ O núcleo da primeira versão deve ser executável com `Internet OFF` e sem API 
 ### Bloco B — Retrieval and Grounding
 
 **Próxima unidade oficial: Aula 15 — Retrieval, Semantic Search and Grounding**  
-Status: `Draft`  
+Status: `Available`  
 Especificação: `docs/curriculum/AULA-15-retrieval-semantic-search-grounding.md`
 
 Objetivo: separar retrieval de generation antes de construir RAG.
