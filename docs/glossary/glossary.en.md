@@ -1321,3 +1321,43 @@ A condition in which the available evidence does not adequately support a specif
 **Example:** No retrieved chunk contains information about the requested deadline.
 
 **First lesson:** 16
+
+## Factuality
+
+The degree to which a claim or answer corresponds to relevant facts or reality.
+
+**In TIL:** In Lesson 16, factuality is distinguished from groundedness: an answer can be supported by a source and still be wrong if that source is incorrect or outdated.
+
+**Example:** The answer correctly cites an old document stating ten days even though the current rule is five.
+
+**First lesson:** 16
+
+## Evidence Governance
+
+A set of practices for controlling the origin, authority, validity, freshness, versioning, and use of evidence in a system.
+
+**In TIL:** In Lesson 16, evidence governance explains why technically correct retrieval and grounding do not guarantee factuality.
+
+**Example:** The system only considers current, approved documents with identified sources.
+
+**First lesson:** 16
+
+## Freshness
+
+A property indicating how current and still valid an item of evidence is for the question or decision being considered.
+
+**In TIL:** In Lesson 16, freshness is a governance factor that can make a grounded answer factually wrong when the source is outdated.
+
+**Example:** A policy published in 2024 was replaced by a 2026 version.
+
+**First lesson:** 16
+
+## Authority Level
+
+An indication of the strength or priority of a source for supporting a claim, decision, or policy.
+
+**In TIL:** In Lesson 16, authority level helps distinguish official, secondary, or informal sources when evidence conflicts.
+
+**Example:** A current official policy has priority over an old unreviewed FAQ.
+
+**First lesson:** 16

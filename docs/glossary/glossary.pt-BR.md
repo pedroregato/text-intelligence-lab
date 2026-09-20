@@ -1585,3 +1585,51 @@ Condição em que as evidências disponíveis não sustentam de forma adequada u
 **Exemplo:** Nenhum chunk recuperado contém informação sobre o prazo solicitado.
 
 **Primeira aula:** 16
+
+## Factualidade
+
+**English:** Factuality
+
+Grau em que uma afirmação ou resposta corresponde aos fatos ou à realidade relevante.
+
+**No TIL:** Na Aula 16, factualidade é diferenciada de groundedness: uma resposta pode estar apoiada em uma fonte e ainda estar errada se a fonte estiver incorreta ou desatualizada.
+
+**Exemplo:** A resposta cita corretamente um documento antigo que afirma prazo de dez dias, embora a regra atual seja cinco.
+
+**Primeira aula:** 16
+
+## Governança da evidência
+
+**English:** Evidence Governance
+
+Conjunto de práticas para controlar origem, autoridade, validade, atualização, versionamento e uso de evidências em um sistema.
+
+**No TIL:** Na Aula 16, governança da evidência explica por que retrieval e grounding tecnicamente corretos não garantem factualidade.
+
+**Exemplo:** O sistema só considera documentos vigentes, aprovados e com fonte identificada.
+
+**Primeira aula:** 16
+
+## Atualidade da evidência
+
+**English:** Freshness
+
+Propriedade que indica quão atual e ainda vigente é uma evidência para a decisão ou pergunta em análise.
+
+**No TIL:** Na Aula 16, freshness aparece como fator de governança capaz de tornar uma resposta grounded porém factualmente incorreta quando a fonte está desatualizada.
+
+**Exemplo:** Uma política publicada em 2024 foi substituída por uma versão de 2026.
+
+**Primeira aula:** 16
+
+## Nível de autoridade
+
+**English:** Authority Level
+
+Indicação da força ou prioridade de uma fonte para sustentar uma afirmação, decisão ou política.
+
+**No TIL:** Na Aula 16, authority level ajuda a diferenciar fontes oficiais, secundárias ou informais quando há evidências conflitantes.
+
+**Exemplo:** Uma norma oficial vigente tem prioridade sobre uma FAQ antiga não revisada.
+
+**Primeira aula:** 16
