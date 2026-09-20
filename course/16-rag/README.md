@@ -23,6 +23,7 @@ RAG
 - top-k sensitivity;
 - insufficient evidence;
 - retrieval/context/generation/attribution failures;
+- laboratório de diagnóstico por estágio com logs de retrieval, contexto, resposta e fonte;
 - utility e trade-offs.
 
 ## Fora de escopo
@@ -73,3 +74,36 @@ missing-evidence grounded: false
 A validação também detectou e corrigiu um caso de attribution inadequada: uma evidência irrelevante recuperada não deve ser apresentada como fonte de uma resposta sem suporte.
 
 Essa validação lógica não substitui o gate de execução headless integral do `.ipynb` nem a execução oficial no Kaggle.
+
+
+## Failure diagnosis lab — 2026-09-20
+
+A Aula 16 foi enriquecida com cenários concretos e um mini laboratório de diagnóstico.
+
+Novos elementos:
+
+```text
+retrieval log
+→ context log
+→ answer
+→ source
+→ failure diagnosis
+```
+
+Casos cobertos:
+
+- retrieval encontra os itens errados;
+- retrieval encontra C1, mas C1 desaparece na construção do contexto;
+- contexto contém C1, mas a geração contradiz C1;
+- resposta está correta, mas não preserva attribution.
+
+Validação lógica:
+
+```text
+A → retrieval failure   PASS
+B → context failure     PASS
+C → generation failure  PASS
+D → attribution failure PASS
+```
+
+A versão anterior da Aula 16 já havia executado com sucesso no Kaggle. Como o notebook foi enriquecido depois dessa execução, a versão atualizada deve passar por um novo `Run All` antes de ser promovida para `Available`.
