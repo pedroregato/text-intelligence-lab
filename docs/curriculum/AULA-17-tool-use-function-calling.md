@@ -182,7 +182,7 @@ course/17-tool-use-function-calling/
 Kaggle slug:
 
 ```text
-til-17-tool-use-function-calling
+til-17-tool-use-function-calling-and-contracts
 ```
 
 Configuração inicial:
