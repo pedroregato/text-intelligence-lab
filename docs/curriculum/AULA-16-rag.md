@@ -254,13 +254,24 @@ evidence insufficient
 
 ### Experiment E — Failure localization
 
-Fornecer três cenários:
+Fornecer cenários observáveis por estágio:
 
-1. retrieval incorreto;
-2. retrieval correto + geração incorreta;
-3. resposta correta sem atribuição.
+1. trecho correto não recuperado;
+2. trecho correto recuperado, mas removido na construção do contexto;
+3. contexto correto, mas geração incompatível com a evidência;
+4. resposta correta sem atribuição da fonte.
 
-O aluno identifica em qual estágio ocorreu a falha.
+O aluno deve localizar **o primeiro estágio em que a evidência correta deixou de ser preservada**.
+
+A aula deve incluir um mini laboratório com logs explícitos de:
+
+- `retrieved_ids`;
+- `context_ids`;
+- resposta;
+- fonte atribuída;
+- diagnóstico esperado.
+
+O objetivo é preparar o aluno para observabilidade de sistemas de IA, evitando o diagnóstico genérico “o RAG errou”.
 
 ## Evidence Strategy
 
@@ -424,6 +435,8 @@ Classificar cenários como:
 - context failure;
 - generation failure;
 - attribution failure.
+
+Além da associação conceitual, o notebook deve apresentar um laboratório de diagnóstico em que o aluno inspeciona logs do pipeline e justifica a classificação com base na trajetória da evidência.
 
 ### Exercise 5 — Architecture decision
 
