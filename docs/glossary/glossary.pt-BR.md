@@ -1465,3 +1465,123 @@ Conjunto organizado de evidências recuperadas e seus metadados preparado para s
 **Exemplo:** Um objeto com query, C3, o texto do chunk e seu score de similaridade.
 
 **Primeira aula:** 15
+
+## Retrieval-Augmented Generation (RAG)
+
+**English:** Retrieval-Augmented Generation (RAG)
+
+Arquitetura que combina recuperação de evidências com geração, inserindo informação recuperada no contexto usado para produzir a resposta.
+
+**No TIL:** Na Aula 16, RAG é decomposto em retrieval, seleção de evidência, construção de contexto, geração, grounding e avaliação.
+
+**Exemplo:** Uma pergunta recupera dois trechos relevantes e o gerador produz a resposta usando apenas esses trechos.
+
+**Primeira aula:** 16
+
+## Generation-only
+
+**English:** Generation-only
+
+Configuração em que a resposta é produzida sem uma etapa explícita de retrieval de evidências externas.
+
+**No TIL:** Na Aula 16, generation-only funciona como baseline arquitetural para comparar com o fluxo RAG.
+
+**Exemplo:** Responder uma pergunta diretamente a partir do prompt sem consultar o corpus didático.
+
+**Primeira aula:** 16
+
+## Construção de contexto
+
+**English:** Context Construction
+
+Etapa que organiza instruções, consulta e evidências recuperadas em uma entrada estruturada para o gerador.
+
+**No TIL:** Na Aula 16, o contexto é mostrado explicitamente para que o aluno veja quais trechos chegam à etapa de geração.
+
+**Exemplo:** Combinar instrução, C1 e C2 recuperados e a pergunta em um único bloco de entrada.
+
+**Primeira aula:** 16
+
+## Resposta fundamentada
+
+**English:** Grounded Answer
+
+Resposta cuja afirmação pode ser rastreada até evidências explicitamente disponíveis no contexto ou no evidence pack.
+
+**No TIL:** Na Aula 16, uma resposta só é considerada grounded quando a informação usada aparece nas evidências recuperadas.
+
+**Exemplo:** Responder “cinco dias úteis” e indicar C3 como fonte.
+
+**Primeira aula:** 16
+
+## Groundedness
+
+**English:** Groundedness
+
+Grau em que as afirmações de uma resposta são sustentadas pelas evidências fornecidas ao sistema.
+
+**No TIL:** Na Aula 16, groundedness é tratada como propriedade distinta de fluência ou plausibilidade.
+
+**Exemplo:** Uma resposta pode soar bem, mas ter groundedness baixa se incluir fatos ausentes do evidence pack.
+
+**Primeira aula:** 16
+
+## Atribuição de fonte
+
+**English:** Source Attribution
+
+Associação explícita entre uma afirmação da resposta e a fonte ou trecho que a sustenta.
+
+**No TIL:** Na Aula 16, attribution torna a origem da resposta auditável e separa resposta correta de resposta rastreável.
+
+**Exemplo:** A resposta indica “[C2]” ao lado da informação usada.
+
+**Primeira aula:** 16
+
+## Falha de retrieval
+
+**English:** Retrieval Failure
+
+Falha em que a etapa de retrieval não recupera a evidência necessária ou prioriza evidência inadequada.
+
+**No TIL:** Na Aula 16, esse tipo de falha é separado de erros posteriores de contexto ou geração.
+
+**Exemplo:** O corpus contém a resposta, mas o trecho correto não aparece no top-k.
+
+**Primeira aula:** 16
+
+## Falha de contexto
+
+**English:** Context Failure
+
+Falha em que evidências adequadas foram recuperadas, mas são organizadas, truncadas ou apresentadas de forma que prejudica a etapa seguinte.
+
+**No TIL:** Na Aula 16, context failure mostra que retrieval correto não garante um contexto útil.
+
+**Exemplo:** O trecho correto é recuperado, mas fica fora do bloco entregue ao gerador.
+
+**Primeira aula:** 16
+
+## Falha de geração
+
+**English:** Generation Failure
+
+Falha em que o contexto contém evidência suficiente, mas a saída gerada ignora, distorce ou extrapola essa evidência.
+
+**No TIL:** Na Aula 16, generation failure é isolada das falhas de retrieval para facilitar diagnóstico e observabilidade.
+
+**Exemplo:** O contexto informa cinco dias úteis, mas a resposta afirma dez dias.
+
+**Primeira aula:** 16
+
+## Evidência insuficiente
+
+**English:** Insufficient Evidence
+
+Condição em que as evidências disponíveis não sustentam de forma adequada uma resposta específica.
+
+**No TIL:** Na Aula 16, o sistema deve reconhecer essa condição e preferir abstention, ampliar a busca ou escalar.
+
+**Exemplo:** Nenhum chunk recuperado contém informação sobre o prazo solicitado.
+
+**Primeira aula:** 16
