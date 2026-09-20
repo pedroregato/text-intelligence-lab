@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Câmara do Log-Odds — A Saga do LOR</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: radial-gradient(ellipse at top, #2e0b0b 0%, #160404 60%, #000 100%);
+    color: #ffe0e0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(2px 2px at 20% 30%, #fff, transparent),
+      radial-gradient(1px 1px at 60% 70%, #fa8, transparent),
+      radial-gradient(1px 1px at 80% 20%, #f44, transparent),
+      radial-gradient(2px 2px at 40% 80%, #fff, transparent);
+    background-size: 200px 200px;
+    opacity: 0.35;
+    pointer-events: none;
+    animation: drift 60s linear infinite;
+  }
+  @keyframes drift {
+    from { background-position: 0 0; }
+    to { background-position: 200px 400px; }
+  }
+
+  .game {
+    width: 100%;
+    max-width: 820px;
+    background: rgba(35, 8, 8, 0.92);
+    border: 2px solid #ff5c3a;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(255, 92, 58, 0.5), inset 0 0 30px rgba(255, 92, 58, 0.1);
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* HUD */
+  .hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #ff5c3a;
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin-bottom: 25px;
+    font-size: 0.95em;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .hud-item { display: flex; align-items: center; gap: 6px; }
+  .hud-item strong { color: #ffd54f; }
+  #lives { letter-spacing: 2px; }
+
+  /* Barra de progresso */
+  .progress-wrap {
+    width: 100%;
+    height: 10px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    border: 1px solid #7a2a1a;
+  }
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff5c3a, #ffd54f, #ff9a3a);
+    transition: width 0.6s ease;
+    box-shadow: 0 0 12px #ff5c3a;
+  }
+
+  /* Tela */
+  .screen { display: none; animation: fadeIn 0.5s ease; }
+  .screen.active { display: block; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  h1 {
+    font-size: 2.2em;
+    background: linear-gradient(90deg, #ff5c3a, #ffd54f, #ff9a3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    text-align: center;
+    text-shadow: 0 0 30px rgba(255,92,58,0.4);
+  }
+  h2 {
+    font-size: 1.5em;
+    color: #ffb347;
+    margin-bottom: 18px;
+    text-shadow: 0 0 10px rgba(255,179,71,0.4);
+  }
+
+  .phase-tag {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff5c3a, #ffd54f);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #2e0b0b;
+  }
+
+  p { line-height: 1.7; margin-bottom: 15px; font-size: 1.05em; }
+
+  .narration {
+    background: rgba(255, 179, 71, 0.08);
+    border-left: 4px solid #ffb347;
+    padding: 15px 18px;
+    border-radius: 8px;
+    font-style: italic;
+    margin-bottom: 22px;
+    color: #ffdca8;
+  }
+
+  /* Botões de opção */
+  .options { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+
+  .option {
+    background: rgba(255, 92, 58, 0.15);
+    border: 2px solid #7a2a1a;
+    color: #ffe0e0;
+    padding: 16px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1em;
+    transition: all 0.25s ease;
+    position: relative;
+    font-family: inherit;
+  }
+  .option:hover {
+    background: rgba(255, 92, 58, 0.35);
+    border-color: #ff5c3a;
+    transform: translateX(6px);
+    box-shadow: 0 0 20px rgba(255, 92, 58, 0.5);
+  }
+  .option:disabled { cursor: default; opacity: 0.55; transform: none; }
+  .option.correct {
+    background: rgba(0, 255, 150, 0.2);
+    border-color: #00ff96;
+    box-shadow: 0 0 20px rgba(0,255,150,0.5);
+    animation: pulseGood 0.5s ease;
+  }
+  .option.wrong {
+    background: rgba(255, 60, 100, 0.25);
+    border-color: #ff3c64;
+    box-shadow: 0 0 20px rgba(255,60,100,0.5);
+    animation: shake 0.4s ease;
+  }
+  @keyframes pulseGood { 0%{transform:scale(1);} 50%{transform:scale(1.03);} 100%{transform:scale(1);} }
+  @keyframes shake {
+    0%,100%{transform:translateX(0);}
+    25%{transform:translateX(-8px);}
+    75%{transform:translateX(8px);}
+  }
+
+  .feedback {
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin: 15px 0;
+    font-weight: 500;
+    display: none;
+  }
+  .feedback.show { display: block; animation: fadeIn 0.3s ease; }
+  .feedback.good { background: rgba(0,255,150,0.15); border: 1px solid #00ff96; color: #9fffcf; }
+  .feedback.bad { background: rgba(255,60,100,0.15); border: 1px solid #ff3c64; color: #ffb3c6; }
+
+  /* Botão principal */
+  .btn {
+    background: linear-gradient(90deg, #ff5c3a, #ffd54f);
+    color: #2e0b0b;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-size: 1.05em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-family: inherit;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 20px rgba(255,92,58,0.5);
+    margin-top: 10px;
+  }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 35px rgba(255, 213, 79, 0.8);
+  }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  .btn-center { display: flex; justify-content: center; margin-top: 20px; }
+
+  /* Fórmula estilizada */
+  .formula {
+    background: rgba(0,0,0,0.5);
+    border: 2px dashed #ffb347;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    font-size: 1.2em;
+    margin: 20px 0;
+    color: #ffd54f;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+    line-height: 1.8;
+  }
+
+  /* Avatar */
+  .avatar-choice { display: flex; gap: 15px; justify-content: center; margin: 25px 0; flex-wrap: wrap; }
+  .avatar {
+    background: rgba(255, 92, 58, 0.15);
+    border: 2px solid #7a2a1a;
+    border-radius: 15px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 130px;
+  }
+  .avatar:hover {
+    border-color: #ff5c3a;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 25px rgba(255,92,58,0.6);
+  }
+  .avatar .emoji { font-size: 3em; display: block; margin-bottom: 8px; }
+  .avatar .name { font-size: 0.85em; color: #ffc9b8; }
+
+  /* Tabela de contingência */
+  .table-demo {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  .contingency {
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.4);
+    border: 1px solid #7a2a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 0.95em;
+  }
+  .contingency th, .contingency td {
+    padding: 12px 20px;
+    text-align: center;
+    border: 1px solid #7a2a1a;
+  }
+  .contingency th {
+    background: rgba(255, 92, 58, 0.25);
+    color: #ffd54f;
+    font-size: 0.9em;
+  }
+  .contingency td { color: #ffe0e0; }
+  .contingency .highlight { color: #00e5ff; font-weight: bold; }
+
+  /* Vitória */
+  .victory { text-align: center; }
+  .trophy { font-size: 5em; display: block; margin: 15px 0; animation: float 2s ease-in-out infinite; }
+  @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-15px);} }
+
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+  }
+  .stat-box {
+    background: rgba(255, 92, 58, 0.15);
+    border: 1px solid #ff5c3a;
+    border-radius: 12px;
+    padding: 15px 25px;
+    text-align: center;
+  }
+  .stat-box .num { font-size: 1.8em; color: #ffd54f; font-weight: bold; }
+  .stat-box .lbl { font-size: 0.8em; color: #ffc9b8; text-transform: uppercase; letter-spacing: 1px; }
+
+  .badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 20px 0; }
+  .badge {
+    background: linear-gradient(135deg, #ff5c3a, #ffd54f);
+    color: #2e0b0b;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(255, 213, 79, 0.5);
+  }
+
+  /* Game over */
+  .gameover { text-align: center; }
+  .skull { font-size: 5em; display: block; margin: 15px 0; }
+
+  /* Insight box */
+  .insight {
+    background: rgba(255, 213, 79, 0.1);
+    border: 1px solid #ffd54f;
+    border-radius: 10px;
+    padding: 15px 18px;
+    margin: 15px 0;
+    color: #ffe9a8;
+    font-size: 0.95em;
+    line-height: 1.6;
+  }
+  .insight::before { content: "💡 "; }
+
+  /* Simulador interativo */
+  .simulator {
+    background: rgba(0,0,0,0.4);
+    border: 2px solid #ffb347;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  .sim-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+  }
+  .sim-row label { min-width: 180px; color: #ffc9b8; font-size: 0.9em; }
+  .sim-row input[type="range"] {
+    flex: 1;
+    accent-color: #ff5c3a;
+    min-width: 150px;
+  }
+  .sim-row .val {
+    min-width: 60px;
+    text-align: right;
+    color: #ffd54f;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+  }
+  .sim-output {
+    background: rgba(255, 92, 58, 0.15);
+    border: 1px dashed #ff5c3a;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    margin-top: 15px;
+  }
+  .sim-output .big {
+    font-size: 1.8em;
+    color: #ffd54f;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+  }
+  .sim-output .label { font-size: 0.85em; color: #ffc9b8; margin-top: 5px; }
+
+  @media (max-width: 600px) {
+    .game { padding: 20px; }
+    h1 { font-size: 1.6em; }
+    h2 { font-size: 1.2em; }
+    .formula { font-size: 0.95em; }
+    .hud { font-size: 0.8em; }
+    .sim-row label { min-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="game">
+  <!-- HUD -->
+  <div class="hud">
+    <div class="hud-item">🧙 <span id="playerName">Aprendiz</span></div>
+    <div class="hud-item">⚡ XP: <strong id="xp">0</strong></div>
+    <div class="hud-item">❤️ Vidas: <span id="lives">❤️❤️❤️</span></div>
+    <div class="hud-item">🏅 <strong id="badgeCount">0</strong></div>
+  </div>
+
+  <!-- Barra de progresso -->
+  <div class="progress-wrap">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- ===== TELA 0: INTRO ===== -->
+  <div class="screen active" id="screen-intro">
+    <h1>🔥 A Câmara do Log-Odds</h1>
+    <p style="text-align:center; color:#ffc9b8;">A Saga do LOR em IA</p>
+    <div class="narration">
+      "Nas profundezas do Templo da Estatística, existe uma câmara selada por séculos. Ela guarda o segredo do LOR — a métrica que separa o sinal do ruído nos classificadores de texto. Para abri-la, você precisa provar seu valor em 7 desafios. Cada erro custa uma vida. Você aceita?"
+    </div>
+    <h2>Escolha sua classe:</h2>
+    <div class="avatar-choice">
+      <div class="avatar" onclick="chooseAvatar('Alquimista de Features','⚗️')">
+        <span class="emoji">⚗️</span>
+        <span class="name">Alquimista de<br>Features</span>
+      </div>
+      <div class="avatar" onclick="chooseAvatar('Caçador de Spam','🏹')">
+        <span class="emoji">🏹</span>
+        <span class="name">Caçador de<br>Spam</span>
+      </div>
+      <div class="avatar" onclick="chooseAvatar('Sentinela do Texto','🛡️')">
+        <span class="emoji">🛡️</span>
+        <span class="name">Sentinela do<br>Texto</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FASE 1: O QUE É LOR ===== -->
+  <div class="screen" id="screen-1">
+    <span class="phase-tag">Fase 1 · Portão da Probabilidade</span>
+    <h2>🎲 O que é o Log-Odds Ratio?</h2>
+    <div class="narration">"O guardião da câmara pergunta: você sabe o que é uma razão de chances?"</div>
+    <p>O LOR compara a probabilidade de uma feature aparecer em uma classe versus fora dela. Qual é a interpretação correta?</p>
+    <div class="options" id="options-1">
+      <button class="option" onclick="answer(1, this, true, 50)">A) Mede a associação entre uma feature e uma classe — quanto maior, mais a feature "puxa" para aquela classe</button>
+      <button class="option" onclick="answer(1, this, false)">B) Mede a distância geométrica entre dois vetores</button>
+      <button class="option" onclick="answer(1, this, false)">C) Mede a frequência absoluta de uma palavra no texto</button>
+    </div>
+    <div class="feedback" id="fb-1"></div>
+    <div class="btn-center"><button class="btn" id="next-1" style="display:none" onclick="goTo(2)">Avançar →</button></div>
+  </div>
+
+  <!-- ===== FASE 2: A FÓRMULA ===== -->
+  <div class="screen" id="screen-2">
+    <span class="phase-tag">Fase 2 · Pergaminho da Razão</span>
+    <h2>📜 A fórmula do LOR</h2>
+    <div class="narration">"Um pergaminho se desenrola revelando a fórmula. Complete-a para desbloquear o poder."</div>
+
+    <div class="formula">
+      LOR(t, c) = log [ P(t|c) / (1 − P(t|c)) ]<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;÷<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [ P(t|¬c) / (1 − P(t|¬c)) ]
+    </div>
+
+    <p>O que o numerador representa?</p>
+    <div class="options" id="options-2">
+      <button class="option" onclick="answer(2, this, true, 75)">A) As odds da feature aparecer na classe <em>c</em> (chances dentro da classe)</button>
+      <button class="option" onclick="answer(2, this, false)">B) As odds da feature aparecer fora da classe <em>c</em></button>
+      <button class="option" onclick="answer(2, this, false)">C) A contagem total de documentos da classe <em>c</em></button>
+    </div>
+
+    <div class="insight">
+      O <strong>numerador</strong> é a chance da feature estar presente <em>dentro</em> da classe. O <strong>denominador</strong> é a chance dela estar presente <em>fora</em> da classe. A razão entre os dois indica quanto a feature "favorece" a classe.
+    </div>
+
+    <div class="feedback" id="fb-2"></div>
+    <div class="btn-center"><button class="btn" id="next-2" style="display:none" onclick="goTo(3)">Avançar →</button></div>
+  </div>
+
+  <!-- ===== FASE 3: INTERPRETAÇÃO ===== -->
+  <div class="screen" id="screen-3">
+    <span class="phase-tag">Fase 3 · Espelho da Interpretação</span>
+    <h2>🪞 Como ler o LOR?</h2>
+    <p>O LOR varia de <strong>−∞ a +∞</strong>. Observe a escala:</p>
+
+    <div class="formula" style="font-size:1em;">
+      ← −∞ &nbsp;&nbsp;&nbsp; 0 &nbsp;&nbsp;&nbsp; +∞ →<br>
+      <span style="color:#ff6b6b;">assoc. negativa</span> &nbsp;|&nbsp; <span style="color:#ffd54f;">neutro</span> &nbsp;|&nbsp; <span style="color:#00ff96;">assoc. positiva</span>
+    </div>
+
+    <p>Se um termo tem <strong>LOR = 0</strong>, o que isso significa?</p>
+    <div class="options" id="options-3">
+      <button class="option" onclick="answer(3, this, true, 100)">A) A feature é neutra — aparece igualmente dentro e fora da classe, sem associação</button>
+      <button class="option" onclick="answer(3, this, false)">B) A feature é extremamente relevante para a classe</button>
+      <button class="option" onclick="answer(3, this, false)">C) A feature nunca aparece no dataset</button>
+    </div>
+
+    <div class="insight">
+      <strong>LOR &gt; 0:</strong> feature puxa para a classe (associação positiva).<br>
+      <strong>LOR = 0:</strong> feature neutra (odds iguais dentro e fora).<br>
+      <strong>LOR &lt; 0:</strong> feature "empurra" para fora da classe (associação negativa).
+    </div>
+
+    <div class="feedback" id="fb-3"></div>
+    <div class="btn-center"><button class="btn" id="next-3" style="display:none" onclick="goTo(4)">Avançar →</button></div>
+  </div>
+
+  <!-- ===== FASE 4: PROBLEMA DE EVENTOS RAROS ===== -->
+  <div class="screen" id="screen-4">
+    <span class="phase-tag">Fase 4 · Abismo dos Eventos Raros</span>
+    <h2>⚠️ O problema do infinito</h2>
+    <div class="narration">"Um abismo se abre. Se uma feature nunca aparece fora da classe, o LOR explode para o infinito. Como atravessar?"</div>
+
+    <p>Se <code>P(t|¬c) = 0</code>, o denominador da fração se torna zero e o LOR vai para <strong>+∞</strong>. Qual é a solução padrão?</p>
+
+    <div class="options" id="options-4">
+      <button class="option" onclick="answer(4, this, true, 100)">A) Aplicar suavização (smoothing) — somar uma pequena constante (ex: 0.5 ou 1) às contagens</button>
+      <button class="option" onclick="answer(4, this, false)">B) Ignorar a feature completamente e descartá-la</button>
+      <button class="option" onclick="answer(4, this, false)">C) Usar o valor absoluto do LOR para torná-lo finito</button>
+    </div>
+
+    <div class="insight">
+      A suavização mais comum é o <strong>prior de Laplace</strong> (adicionar 1 a cada contagem) ou <strong>ELE</strong> (Expected Likelihood Estimate, adicionar 0.5). Isso evita divisão por zero e mantém o LOR finito e interpretável.
+    </div>
+
+    <div class="feedback" id="fb-4"></div>
+    <div class="btn-center"><button class="btn" id="next-4" style="display:none" onclick="goTo(5)">Avançar →</button></div>
+  </div>
+
+  <!-- ===== FASE 5: SIMULADOR INTERATIVO ===== -->
+  <div class="screen" id="screen-5">
+    <span class="phase-tag">Fase 5 · Forja do LOR</span>
+    <h2>⚒️ Simulador: calcule seu próprio LOR</h2>
+    <p>Ajuste as probabilidades e veja o LOR mudar em tempo real:</p>
+
+    <div class="simulator">
+      <div class="sim-row">
+        <label>P(t | c) — dentro da classe:</label>
+        <input type="range" id="pIn" min="1" max="99" value="80" oninput="updateSim()">
+        <span class="val" id="pInVal">0.80</span>
+      </div>
+      <div class="sim-row">
+        <label>P(t | ¬c) — fora da classe:</label>
+        <input type="range" id="pOut" min="1" max="99" value="20" oninput="updateSim()">
+        <span class="val" id="pOutVal">0.20</span>
+      </div>
+
+      <div class="sim-output">
+        <div class="big" id="lorValue">LOR = 2.77</div>
+        <div class="label" id="lorLabel">Associação positiva forte 🔥</div>
+      </div>
+    </div>
+
+    <div class="insight">
+      Experimente: quando <code>P(t|c) = P(t|¬c)</code>, o LOR é <strong>0</strong> (neutro). Quanto mais distantes as probabilidades, maior o valor absoluto do LOR.
+    </div>
+
+    <div class="btn-center"><button class="btn" onclick="goTo(6)">Ir para o Chefe →</button></div>
+  </div>
+
+  <!-- ===== FASE 6: CHEFE FINAL ===== -->
+  <div class="screen" id="screen-6">
+    <span class="phase-tag">Fase 6 · Chefe Final</span>
+    <h1 style="font-size:1.8em;">👹 O Filtro do Ruído</h1>
+    <div class="narration">
+      "Um demônio de mil palavras inúteis bloqueia a saída. Ele sussurra: 'Nem toda feature merece atenção. Prove que sabe selecionar as melhores!'"
+    </div>
+
+    <h2>Pergunta decisiva:</h2>
+    <p>Você tem um vocabulário de <strong>50.000 termos</strong> e precisa reduzir para <strong>500 features</strong> para um classificador Naive Bayes. Como o LOR ajuda?</p>
+
+    <div class="options" id="options-6">
+      <button class="option" onclick="answer(6, this, true, 200)">A) Calcular o LOR de cada termo para cada classe e manter os 500 com maior pontuação (mais associados)</button>
+      <button class="option" onclick="answer(6, this, false)">B) Manter os 500 termos mais frequentes, ignorando a associação com classes</button>
+      <button class="option" onclick="answer(6, this, false)">C) Usar todos os 50.000 termos e deixar o modelo decidir sozinho</button>
+    </div>
+
+    <div class="insight">
+      O LOR é uma <strong>métrica unilateral</strong>: identifica features positivamente correlacionadas com uma classe específica. É uma das técnicas mais eficazes de <strong>seleção de features</strong> em PLN, superando a simples frequência.
+    </div>
+
+    <div class="feedback" id="fb-6"></div>
+    <div class="btn-center"><button class="btn" id="next-6" style="display:none" onclick="goTo(7)">Finalizar →</button></div>
+  </div>
+
+  <!-- ===== FASE 7: VITÓRIA ===== -->
+  <div class="screen" id="screen-7">
+    <div class="victory">
+      <span class="trophy">🏆</span>
+      <h1>Mestre do Log-Odds!</h1>
+      <p style="color:#ffc9b8;">Você abriu a Câmara do LOR e dominou a arte da seleção de features.</p>
+
+      <div class="stats">
+        <div class="stat-box"><div class="num" id="finalXP">0</div><div class="lbl">XP Total</div></div>
+        <div class="stat-box"><div class="num" id="finalBadges">0</div><div class="lbl">Badges</div></div>
+        <div class="stat-box"><div class="num" id="finalLives">0</div><div class="lbl">Vidas Restantes</div></div>
+      </div>
+
+      <div class="badges" id="badgeList"></div>
+
+      <div class="insight" style="text-align:left; margin-top:25px;">
+        <strong>Resumo do que você aprendeu:</strong><br>
+        • LOR = log da razão entre odds dentro e fora da classe<br>
+        • Fórmula: log [ (P(t|c)/(1−P(t|c))) / (P(t|¬c)/(1−P(t|¬c))) ]<br>
+        • Varia de −∞ a +∞ (0 = neutro, &gt;0 = associação positiva, &lt;0 = negativa)<br>
+        • Problema de eventos raros: resolver com suavização (Laplace, ELE)<br>
+        • Usado em: seleção de features em PLN, classificadores Naive Bayes, análise de sentimento, detecção de spam
+      </div>
+
+      <div class="btn-center">
+        <button class="btn" onclick="restart()">🔁 Jogar Novamente</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GAME OVER ===== -->
+  <div class="screen" id="screen-gameover">
+    <div class="gameover">
+      <span class="skull">💀</span>
+      <h1>Game Over</h1>
+      <p>O ruído consumiu suas forças na Câmara do Log-Odds...</p>
+      <p style="color:#ffc9b8;">Mas todo mestre já caiu antes. Tente novamente!</p>
+      <div class="btn-center">
+        <button class="btn" onclick="restart()">🔄 Recomeçar Jornada</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const state = {
+    xp: 0,
+    lives: 3,
+    badges: 0,
+    playerName: "Aprendiz",
+    playerEmoji: "⚗️"
+  };
+
+  const badgeNames = [
+    "🏅 Iniciado na Probabilidade",
+    "🏅 Leitor de Pergaminhos",
+    "🏅 Intérprete da Escala",
+    "🏅 Sobrevivente do Infinito",
+    "🏅 Forjador de Features",
+    "🏅 Matador do Ruído"
+  ];
+
+  function chooseAvatar(name, emoji) {
+    state.playerName = name;
+    state.playerEmoji = emoji;
+    document.getElementById('playerName').textContent = name;
+    goTo(1);
+  }
+
+  function goTo(n) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    const target = document.getElementById('screen-' + n);
+    if (target) target.classList.add('active');
+    updateProgress(n);
+    if (n === 5) updateSim();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function updateProgress(phase) {
+    const total = 7;
+    const pct = Math.min((phase / total) * 100, 100);
+    document.getElementById('progressBar').style.width = pct + '%';
+  }
+
+  function updateHUD() {
+    document.getElementById('xp').textContent = state.xp;
+    document.getElementById('badgeCount').textContent = state.badges;
+    const hearts = '❤️'.repeat(Math.max(state.lives, 0)) + '🖤'.repeat(Math.max(3 - state.lives, 0));
+    document.getElementById('lives').textContent = hearts;
+  }
+
+  function answer(phase, btn, correct, xpReward) {
+    const container = document.getElementById('options-' + phase);
+    const buttons = container.querySelectorAll('.option');
+    buttons.forEach(b => b.disabled = true);
+
+    const fb = document.getElementById('fb-' + phase);
+    const nextBtn = document.getElementById('next-' + phase);
+
+    if (correct) {
+      btn.classList.add('correct');
+      state.xp += xpReward;
+      state.badges += 1;
+      fb.className = 'feedback good show';
+      fb.innerHTML = `✅ <strong>Correto!</strong> +${xpReward} XP · Badge conquistada: ${badgeNames[state.badges - 1] || '🏅'}`;
+      updateHUD();
+      if (nextBtn) nextBtn.style.display = 'inline-block';
+    } else {
+      btn.classList.add('wrong');
+      state.lives -= 1;
+      updateHUD();
+      fb.className = 'feedback bad show';
+      if (state.lives <= 0) {
+        fb.innerHTML = `❌ <strong>Errado!</strong> Você perdeu sua última vida...`;
+        setTimeout(() => {
+          document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+          document.getElementById('screen-gameover').classList.add('active');
+        }, 1500);
+      } else {
+        fb.innerHTML = `❌ <strong>Errado!</strong> -1 vida. Tente outra opção.`;
+        buttons.forEach(b => {
+          if (b !== btn) b.disabled = false;
+        });
+      }
+    }
+  }
+
+  // Simulador interativo
+  function updateSim() {
+    const pIn = document.getElementById('pIn').value / 100;
+    const pOut = document.getElementById('pOut').value / 100;
+
+    document.getElementById('pInVal').textContent = pIn.toFixed(2);
+    document.getElementById('pOutVal').textContent = pOut.toFixed(2);
+
+    // odds = p / (1-p)
+    const oddsIn = pIn / (1 - pIn);
+    const oddsOut = pOut / (1 - pOut);
+    const lor = Math.log(oddsIn / oddsOut);
+
+    document.getElementById('lorValue').textContent = 'LOR = ' + lor.toFixed(2);
+
+    let label = '';
+    if (lor > 2) label = 'Associação positiva muito forte 🔥🔥';
+    else if (lor > 0.5) label = 'Associação positiva forte 🔥';
+    else if (lor > 0.1) label = 'Associação positiva leve ↗️';
+    else if (lor > -0.1) label = 'Neutro — sem associação ➡️';
+    else if (lor > -0.5) label = 'Associação negativa leve ↘️';
+    else if (lor > -2) label = 'Associação negativa forte ❄️';
+    else label = 'Associação negativa muito forte ❄️❄️';
+
+    document.getElementById('lorLabel').textContent = label;
+
+    // Muda a cor conforme o valor
+    const el = document.getElementById('lorValue');
+    if (lor > 0.1) el.style.color = '#00ff96';
+    else if (lor < -0.1) el.style.color = '#ff6b6b';
+    else el.style.color = '#ffd54f';
+  }
+
+  function restart() {
+    state.xp = 0;
+    state.lives = 3;
+    state.badges = 0;
+    state.playerName = "Aprendiz";
+    state.playerEmoji = "⚗️";
+
+    document.getElementById('playerName').textContent = "Aprendiz";
+    updateHUD();
+    updateProgress(0);
+
+    document.querySelectorAll('.option').forEach(b => {
+      b.disabled = false;
+      b.classList.remove('correct', 'wrong');
+    });
+    document.querySelectorAll('.feedback').forEach(f => {
+      f.className = 'feedback';
+      f.innerHTML = '';
+    });
+    document.querySelectorAll('.btn[id^="next-"]').forEach(b => b.style.display = 'none');
+
+    document.getElementById('badgeList').innerHTML = '';
+
+    // Resetar sliders do simulador
+    document.getElementById('pIn').value = 80;
+    document.getElementById('pOut').value = 20;
+
+    goTo(0);
+  }
+
+  // Preencher tela final quando entrar na fase 7
+  const originalGoTo = goTo;
+  goTo = function(n) {
+    originalGoTo(n);
+    if (n === 7) {
+      document.getElementById('finalXP').textContent = state.xp;
+      document.getElementById('finalBadges').textContent = state.badges;
+      document.getElementById('finalLives').textContent = state.lives;
+      const badgeList = document.getElementById('badgeList');
+      badgeList.innerHTML = '';
+      for (let i = 0; i < state.badges; i++) {
+        const span = document.createElement('span');
+        span.className = 'badge';
+        span.textContent = badgeNames[i] || '🏅';
+        badgeList.appendChild(span);
+      }
+    }
+  };
+
+  // Inicializar
+  updateHUD();
+  updateProgress(0);
+  updateSim();
+</script>
+
+</body>
+</html>
