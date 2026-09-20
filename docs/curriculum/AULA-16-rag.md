@@ -185,7 +185,36 @@ A resposta pode estar correta, mas não há rastreabilidade da fonte usada.
 
 Essa taxonomia é importante para observabilidade futura.
 
-### 7. Generation-only vs RAG
+### 7. Factuality and Evidence Governance
+
+A aula deve explicitar que **groundedness não implica factuality**.
+
+O aluno deve distinguir:
+
+- groundedness — a resposta é sustentada pela evidência fornecida?
+- factuality — a resposta corresponde à realidade relevante?
+- governance — a evidência usada é atual, autorizada, rastreável e adequada para a decisão?
+
+A aula deve incluir um cenário em que:
+
+- retrieval funciona;
+- context construction funciona;
+- generation preserva a evidência;
+- attribution está correta;
+- mas a fonte está desatualizada ou foi superseded.
+
+Esse caso deve ser diagnosticado como **factuality failure**, com análise da causa de governança da evidência.
+
+Metadados mínimos de governança a demonstrar:
+
+- source_owner;
+- version;
+- effective_date;
+- last_reviewed_at;
+- authority_level;
+- status.
+
+### 8. Generation-only vs RAG
 
 A comparação deve perguntar:
 
@@ -434,7 +463,8 @@ Classificar cenários como:
 - retrieval failure;
 - context failure;
 - generation failure;
-- attribution failure.
+- attribution failure;
+- factuality failure.
 
 Além da associação conceitual, o notebook deve apresentar um laboratório de diagnóstico em que o aluno inspeciona logs do pipeline e justifica a classificação com base na trajetória da evidência.
 
@@ -458,7 +488,7 @@ Student-ready somente quando:
 5. context construction observável;
 6. grounded answer rastreável;
 7. missing evidence tratado;
-8. failure taxonomy aplicada;
+8. failure taxonomy aplicada, incluindo factuality failure e governança da evidência;
 9. top-k sensitivity demonstrada;
 10. custo/latência/risco discutidos;
 11. exercícios seguem o padrão TIL;
