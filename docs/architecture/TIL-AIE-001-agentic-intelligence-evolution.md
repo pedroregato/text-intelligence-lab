@@ -214,7 +214,7 @@ Tópicos candidatos:
 
 Primeira unidade: **Aula 15 — Retrieval, Semantic Search and Grounding** (`Available`).
 
-Segunda unidade: **Aula 16 — Retrieval-Augmented Generation (RAG)** (`Published / final headless gate pending`).
+Segunda unidade: **Aula 16 — Retrieval-Augmented Generation (RAG)** (`Available`).
 
 Especificação: `docs/curriculum/AULA-15-retrieval-semantic-search-grounding.md`.
 
