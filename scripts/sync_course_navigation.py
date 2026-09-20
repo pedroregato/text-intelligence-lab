@@ -18,9 +18,12 @@ def nav_markdown(previous, current, next_item, course_home, roadmap_url, next_pl
     prev_label = previous["title"] if previous else course_home["title"]
     prev_url = previous["url"] if previous else course_home["url"]
 
-    if next_item:
+    if next_item and next_item.get("published", True):
         next_label = next_item["title"]
         next_url = next_item["url"]
+    elif next_item:
+        next_label = next_item["title"] + " — em preparação"
+        next_url = roadmap_url
     else:
         next_label = next_planned["label"] + " — em preparação"
         next_url = roadmap_url
