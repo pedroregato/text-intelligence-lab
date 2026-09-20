@@ -801,3 +801,131 @@ terms:
       til_context: "In Lesson 16, authority level helps distinguish official, secondary, or informal sources when evidence conflicts."
       example: "A current official policy has priority over an old unreviewed FAQ."
     related: [evidence-governance, freshness, provenance]
+
+  - id: tool-calling
+    category: production
+    lesson_first_seen: "17"
+    pt-BR:
+      term: "Chamada de ferramenta"
+      english_term: "Tool Calling"
+      definition: "Mecanismo pelo qual um sistema solicita a execução de uma ferramenta externa por meio de uma chamada estruturada."
+      til_context: "Na Aula 17, o conceito é aplicado ao laboratório TIL Tool Registry e à transição de resposta para ação estruturada."
+      example: "O aluno inspeciona a chamada, valida os argumentos e observa o resultado ou erro antes da resposta final."
+    en:
+      term: "Tool Calling"
+      definition: "Mechanism by which a system requests execution of an external tool through a structured call."
+      til_context: "In Lesson 17, the concept is applied to the TIL Tool Registry lab and the transition from answering to structured action."
+      example: "The learner inspects the call, validates arguments, and observes the result or error before the final response."
+    related: []
+
+  - id: function-calling
+    category: production
+    lesson_first_seen: "17"
+    pt-BR:
+      term: "Chamada de função"
+      english_term: "Function Calling"
+      definition: "Forma de tool calling em que a capacidade externa é representada como uma função com nome, argumentos e contrato definidos."
+      til_context: "Na Aula 17, o conceito é aplicado ao laboratório TIL Tool Registry e à transição de resposta para ação estruturada."
+      example: "O aluno inspeciona a chamada, valida os argumentos e observa o resultado ou erro antes da resposta final."
+    en:
+      term: "Function Calling"
+      definition: "A form of tool calling in which the external capability is represented as a function with a defined name, arguments, and contract."
+      til_context: "In Lesson 17, the concept is applied to the TIL Tool Registry lab and the transition from answering to structured action."
+      example: "The learner inspects the call, validates arguments, and observes the result or error before the final response."
+    related: []
+
+  - id: tool-contract
+    category: production
+    lesson_first_seen: "17"
+    pt-BR:
+      term: "Contrato de ferramenta"
+      english_term: "Tool Contract"
+      definition: "Especificação explícita de nome, descrição, entradas, validação, saída e semântica de erros de uma ferramenta."
+      til_context: "Na Aula 17, o conceito é aplicado ao laboratório TIL Tool Registry e à transição de resposta para ação estruturada."
+      example: "O aluno inspeciona a chamada, valida os argumentos e observa o resultado ou erro antes da resposta final."
+    en:
+      term: "Tool Contract"
+      definition: "Explicit specification of a tool's name, description, inputs, validation, output, and error semantics."
+      til_context: "In Lesson 17, the concept is applied to the TIL Tool Registry lab and the transition from answering to structured action."
+      example: "The learner inspects the call, validates arguments, and observes the result or error before the final response."
+    related: []
+
+  - id: input-schema
+    category: production
+    lesson_first_seen: "17"
+    pt-BR:
+      term: "Schema de entrada"
+      english_term: "Input Schema"
+      definition: "Descrição estruturada dos campos, tipos, obrigatoriedade e restrições aceitos por uma chamada de ferramenta."
+      til_context: "Na Aula 17, o conceito é aplicado ao laboratório TIL Tool Registry e à transição de resposta para ação estruturada."
+      example: "O aluno inspeciona a chamada, valida os argumentos e observa o resultado ou erro antes da resposta final."
+    en:
+      term: "Input Schema"
+      definition: "Structured description of the fields, types, required properties, and constraints accepted by a tool call."
+      til_context: "In Lesson 17, the concept is applied to the TIL Tool Registry lab and the transition from answering to structured action."
+      example: "The learner inspects the call, validates arguments, and observes the result or error before the final response."
+    related: []
+
+  - id: tool-registry
+    category: production
+    lesson_first_seen: "17"
+    pt-BR:
+      term: "Registro de ferramentas"
+      english_term: "Tool Registry"
+      definition: "Catálogo estruturado de ferramentas disponíveis, seus contratos e formas de execução."
+      til_context: "Na Aula 17, o conceito é aplicado ao laboratório TIL Tool Registry e à transição de resposta para ação estruturada."
+      example: "O aluno inspeciona a chamada, valida os argumentos e observa o resultado ou erro antes da resposta final."
+    en:
+      term: "Tool Registry"
+      definition: "Structured catalog of available tools, their contracts, and execution mechanisms."
+      til_context: "In Lesson 17, the concept is applied to the TIL Tool Registry lab and the transition from answering to structured action."
+      example: "The learner inspects the call, validates arguments, and observes the result or error before the final response."
+    related: []
+
+  - id: side-effect
+    category: production
+    lesson_first_seen: "17"
+    pt-BR:
+      term: "Efeito colateral"
+      english_term: "Side Effect"
+      definition: "Alteração observável de estado causada pela execução de uma operação além do valor retornado diretamente."
+      til_context: "Na Aula 17, o conceito é aplicado ao laboratório TIL Tool Registry e à transição de resposta para ação estruturada."
+      example: "O aluno inspeciona a chamada, valida os argumentos e observa o resultado ou erro antes da resposta final."
+    en:
+      term: "Side Effect"
+      definition: "Observable state change caused by an operation beyond its direct return value."
+      til_context: "In Lesson 17, the concept is applied to the TIL Tool Registry lab and the transition from answering to structured action."
+      example: "The learner inspects the call, validates arguments, and observes the result or error before the final response."
+    related: []
+
+  - id: approval-gate
+    category: production
+    lesson_first_seen: "17"
+    pt-BR:
+      term: "Gate de aprovação"
+      english_term: "Approval Gate"
+      definition: "Ponto de controle que exige autorização explícita antes de uma ação potencialmente sensível ou irreversível."
+      til_context: "Na Aula 17, o conceito é aplicado ao laboratório TIL Tool Registry e à transição de resposta para ação estruturada."
+      example: "O aluno inspeciona a chamada, valida os argumentos e observa o resultado ou erro antes da resposta final."
+    en:
+      term: "Approval Gate"
+      definition: "Control point requiring explicit authorization before a potentially sensitive or irreversible action."
+      til_context: "In Lesson 17, the concept is applied to the TIL Tool Registry lab and the transition from answering to structured action."
+      example: "The learner inspects the call, validates arguments, and observes the result or error before the final response."
+    related: []
+
+  - id: tool-observability
+    category: production
+    lesson_first_seen: "17"
+    pt-BR:
+      term: "Observabilidade de ferramentas"
+      english_term: "Tool Observability"
+      definition: "Capacidade de registrar e inspecionar seleção da ferramenta, argumentos, validação, execução, resultado, latência e erros."
+      til_context: "Na Aula 17, o conceito é aplicado ao laboratório TIL Tool Registry e à transição de resposta para ação estruturada."
+      example: "O aluno inspeciona a chamada, valida os argumentos e observa o resultado ou erro antes da resposta final."
+    en:
+      term: "Tool Observability"
+      definition: "Ability to record and inspect tool selection, arguments, validation, execution, result, latency, and errors."
+      til_context: "In Lesson 17, the concept is applied to the TIL Tool Registry lab and the transition from answering to structured action."
+      example: "The learner inspects the call, validates arguments, and observes the result or error before the final response."
+    related: []
