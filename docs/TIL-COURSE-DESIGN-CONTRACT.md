@@ -524,3 +524,30 @@ Internet OFF by default
 Internet ON by justified exception
 → external access is part of the lesson
 ```
+
+
+---
+
+## 17C. Living Glossary Integration
+
+The Living Glossary is an active learning resource, not a detached reference appendix.
+
+For lessons that introduce or reuse important technical concepts:
+
+1. include a concise glossary section near the beginning of the notebook;
+2. make central terms clickable to their canonical PT-BR glossary anchors;
+3. link a concept again at its **first meaningful use** when the definition materially helps interpretation;
+4. prefer contextual links in headings or short `📚 Glossário` references over repeated long explanations;
+5. provide the EN glossary entry point when English terminology is important;
+6. do not overload every occurrence with links — the goal is retrieval support, not visual noise.
+
+Canonical pattern:
+
+```text
+concept introduced
+→ glossary link available
+→ concept used in experiment
+→ glossary remains one click away
+```
+
+A lesson that merely lists glossary terms without connecting them to the places where the concepts are used does not satisfy this requirement.
