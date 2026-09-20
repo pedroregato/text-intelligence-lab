@@ -80,3 +80,27 @@ sem API externa
 - [ ] revisão pedagógica final.
 
 Especificação: `docs/curriculum/AULA-17-tool-use-function-calling.md`.
+
+
+## Architecture decision lab
+
+O Exercício 5 foi ampliado para um laboratório de decisão arquitetural com oito cenários.
+
+O aluno compara:
+
+```text
+direct_answer
+direct_function
+structured_tool
+```
+
+e justifica a escolha considerando:
+
+- complexidade;
+- determinismo;
+- observabilidade;
+- reutilização;
+- risco;
+- governança.
+
+O objetivo é reforçar o princípio do TIL de escolher a arquitetura mínima suficiente e exigir evidência antes de adicionar complexidade.
