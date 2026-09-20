@@ -52,8 +52,8 @@ GPU OFF
 - [x] navegação anterior/home/próxima incluída;
 - [ ] execução headless integral;
 - [ ] warnings revisados;
-- [ ] execução Kaggle;
-- [ ] revisão pedagógica final.
+- [x] execução Kaggle;
+- [x] revisão pedagógica final.
 
 Especificação: `docs/curriculum/AULA-16-rag.md`.
 
@@ -152,3 +152,19 @@ E → factuality failure
 ```
 
 Como essa melhoria altera o notebook após a última execução Kaggle, a versão atualizada precisa de novo `Run All` antes da promoção para `Available`.
+
+
+## Kaggle execution — 2026-09-20
+
+A versão enriquecida da Aula 16, incluindo o laboratório de failure diagnosis e a extensão de factuality/evidence governance, foi republicada e executada com sucesso no Kaggle pelo primeiro aluno do curso.
+
+Resultado reportado:
+
+```text
+Run All: COMPLETE
+notebook: TIL 16 Retrieval-Augmented Generation
+```
+
+A revisão pedagógica final também foi concluída: a progressão generation-only → retrieval → context construction → grounded answer → failure localization → factuality/governance permanece coerente e cumulativa.
+
+Permanece aberto apenas o gate de execução headless integral via `nbconvert` e a revisão explícita dos warnings dessa execução, conforme a política headless-first do TIL.
