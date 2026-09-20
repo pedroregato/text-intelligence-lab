@@ -2,7 +2,7 @@
 
 ## Status
 
-Draft
+Available / student-ready
 
 ## Role in the TIL
 
