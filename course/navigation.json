@@ -5,7 +5,7 @@
   },
   "roadmap_url": "https://github.com/pedroregato/text-intelligence-lab/blob/main/docs/ROADMAP.md",
   "next_planned": {
-    "label": "Aula 16 — Retrieval-Augmented Generation (RAG)",
+    "label": "Tools and Workflows",
     "status": "in preparation"
   },
   "lessons": [
@@ -116,6 +116,13 @@
       "title": "Aula 15 — Retrieval, Semantic Search and Grounding",
       "path": "course/15-retrieval-semantic-search-grounding/15-til-retrieval-semantic-search-grounding.ipynb",
       "url": "https://www.kaggle.com/code/pedrogentil/til-15-retrieval-semantic-search-grounding"
+    },
+    {
+      "id": "16",
+      "title": "Aula 16 — Retrieval-Augmented Generation (RAG)",
+      "path": "course/16-rag/16-til-retrieval-augmented-generation.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-16-retrieval-augmented-generation",
+      "published": false
     }
   ]
 }
