@@ -153,7 +153,24 @@ A Aula 15 cobre:
 - evidence pack;
 - failure modes de retrieval.
 
-A primeira versão usa `Internet OFF`, TF-IDF real e vetores semânticos didáticos explicitamente marcados como proxies. RAG completo fica para a Aula 16.
+A primeira versão usa `Internet OFF`, TF-IDF real e vetores semânticos didáticos explicitamente marcados como proxies.
+
+### Aula 16 — Retrieval-Augmented Generation (RAG)
+
+Status: `Proposed`  
+Especificação: `docs/curriculum/AULA-16-rag.md`
+
+A Aula 16 combinará as capacidades estudadas separadamente nas Aulas 14 e 15:
+
+```text
+generation
++
+retrieval + grounding
+=
+RAG
+```
+
+O foco será tornar observáveis retrieval, evidence pack, context construction, grounded answer, attribution e failure localization, sem depender inicialmente de API externa ou framework de RAG.
 
 ### Bloco C — Tools and Workflows
 
