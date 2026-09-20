@@ -24,6 +24,8 @@ RAG
 - insufficient evidence;
 - retrieval/context/generation/attribution failures;
 - laboratório de diagnóstico por estágio com logs de retrieval, contexto, resposta e fonte;
+- factuality versus groundedness;
+- governança da evidência, freshness e authority level;
 - utility e trade-offs.
 
 ## Fora de escopo
@@ -107,3 +109,46 @@ D → attribution failure PASS
 ```
 
 A versão anterior da Aula 16 já havia executado com sucesso no Kaggle. Como o notebook foi enriquecido depois dessa execução, a versão atualizada deve passar por um novo `Run All` antes de ser promovida para `Available`.
+
+
+## Factuality and evidence governance — 2026-09-20
+
+A Aula 16 agora explicita que:
+
+```text
+groundedness != factuality
+```
+
+Novo cenário diagnóstico:
+
+```text
+retrieval      = OK
+context        = OK
+generation     = OK
+attribution    = OK
+factuality     = FAIL
+governance     = FAIL
+```
+
+O caso usa uma política antiga `POL-2024` com `status = superseded` e uma política vigente `POL-2026` com `status = active` e `authority_level = official`.
+
+Metadados introduzidos:
+
+- `source_owner`;
+- `version`;
+- `effective_date`;
+- `last_reviewed_at`;
+- `authority_level`;
+- `status`.
+
+O laboratório de diagnóstico passa a ter cinco casos:
+
+```text
+A → retrieval failure
+B → context failure
+C → generation failure
+D → attribution failure
+E → factuality failure
+```
+
+Como essa melhoria altera o notebook após a última execução Kaggle, a versão atualizada precisa de novo `Run All` antes da promoção para `Available`.
