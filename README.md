@@ -310,6 +310,32 @@ text-intelligence-lab/
 └── setup_structure.py
 ```
 
+## Navegação entre aulas
+
+Cada notebook oficial termina com um bloco de navegação:
+
+```text
+← Aula anterior
+| Apresentação do curso |
+Próxima aula →
+```
+
+Os links priorizam os notebooks oficiais no Kaggle, mantendo o aluno dentro do fluxo do curso.
+
+A ordem canônica está em:
+
+`course/navigation.json`
+
+e pode ser sincronizada nos notebooks com:
+
+```bash
+python scripts/sync_course_navigation.py
+```
+
+O sincronizador é idempotente: atualiza o rodapé existente ou cria um novo sem duplicá-lo. Quando a próxima aula ainda não foi publicada, o link aponta para o roadmap e é marcado como **em preparação**.
+
+---
+
 ## Status
 
 O curso está em construção ativa.
