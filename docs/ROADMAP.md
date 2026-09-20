@@ -157,7 +157,7 @@ A primeira versão usa `Internet OFF`, TF-IDF real e vetores semânticos didáti
 
 ### Aula 16 — Retrieval-Augmented Generation (RAG)
 
-Status: `Draft`  
+Status: `Published / final headless gate pending`  
 Especificação: `docs/curriculum/AULA-16-rag.md`
 
 A Aula 16 combinará as capacidades estudadas separadamente nas Aulas 14 e 15:
