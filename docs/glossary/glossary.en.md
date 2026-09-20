@@ -1361,3 +1361,83 @@ An indication of the strength or priority of a source for supporting a claim, de
 **Example:** A current official policy has priority over an old unreviewed FAQ.
 
 **First lesson:** 16
+
+## Tool Calling
+
+Mechanism by which a system requests execution of an external tool through a structured call.
+
+**In TIL:** In Lesson 17, the concept is applied to the TIL Tool Registry lab and the transition from answering to structured action.
+
+**Example:** The learner inspects the call, validates arguments, and observes the result or error before the final response.
+
+**First lesson:** 17
+
+## Function Calling
+
+A form of tool calling in which the external capability is represented as a function with a defined name, arguments, and contract.
+
+**In TIL:** In Lesson 17, the concept is applied to the TIL Tool Registry lab and the transition from answering to structured action.
+
+**Example:** The learner inspects the call, validates arguments, and observes the result or error before the final response.
+
+**First lesson:** 17
+
+## Tool Contract
+
+Explicit specification of a tool's name, description, inputs, validation, output, and error semantics.
+
+**In TIL:** In Lesson 17, the concept is applied to the TIL Tool Registry lab and the transition from answering to structured action.
+
+**Example:** The learner inspects the call, validates arguments, and observes the result or error before the final response.
+
+**First lesson:** 17
+
+## Input Schema
+
+Structured description of the fields, types, required properties, and constraints accepted by a tool call.
+
+**In TIL:** In Lesson 17, the concept is applied to the TIL Tool Registry lab and the transition from answering to structured action.
+
+**Example:** The learner inspects the call, validates arguments, and observes the result or error before the final response.
+
+**First lesson:** 17
+
+## Tool Registry
+
+Structured catalog of available tools, their contracts, and execution mechanisms.
+
+**In TIL:** In Lesson 17, the concept is applied to the TIL Tool Registry lab and the transition from answering to structured action.
+
+**Example:** The learner inspects the call, validates arguments, and observes the result or error before the final response.
+
+**First lesson:** 17
+
+## Side Effect
+
+Observable state change caused by an operation beyond its direct return value.
+
+**In TIL:** In Lesson 17, the concept is applied to the TIL Tool Registry lab and the transition from answering to structured action.
+
+**Example:** The learner inspects the call, validates arguments, and observes the result or error before the final response.
+
+**First lesson:** 17
+
+## Approval Gate
+
+Control point requiring explicit authorization before a potentially sensitive or irreversible action.
+
+**In TIL:** In Lesson 17, the concept is applied to the TIL Tool Registry lab and the transition from answering to structured action.
+
+**Example:** The learner inspects the call, validates arguments, and observes the result or error before the final response.
+
+**First lesson:** 17
+
+## Tool Observability
+
+Ability to record and inspect tool selection, arguments, validation, execution, result, latency, and errors.
+
+**In TIL:** In Lesson 17, the concept is applied to the TIL Tool Registry lab and the transition from answering to structured action.
+
+**Example:** The learner inspects the call, validates arguments, and observes the result or error before the final response.
+
+**First lesson:** 17

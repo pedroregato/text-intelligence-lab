@@ -1633,3 +1633,99 @@ Indicação da força ou prioridade de uma fonte para sustentar uma afirmação,
 **Exemplo:** Uma norma oficial vigente tem prioridade sobre uma FAQ antiga não revisada.
 
 **Primeira aula:** 16
+
+## Chamada de ferramenta
+
+**English:** Tool Calling
+
+Mecanismo pelo qual um sistema solicita a execução de uma ferramenta externa por meio de uma chamada estruturada.
+
+**No TIL:** Na Aula 17, o conceito é aplicado ao laboratório TIL Tool Registry e à transição de resposta para ação estruturada.
+
+**Exemplo:** O aluno inspeciona a chamada, valida os argumentos e observa o resultado ou erro antes da resposta final.
+
+**Primeira aula:** 17
+
+## Chamada de função
+
+**English:** Function Calling
+
+Forma de tool calling em que a capacidade externa é representada como uma função com nome, argumentos e contrato definidos.
+
+**No TIL:** Na Aula 17, o conceito é aplicado ao laboratório TIL Tool Registry e à transição de resposta para ação estruturada.
+
+**Exemplo:** O aluno inspeciona a chamada, valida os argumentos e observa o resultado ou erro antes da resposta final.
+
+**Primeira aula:** 17
+
+## Contrato de ferramenta
+
+**English:** Tool Contract
+
+Especificação explícita de nome, descrição, entradas, validação, saída e semântica de erros de uma ferramenta.
+
+**No TIL:** Na Aula 17, o conceito é aplicado ao laboratório TIL Tool Registry e à transição de resposta para ação estruturada.
+
+**Exemplo:** O aluno inspeciona a chamada, valida os argumentos e observa o resultado ou erro antes da resposta final.
+
+**Primeira aula:** 17
+
+## Schema de entrada
+
+**English:** Input Schema
+
+Descrição estruturada dos campos, tipos, obrigatoriedade e restrições aceitos por uma chamada de ferramenta.
+
+**No TIL:** Na Aula 17, o conceito é aplicado ao laboratório TIL Tool Registry e à transição de resposta para ação estruturada.
+
+**Exemplo:** O aluno inspeciona a chamada, valida os argumentos e observa o resultado ou erro antes da resposta final.
+
+**Primeira aula:** 17
+
+## Registro de ferramentas
+
+**English:** Tool Registry
+
+Catálogo estruturado de ferramentas disponíveis, seus contratos e formas de execução.
+
+**No TIL:** Na Aula 17, o conceito é aplicado ao laboratório TIL Tool Registry e à transição de resposta para ação estruturada.
+
+**Exemplo:** O aluno inspeciona a chamada, valida os argumentos e observa o resultado ou erro antes da resposta final.
+
+**Primeira aula:** 17
+
+## Efeito colateral
+
+**English:** Side Effect
+
+Alteração observável de estado causada pela execução de uma operação além do valor retornado diretamente.
+
+**No TIL:** Na Aula 17, o conceito é aplicado ao laboratório TIL Tool Registry e à transição de resposta para ação estruturada.
+
+**Exemplo:** O aluno inspeciona a chamada, valida os argumentos e observa o resultado ou erro antes da resposta final.
+
+**Primeira aula:** 17
+
+## Gate de aprovação
+
+**English:** Approval Gate
+
+Ponto de controle que exige autorização explícita antes de uma ação potencialmente sensível ou irreversível.
+
+**No TIL:** Na Aula 17, o conceito é aplicado ao laboratório TIL Tool Registry e à transição de resposta para ação estruturada.
+
+**Exemplo:** O aluno inspeciona a chamada, valida os argumentos e observa o resultado ou erro antes da resposta final.
+
+**Primeira aula:** 17
+
+## Observabilidade de ferramentas
+
+**English:** Tool Observability
+
+Capacidade de registrar e inspecionar seleção da ferramenta, argumentos, validação, execução, resultado, latência e erros.
+
+**No TIL:** Na Aula 17, o conceito é aplicado ao laboratório TIL Tool Registry e à transição de resposta para ação estruturada.
+
+**Exemplo:** O aluno inspeciona a chamada, valida os argumentos e observa o resultado ou erro antes da resposta final.
+
+**Primeira aula:** 17
