@@ -234,16 +234,31 @@ Tópicos candidatos:
 
 Objetivo: introduzir ação externa antes de introduzir autonomia ampla.
 
-Tópicos candidatos:
+Sequência formal:
 
-- function/tool calling;
-- contratos de ferramenta;
-- validação de argumentos;
-- workflows determinísticos;
-- estado;
-- retries;
-- idempotência;
-- observabilidade.
+```text
+Aula 17 — Tool Use, Function Calling and Contracts
+→ Aula 18 — Deterministic Workflows
+→ Aula 19 — Model Context Protocol (MCP)
+```
+
+Aula 17: tool contracts, schemas, validação, execução, efeitos colaterais e observabilidade.
+
+Aula 18: composição determinística, estado, retries, idempotência, checkpoints e approval gates.
+
+Aula 19: MCP como camada padronizada de integração, cobrindo host/client/server, tools/resources/prompts, discovery, authorization, segurança e governança.
+
+Princípio pedagógico:
+
+```text
+função direta
+→ tool estruturada
+→ workflow
+→ MCP
+→ agente
+```
+
+MCP não deve ser tratado como sinônimo de agente ou workflow; é uma camada de protocolo e integração que pode servir ambos.
 
 ### Bloco D — Agentic Systems
 
