@@ -1,6 +1,6 @@
 # Aula 16 — Retrieval-Augmented Generation (RAG)
 
-Status: `Draft`
+Status: `Available / student-ready`
 
 Esta aula combina as capacidades estudadas separadamente nas Aulas 14 e 15:
 
@@ -50,8 +50,8 @@ GPU OFF
 - [x] Glossário Vivo atualizado;
 - [x] PT-BR / EN / HTML regenerados;
 - [x] navegação anterior/home/próxima incluída;
-- [ ] execução headless integral;
-- [ ] warnings revisados;
+- [x] execução headless integral;
+- [x] warnings revisados;
 - [x] execução Kaggle;
 - [x] revisão pedagógica final.
 
@@ -168,3 +168,22 @@ notebook: TIL 16 Retrieval-Augmented Generation
 A revisão pedagógica final também foi concluída: a progressão generation-only → retrieval → context construction → grounded answer → failure localization → factuality/governance permanece coerente e cumulativa.
 
 Permanece aberto apenas o gate de execução headless integral via `nbconvert` e a revisão explícita dos warnings dessa execução, conforme a política headless-first do TIL.
+
+
+## Headless validation — 2026-09-20
+
+A versão canônica da Aula 16 foi executada localmente com `jupyter nbconvert --execute`.
+
+Resultado final:
+
+```text
+execution: COMPLETE
+notebook errors: 0
+```
+
+Warnings observados e revisados:
+
+- `Proactor event loop...` — warning de integração `asyncio/zmq` no Windows; não compromete a execução do notebook;
+- `Kernel is running over TCP without encryption` — warning de segurança do kernel local; não representa erro do conteúdo pedagógico.
+
+Com a execução Kaggle, a revisão pedagógica final e a validação headless concluídas, a Aula 16 atende aos critérios de `Available / student-ready`.
