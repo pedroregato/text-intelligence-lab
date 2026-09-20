@@ -53,8 +53,9 @@ Ler
 | 13C | Model Routing, Orchestration e Utility: sistemas compostos de IA |
 | 14 | LLM Foundations: da classificação à geração — `Available` |
 | 15 | Retrieval, Semantic Search and Grounding — `Available` |
+| 16 | Retrieval-Augmented Generation (RAG) — `Draft` |
 
-A **Aula 14 — LLM Foundations: da classificação à geração** está `Available`. A próxima unidade em desenvolvimento é a **Aula 15 — Retrieval, Semantic Search and Grounding**, que separa retrieval de generation antes da introdução de RAG.
+As **Aulas 14 e 15** estão `Available`. A próxima unidade em desenvolvimento é a **Aula 16 — Retrieval-Augmented Generation (RAG)**, que combina generation, retrieval e grounding mantendo cada estágio observável.
 
 ## Organização conceitual
 
