@@ -356,6 +356,42 @@ Students should be able to navigate the course from Kaggle without needing to un
 
 ---
 
+## 17B. Lesson Navigation
+
+Every student lesson notebook must end with a visible navigation block that keeps the learner inside the course flow.
+
+Required destinations:
+
+```text
+← Previous lesson
+🏠 Course Home
+Next lesson →
+```
+
+Rules:
+
+- navigation must appear at the end of the notebook, after the lesson summary or closing section;
+- lesson links should prefer the official Kaggle notebooks because Kaggle is the primary learner execution environment;
+- the Course Home link must point to the official TIL Course Home;
+- the first lesson may use Course Home as its previous destination;
+- when the next lesson has not yet been published, the next destination must point to the curriculum roadmap and be labeled as **in preparation** rather than linking to a nonexistent notebook;
+- navigation labels should include lesson number and short title when practical;
+- navigation must not depend on notebook execution;
+- broken or stale navigation links block student-ready status.
+
+Canonical learner flow:
+
+```text
+Course Home
+→ lesson
+→ previous / home / next
+→ continuous course navigation
+```
+
+The ordered course navigation should be maintained from a single course-navigation definition so future lessons can be inserted without manually redesigning every footer.
+
+---
+
 ## 18. Lesson Readiness
 
 A lesson is considered **student-ready** when all items below are true:
