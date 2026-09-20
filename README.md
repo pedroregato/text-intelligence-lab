@@ -53,9 +53,9 @@ Ler
 | 13C | Model Routing, Orchestration e Utility: sistemas compostos de IA |
 | 14 | LLM Foundations: da classificação à geração — `Available` |
 | 15 | Retrieval, Semantic Search and Grounding — `Available` |
-| 16 | Retrieval-Augmented Generation (RAG) — `Published / final headless gate pending` |
+| 16 | Retrieval-Augmented Generation (RAG) — `Available` |
 
-As **Aulas 14 e 15** estão `Available`. A **Aula 16 — Retrieval-Augmented Generation (RAG)** já foi publicada e executada com sucesso no Kaggle; resta apenas o gate técnico independente de execução headless via `nbconvert` antes da promoção formal para `Available`.
+As **Aulas 14 e 15** estão `Available`. A **Aula 16 — Retrieval-Augmented Generation (RAG)** está `Available`, com execução Kaggle e validação headless concluídas.
 
 ## Organização conceitual
 
