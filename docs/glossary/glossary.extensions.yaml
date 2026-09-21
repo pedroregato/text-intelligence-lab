@@ -929,3 +929,115 @@ terms:
       til_context: "In Lesson 17, the concept is applied to the TIL Tool Registry lab and the transition from answering to structured action."
       example: "The learner inspects the call, validates arguments, and observes the result or error before the final response."
     related: []
+
+  - id: deterministic-workflow
+    category: production
+    lesson_first_seen: "18"
+    pt-BR:
+      term: "Workflow determinístico"
+      english_term: "Deterministic Workflow"
+      definition: "Fluxo de execução em que a sequência de etapas, regras e transições é definida explicitamente pelo sistema."
+      til_context: "Na Aula 18, o conceito é usado no laboratório TIL Lesson Release Workflow."
+      example: "O aluno executa, interrompe, retoma e observa um workflow determinístico sob regras explícitas."
+    en:
+      term: "Deterministic Workflow"
+      definition: "Execution flow in which the sequence of steps, rules, and transitions is explicitly defined by the system."
+      til_context: "In Lesson 18, the concept is used in the TIL Lesson Release Workflow lab."
+      example: "The learner executes, interrupts, resumes, and observes a deterministic workflow under explicit rules."
+    related: []
+
+  - id: workflow-state
+    category: production
+    lesson_first_seen: "18"
+    pt-BR:
+      term: "Estado do workflow"
+      english_term: "Workflow State"
+      definition: "Conjunto explícito de dados que representa o progresso, entradas, saídas, tentativas, erros e decisões de um workflow."
+      til_context: "Na Aula 18, o conceito é usado no laboratório TIL Lesson Release Workflow."
+      example: "O aluno executa, interrompe, retoma e observa um workflow determinístico sob regras explícitas."
+    en:
+      term: "Workflow State"
+      definition: "Explicit data structure representing a workflow's progress, inputs, outputs, attempts, errors, and decisions."
+      til_context: "In Lesson 18, the concept is used in the TIL Lesson Release Workflow lab."
+      example: "The learner executes, interrupts, resumes, and observes a deterministic workflow under explicit rules."
+    related: []
+
+  - id: retry
+    category: production
+    lesson_first_seen: "18"
+    pt-BR:
+      term: "Retry"
+      english_term: "Retry"
+      definition: "Nova tentativa controlada de executar uma etapa após uma falha considerada recuperável."
+      til_context: "Na Aula 18, o conceito é usado no laboratório TIL Lesson Release Workflow."
+      example: "O aluno executa, interrompe, retoma e observa um workflow determinístico sob regras explícitas."
+    en:
+      term: "Retry"
+      definition: "Controlled re-attempt to execute a step after a failure considered recoverable."
+      til_context: "In Lesson 18, the concept is used in the TIL Lesson Release Workflow lab."
+      example: "The learner executes, interrupts, resumes, and observes a deterministic workflow under explicit rules."
+    related: []
+
+  - id: idempotency
+    category: production
+    lesson_first_seen: "18"
+    pt-BR:
+      term: "Idempotência"
+      english_term: "Idempotency"
+      definition: "Propriedade pela qual repetir uma operação com a mesma entrada não produz efeitos adicionais indesejados."
+      til_context: "Na Aula 18, o conceito é usado no laboratório TIL Lesson Release Workflow."
+      example: "O aluno executa, interrompe, retoma e observa um workflow determinístico sob regras explícitas."
+    en:
+      term: "Idempotency"
+      definition: "Property by which repeating an operation with the same input does not produce unintended additional effects."
+      til_context: "In Lesson 18, the concept is used in the TIL Lesson Release Workflow lab."
+      example: "The learner executes, interrupts, resumes, and observes a deterministic workflow under explicit rules."
+    related: []
+
+  - id: checkpoint
+    category: production
+    lesson_first_seen: "18"
+    pt-BR:
+      term: "Checkpoint"
+      english_term: "Checkpoint"
+      definition: "Registro persistente ou explícito de um estado intermediário que permite inspecionar ou retomar um workflow."
+      til_context: "Na Aula 18, o conceito é usado no laboratório TIL Lesson Release Workflow."
+      example: "O aluno executa, interrompe, retoma e observa um workflow determinístico sob regras explícitas."
+    en:
+      term: "Checkpoint"
+      definition: "Persistent or explicit record of an intermediate state that allows a workflow to be inspected or resumed."
+      til_context: "In Lesson 18, the concept is used in the TIL Lesson Release Workflow lab."
+      example: "The learner executes, interrupts, resumes, and observes a deterministic workflow under explicit rules."
+    related: []
+
+  - id: retryable-error
+    category: production
+    lesson_first_seen: "18"
+    pt-BR:
+      term: "Erro recuperável"
+      english_term: "Retryable Error"
+      definition: "Falha que pode justificar uma nova tentativa automática sob limites e condições explícitas."
+      til_context: "Na Aula 18, o conceito é usado no laboratório TIL Lesson Release Workflow."
+      example: "O aluno executa, interrompe, retoma e observa um workflow determinístico sob regras explícitas."
+    en:
+      term: "Retryable Error"
+      definition: "Failure that may justify an automatic retry under explicit limits and conditions."
+      til_context: "In Lesson 18, the concept is used in the TIL Lesson Release Workflow lab."
+      example: "The learner executes, interrupts, resumes, and observes a deterministic workflow under explicit rules."
+    related: []
+
+  - id: workflow-observability
+    category: production
+    lesson_first_seen: "18"
+    pt-BR:
+      term: "Observabilidade de workflows"
+      english_term: "Workflow Observability"
+      definition: "Capacidade de inspecionar etapas, estado, tentativas, latência, erros, checkpoints e decisões durante a execução de um workflow."
+      til_context: "Na Aula 18, o conceito é usado no laboratório TIL Lesson Release Workflow."
+      example: "O aluno executa, interrompe, retoma e observa um workflow determinístico sob regras explícitas."
+    en:
+      term: "Workflow Observability"
+      definition: "Ability to inspect steps, state, attempts, latency, errors, checkpoints, and decisions during workflow execution."
+      til_context: "In Lesson 18, the concept is used in the TIL Lesson Release Workflow lab."
+      example: "The learner executes, interrupts, resumes, and observes a deterministic workflow under explicit rules."
+    related: []
