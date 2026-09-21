@@ -2,7 +2,7 @@
 
 ## Status
 
-Draft
+Available / student-ready
 
 ## Role in the TIL
 
@@ -377,8 +377,16 @@ Student-ready somente quando:
 19. execução Kaggle concluída;
 20. revisão pedagógica final.
 
+## Validation Evidence
+
+- execução completa no Kaggle concluída;
+- notebook revisado pedagogicamente;
+- Glossário Vivo integrado;
+- diagramas de fluxo adicionados para estado, workflow principal, retry, approval/recovery e confidence-gated routing;
+- critérios de student-ready atendidos.
+
 ## Exit Condition
 
-A aula estará completa quando o aluno conseguir explicar:
+A aula está completa quando o aluno consegue explicar:
 
 > **Um workflow determinístico coordena capacidades sob uma sequência explícita, estado observável e políticas de execução previsíveis. Ele deve ser preferido a maior autonomia quando já resolve o problema com menor risco e complexidade.**
