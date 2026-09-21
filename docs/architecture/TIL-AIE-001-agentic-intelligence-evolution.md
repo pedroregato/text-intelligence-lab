@@ -242,7 +242,7 @@ Aula 17 — Tool Use, Function Calling and Contracts
 → Aula 19 — Model Context Protocol (MCP)
 ```
 
-Aula 17: tool contracts, schemas, validação, execução, efeitos colaterais e observabilidade.
+Aula 17 (`Available`): tool contracts, schemas, validação, execução, efeitos colaterais e observabilidade.
 
 Aula 18: composição determinística, estado, retries, idempotência, checkpoints e approval gates.
 
