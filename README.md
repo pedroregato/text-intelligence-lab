@@ -54,9 +54,9 @@ Ler
 | 14 | LLM Foundations: da classificação à geração — `Available` |
 | 15 | Retrieval, Semantic Search and Grounding — `Available` |
 | 16 | Retrieval-Augmented Generation (RAG) — `Available` |
-| 17 | Tool Use, Function Calling and Contracts — `Draft` |
+| 17 | Tool Use, Function Calling and Contracts — `Candidate` |
 
-As **Aulas 14 e 15** estão `Available`. A **Aula 16 — Retrieval-Augmented Generation (RAG)** está `Available`, com execução Kaggle e validação headless concluídas. A **Aula 17 — Tool Use, Function Calling and Contracts** está em `Draft` e inicia o Bloco C — Tools and Workflows.
+As **Aulas 14 e 15** estão `Available`. A **Aula 16 — Retrieval-Augmented Generation (RAG)** está `Available`, com execução Kaggle e validação headless concluídas. A **Aula 17 — Tool Use, Function Calling and Contracts** está em `Candidate — final validation pending` e inicia o Bloco C — Tools and Workflows.
 
 ## Organização conceitual
 
