@@ -5,7 +5,7 @@
   },
   "roadmap_url": "https://github.com/pedroregato/text-intelligence-lab/blob/main/docs/ROADMAP.md",
   "next_planned": {
-    "label": "Aula 19 — Model Context Protocol (MCP)",
+    "label": "Bloco D — Agentic Systems",
     "status": "in preparation"
   },
   "lessons": [
@@ -137,6 +137,13 @@
       "path": "course/18-deterministic-workflows/18-til-deterministic-workflows.ipynb",
       "url": "https://www.kaggle.com/code/pedrogentil/til-18-deterministic-workflows",
       "published": true
+    },
+    {
+      "id": "19",
+      "title": "Aula 19 — Model Context Protocol (MCP)",
+      "path": "course/19-model-context-protocol/19-til-model-context-protocol.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-19-model-context-protocol",
+      "published": false
     }
   ]
 }
