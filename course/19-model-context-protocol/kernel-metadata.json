@@ -7,7 +7,9 @@
   "is_private": false,
   "enable_gpu": false,
   "enable_internet": false,
-  "dataset_sources": [],
+  "dataset_sources": [
+    "pedrogentil/til-mcp-python-sdk-wheelhouse"
+  ],
   "competition_sources": [],
   "kernel_sources": []
 }
