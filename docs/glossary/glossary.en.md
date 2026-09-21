@@ -1511,3 +1511,43 @@ Ability to inspect steps, state, attempts, latency, errors, checkpoints, and dec
 **Example:** The learner executes, interrupts, resumes, and observes a deterministic workflow under explicit rules.
 
 **First lesson:** 18
+
+## Typed Decision
+
+Decision represented by an explicit structure with defined fields instead of free text used directly to control execution.
+
+**In TIL:** In Lesson 18, the concept separates decision production, routing policy, and workflow execution.
+
+**Example:** The same choice can proceed to execution, escalation, or human review depending on confidence and configured policy.
+
+**First lesson:** 18
+
+## Decision Contract
+
+Explicit schema defining the fields, types, and expected semantics of a decision consumed by a workflow.
+
+**In TIL:** In Lesson 18, the concept separates decision production, routing policy, and workflow execution.
+
+**Example:** The same choice can proceed to execution, escalation, or human review depending on confidence and configured policy.
+
+**First lesson:** 18
+
+## Confidence-Gated Routing
+
+Strategy in which decision confidence is interpreted by an explicit policy to choose among execution, escalation, or review.
+
+**In TIL:** In Lesson 18, the concept separates decision production, routing policy, and workflow execution.
+
+**Example:** The same choice can proceed to execution, escalation, or human review depending on confidence and configured policy.
+
+**First lesson:** 18
+
+## Routing Policy
+
+Explicit set of rules that transforms decision signals, such as choice and confidence, into an execution route.
+
+**In TIL:** In Lesson 18, the concept separates decision production, routing policy, and workflow execution.
+
+**Example:** The same choice can proceed to execution, escalation, or human review depending on confidence and configured policy.
+
+**First lesson:** 18

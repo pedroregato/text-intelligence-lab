@@ -1813,3 +1813,51 @@ Capacidade de inspecionar etapas, estado, tentativas, latência, erros, checkpoi
 **Exemplo:** O aluno executa, interrompe, retoma e observa um workflow determinístico sob regras explícitas.
 
 **Primeira aula:** 18
+
+## Decisão tipada
+
+**English:** Typed Decision
+
+Decisão representada por uma estrutura explícita com campos definidos, em vez de texto livre usado diretamente para controlar a execução.
+
+**No TIL:** Na Aula 18, o conceito é usado para separar produção da decisão, política de roteamento e execução do workflow.
+
+**Exemplo:** A mesma escolha pode seguir para execução, escalação ou revisão humana conforme a confiança e a política configurada.
+
+**Primeira aula:** 18
+
+## Contrato de decisão
+
+**English:** Decision Contract
+
+Esquema explícito que define os campos, tipos e semântica esperados para uma decisão consumida por um workflow.
+
+**No TIL:** Na Aula 18, o conceito é usado para separar produção da decisão, política de roteamento e execução do workflow.
+
+**Exemplo:** A mesma escolha pode seguir para execução, escalação ou revisão humana conforme a confiança e a política configurada.
+
+**Primeira aula:** 18
+
+## Roteamento por confiança
+
+**English:** Confidence-Gated Routing
+
+Estratégia em que a confiança de uma decisão é interpretada por uma política explícita para escolher entre executar, escalar ou solicitar revisão.
+
+**No TIL:** Na Aula 18, o conceito é usado para separar produção da decisão, política de roteamento e execução do workflow.
+
+**Exemplo:** A mesma escolha pode seguir para execução, escalação ou revisão humana conforme a confiança e a política configurada.
+
+**Primeira aula:** 18
+
+## Política de roteamento
+
+**English:** Routing Policy
+
+Conjunto explícito de regras que transforma sinais de decisão, como escolha e confiança, em uma rota de execução.
+
+**No TIL:** Na Aula 18, o conceito é usado para separar produção da decisão, política de roteamento e execução do workflow.
+
+**Exemplo:** A mesma escolha pode seguir para execução, escalação ou revisão humana conforme a confiança e a política configurada.
+
+**Primeira aula:** 18
