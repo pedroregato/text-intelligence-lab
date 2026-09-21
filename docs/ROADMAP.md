@@ -190,7 +190,11 @@ Especificação: `docs/curriculum/AULA-17-tool-use-function-calling.md`
 
 A Aula 17 introduz contratos de ferramenta, schemas, validação, execução, resultados, failure taxonomy, efeitos colaterais, safety e observabilidade.
 
-A Aula 18 deverá tratar composição determinística de ferramentas, estado, retries, idempotência, checkpoints e approval gates.
+**Aula 18 — Deterministic Workflows**  
+Status: `Draft`  
+Especificação: `docs/curriculum/AULA-18-deterministic-workflows.md`
+
+A Aula 18 trata composição determinística de ferramentas, estado, retries, idempotência, checkpoints, approval gates, recovery e observabilidade.
 
 A Aula 19 introduzirá **Model Context Protocol (MCP)** depois que o aluno já dominar tools e workflows. O foco será:
 
