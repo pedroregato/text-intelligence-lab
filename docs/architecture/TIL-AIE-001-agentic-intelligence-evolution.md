@@ -244,7 +244,7 @@ Aula 17 — Tool Use, Function Calling and Contracts
 
 Aula 17 (`Available`): tool contracts, schemas, validação, execução, efeitos colaterais e observabilidade.
 
-Aula 18: composição determinística, estado, retries, idempotência, checkpoints e approval gates.
+Aula 18 (`Draft`): composição determinística, estado, retries, idempotência, checkpoints, approval gates, recovery e observabilidade.
 
 Aula 19: MCP como camada padronizada de integração, cobrindo host/client/server, tools/resources/prompts, discovery, authorization, segurança e governança.
 
