@@ -6,7 +6,7 @@ Draft specification
 
 ## Protocol Baseline
 
-Esta aula deve usar como referência principal a especificação MCP **2026-07-28**.
+Esta aula deve usar como referência principal a especificação MCP **2026-07-28** e o **Python SDK v2**, linha estável compatível com essa revisão.
 
 Fontes canônicas:
 
@@ -163,12 +163,23 @@ O objetivo não é decorar versões, mas entender que protocolos evoluem e integ
 
 Cobrir conceitualmente:
 
+- conexão in-process para testes e ensino;
 - stdio;
-- HTTP.
+- Streamable HTTP.
 
-A versão 2026-07-28 remove sessões de protocolo do núcleo moderno e torna requests auto-descritivos.
+A versão 2026-07-28 remove o `initialize/initialized` e o `Mcp-Session-Id` do wire protocol moderno. Cada request carrega sua versão e metadados necessários; `server/discover` pode ser usado para obter capacidades antecipadamente.
 
-O notebook não deve depender de infraestrutura remota para ensinar o conceito.
+No núcleo do notebook, cliente e servidor devem se conectar **in-process**, sem subprocesso, porta ou infraestrutura remota. Depois de o aluno compreender o protocolo, stdio e HTTP aparecem como alternativas reais de transporte.
+
+Isso preserva:
+
+```text
+Internet OFF
++ execução headless
++ sem porta local
++ sem dependência de processo externo
+```
+
 
 ### 8. Authorization and Security
 
@@ -190,7 +201,39 @@ Tópicos:
 - approval gates para ações relevantes;
 - auditabilidade.
 
-### 9. Observability
+### 9. Multi Round-Trip Requests (MRTR)
+
+A revisão 2026-07-28 substitui o antigo padrão de requests iniciados livremente pelo servidor por um fluxo controlado de múltiplas idas e voltas.
+
+Modelo conceitual:
+
+```text
+client request
+→ server precisa de informação adicional
+→ input_required
+→ client coleta resposta
+→ repete a request original com inputResponses
+→ server continua
+```
+
+O tema deve aparecer **conceitualmente** na primeira versão da aula, especialmente como ponte para approval/elicitation, mas não precisa dominar o laboratório básico.
+
+### 10. Deprecated Features and Historical Context
+
+A aula deve alertar explicitamente que materiais MCP anteriores podem ensinar padrões que mudaram.
+
+Na revisão 2026-07-28:
+
+- `sampling` foi depreciado;
+- `roots` foi depreciado;
+- `initialize/initialized` deixou de fazer parte do fluxo moderno;
+- `Mcp-Session-Id` foi removido do protocolo moderno.
+
+O objetivo não é ensinar migração completa, mas desenvolver uma disciplina importante:
+
+> **Protocolos versionados precisam ser estudados junto com a versão da especificação.**
+
+### 11. Observability
 
 Registrar, quando aplicável:
 
@@ -210,7 +253,27 @@ A especificação moderna também documenta propagação de contexto OpenTelemet
 
 ## Student Lab
 
-Construir um **TIL Lesson MCP Server** mínimo.
+Construir um **TIL Lesson MCP Server** mínimo com o Python SDK v2.
+
+No caminho principal do notebook:
+
+```text
+MCPServer
+↕ in-process
+Client
+```
+
+Essa forma de conexão existe oficialmente no SDK para testes e permite observar discovery, capabilities e invocação sem abrir portas ou lançar subprocessos.
+
+Somente depois do caminho principal, a aula apresenta conceitualmente:
+
+```text
+mesmo servidor
+→ stdio
+ou
+→ Streamable HTTP
+```
+
 
 Capacidades propostas:
 
@@ -261,6 +324,30 @@ release_note
 Template simples para revisar uma release note.
 
 Nenhuma capability deve produzir side effect externo real.
+
+## Protocol Introspection Lab
+
+Antes do Architecture Lab, o aluno deve inspecionar pelo cliente:
+
+```text
+protocol_version
+server_capabilities
+tools
+resources
+prompts
+```
+
+Objetivo:
+
+> **Não apenas chamar uma capability, mas observar o contrato e as capacidades que o protocolo torna descobríveis.**
+
+Essa etapa cria a ponte entre:
+
+```text
+Aula 17 → contrato
+Aula 18 → política de execução
+Aula 19 → descoberta e exposição padronizadas
+```
 
 ## Architecture Lab
 
@@ -399,18 +486,22 @@ Student-ready somente quando:
 3. tools/resources/prompts diferenciados;
 4. discovery demonstrado;
 5. versioning demonstrado;
-6. transporte explicado;
-7. segurança e autorização abordadas;
-8. observabilidade demonstrada;
-9. servidor mínimo executável;
-10. cliente mínimo executável;
-11. failure taxonomy demonstrada;
-12. architecture decision lab;
-13. Glossário Vivo integrado;
-14. Internet OFF no núcleo;
-15. execução headless completa;
-16. execução Kaggle validada;
-17. revisão pedagógica final.
+6. conexão in-process demonstrada;
+7. stdio e Streamable HTTP explicados;
+8. MRTR explicado conceitualmente;
+9. features depreciadas identificadas;
+10. segurança e autorização abordadas;
+11. observabilidade demonstrada;
+12. servidor mínimo executável;
+13. cliente mínimo executável;
+14. protocol introspection lab;
+15. failure taxonomy demonstrada;
+16. architecture decision lab;
+17. Glossário Vivo integrado;
+18. Internet OFF no núcleo;
+19. execução headless completa;
+20. execução Kaggle validada;
+21. revisão pedagógica final.
 
 ## Exit Condition
 
