@@ -1,6 +1,6 @@
 # Aula 17 — Tool Use, Function Calling and Contracts
 
-Status: `Candidate — final validation pending`
+Status: `Available / student-ready`
 
 A Aula 17 inicia o Bloco C — **Tools and Workflows**.
 
@@ -76,7 +76,7 @@ sem API externa
 - [x] navegação anterior/home/próxima incluída;
 - [ ] execução headless integral;
 - [ ] warnings revisados;
-- [ ] execução Kaggle;
+- [x] execução Kaggle;
 - [x] revisão pedagógica final.
 
 Especificação: `docs/curriculum/AULA-17-tool-use-function-calling.md`.
@@ -163,3 +163,16 @@ Critérios revisados:
 - ponte para MCP sem confundir MCP com agente.
 
 A aula está pedagogicamente pronta para promoção assim que os gates de execução final forem concluídos.
+
+
+## Kaggle validation
+
+Date: 2026-09-20
+
+- Kaggle execution: COMPLETE
+- Notebook execution: successful
+- Final pedagogical review: PASS
+
+A aula está promovida para `Available / student-ready`.
+
+Observação: o gate headless local continua registrado separadamente quando houver evidência explícita do arquivo executado localmente.
