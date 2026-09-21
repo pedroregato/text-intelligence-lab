@@ -196,6 +196,11 @@ Especificação: `docs/curriculum/AULA-18-deterministic-workflows.md`
 
 A Aula 18 trata composição determinística de ferramentas, estado, retries, idempotência, checkpoints, approval gates, recovery, observabilidade e **Typed Decisions and Confidence-Gated Routing** por contratos de decisão e políticas explícitas. A unidade foi validada em execução completa no Kaggle e promovida para `Available / student-ready`.
 
+**Aula 19 — Model Context Protocol (MCP)**  
+Status: `Draft specification`  
+Especificação: `docs/curriculum/AULA-19-model-context-protocol.md`  
+Baseline do protocolo: `2026-07-28`
+
 A Aula 19 introduzirá **Model Context Protocol (MCP)** depois que o aluno já dominar tools e workflows. O foco será:
 
 - host / client / server;
