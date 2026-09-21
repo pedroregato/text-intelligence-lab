@@ -161,6 +161,75 @@ checkpoint
 approval_status
 ```
 
+## Decision Contracts and Confidence-Gated Routing
+
+A Aula 18 incorpora os princípios de **Typed Decisions and Confidence-Gated Routing** sem depender de uma biblioteca específica.
+
+Uma decisão deve ser representada por um contrato explícito, por exemplo:
+
+```text
+choice
+confidence
+source
+latency_ms
+cost
+```
+
+A decisão não executa a próxima ação sozinha. Ela é interpretada por uma **routing policy** determinística.
+
+Exemplo didático:
+
+```text
+confidence >= 0.90
+→ executar rota principal
+
+0.70 <= confidence < 0.90
+→ escalar para rota de maior custo ou validação adicional
+
+confidence < 0.70
+→ solicitar intervenção humana
+```
+
+Esses limiares são exemplos pedagógicos, não regras universais.
+
+O ponto arquitetural é separar:
+
+```text
+decision generation
+→ typed decision
+→ routing policy
+→ execution
+```
+
+Isso torna a decisão observável, testável e substituível.
+
+O curso deve ensinar a abstração, não uma dependência de fornecedor:
+
+```text
+DecisionProvider
+→ contract
+→ policy
+→ workflow
+```
+
+Uma implementação futura pode usar Jev ou outra ferramenta, mas o workflow da aula deve funcionar sem qualquer dependência externa.
+
+### Observability of Decisions
+
+Quando aplicável, registrar:
+
+```text
+choice
+confidence
+source
+latency_ms
+cost
+route_selected
+escalation_reason
+```
+
+Em AUTHOR / EVIDENCE, confidence poderá ser avaliada com métricas de calibração como Brier Score e ECE, além de coverage, escalation rate, custo, latência e utility.
+
 ## Student Lab
 
 Construir um **TIL Lesson Release Workflow** didático.
@@ -296,15 +365,17 @@ Student-ready somente quando:
 7. approval gate executável;
 8. failure taxonomy;
 9. observabilidade por etapa;
-10. recovery lab;
-11. architecture decision lab;
-12. Glossário Vivo integrado contextualmente;
-13. navegação anterior/home/próxima;
-14. Internet OFF;
-15. execução headless completa;
-16. warnings revisados;
-17. execução Kaggle concluída;
-18. revisão pedagógica final.
+10. decision contract executável;
+11. confidence-gated routing demonstrado;
+12. recovery lab;
+13. architecture decision lab;
+14. Glossário Vivo integrado contextualmente;
+15. navegação anterior/home/próxima;
+16. Internet OFF;
+17. execução headless completa;
+18. warnings revisados;
+19. execução Kaggle concluída;
+20. revisão pedagógica final.
 
 ## Exit Condition
 
