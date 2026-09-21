@@ -1041,3 +1041,67 @@ terms:
       til_context: "In Lesson 18, the concept is used in the TIL Lesson Release Workflow lab."
       example: "The learner executes, interrupts, resumes, and observes a deterministic workflow under explicit rules."
     related: []
+
+  - id: typed-decision
+    category: production
+    lesson_first_seen: "18"
+    pt-BR:
+      term: "Decisão tipada"
+      english_term: "Typed Decision"
+      definition: "Decisão representada por uma estrutura explícita com campos definidos, em vez de texto livre usado diretamente para controlar a execução."
+      til_context: "Na Aula 18, o conceito é usado para separar produção da decisão, política de roteamento e execução do workflow."
+      example: "A mesma escolha pode seguir para execução, escalação ou revisão humana conforme a confiança e a política configurada."
+    en:
+      term: "Typed Decision"
+      definition: "Decision represented by an explicit structure with defined fields instead of free text used directly to control execution."
+      til_context: "In Lesson 18, the concept separates decision production, routing policy, and workflow execution."
+      example: "The same choice can proceed to execution, escalation, or human review depending on confidence and configured policy."
+    related: []
+
+  - id: decision-contract
+    category: production
+    lesson_first_seen: "18"
+    pt-BR:
+      term: "Contrato de decisão"
+      english_term: "Decision Contract"
+      definition: "Esquema explícito que define os campos, tipos e semântica esperados para uma decisão consumida por um workflow."
+      til_context: "Na Aula 18, o conceito é usado para separar produção da decisão, política de roteamento e execução do workflow."
+      example: "A mesma escolha pode seguir para execução, escalação ou revisão humana conforme a confiança e a política configurada."
+    en:
+      term: "Decision Contract"
+      definition: "Explicit schema defining the fields, types, and expected semantics of a decision consumed by a workflow."
+      til_context: "In Lesson 18, the concept separates decision production, routing policy, and workflow execution."
+      example: "The same choice can proceed to execution, escalation, or human review depending on confidence and configured policy."
+    related: []
+
+  - id: confidence-gated-routing
+    category: production
+    lesson_first_seen: "18"
+    pt-BR:
+      term: "Roteamento por confiança"
+      english_term: "Confidence-Gated Routing"
+      definition: "Estratégia em que a confiança de uma decisão é interpretada por uma política explícita para escolher entre executar, escalar ou solicitar revisão."
+      til_context: "Na Aula 18, o conceito é usado para separar produção da decisão, política de roteamento e execução do workflow."
+      example: "A mesma escolha pode seguir para execução, escalação ou revisão humana conforme a confiança e a política configurada."
+    en:
+      term: "Confidence-Gated Routing"
+      definition: "Strategy in which decision confidence is interpreted by an explicit policy to choose among execution, escalation, or review."
+      til_context: "In Lesson 18, the concept separates decision production, routing policy, and workflow execution."
+      example: "The same choice can proceed to execution, escalation, or human review depending on confidence and configured policy."
+    related: []
+
+  - id: routing-policy
+    category: production
+    lesson_first_seen: "18"
+    pt-BR:
+      term: "Política de roteamento"
+      english_term: "Routing Policy"
+      definition: "Conjunto explícito de regras que transforma sinais de decisão, como escolha e confiança, em uma rota de execução."
+      til_context: "Na Aula 18, o conceito é usado para separar produção da decisão, política de roteamento e execução do workflow."
+      example: "A mesma escolha pode seguir para execução, escalação ou revisão humana conforme a confiança e a política configurada."
+    en:
+      term: "Routing Policy"
+      definition: "Explicit set of rules that transforms decision signals, such as choice and confidence, into an execution route."
+      til_context: "In Lesson 18, the concept separates decision production, routing policy, and workflow execution."
+      example: "The same choice can proceed to execution, escalation, or human review depending on confidence and configured policy."
+    related: []
