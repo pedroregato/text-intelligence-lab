@@ -110,9 +110,9 @@ The notebook contains contextual links to those concepts.
 
 ### G7 — Generated glossary views
 
-**PENDING**
+**PASS**
 
-Regenerate:
+The generated glossary views were rebuilt and committed:
 
 ```text
 docs/glossary/glossary.pt-BR.md
@@ -120,13 +120,11 @@ docs/glossary/glossary.en.md
 docs/glossary/web/index.html
 ```
 
-using:
+Evidence:
 
-```powershell
-python docs/glossary/build_glossary.py
+```text
+0aeb568 — glossary: regenerate views for Aula 19 MCP
 ```
-
-Commit the generated views before promotion.
 
 ### G8 — Pedagogical review
 
@@ -150,7 +148,7 @@ Promote to:
 Available / student-ready
 ```
 
-only after G7 and G8 pass.
+only after G8 passes.
 
 ## Governing principle
 
