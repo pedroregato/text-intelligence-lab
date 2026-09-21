@@ -415,6 +415,10 @@ Cobrir:
 - não introduzir side effects reais;
 - não ensinar sintaxe de SDK sem explicar o protocolo.
 
+## Notebook Blueprint
+
+Desenho célula por célula: `docs/curriculum/AULA-19-notebook-blueprint.md`.
+
 ## Notebook Design
 
 Proposta:
