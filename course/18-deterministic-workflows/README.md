@@ -16,6 +16,8 @@ A Aula 18 é a segunda unidade do Bloco C — **Tools and Workflows**.
 - approval gates;
 - recovery;
 - workflow observability;
+- Typed Decisions and Confidence-Gated Routing;
+- decision contracts e routing policies;
 - workflow vs agent architecture decision.
 
 ## Laboratório
@@ -72,3 +74,17 @@ sem side effects reais
 - [ ] revisão pedagógica final.
 
 Especificação: `docs/curriculum/AULA-18-deterministic-workflows.md`.
+
+
+## Decision layer
+
+A Aula 18 ensina a abstração:
+
+```text
+DecisionProvider
+→ Decision Contract
+→ Routing Policy
+→ Workflow
+```
+
+Jev pode ser estudado futuramente como implementação opcional desse padrão, mas não é dependência da aula nem do TIL.
