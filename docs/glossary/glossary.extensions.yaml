@@ -1105,3 +1105,179 @@ terms:
       til_context: "In Lesson 18, the concept separates decision production, routing policy, and workflow execution."
       example: "The same choice can proceed to execution, escalation, or human review depending on confidence and configured policy."
     related: []
+
+  - id: model-context-protocol
+    category: production
+    lesson_first_seen: "19"
+    pt-BR:
+      term: "Model Context Protocol (MCP)"
+      english_term: "Model Context Protocol (MCP)"
+      definition: "Protocolo aberto para padronizar como aplicações de IA descobrem, acessam e invocam capacidades e contexto expostos por servidores."
+      til_context: "Na Aula 19, o MCP é estudado como camada de integração padronizada, separada de workflow e autonomia agente."
+      example: "Um host usa um cliente MCP para descobrir tools, resources e prompts de um servidor sem conhecer sua implementação interna."
+    en:
+      term: "Model Context Protocol (MCP)"
+      definition: "Open protocol for standardizing how AI applications discover, access, and invoke capabilities and context exposed by servers."
+      til_context: "In Lesson 19, MCP is studied as a standardized integration layer, separate from workflows and agent autonomy."
+      example: "A host uses an MCP client to discover tools, resources, and prompts from a server without knowing its internal implementation."
+    related: [mcp-host, mcp-client, mcp-server, capability-discovery]
+
+  - id: mcp-host
+    category: production
+    lesson_first_seen: "19"
+    pt-BR:
+      term: "MCP Host"
+      english_term: "MCP Host"
+      definition: "Aplicação que coordena a experiência e contém ou gerencia um ou mais clientes MCP."
+      til_context: "Na Aula 19, o host representa a aplicação que decide como consumir capacidades MCP sob políticas próprias."
+      example: "Uma aplicação de IA mantém um cliente MCP conectado a um servidor didático do TIL."
+    en:
+      term: "MCP Host"
+      definition: "Application that coordinates the experience and contains or manages one or more MCP clients."
+      til_context: "In Lesson 19, the host is the application that decides how to consume MCP capabilities under its own policies."
+      example: "An AI application keeps an MCP client connected to a TIL teaching server."
+    related: [model-context-protocol, mcp-client]
+
+  - id: mcp-client
+    category: production
+    lesson_first_seen: "19"
+    pt-BR:
+      term: "MCP Client"
+      english_term: "MCP Client"
+      definition: "Componente que estabelece comunicação com um servidor MCP, descobre capacidades e executa operações do protocolo."
+      til_context: "Na Aula 19, Client(mcp) é usado in-process para observar discovery e invocation sem introduzir transporte de rede."
+      example: "O cliente lista tools e depois chama get_lesson_status."
+    en:
+      term: "MCP Client"
+      definition: "Component that communicates with an MCP server, discovers capabilities, and performs protocol operations."
+      til_context: "In Lesson 19, Client(mcp) is used in-process to observe discovery and invocation without introducing network transport."
+      example: "The client lists tools and then calls get_lesson_status."
+    related: [model-context-protocol, mcp-server, capability-discovery]
+
+  - id: mcp-server
+    category: production
+    lesson_first_seen: "19"
+    pt-BR:
+      term: "MCP Server"
+      english_term: "MCP Server"
+      definition: "Componente que expõe capabilities por meio do MCP, como tools, resources e prompts."
+      til_context: "Na Aula 19, MCPServer registra capabilities locais determinísticas e sem side effects externos."
+      example: "O TIL Lesson Server expõe uma tool, um resource e um prompt."
+    en:
+      term: "MCP Server"
+      definition: "Component that exposes capabilities through MCP, such as tools, resources, and prompts."
+      til_context: "In Lesson 19, MCPServer registers deterministic local capabilities with no external side effects."
+      example: "The TIL Lesson Server exposes a tool, a resource, and a prompt."
+    related: [model-context-protocol, mcp-client, mcp-tool, mcp-resource, mcp-prompt]
+
+  - id: capability-discovery
+    category: production
+    lesson_first_seen: "19"
+    pt-BR:
+      term: "Capability Discovery"
+      english_term: "Capability Discovery"
+      definition: "Mecanismo pelo qual um cliente inspeciona capacidades e contratos expostos por um servidor antes de utilizá-los."
+      til_context: "Na Aula 19, discovery torna visíveis tools, resources, prompts e seus metadados antes da invocation."
+      example: "O cliente executa list_tools() e observa nomes, descrições e input schemas."
+    en:
+      term: "Capability Discovery"
+      definition: "Mechanism by which a client inspects capabilities and contracts exposed by a server before using them."
+      til_context: "In Lesson 19, discovery makes tools, resources, prompts, and their metadata visible before invocation."
+      example: "The client runs list_tools() and observes names, descriptions, and input schemas."
+    related: [mcp-client, mcp-server, mcp-tool]
+
+  - id: mcp-tool
+    category: production
+    lesson_first_seen: "19"
+    pt-BR:
+      term: "MCP Tool"
+      english_term: "MCP Tool"
+      definition: "Capability invocável que representa uma operação exposta por um servidor MCP."
+      til_context: "Na Aula 19, tools preservam contratos explícitos de entrada, validação, execução e resultado."
+      example: "get_lesson_status recebe lesson_id e retorna o status simulado de uma aula."
+    en:
+      term: "MCP Tool"
+      definition: "Invocable capability representing an operation exposed by an MCP server."
+      til_context: "In Lesson 19, tools preserve explicit contracts for input, validation, execution, and result."
+      example: "get_lesson_status receives lesson_id and returns the simulated status of a lesson."
+    related: [mcp-server, mcp-resource, mcp-prompt]
+
+  - id: mcp-resource
+    category: production
+    lesson_first_seen: "19"
+    pt-BR:
+      term: "MCP Resource"
+      english_term: "MCP Resource"
+      definition: "Conteúdo ou contexto endereçável que pode ser lido por um cliente MCP."
+      til_context: "Na Aula 19, resources são diferenciados de tools porque representam conteúdo, não uma operação."
+      example: "til://lessons/status expõe o estado simulado das aulas."
+    en:
+      term: "MCP Resource"
+      definition: "Addressable content or context that can be read by an MCP client."
+      til_context: "In Lesson 19, resources are distinguished from tools because they represent content rather than an operation."
+      example: "til://lessons/status exposes the simulated lesson status."
+    related: [mcp-server, mcp-tool, mcp-prompt]
+
+  - id: mcp-prompt
+    category: production
+    lesson_first_seen: "19"
+    pt-BR:
+      term: "MCP Prompt"
+      english_term: "MCP Prompt"
+      definition: "Template de mensagem exposto por um servidor MCP para ser selecionado e renderizado pelo host ou usuário."
+      til_context: "Na Aula 19, prompts são renderizados sem chamar um LLM externo, separando template de execução de modelo."
+      example: "review_release produz uma mensagem de revisão para uma release note."
+    en:
+      term: "MCP Prompt"
+      definition: "Message template exposed by an MCP server to be selected and rendered by a host or user."
+      til_context: "In Lesson 19, prompts are rendered without calling an external LLM, separating templates from model execution."
+      example: "review_release produces a review message for a release note."
+    related: [mcp-server, mcp-tool, mcp-resource]
+
+  - id: protocol-version
+    category: production
+    lesson_first_seen: "19"
+    pt-BR:
+      term: "Protocol Version"
+      english_term: "Protocol Version"
+      definition: "Identificador da revisão de um protocolo que define a semântica e as capacidades esperadas entre participantes."
+      til_context: "Na Aula 19, a revisão MCP 2026-07-28 é declarada explicitamente para evitar misturar exemplos modernos e legados."
+      example: "O cliente inspeciona protocol_version antes de chamar capabilities."
+    en:
+      term: "Protocol Version"
+      definition: "Identifier of a protocol revision defining expected semantics and capabilities between participants."
+      til_context: "In Lesson 19, MCP revision 2026-07-28 is declared explicitly to avoid mixing modern and legacy examples."
+      example: "The client inspects protocol_version before calling capabilities."
+    related: [model-context-protocol, transport]
+
+  - id: transport
+    category: production
+    lesson_first_seen: "19"
+    pt-BR:
+      term: "Transport"
+      english_term: "Transport"
+      definition: "Mecanismo usado para carregar a comunicação entre cliente e servidor sem alterar o papel semântico das capabilities."
+      til_context: "Na Aula 19, in-process é usado no núcleo, enquanto stdio e Streamable HTTP são apresentados conceitualmente."
+      example: "A mesma tool pode manter seu contrato ao ser acessada por um transporte diferente."
+    en:
+      term: "Transport"
+      definition: "Mechanism used to carry communication between client and server without changing the semantic role of capabilities."
+      til_context: "In Lesson 19, in-process is used in the core lab while stdio and Streamable HTTP are introduced conceptually."
+      example: "The same tool can preserve its contract when accessed through a different transport."
+    related: [model-context-protocol, protocol-version]
+
+  - id: authorization
+    category: production
+    lesson_first_seen: "19"
+    pt-BR:
+      term: "Authorization"
+      english_term: "Authorization"
+      definition: "Política que determina se um chamador autenticado ou identificado pode executar uma ação ou acessar um recurso."
+      til_context: "Na Aula 19, autorização é separada de confiança do modelo e da mera existência de uma capability."
+      example: "Uma tool disponível no servidor não implica que todo chamador esteja autorizado a executá-la."
+    en:
+      term: "Authorization"
+      definition: "Policy determining whether an authenticated or identified caller may perform an action or access a resource."
+      til_context: "In Lesson 19, authorization is separated from model confidence and from the mere existence of a capability."
+      example: "A tool being available on the server does not imply every caller is authorized to execute it."
+    related: [mcp-tool, mcp-resource]
