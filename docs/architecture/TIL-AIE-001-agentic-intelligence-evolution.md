@@ -246,7 +246,7 @@ Aula 17 (`Available`): tool contracts, schemas, validação, execução, efeitos
 
 Aula 18 (`Available / student-ready`): composição determinística, estado, retries, idempotência, checkpoints, approval gates, recovery, observabilidade e Typed Decisions with Confidence-Gated Routing.
 
-Aula 19: MCP como camada padronizada de integração, cobrindo host/client/server, tools/resources/prompts, discovery, authorization, segurança e governança.
+Aula 19 (`Draft specification`): MCP como camada padronizada de integração, cobrindo host/client/server, tools/resources/prompts, discovery, versioning, transport, authorization, segurança e governança. A especificação curricular usa como baseline o MCP `2026-07-28`, evitando ensinar semântica legada como se fosse atual.
 
 Princípio pedagógico:
 
