@@ -1729,3 +1729,87 @@ Capacidade de registrar e inspecionar seleção da ferramenta, argumentos, valid
 **Exemplo:** O aluno inspeciona a chamada, valida os argumentos e observa o resultado ou erro antes da resposta final.
 
 **Primeira aula:** 17
+
+## Workflow determinístico
+
+**English:** Deterministic Workflow
+
+Fluxo de execução em que a sequência de etapas, regras e transições é definida explicitamente pelo sistema.
+
+**No TIL:** Na Aula 18, o conceito é usado no laboratório TIL Lesson Release Workflow.
+
+**Exemplo:** O aluno executa, interrompe, retoma e observa um workflow determinístico sob regras explícitas.
+
+**Primeira aula:** 18
+
+## Estado do workflow
+
+**English:** Workflow State
+
+Conjunto explícito de dados que representa o progresso, entradas, saídas, tentativas, erros e decisões de um workflow.
+
+**No TIL:** Na Aula 18, o conceito é usado no laboratório TIL Lesson Release Workflow.
+
+**Exemplo:** O aluno executa, interrompe, retoma e observa um workflow determinístico sob regras explícitas.
+
+**Primeira aula:** 18
+
+## Retry
+
+**English:** Retry
+
+Nova tentativa controlada de executar uma etapa após uma falha considerada recuperável.
+
+**No TIL:** Na Aula 18, o conceito é usado no laboratório TIL Lesson Release Workflow.
+
+**Exemplo:** O aluno executa, interrompe, retoma e observa um workflow determinístico sob regras explícitas.
+
+**Primeira aula:** 18
+
+## Idempotência
+
+**English:** Idempotency
+
+Propriedade pela qual repetir uma operação com a mesma entrada não produz efeitos adicionais indesejados.
+
+**No TIL:** Na Aula 18, o conceito é usado no laboratório TIL Lesson Release Workflow.
+
+**Exemplo:** O aluno executa, interrompe, retoma e observa um workflow determinístico sob regras explícitas.
+
+**Primeira aula:** 18
+
+## Checkpoint
+
+**English:** Checkpoint
+
+Registro persistente ou explícito de um estado intermediário que permite inspecionar ou retomar um workflow.
+
+**No TIL:** Na Aula 18, o conceito é usado no laboratório TIL Lesson Release Workflow.
+
+**Exemplo:** O aluno executa, interrompe, retoma e observa um workflow determinístico sob regras explícitas.
+
+**Primeira aula:** 18
+
+## Erro recuperável
+
+**English:** Retryable Error
+
+Falha que pode justificar uma nova tentativa automática sob limites e condições explícitas.
+
+**No TIL:** Na Aula 18, o conceito é usado no laboratório TIL Lesson Release Workflow.
+
+**Exemplo:** O aluno executa, interrompe, retoma e observa um workflow determinístico sob regras explícitas.
+
+**Primeira aula:** 18
+
+## Observabilidade de workflows
+
+**English:** Workflow Observability
+
+Capacidade de inspecionar etapas, estado, tentativas, latência, erros, checkpoints e decisões durante a execução de um workflow.
+
+**No TIL:** Na Aula 18, o conceito é usado no laboratório TIL Lesson Release Workflow.
+
+**Exemplo:** O aluno executa, interrompe, retoma e observa um workflow determinístico sob regras explícitas.
+
+**Primeira aula:** 18

@@ -1441,3 +1441,73 @@ Ability to record and inspect tool selection, arguments, validation, execution, 
 **Example:** The learner inspects the call, validates arguments, and observes the result or error before the final response.
 
 **First lesson:** 17
+
+## Deterministic Workflow
+
+Execution flow in which the sequence of steps, rules, and transitions is explicitly defined by the system.
+
+**In TIL:** In Lesson 18, the concept is used in the TIL Lesson Release Workflow lab.
+
+**Example:** The learner executes, interrupts, resumes, and observes a deterministic workflow under explicit rules.
+
+**First lesson:** 18
+
+## Workflow State
+
+Explicit data structure representing a workflow's progress, inputs, outputs, attempts, errors, and decisions.
+
+**In TIL:** In Lesson 18, the concept is used in the TIL Lesson Release Workflow lab.
+
+**Example:** The learner executes, interrupts, resumes, and observes a deterministic workflow under explicit rules.
+
+**First lesson:** 18
+
+## Retry
+
+Controlled re-attempt to execute a step after a failure considered recoverable.
+
+**In TIL:** In Lesson 18, the concept is used in the TIL Lesson Release Workflow lab.
+
+**Example:** The learner executes, interrupts, resumes, and observes a deterministic workflow under explicit rules.
+
+**First lesson:** 18
+
+## Idempotency
+
+Property by which repeating an operation with the same input does not produce unintended additional effects.
+
+**In TIL:** In Lesson 18, the concept is used in the TIL Lesson Release Workflow lab.
+
+**Example:** The learner executes, interrupts, resumes, and observes a deterministic workflow under explicit rules.
+
+**First lesson:** 18
+
+## Checkpoint
+
+Persistent or explicit record of an intermediate state that allows a workflow to be inspected or resumed.
+
+**In TIL:** In Lesson 18, the concept is used in the TIL Lesson Release Workflow lab.
+
+**Example:** The learner executes, interrupts, resumes, and observes a deterministic workflow under explicit rules.
+
+**First lesson:** 18
+
+## Retryable Error
+
+Failure that may justify an automatic retry under explicit limits and conditions.
+
+**In TIL:** In Lesson 18, the concept is used in the TIL Lesson Release Workflow lab.
+
+**Example:** The learner executes, interrupts, resumes, and observes a deterministic workflow under explicit rules.
+
+**First lesson:** 18
+
+## Workflow Observability
+
+Ability to inspect steps, state, attempts, latency, errors, checkpoints, and decisions during workflow execution.
+
+**In TIL:** In Lesson 18, the concept is used in the TIL Lesson Release Workflow lab.
+
+**Example:** The learner executes, interrupts, resumes, and observes a deterministic workflow under explicit rules.
+
+**First lesson:** 18
