@@ -2,7 +2,7 @@
 
 ## Status
 
-Draft specification
+Draft implementation
 
 ## Protocol Baseline
 
