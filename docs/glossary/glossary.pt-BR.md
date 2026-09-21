@@ -1861,3 +1861,135 @@ Conjunto explícito de regras que transforma sinais de decisão, como escolha e 
 **Exemplo:** A mesma escolha pode seguir para execução, escalação ou revisão humana conforme a confiança e a política configurada.
 
 **Primeira aula:** 18
+
+## Model Context Protocol (MCP)
+
+**English:** Model Context Protocol (MCP)
+
+Protocolo aberto para padronizar como aplicações de IA descobrem, acessam e invocam capacidades e contexto expostos por servidores.
+
+**No TIL:** Na Aula 19, o MCP é estudado como camada de integração padronizada, separada de workflow e autonomia agente.
+
+**Exemplo:** Um host usa um cliente MCP para descobrir tools, resources e prompts de um servidor sem conhecer sua implementação interna.
+
+**Primeira aula:** 19
+
+## MCP Host
+
+**English:** MCP Host
+
+Aplicação que coordena a experiência e contém ou gerencia um ou mais clientes MCP.
+
+**No TIL:** Na Aula 19, o host representa a aplicação que decide como consumir capacidades MCP sob políticas próprias.
+
+**Exemplo:** Uma aplicação de IA mantém um cliente MCP conectado a um servidor didático do TIL.
+
+**Primeira aula:** 19
+
+## MCP Client
+
+**English:** MCP Client
+
+Componente que estabelece comunicação com um servidor MCP, descobre capacidades e executa operações do protocolo.
+
+**No TIL:** Na Aula 19, Client(mcp) é usado in-process para observar discovery e invocation sem introduzir transporte de rede.
+
+**Exemplo:** O cliente lista tools e depois chama get_lesson_status.
+
+**Primeira aula:** 19
+
+## MCP Server
+
+**English:** MCP Server
+
+Componente que expõe capabilities por meio do MCP, como tools, resources e prompts.
+
+**No TIL:** Na Aula 19, MCPServer registra capabilities locais determinísticas e sem side effects externos.
+
+**Exemplo:** O TIL Lesson Server expõe uma tool, um resource e um prompt.
+
+**Primeira aula:** 19
+
+## Capability Discovery
+
+**English:** Capability Discovery
+
+Mecanismo pelo qual um cliente inspeciona capacidades e contratos expostos por um servidor antes de utilizá-los.
+
+**No TIL:** Na Aula 19, discovery torna visíveis tools, resources, prompts e seus metadados antes da invocation.
+
+**Exemplo:** O cliente executa list_tools() e observa nomes, descrições e input schemas.
+
+**Primeira aula:** 19
+
+## MCP Tool
+
+**English:** MCP Tool
+
+Capability invocável que representa uma operação exposta por um servidor MCP.
+
+**No TIL:** Na Aula 19, tools preservam contratos explícitos de entrada, validação, execução e resultado.
+
+**Exemplo:** get_lesson_status recebe lesson_id e retorna o status simulado de uma aula.
+
+**Primeira aula:** 19
+
+## MCP Resource
+
+**English:** MCP Resource
+
+Conteúdo ou contexto endereçável que pode ser lido por um cliente MCP.
+
+**No TIL:** Na Aula 19, resources são diferenciados de tools porque representam conteúdo, não uma operação.
+
+**Exemplo:** til://lessons/status expõe o estado simulado das aulas.
+
+**Primeira aula:** 19
+
+## MCP Prompt
+
+**English:** MCP Prompt
+
+Template de mensagem exposto por um servidor MCP para ser selecionado e renderizado pelo host ou usuário.
+
+**No TIL:** Na Aula 19, prompts são renderizados sem chamar um LLM externo, separando template de execução de modelo.
+
+**Exemplo:** review_release produz uma mensagem de revisão para uma release note.
+
+**Primeira aula:** 19
+
+## Protocol Version
+
+**English:** Protocol Version
+
+Identificador da revisão de um protocolo que define a semântica e as capacidades esperadas entre participantes.
+
+**No TIL:** Na Aula 19, a revisão MCP 2026-07-28 é declarada explicitamente para evitar misturar exemplos modernos e legados.
+
+**Exemplo:** O cliente inspeciona protocol_version antes de chamar capabilities.
+
+**Primeira aula:** 19
+
+## Transport
+
+**English:** Transport
+
+Mecanismo usado para carregar a comunicação entre cliente e servidor sem alterar o papel semântico das capabilities.
+
+**No TIL:** Na Aula 19, in-process é usado no núcleo, enquanto stdio e Streamable HTTP são apresentados conceitualmente.
+
+**Exemplo:** A mesma tool pode manter seu contrato ao ser acessada por um transporte diferente.
+
+**Primeira aula:** 19
+
+## Authorization
+
+**English:** Authorization
+
+Política que determina se um chamador autenticado ou identificado pode executar uma ação ou acessar um recurso.
+
+**No TIL:** Na Aula 19, autorização é separada de confiança do modelo e da mera existência de uma capability.
+
+**Exemplo:** Uma tool disponível no servidor não implica que todo chamador esteja autorizado a executá-la.
+
+**Primeira aula:** 19

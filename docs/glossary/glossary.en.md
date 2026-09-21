@@ -1551,3 +1551,113 @@ Explicit set of rules that transforms decision signals, such as choice and confi
 **Example:** The same choice can proceed to execution, escalation, or human review depending on confidence and configured policy.
 
 **First lesson:** 18
+
+## Model Context Protocol (MCP)
+
+Open protocol for standardizing how AI applications discover, access, and invoke capabilities and context exposed by servers.
+
+**In TIL:** In Lesson 19, MCP is studied as a standardized integration layer, separate from workflows and agent autonomy.
+
+**Example:** A host uses an MCP client to discover tools, resources, and prompts from a server without knowing its internal implementation.
+
+**First lesson:** 19
+
+## MCP Host
+
+Application that coordinates the experience and contains or manages one or more MCP clients.
+
+**In TIL:** In Lesson 19, the host is the application that decides how to consume MCP capabilities under its own policies.
+
+**Example:** An AI application keeps an MCP client connected to a TIL teaching server.
+
+**First lesson:** 19
+
+## MCP Client
+
+Component that communicates with an MCP server, discovers capabilities, and performs protocol operations.
+
+**In TIL:** In Lesson 19, Client(mcp) is used in-process to observe discovery and invocation without introducing network transport.
+
+**Example:** The client lists tools and then calls get_lesson_status.
+
+**First lesson:** 19
+
+## MCP Server
+
+Component that exposes capabilities through MCP, such as tools, resources, and prompts.
+
+**In TIL:** In Lesson 19, MCPServer registers deterministic local capabilities with no external side effects.
+
+**Example:** The TIL Lesson Server exposes a tool, a resource, and a prompt.
+
+**First lesson:** 19
+
+## Capability Discovery
+
+Mechanism by which a client inspects capabilities and contracts exposed by a server before using them.
+
+**In TIL:** In Lesson 19, discovery makes tools, resources, prompts, and their metadata visible before invocation.
+
+**Example:** The client runs list_tools() and observes names, descriptions, and input schemas.
+
+**First lesson:** 19
+
+## MCP Tool
+
+Invocable capability representing an operation exposed by an MCP server.
+
+**In TIL:** In Lesson 19, tools preserve explicit contracts for input, validation, execution, and result.
+
+**Example:** get_lesson_status receives lesson_id and returns the simulated status of a lesson.
+
+**First lesson:** 19
+
+## MCP Resource
+
+Addressable content or context that can be read by an MCP client.
+
+**In TIL:** In Lesson 19, resources are distinguished from tools because they represent content rather than an operation.
+
+**Example:** til://lessons/status exposes the simulated lesson status.
+
+**First lesson:** 19
+
+## MCP Prompt
+
+Message template exposed by an MCP server to be selected and rendered by a host or user.
+
+**In TIL:** In Lesson 19, prompts are rendered without calling an external LLM, separating templates from model execution.
+
+**Example:** review_release produces a review message for a release note.
+
+**First lesson:** 19
+
+## Protocol Version
+
+Identifier of a protocol revision defining expected semantics and capabilities between participants.
+
+**In TIL:** In Lesson 19, MCP revision 2026-07-28 is declared explicitly to avoid mixing modern and legacy examples.
+
+**Example:** The client inspects protocol_version before calling capabilities.
+
+**First lesson:** 19
+
+## Transport
+
+Mechanism used to carry communication between client and server without changing the semantic role of capabilities.
+
+**In TIL:** In Lesson 19, in-process is used in the core lab while stdio and Streamable HTTP are introduced conceptually.
+
+**Example:** The same tool can preserve its contract when accessed through a different transport.
+
+**First lesson:** 19
+
+## Authorization
+
+Policy determining whether an authenticated or identified caller may perform an action or access a resource.
+
+**In TIL:** In Lesson 19, authorization is separated from model confidence and from the mere existence of a capability.
+
+**Example:** A tool being available on the server does not imply every caller is authorized to execute it.
+
+**First lesson:** 19
