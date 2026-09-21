@@ -120,3 +120,26 @@ Integrações incluídas:
 - revisão de conceitos antes da ponte para MCP.
 
 Isso mantém o glossário como recurso ativo de aprendizagem ao longo da aula.
+
+
+## Validação técnica da versão candidata
+
+Validação realizada em 2026-09-20:
+
+- estrutura do notebook: PASS;
+- IDs de células únicos: PASS;
+- navegação no último bloco: PASS;
+- outputs canônicos limpos: PASS;
+- Tool Registry: PASS;
+- argument validation: PASS;
+- failure taxonomy paths: PASS;
+- observability paths: PASS;
+- architecture decision lab: PASS;
+- Living Glossary contextual integration: PASS;
+- caminhos de código executáveis: PASS.
+
+Pendente antes de `Available / student-ready`:
+
+- execução integral da versão candidata no Kaggle;
+- execução headless integral do arquivo canônico em ambiente notebook;
+- revisão final dos warnings de execução.
