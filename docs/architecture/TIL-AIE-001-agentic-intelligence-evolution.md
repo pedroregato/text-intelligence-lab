@@ -358,3 +358,17 @@ Sem evidência suficiente:
 ```text
 manter arquitetura mais simples
 ```
+
+
+### Typed Decisions and Confidence-Gated Routing
+
+No Bloco C, decisões produzidas por modelos ou regras devem entrar nos workflows por contratos explícitos. A arquitetura de referência é:
+
+```text
+DecisionProvider
+→ typed decision
+→ routing policy
+→ controlled execution
+```
+
+A abstração deve permanecer vendor-neutral. Ferramentas específicas, como Jev, podem aparecer como estudos de caso ou implementações opcionais, mas não como dependência estrutural do TIL.
