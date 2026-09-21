@@ -30,7 +30,7 @@ jobs:
       - name: Generate PT-BR, EN and interactive HTML
         run: python docs/glossary/build_glossary.py
 
-      - name: Validate Lesson 13C glossary coverage
+      - name: Validate glossary coverage
         shell: bash
         run: |
           set -euo pipefail
@@ -51,6 +51,25 @@ jobs:
             }
           done
           echo 'Lesson 13C glossary coverage: OK'
+          for term in \
+            '## Workflow determinístico' \
+            '## Estado do workflow' \
+            '## Retry' \
+            '## Idempotência' \
+            '## Checkpoint' \
+            '## Erro recuperável' \
+            '## Observabilidade de workflows' \
+            '## Decisão tipada' \
+            '## Contrato de decisão' \
+            '## Roteamento por confiança' \
+            '## Política de roteamento'
+          do
+            grep -Fq "$term" "$glossary" || {
+              echo "Missing Lesson 18 glossary term: $term"
+              exit 1
+            }
+          done
+          echo 'Lesson 18 glossary coverage: OK'
 
       - name: Commit generated glossary views
         run: |
