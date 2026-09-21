@@ -2,7 +2,7 @@
 
 ## Status
 
-Draft
+Candidate — final validation pending
 
 ## Role in the TIL
 
