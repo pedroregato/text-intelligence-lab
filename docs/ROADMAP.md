@@ -185,7 +185,7 @@ Aula 17 — Tool Use, Function Calling and Contracts
 ```
 
 **Aula 17 — Tool Use, Function Calling and Contracts**  
-Status: `Candidate — final validation pending`  
+Status: `Available`  
 Especificação: `docs/curriculum/AULA-17-tool-use-function-calling.md`
 
 A Aula 17 introduz contratos de ferramenta, schemas, validação, execução, resultados, failure taxonomy, efeitos colaterais, safety e observabilidade.
