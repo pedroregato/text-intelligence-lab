@@ -65,7 +65,7 @@ sem side effects reais
 - [x] novos conceitos no Glossário Vivo;
 - [x] integração contextual do Glossário;
 - [x] navegação anterior/home/próxima;
-- [ ] PT-BR / EN / HTML regenerados;
+- [x] PT-BR / EN / HTML regenerados;
 - [ ] execução headless integral;
 - [ ] warnings revisados;
 - [ ] execução Kaggle;
