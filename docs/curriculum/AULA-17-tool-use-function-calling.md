@@ -2,7 +2,7 @@
 
 ## Status
 
-Candidate — final validation pending
+Available / student-ready
 
 ## Role in the TIL
 
