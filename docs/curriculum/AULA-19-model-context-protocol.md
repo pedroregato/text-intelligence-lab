@@ -502,13 +502,49 @@ Student-ready somente quando:
 15. failure taxonomy demonstrada;
 16. architecture decision lab;
 17. Glossário Vivo integrado;
-18. Internet OFF no núcleo;
-19. execução headless completa;
-20. execução Kaggle validada;
-21. revisão pedagógica final.
+18. raio-X de mensagem/schema demonstrado;
+19. host determinístico demonstrado;
+20. discovery dirigido por contrato demonstrado;
+21. fluxo composto entre primitives demonstrado;
+22. trust e authorization diferenciados;
+23. Internet OFF no núcleo;
+24. execução headless completa da versão reengenheirada;
+25. execução Kaggle validada da versão reengenheirada;
+26. revisão pedagógica final.
 
 ## Exit Condition
 
 A aula estará completa quando o aluno conseguir explicar:
 
 > **MCP padroniza como capacidades e contexto são expostos, descobertos e invocados. Ele não substitui contratos, workflows, autorização ou governança, e não transforma por si só um sistema em agente.**
+
+
+## Reengineering v2
+
+A revisão pedagógica identificou uma distinção crítica:
+
+```text
+usar o SDK MCP
+≠
+compreender o protocolo MCP
+```
+
+A versão reengenheirada da Aula 19 preserva a abertura conceitual e exige que o laboratório torne observáveis os elementos que antes estavam escondidos pela conexão in-process.
+
+### Novas evidências obrigatórias
+
+1. **Problema N×M observável** — o aluno mede o crescimento de integrações ad hoc antes da padronização.
+2. **Raio-X do protocolo** — chamada Python é colocada ao lado de uma representação didática MCP/JSON-RPC e do JSON Schema descoberto.
+3. **Discovery dirigido por contrato** — o cliente usa `list_tools()`, inspeciona schemas, valida argumentos e seleciona uma capability sem receber seu nome no chamador.
+4. **Host explícito** — um host determinístico, sem LLM, demonstra onde vivem seleção de contexto, autorização e política.
+5. **Primitives compostas** — tool → resultado → prompt → revisão humana conecta MCP aos workflows determinísticos da Aula 18.
+6. **Failure Lab: prever → observar → explicar** — o aluno formula hipótese antes de executar e interpreta a camada da falha.
+7. **Segurança em duas dimensões** — trust/capability poisoning é separado de authorization.
+8. **Architecture Decision Lab com caso cinzento** — a resposta pode depender de horizonte, risco e utility.
+9. **Checagem final** — o aluno deve conseguir explicar o que permanece verdadeiro sobre MCP mesmo sem o SDK Python.
+
+### Regra didática
+
+> Cada afirmação central do markdown deve, sempre que possível, produzir uma evidência observável no código.
+
+O objetivo não é ensinar uma coleção de decorators. É ensinar o protocolo por meio de uma implementação concreta.
