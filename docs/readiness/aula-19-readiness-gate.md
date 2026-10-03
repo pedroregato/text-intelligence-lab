@@ -33,7 +33,7 @@ The transition from Lessons 17 and 18 is explicit.
 
 ### G2 — Executable MCP lab
 
-**PASS**
+**PENDING REVALIDATION — FINAL TRUST/ERROR SEMANTICS**
 
 The notebook implements:
 
@@ -97,9 +97,9 @@ The previous notebook version executed headlessly. The reengineered v2 must be e
 
 ### G5 — Kaggle execution
 
-**PASS**
+**PENDING — FINAL TRUST/ERROR SEMANTICS**
 
-The execution-evidence refinement completed successfully on Kaggle, including structured output, protocol payload serialization, trust/catalog drift, and the revised Failure Lab.
+The prior refinement completed successfully on Kaggle. A fresh Run All is required after the final trust/poisoning and error-surface corrections.
 
 ### G6 — Living Glossary source
 
