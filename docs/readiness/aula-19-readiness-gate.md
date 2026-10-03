@@ -33,7 +33,7 @@ The transition from Lessons 17 and 18 is explicit.
 
 ### G2 — Executable MCP lab
 
-**PASS**
+**PENDING REVALIDATION — v2 REENGINEERING**
 
 The notebook implements:
 
@@ -48,6 +48,25 @@ The notebook implements:
 - failure lab;
 - observability;
 - architecture decision lab.
+
+### G2A — Protocol visibility
+
+**PENDING EXECUTION REVIEW**
+
+The reengineered notebook now includes:
+
+- N×M integration-cost lab;
+- protocol X-ray with MCP/JSON-RPC representation;
+- readable discovered JSON Schema;
+- discovery-driven invocation;
+- explicit deterministic ToyHost;
+- composed tool → prompt → human-review flow;
+- trust/poisoning demo separated from authorization;
+- predict → observe → explain failure lab;
+- ambiguous architecture case;
+- final conceptual check independent of Python SDK syntax.
+
+These items become PASS only after execution and pedagogical inspection.
 
 ### G3 — Reproducibility
 
@@ -72,15 +91,15 @@ pedrogentil/til-mcp-python-sdk-wheelhouse
 
 ### G4 — Local headless execution
 
-**PASS**
+**PENDING — v2 REENGINEERING**
 
-The notebook executed headlessly with all code cells processed and no recorded execution errors.
+The previous notebook version executed headlessly. The reengineered v2 must be executed again because its laboratory structure changed materially.
 
 ### G5 — Kaggle execution
 
-**PASS**
+**PENDING — v2 REENGINEERING**
 
-The notebook was pushed and executed on Kaggle with the offline MCP dependency attached.
+The previous notebook version was validated on Kaggle. The reengineered v2 requires a new complete Kaggle Run All with the offline MCP dependency attached.
 
 ### G6 — Living Glossary source
 
