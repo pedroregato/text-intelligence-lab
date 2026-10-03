@@ -33,7 +33,7 @@ The transition from Lessons 17 and 18 is explicit.
 
 ### G2 — Executable MCP lab
 
-**PENDING REVALIDATION — v2 REENGINEERING**
+**PASS**
 
 The notebook implements:
 
@@ -51,7 +51,7 @@ The notebook implements:
 
 ### G2A — Protocol visibility
 
-**PENDING EXECUTION REVIEW**
+**PENDING PEDAGOGICAL INSPECTION**
 
 The reengineered notebook now includes:
 
@@ -97,9 +97,9 @@ The previous notebook version executed headlessly. The reengineered v2 must be e
 
 ### G5 — Kaggle execution
 
-**PENDING — v2 REENGINEERING**
+**PASS**
 
-The previous notebook version was validated on Kaggle. The reengineered v2 requires a new complete Kaggle Run All with the offline MCP dependency attached.
+The reengineered v2 completed successfully on Kaggle with the offline MCP wheelhouse attached.
 
 ### G6 — Living Glossary source
 
