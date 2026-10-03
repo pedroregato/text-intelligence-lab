@@ -2,7 +2,7 @@
 
 ## Status
 
-Design blueprint — pre-implementation
+Reengineered blueprint — implementation v2
 
 ## Purpose
 
@@ -979,3 +979,67 @@ Antes da promoção:
 [ ] Kaggle COMPLETE
 [ ] pedagogical review complete
 ```
+
+
+## Reengineering Delta
+
+A implementação v2 altera a estratégia original em pontos deliberados.
+
+### O que permanece
+
+- abertura pelo problema de integração;
+- MCP ≠ agent;
+- version discipline;
+- MCPServer + Client in-process como núcleo;
+- Internet OFF;
+- tools, resources e prompts;
+- observabilidade;
+- Failure Lab;
+- Architecture Decision Lab;
+- ponte para Agentic Systems.
+
+### O que foi acrescentado
+
+```text
+problema N×M
+→ evidência quantitativa simples
+
+SDK call
+→ raio-X MCP/JSON-RPC + JSON Schema
+
+discovery demonstrativo
+→ discovery dirigindo invocation
+
+client chamado diretamente
+→ ToyHost determinístico
+
+primitives isoladas
+→ tool → prompt → revisão humana
+
+security genérica
+→ trust/poisoning separado de authorization
+
+failure execution
+→ prever → observar → explicar
+
+casos óbvios
+→ caso arquitetural cinzento
+
+fim da aula
+→ checagem conceitual sem depender do SDK
+```
+
+### Decisão sobre transportes
+
+O núcleo continua in-process para reduzir carga operacional. `stdio` permanece extensão recomendada, não requisito do primeiro caminho executável. A aula deve explicar explicitamente que o raio-X apresentado é uma representação didática equivalente, e não captura de framing de transporte.
+
+### Novo padrão pedagógico
+
+```text
+afirmação
+→ evidência
+→ interpretação
+→ decisão
+```
+
+A implementação não deve permitir que discovery, authorization ou host permaneçam apenas como conceitos declarados.
