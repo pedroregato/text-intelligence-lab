@@ -98,7 +98,7 @@ Exercises require:
 
 ### G10 — Reproducibility
 
-**PENDING EXECUTION**
+**PASS**
 
 Required:
 
@@ -111,9 +111,9 @@ Required:
 
 ### G11 — Kaggle execution
 
-**PENDING**
+**PASS**
 
-The reengineered notebook must complete a fresh Kaggle Run All.
+The reengineered v2 completed successfully on Kaggle with the required versioned DistilBERT model attached, Internet OFF and CPU execution.
 
 ### G12 — Pedagogical review
 
