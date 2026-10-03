@@ -2,16 +2,16 @@
 
 ## Status
 
-Reengineered blueprint — implementation v2
+Final reconciled blueprint — pedagogically approved; final Kaggle revalidation pending
 
 ## Purpose
 
-Definir a sequência pedagógica, a responsabilidade de cada célula e a evidência observável da **Aula 19 — Model Context Protocol (MCP)** antes da implementação do notebook.
+Registrar a sequência pedagógica, a responsabilidade dos blocos executáveis e a evidência observável da **Aula 19 — Model Context Protocol (MCP)** conforme a implementação final do notebook. Este artefato funciona como blueprint reconciliado: documenta tanto a intenção de design quanto as decisões confirmadas pela execução.
 
 Baseline:
 
 - MCP specification: `2026-07-28`;
-- Python SDK: v2 stable;
+- Python SDK: `2.2.0`;
 - núcleo do notebook: `Internet OFF`, `GPU OFF`, sem API proprietária e sem side effects reais.
 
 ## Design Principle
@@ -256,16 +256,17 @@ Explicar que o SDK deriva parte dos contratos da assinatura e documentação das
 
 **Tipo:** Code
 
-Criar:
+Criar servidor versionado:
 
 ```python
 mcp = MCPServer(
     "TIL Lesson Server",
+    version="19.2.0",
     instructions="..."
 )
 ```
 
-Sem transport ainda.
+A versão do servidor deve aparecer na introspecção. O laboratório principal permanece in-process, sem transporte de rede.
 
 ---
 
@@ -323,10 +324,12 @@ Entrada:
 
 `lesson_id: str`
 
-Saída estruturada contendo:
+Saída estruturada tipada contendo:
 
 - `lesson_id`;
 - `status`.
+
+O contrato de saída deve gerar `outputSchema` e preencher `structuredContent`.
 
 Erro controlado para aula inexistente.
 
@@ -468,8 +471,9 @@ Executar:
 Mostrar:
 
 - conteúdo retornado;
-- conteúdo estruturado, se aplicável;
-- `is_error`.
+- `structured_content`;
+- `is_error`;
+- serialização real do resultado com `model_dump(mode="json", by_alias=True)`, evidenciando nomes do protocolo como `structuredContent` e `isError`.
 
 ---
 
@@ -524,21 +528,26 @@ Usar a formulação da documentação atual do SDK para evitar confusão conceit
 
 ---
 
-### Célula 28 — Discovery vs hard-coded integration
+### Célula 28 — Discovery dirigindo invocation
 
-**Tipo:** Markdown
+**Tipo:** Markdown + Code
 
 Comparar:
 
 ```text
 hard-coded call
-→ cliente precisa conhecer endpoint/assinatura
+→ chamador fornece diretamente o nome da capability
 
-MCP discovery
-→ cliente pode inspecionar capabilities e contratos
+discovery-driven call
+→ cliente descobre contratos
+→ valida argumentos
+→ seleciona uma capability compatível
+→ invoca
 ```
 
-Não declarar que discovery elimina integração ou governança.
+A implementação usa uma heurística didática baseada nos nomes de argumentos. Deve permanecer explícito que um host real precisa de política ou raciocínio para selecionar por intenção quando múltiplas tools aceitam schemas semelhantes.
+
+Não declarar que discovery elimina integração, ambiguidade ou governança.
 
 ---
 
@@ -589,9 +598,9 @@ O núcleo do notebook usa in-process.
 
 ---
 
-### Célula 31 — Segurança e autorização
+### Célula 31 — Segurança, confiança, integridade e autorização
 
-**Tipo:** Markdown
+**Tipo:** Markdown + Code
 
 Princípios:
 
@@ -603,11 +612,62 @@ authorization
 capability exists
 ≠
 caller is authorized
+
+capability name approved
+≠
+capability definition unchanged
+
+discovered metadata
+≠
+trusted metadata
 ```
 
-Conectar approval gates da Aula 18.
+A implementação deve demonstrar dois gates distintos:
 
-Cobrir least privilege e secrets fora do prompt.
+```text
+Gate 1 — authorization / allowlist
+tool existe, mas nome não está permitido
+→ bloqueio por autorização
+
+Gate 2 — integrity / pinning
+tool está permitida por nome, mas fingerprint mudou
+→ bloqueio por contract drift
+```
+
+A tool alterada deve manter o mesmo **nome MCP** e usar um nome Python diferente para evitar colisão no namespace do notebook.
+
+O host deve fechar o ciclo:
+
+```text
+detectar
+→ validar
+→ autorizar
+→ executar
+```
+
+e não apenas detectar/logar.
+
+Conectar explicitamente aos approval gates da Aula 18.
+
+Registrar ainda a escolha didática:
+
+```text
+ToyHost sem fingerprint
+→ fail-open
+```
+
+e contrastá-la com a política mais conservadora de produção:
+
+```text
+sem fingerprint aprovado
+→ não expor
+→ não executar
+→ fail-closed
+```
+
+Frase-chave:
+
+> ausência de evidência de integridade não é o mesmo que evidência de integridade.
 
 ---
 
@@ -733,13 +793,49 @@ Sugerir:
 
 ---
 
-### Célula 40 — Solução de referência
+### Célula 40 — Solução e interpretação de referência
 
-**Tipo:** Code
+**Tipo:** Code + Markdown
 
-Implementar solução curta e legível.
+A execução deve reduzir ruído de logs e exibir uma tabela com:
 
-Sem esconder comportamento com helpers sofisticados.
+- case;
+- result type;
+- `is_error`;
+- texto visível ao client;
+- exception type.
+
+Usar largura de coluna suficiente para não truncar `client_visible_text`.
+
+A interpretação deve tornar explícito:
+
+```text
+missing tool
+→ CallToolResult(isError=True)
+
+server execution failure
+→ CallToolResult(isError=True)
+
+invalid arguments
+→ CallToolResult(isError=True) com detalhes de validação
+
+missing resource / protocol error
+→ MCPError
+```
+
+Não ensinar uma regra falsa de ocultação uniforme de detalhes.
+
+Distinguir:
+
+```text
+observabilidade interna do servidor
+≠
+mensagem devolvida ao client
+≠
+detalhe seguro para expor a um modelo
+```
+
+O limite de detalhes expostos é parte do contrato e da postura de segurança.
 
 ---
 
@@ -956,41 +1052,49 @@ Esses temas podem aparecer como leitura, extensão ou AUTHOR lab posterior.
 
 ## Student-ready Gate
 
-Antes da promoção:
+Estado reconciliado após a revisão pedagógica final:
 
 ```text
-[ ] MCP version explicit
-[ ] Python SDK version explicit
-[ ] glossary integrated
-[ ] host/client/server clear
-[ ] tool/resource/prompt clear
-[ ] discovery executable
-[ ] protocol introspection executable
-[ ] tool call executable
-[ ] resource read executable
-[ ] prompt rendering executable
-[ ] failure lab executable
-[ ] observability visible
-[ ] authorization concept clear
-[ ] modern vs legacy distinction clear
-[ ] architecture decision lab complete
-[ ] Internet OFF
-[ ] headless PASS
-[ ] Kaggle COMPLETE
-[ ] pedagogical review complete
+[x] MCP version explicit
+[x] Python SDK version explicit
+[x] glossary integrated
+[x] host/client/server clear
+[x] tool/resource/prompt clear
+[x] discovery executable
+[x] discovery drives invocation
+[x] protocol introspection executable
+[x] real protocol-model serialization visible
+[x] inputSchema and outputSchema visible
+[x] structuredContent observable
+[x] tool call executable
+[x] resource read executable
+[x] prompt rendering executable
+[x] Failure Lab executable and interpreted
+[x] observability visible
+[x] trust vs authorization vs integrity separated
+[x] allowlist enforcement demonstrated
+[x] per-capability fingerprint enforcement demonstrated
+[x] fail-open vs fail-closed explicit
+[x] modern vs legacy distinction clear
+[x] architecture decision lab complete
+[x] Internet OFF
+[x] pedagogical review complete
+[ ] final Kaggle COMPLETE after last executable refinements
 ```
 
+A aula está **aprovada didaticamente**. A única pendência deste blueprint é a revalidação técnica final no Kaggle após os últimos ajustes executáveis.
 
-## Reengineering Delta
 
-A implementação v2 altera a estratégia original em pontos deliberados.
+## Reengineering Delta — Final
+
+A implementação final alterou e aprofundou o blueprint original em pontos deliberados.
 
 ### O que permanece
 
 - abertura pelo problema de integração;
 - MCP ≠ agent;
 - version discipline;
-- MCPServer + Client in-process como núcleo;
+- `MCPServer + Client` in-process como núcleo;
 - Internet OFF;
 - tools, resources e prompts;
 - observabilidade;
@@ -998,14 +1102,22 @@ A implementação v2 altera a estratégia original em pontos deliberados.
 - Architecture Decision Lab;
 - ponte para Agentic Systems.
 
-### O que foi acrescentado
+### O que foi acrescentado e confirmado por execução
 
 ```text
 problema N×M
-→ evidência quantitativa simples
+→ contraste N×M vs N+M
 
 SDK call
-→ raio-X MCP/JSON-RPC + JSON Schema
+→ raio-X dos tipos reais do protocolo
+
+snake_case Python
+→ model_dump(by_alias=True)
+→ inputSchema / outputSchema / structuredContent / isError
+
+output textual
+→ outputSchema tipado
+→ structuredContent
 
 discovery demonstrativo
 → discovery dirigindo invocation
@@ -1014,32 +1126,160 @@ client chamado diretamente
 → ToyHost determinístico
 
 primitives isoladas
-→ tool → prompt → revisão humana
+→ tool catalog / application resource / user-selected prompt
+
+tool → prompt
+→ revisão humana
 
 security genérica
-→ trust/poisoning separado de authorization
+→ trust ≠ integrity ≠ authorization
+
+allowlist
+→ bloqueio de capability não autorizada
+
+fingerprint por capability
+→ detecção de contract drift
+
+detecção
+→ enforcement
+→ remoção do catálogo + bloqueio de call_tool
+
+fail-open didático
+→ contraste explícito com fail-closed de produção
 
 failure execution
 → prever → observar → explicar
+
+CallToolResult(isError=True)
+≠
+MCPError
+
+mensagem do client
+≠
+observabilidade interna
+≠
+detalhe seguro para modelo
 
 casos óbvios
 → caso arquitetural cinzento
 
 fim da aula
-→ checagem conceitual sem depender do SDK
+→ checagem conceitual independente do SDK
 ```
+
+### Raio-X: o que é real e o que é ilustrativo
+
+A aula distingue explicitamente:
+
+```text
+API Python do SDK
+≠
+modelo tipado serializado do protocolo
+≠
+envelope JSON-RPC
+≠
+transporte
+```
+
+Os objetos do SDK são serializados com `model_dump(mode="json", by_alias=True)`, portanto os campos mostrados como `inputSchema`, `outputSchema`, `structuredContent` e `isError` vêm de objetos reais do protocolo.
+
+O envelope JSON-RPC de `tools/call` permanece **representação didática**, não captura de wire/transport.
 
 ### Decisão sobre transportes
 
-O núcleo continua in-process para reduzir carga operacional. `stdio` permanece extensão recomendada, não requisito do primeiro caminho executável. A aula deve explicar explicitamente que o raio-X apresentado é uma representação didática equivalente, e não captura de framing de transporte.
+O núcleo continua in-process para reduzir carga operacional.
 
-### Novo padrão pedagógico
+`stdio` permanece extensão recomendada, não requisito da primeira experiência executável.
+
+A decisão segue o princípio do TIL:
+
+> complexidade arquitetural precisa ser conquistada por evidência.
+
+Adicionar captura de transporte neste ponto não acrescenta utility pedagógica suficiente para justificar a carga extra.
+
+### Segurança — modelo final
+
+A aula passa a ensinar quatro perguntas independentes:
+
+```text
+Discovery
+→ o que existe?
+
+Authorization
+→ esta capability pode ser usada?
+
+Integrity
+→ esta ainda é a definição aprovada?
+
+Trust
+→ o conteúdo dessa definição é confiável?
+```
+
+E fecha o ciclo com enforcement:
+
+```text
+detectar
+→ validar
+→ autorizar
+→ executar
+```
+
+O exemplo didático usa fail-open quando não há fingerprint fixado, mas registra que ambientes sensíveis normalmente devem considerar fail-closed.
+
+### Failure Lab — interpretação final
+
+A aula não reduz todos os erros a exceções.
+
+A evidência executada mostra:
+
+```text
+tool inexistente
+→ CallToolResult(isError=True)
+
+argumento ausente
+→ CallToolResult(isError=True)
+→ detalhes de validação podem ser visíveis
+
+falha interna da implementação
+→ CallToolResult(isError=True)
+→ mensagem pode ser genérica
+
+resource/protocol error
+→ MCPError
+```
+
+Princípio:
+
+> a superfície de erro faz parte do contrato e da postura de segurança.
+
+### Padrão pedagógico consolidado
 
 ```text
 afirmação
-→ evidência
+→ previsão
+→ evidência executável
+→ output observado
 → interpretação
+→ limitação
 → decisão
 ```
 
-A implementação não deve permitir que discovery, authorization ou host permaneçam apenas como conceitos declarados.
+A Aula 19 foi um dos casos que consolidaram o padrão geral de validação didática do TIL:
+
+> **quando a interpretação escrita e o comportamento executado divergem, o comportamento executado vence — e a aula deve ser corrigida.**
+
+### Estado final
+
+```text
+pedagogical review     PASS
+protocol visibility    PASS
+structured output      PASS
+host/primitives        PASS
+Failure Lab            PASS
+trust/integrity/auth   PASS
+architecture reasoning PASS
+reproducibility design PASS
+final Kaggle Run All   PENDING after last executable refinements
+```
+
+Após o último `Kaggle COMPLETE`, o blueprint pode ser considerado plenamente reconciliado com uma aula student-ready.
