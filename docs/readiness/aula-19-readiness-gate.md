@@ -33,7 +33,7 @@ The transition from Lessons 17 and 18 is explicit.
 
 ### G2 — Executable MCP lab
 
-**PASS**
+**PENDING REVALIDATION — EXECUTION-EVIDENCE REFINEMENT**
 
 The notebook implements:
 
@@ -97,9 +97,9 @@ The previous notebook version executed headlessly. The reengineered v2 must be e
 
 ### G5 — Kaggle execution
 
-**PASS**
+**PENDING — EXECUTION-EVIDENCE REFINEMENT**
 
-The reengineered v2 completed successfully on Kaggle with the offline MCP wheelhouse attached.
+The previous v2 completed successfully on Kaggle. A new Run All is required after the execution-evidence refinement (structured output, real protocol payload serialization, trust/catalog drift, and Failure Lab interpretation).
 
 ### G6 — Living Glossary source
 
