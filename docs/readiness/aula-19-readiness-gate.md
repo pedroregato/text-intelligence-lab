@@ -51,7 +51,7 @@ The notebook implements:
 
 ### G2A — Protocol visibility
 
-**PENDING PEDAGOGICAL INSPECTION**
+**PASS**
 
 The reengineered notebook now includes:
 
@@ -147,16 +147,18 @@ Evidence:
 
 ### G8 — Pedagogical review
 
-**PENDING**
+**PASS**
 
-The lesson still requires final human review of:
+The final pedagogical review passed. The lesson now demonstrates:
 
-- explanation density;
-- progression from concept to code;
-- clarity of host/client/server;
-- interpretation of discovery;
-- failure lab;
-- architecture decision lab;
+- progression from concept to protocol evidence;
+- explicit host/client/server roles;
+- discovery and typed contracts;
+- structured output;
+- trust vs authorization vs integrity;
+- detect → validate → enforce for capability drift;
+- failure-surface interpretation;
+- architecture decision reasoning;
 - bridge to Agentic Systems.
 
 ## Promotion rule
