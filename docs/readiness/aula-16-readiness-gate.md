@@ -50,7 +50,7 @@ Internet OFF, GPU OFF, no external API and deterministic local generation.
 
 ### G8 — Kaggle Run All
 
-**PENDING**
+**PASS**
 
 Fresh execution required after generator reengineering.
 
