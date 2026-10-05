@@ -45,7 +45,7 @@ Ler
 | 7 | Seleção de modelos e tuning |
 | 8 | N-grams e engenharia de features textuais |
 | 9 | Word Embeddings |
-| 10 | Embeddings contextuais e Transformers |
+| 10 | Embeddings contextuais e Transformers — `Available / student-ready` |
 | 11 | BERT para classificação de texto — `Available / student-ready` |
 | 12 | Baselines clássicos fortes |
 | 13 | Métricas e indicadores: da fórmula à decisão |
@@ -57,8 +57,9 @@ Ler
 | 17 | Tool Use, Function Calling and Contracts — `Kaggle PASS / pedagogical review pending` |
 | 18 | Deterministic Workflows — `Available / student-ready` |
 | 19 | Model Context Protocol (MCP) — `Available / student-ready` |
+| 20 | Agentic Systems Foundations — `review-candidate` |
 
-A revisão reengenheirada foi submetida a uma bateria formal de revalidação. As **Aulas 11, 13C, 15, 18 e 19** concluíram execução e inspeção pedagógica e estão `Available / student-ready`. As **Aulas 10, 14, 16 e 17** já passaram no Kaggle, mas ainda aguardam fechamento da inspeção pedagógica. As demais aulas permanecem sob seus readiness gates específicos; execução bem-sucedida, por si só, não implica promoção.
+A revisão reengenheirada foi submetida a uma bateria formal de revalidação. As **Aulas 11, 13C, 15, 18 e 19** concluíram execução e inspeção pedagógica e estão `Available / student-ready`. As **Aulas 10, 11, 13C, 15, 18 e 19** concluíram execução e inspeção pedagógica e estão `Available / student-ready`. As **Aulas 14, 16 e 17** já passaram no Kaggle, mas ainda aguardam fechamento da inspeção pedagógica. A **Aula 20** inaugura o bloco de Agentic Systems e está em `review-candidate`. As demais aulas permanecem sob seus readiness gates específicos; execução bem-sucedida, por si só, não implica promoção.
 
 ## Organização conceitual
 
@@ -352,7 +353,7 @@ O **EDU-ORCH-002** também foi concluído, medindo diretamente quatro configura�
 
 A Aula 13C também passou a cobrir a transição de **Model Intelligence para Agentic Systems**, conectando routing, orchestration, tools, computer use, observability, human oversight e utility.
 
-O movimento curricular até MCP já foi implementado. O foco atual é **concluir as inspeções pedagógicas pendentes da sequência reengenheirada e então avançar para o próximo bloco de Agentic Systems**, preservando o princípio de que toda complexidade adicional deve ser justificada por evidência.
+O movimento curricular até MCP já foi implementado e a **Aula 20 — Agentic Systems Foundations** foi iniciada. O foco atual é **validar a primeira unidade de Agentic Systems sem perder a fila de inspeções pedagógicas pendentes**, preservando o princípio de que toda complexidade adicional deve ser justificada por evidência.
 
 ## Licenciamento
 
