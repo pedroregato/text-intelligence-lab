@@ -2,7 +2,7 @@
 
 ## Status
 
-REVIEW CANDIDATE — not yet student-ready
+AVAILABLE / STUDENT-READY — current revision validated.
 
 ## Scope
 
