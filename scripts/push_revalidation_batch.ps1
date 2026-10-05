@@ -1,5 +1,6 @@
 param(
-    [switch]$StatusOnly
+    [switch]$StatusOnly,
+    [string]$StartAt = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -28,7 +29,18 @@ Write-Host "TIL - Reengineering Validation Batch"
 Write-Host "===================================="
 Write-Host ""
 
+$started = [string]::IsNullOrWhiteSpace($StartAt)
+
 foreach ($item in $batch) {
+    if (-not $started) {
+        if ($item.Lesson -eq $StartAt) {
+            $started = $true
+        }
+        else {
+            continue
+        }
+    }
+
     Write-Host ("Lesson {0} - {1}" -f $item.Lesson, $item.Id)
 
     if (-not $StatusOnly) {
