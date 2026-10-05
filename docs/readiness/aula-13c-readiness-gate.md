@@ -60,9 +60,9 @@ The notebook keeps evidence provenance explicit and does not overwrite measured 
 
 ### G9 — Kaggle Run All
 
-**PASS**
+**PENDING — CURRENT REVISION**
 
-Fresh execution required after the utility-normalization changes.
+A previous revision completed successfully on Kaggle and passed the semantic EVIDENCE check. The current notebook revision adds the executable diminishing-returns comparison (0.80 vs 0.90) and glossary-link normalization, so a fresh Run All is required to validate the exact current revision.
 
 ### G10 — Pedagogical inspection
 
@@ -86,9 +86,9 @@ Promote only after G9 and G10 pass.
 > Utility should make decision policy explicit and stable enough to support comparison; it should not silently change meaning when the candidate set changes.
 
 
-## Final semantic execution check
+## Previous semantic execution check
 
-**EVIDENCE mode verification: PASS** — the Kaggle output reported:
+**EVIDENCE mode verification: PASS (previous revision)** — the Kaggle output reported:
 
 ```text
 Modelos: EVIDENCE
@@ -100,7 +100,7 @@ The output also displayed the measured `til-model-evidence.csv` and `til-routing
 
 ## Semantic execution status
 
-**PASS**
+**PASS FOR PREVIOUS REVISION — RECHECK REQUIRED FOR CURRENT REVISION**
 
 Observed in the completed Kaggle run:
 
@@ -110,3 +110,10 @@ Observed in the completed Kaggle run:
 - source: `data/model-evidence/til-routing-evidence.csv`
 
 The displayed model table contained measured EDU-ORCH-001 evidence, and the routing table contained measured-recovered EDU-ORCH-002 evidence. This closes the semantic execution gate for Aula 13C.
+
+
+## Current revision delta
+
+After the successful semantic validation, the lesson gained an executable comparison between thresholds `0.80` and `0.90` to make diminishing returns observable. The new cell computes deltas for quality, cost, latency and escalation rate and connects the observed result to the TIL principle that architectural complexity must be earned by evidence of utility.
+
+Because this delta includes executable code, the current revision must be re-run on Kaggle before promotion.
