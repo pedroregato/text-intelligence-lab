@@ -51,13 +51,14 @@ Ler
 | 13 | Métricas e indicadores: da fórmula à decisão |
 | 13B | Metric Scenario Lab: cenários, thresholds e custos de erro |
 | 13C | Model Routing, Orchestration e Utility: sistemas compostos de IA |
-| 14 | LLM Foundations: da classificação à geração — `Available` |
-| 15 | Retrieval, Semantic Search and Grounding — `Available` |
-| 16 | Retrieval-Augmented Generation (RAG) — `Available` |
-| 17 | Tool Use, Function Calling and Contracts — `Available` |
-| 18 | Deterministic Workflows — `Available` |
+| 14 | LLM Foundations: da classificação à geração — `revalidation pending` |
+| 15 | Retrieval, Semantic Search and Grounding — `revalidation pending` |
+| 16 | Retrieval-Augmented Generation (RAG) — `revalidation pending` |
+| 17 | Tool Use, Function Calling and Contracts — `revalidation pending` |
+| 18 | Deterministic Workflows — `pedagogically ready / technical revalidation pending` |
+| 19 | Model Context Protocol (MCP) — `pedagogically ready / final Kaggle revalidation pending` |
 
-As **Aulas 14 e 15** estão `Available`. A **Aula 16 — Retrieval-Augmented Generation (RAG)** está `Available`, com execução Kaggle e validação headless concluídas. A **Aula 17 — Tool Use, Function Calling and Contracts** está `Available / student-ready` e inicia o Bloco C — Tools and Workflows. A **Aula 18 — Deterministic Workflows** também está `Available / student-ready`, com execução Kaggle concluída e revisão pedagógica finalizada.
+As versões anteriores das Aulas **14–18** já foram publicadas/executadas no Kaggle. A revisão atual do repositório passou por uma reengenharia pedagógica baseada em evidência e está reunida em uma **bateria de revalidação**. Até o novo Run All, o status do commit atual deve ser lido como `review-candidate`, não como nova promoção automática. A **Aula 19 — MCP** está didaticamente aprovada e aguarda apenas a execução final no Kaggle da revisão atual.
 
 ## Organização conceitual
 
@@ -351,7 +352,7 @@ O **EDU-ORCH-002** também foi concluído, medindo diretamente quatro configura�
 
 A Aula 13C também passou a cobrir a transição de **Model Intelligence para Agentic Systems**, conectando routing, orchestration, tools, computer use, observability, human oversight e utility.
 
-O próximo movimento curricular é avançar de Intelligent Orchestration para LLM Foundations, Retrieval/Grounding, Tools/Workflows e Agentic Systems, preservando o princípio de que toda complexidade adicional deve ser justificada por evidência.
+O movimento curricular até MCP já foi implementado. O foco atual é **revalidar a sequência reengenheirada** antes de avançar para novas unidades de Agentic Systems, preservando o princípio de que toda complexidade adicional deve ser justificada por evidência.
 
 ## Licenciamento
 
