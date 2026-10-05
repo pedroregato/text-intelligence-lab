@@ -38,8 +38,8 @@ AND exercises require reasoning
 | 15 | real semantic retrieval + Recall@k | review-candidate-v2 |
 | 16 | fair RAG comparison + failure localization | review-candidate-v2 |
 | 17 | observable tool-selection layer | review-candidate-v2 |
-| 18 | pedagogically ready; opt-in exercise update | technical revalidation pending |
-| 19 | pedagogically approved MCP lab | final Kaggle revalidation pending |
+| 18 | pedagogically ready; opt-in exercise update | Available / student-ready |
+| 19 | pedagogically approved MCP lab | Available / student-ready |
 
 ## Structural audit completed
 
