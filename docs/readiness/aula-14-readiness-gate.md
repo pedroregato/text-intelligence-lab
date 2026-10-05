@@ -72,7 +72,7 @@ Internet OFF, GPU OFF, no external API, deterministic micro-model and seeded sam
 
 ### G10 — Kaggle Run All
 
-**PENDING**
+**PASS**
 
 The reengineered notebook requires a fresh Kaggle execution.
 
