@@ -180,7 +180,7 @@ def load_terms() -> tuple[dict[str, GlossaryTerm], dict[str, GlossaryTerm]]:
 
 
 def resolve(label: str, aliases: dict[str, GlossaryTerm]) -> GlossaryTerm | None:
-    clean = re.sub(r"[*_`]", "", label).strip()
+    clean = re.sub(r"[*`]", "", label).strip()
     return aliases.get(normalize(clean))
 
 
