@@ -89,6 +89,8 @@ EDITORIAL_LABELS = {
     "palavras-chave:",
     "leitura pelo glossário",
     "leitura pelo glossário:",
+    "glossário em contexto",
+    "glossário em contexto:",
     "mindset til",
     "mindset semântico til",
     "mindset semântico til:",
