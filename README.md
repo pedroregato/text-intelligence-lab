@@ -55,10 +55,10 @@ Ler
 | 15 | Retrieval, Semantic Search and Grounding — `revalidation pending` |
 | 16 | Retrieval-Augmented Generation (RAG) — `revalidation pending` |
 | 17 | Tool Use, Function Calling and Contracts — `revalidation pending` |
-| 18 | Deterministic Workflows — `pedagogically ready / technical revalidation pending` |
-| 19 | Model Context Protocol (MCP) — `pedagogically ready / final Kaggle revalidation pending` |
+| 18 | Deterministic Workflows — `Available / student-ready` |
+| 19 | Model Context Protocol (MCP) — `Available / student-ready` |
 
-As versões anteriores das Aulas **14–18** já foram publicadas/executadas no Kaggle. A revisão atual do repositório passou por uma reengenharia pedagógica baseada em evidência e está reunida em uma **bateria de revalidação**. Até o novo Run All, o status do commit atual deve ser lido como `review-candidate`, não como nova promoção automática. A **Aula 19 — MCP** está didaticamente aprovada e aguarda apenas a execução final no Kaggle da revisão atual.
+As versões anteriores das Aulas **14–18** já foram publicadas/executadas no Kaggle. A revisão atual do repositório passou por uma reengenharia pedagógica baseada em evidência e está reunida em uma **bateria de revalidação**. Até o novo Run All, o status do commit atual deve ser lido como `review-candidate`, não como nova promoção automática. As **Aulas 18 e 19** concluíram a revalidação final no Kaggle e estão `Available / student-ready`.
 
 ## Organização conceitual
 
