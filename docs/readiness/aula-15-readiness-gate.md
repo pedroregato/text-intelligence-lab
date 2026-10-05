@@ -50,9 +50,9 @@ Internet OFF, CPU, versioned Kaggle Model, local_files_only=True.
 
 ### G8 — Kaggle Run All
 
-**PENDING**
+**PASS — CURRENT REVISION**
 
-Fresh execution required after reengineering.
+The current reengineered revision completed successfully on Kaggle.
 
 ### G9 — Pedagogical inspection
 
