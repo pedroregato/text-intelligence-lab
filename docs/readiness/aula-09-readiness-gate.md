@@ -74,7 +74,7 @@ Internet OFF, CPU, workers=1, explicit seeds, synthetic corpus, and no fixed num
 
 ### G10 — Kaggle Run All
 
-**PENDING**
+**PASS**
 
 The reengineered notebook requires a fresh Kaggle execution.
 
