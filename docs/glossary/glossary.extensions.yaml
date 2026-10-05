@@ -1526,3 +1526,84 @@ terms:
       til_context: In Lesson 10, the query is compared with keys to produce scores that determine how much each value contributes to the new contextual representation.
       example: A token query is compared with all token keys before attention scores are normalized.
     related: [self-attention, attention-key, attention-value]
+
+  - id: agentic-loop
+    category: engineering
+    lesson_first_seen: "20"
+    pt-BR:
+      term: Loop agente
+      english_term: Agentic Loop
+      definition: Ciclo iterativo em que o sistema observa o estado, propõe a próxima ação, executa sob controles, observa o resultado e decide se continua, encerra ou escala.
+      til_context: Na Aula 20, o loop agente é comparado diretamente com um workflow determinístico para tornar observável onde a autonomia entra na arquitetura.
+      example: Observar estado → escolher ação → validar → executar → atualizar estado → decidir próximo passo.
+    en:
+      term: Agentic Loop
+      definition: Iterative cycle in which a system observes state, proposes the next action, executes under controls, observes the result, and decides whether to continue, stop, or escalate.
+      til_context: In Lesson 20, the agentic loop is directly compared with a deterministic workflow to make the locus of autonomy observable.
+      example: Observe state → choose action → validate → execute → update state → choose next step.
+    related: [workflow, tool-routing, execution-routing, observability]
+
+  - id: autonomy
+    category: engineering
+    lesson_first_seen: "20"
+    pt-BR:
+      term: Autonomia
+      english_term: Autonomy
+      definition: Grau em que um sistema participa da escolha de ações e próximos passos sem que cada transição tenha sido explicitamente definida por um operador humano.
+      til_context: Na Aula 20, autonomia é tratada como propriedade mensurável, não como rótulo binário de agente versus não-agente.
+      example: Um workflow fixa a próxima etapa; um agentic loop pode selecionar entre ações permitidas conforme o estado observado.
+    en:
+      term: Autonomy
+      definition: Degree to which a system participates in choosing actions and next steps without every transition being explicitly specified by a human operator.
+      til_context: In Lesson 20, autonomy is treated as a measurable property rather than a binary agent/non-agent label.
+      example: A workflow fixes the next step; an agentic loop may select among allowed actions based on observed state.
+    related: [agentic-loop, routing, human-in-the-loop, governance]
+
+  - id: step-budget
+    category: engineering
+    lesson_first_seen: "20"
+    pt-BR:
+      term: Orçamento de passos
+      english_term: Step Budget
+      definition: Limite explícito para a quantidade de iterações ou ações que um sistema pode executar antes de interromper, falhar de forma segura ou escalar.
+      til_context: Na Aula 20, o step budget impede loops abertos e torna custo, latência e risco operacional observáveis.
+      example: max_steps=6 encerra o loop e produz uma razão de término quando o objetivo não foi atingido a tempo.
+    en:
+      term: Step Budget
+      definition: Explicit limit on the number of iterations or actions a system may execute before stopping, failing safely, or escalating.
+      til_context: In Lesson 20, the step budget prevents open loops and makes cost, latency, and operational risk observable.
+      example: max_steps=6 stops the loop and records a termination reason when the goal is not reached in time.
+    related: [agentic-loop, cost, latency, governance]
+
+  - id: termination-condition
+    category: engineering
+    lesson_first_seen: "20"
+    pt-BR:
+      term: Condição de término
+      english_term: Termination Condition
+      definition: Regra explícita que determina quando um loop deve encerrar por sucesso, estado seguro, necessidade de supervisão, limite excedido ou falha não recuperável.
+      til_context: Na Aula 20, condições de término são parte do contrato de controle do agentic loop.
+      example: Encerrar quando published=True, needs_human=True ou step_count atingir max_steps.
+    en:
+      term: Termination Condition
+      definition: Explicit rule that determines when a loop stops because of success, safe terminal state, need for supervision, exceeded limit, or unrecoverable failure.
+      til_context: In Lesson 20, termination conditions are part of the control contract of the agentic loop.
+      example: Stop when published=True, needs_human=True, or step_count reaches max_steps.
+    related: [agentic-loop, step-budget, human-in-the-loop]
+
+  - id: human-escalation
+    category: engineering
+    lesson_first_seen: "20"
+    pt-BR:
+      term: Escalonamento humano
+      english_term: Human Escalation
+      definition: Transição controlada em que o sistema deixa de decidir ou executar autonomamente e solicita julgamento, aprovação ou intervenção humana.
+      til_context: Na Aula 20, o escalonamento humano é um estado terminal seguro para ambiguidade, ausência de autorização ou baixa confiança operacional.
+      example: Uma solicitação ambígua termina em ask_human em vez de o sistema inventar uma ação.
+    en:
+      term: Human Escalation
+      definition: Controlled transition in which a system stops deciding or acting autonomously and requests human judgment, approval, or intervention.
+      til_context: In Lesson 20, human escalation is a safe terminal state for ambiguity, missing authorization, or low operational confidence.
+      example: An ambiguous request ends in ask_human instead of the system inventing an action.
+    related: [human-in-the-loop, agentic-loop, governance, approval-gate]
+
