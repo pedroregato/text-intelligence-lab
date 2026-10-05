@@ -78,13 +78,13 @@ Evidence:
 
 ### G6 — Execução Kaggle
 
-Status: **PASS**
+Status: **PENDING REVALIDATION**
 
 Evidence:
 
-- notebook executado integralmente no Kaggle;
-- execução validada após os ajustes pedagógicos finais;
-- nenhum erro bloqueante reportado na validação final.
+- a versão anterior foi executada integralmente no Kaggle;
+- a revisão pedagógica permanece válida;
+- após a conversão das soluções para o padrão opt-in, um novo Run All será feito na bateria final.
 
 ### G7 — Revisão pedagógica
 
@@ -118,14 +118,14 @@ G2 Decision contracts / routing       PASS
 G3 Representação visual               PASS
 G4 Glossário Vivo                     PASS
 G5 Reprodutibilidade                  PASS
-G6 Execução Kaggle                    PASS
+G6 Execução Kaggle                    PENDING REVALIDATION
 G7 Revisão pedagógica                 PASS
 G8 Navegação e promoção               PASS
 ```
 
 ## Release Status
 
-**AULA 18: AVAILABLE / STUDENT-READY**
+**AULA 18: PEDAGOGICALLY READY / TECHNICAL REVALIDATION PENDING**
 
 ## Exit Principle
 
