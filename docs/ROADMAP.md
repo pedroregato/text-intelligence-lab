@@ -114,7 +114,7 @@ A numeração das próximas aulas será definida quando cada unidade estiver suf
 ### Bloco A — LLM Foundations
 
 **Próxima unidade oficial: Aula 14 — LLM Foundations: da classificação à geração**  
-Status: `Available`  
+Status: `Review candidate v2 — Kaggle revalidation pending`  
 Especificação: `docs/curriculum/AULA-14-llm-foundations.md`
 
 Objetivo: entender o que muda quando o sistema passa de modelos discriminativos/encoders para modelos generativos, sem assumir que a capacidade generativa substitui automaticamente soluções mais simples.
@@ -136,7 +136,7 @@ O núcleo da primeira versão deve ser executável com `Internet OFF` e sem API 
 ### Bloco B — Retrieval and Grounding
 
 **Próxima unidade oficial: Aula 15 — Retrieval, Semantic Search and Grounding**  
-Status: `Available`  
+Status: `Review candidate v2 — Kaggle revalidation pending`  
 Especificação: `docs/curriculum/AULA-15-retrieval-semantic-search-grounding.md`
 
 Objetivo: separar retrieval de generation antes de construir RAG.
@@ -157,7 +157,7 @@ A primeira versão usa `Internet OFF`, TF-IDF real e vetores semânticos didáti
 
 ### Aula 16 — Retrieval-Augmented Generation (RAG)
 
-Status: `Available`  
+Status: `Review candidate v2 — Kaggle revalidation pending`  
 Especificação: `docs/curriculum/AULA-16-rag.md`
 
 A Aula 16 combinará as capacidades estudadas separadamente nas Aulas 14 e 15:
@@ -185,23 +185,23 @@ Aula 17 — Tool Use, Function Calling and Contracts
 ```
 
 **Aula 17 — Tool Use, Function Calling and Contracts**  
-Status: `Available`  
+Status: `Review candidate v2 — Kaggle revalidation pending`  
 Especificação: `docs/curriculum/AULA-17-tool-use-function-calling.md`
 
 A Aula 17 introduz contratos de ferramenta, schemas, validação, execução, resultados, failure taxonomy, efeitos colaterais, safety e observabilidade.
 
 **Aula 18 — Deterministic Workflows**  
-Status: `Available`  
+Status: `Pedagogically ready — technical revalidation pending`  
 Especificação: `docs/curriculum/AULA-18-deterministic-workflows.md`
 
-A Aula 18 trata composição determinística de ferramentas, estado, retries, idempotência, checkpoints, approval gates, recovery, observabilidade e **Typed Decisions and Confidence-Gated Routing** por contratos de decisão e políticas explícitas. A unidade foi validada em execução completa no Kaggle e promovida para `Available / student-ready`.
+A Aula 18 trata composição determinística de ferramentas, estado, retries, idempotência, checkpoints, approval gates, recovery, observabilidade e **Typed Decisions and Confidence-Gated Routing** por contratos de decisão e políticas explícitas. A versão anterior foi validada no Kaggle; a revisão atual preserva a aprovação pedagógica e aguarda nova execução técnica após a padronização dos exercícios opt-in.
 
 **Aula 19 — Model Context Protocol (MCP)**  
-Status: `Draft implementation`  
+Status: `Pedagogically ready — final Kaggle revalidation pending`  
 Especificação: `docs/curriculum/AULA-19-model-context-protocol.md`  
 Baseline do protocolo: `2026-07-28`
 
-A Aula 19 introduzirá **Model Context Protocol (MCP)** depois que o aluno já dominar tools e workflows. O foco será:
+A Aula 19 introduz **Model Context Protocol (MCP)** depois que o aluno já domina tools e workflows. A revisão pedagógica está concluída; falta apenas o Run All final no Kaggle. O foco será:
 
 - host / client / server;
 - tools, resources e prompts;
