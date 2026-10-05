@@ -1281,3 +1281,20 @@ terms:
       til_context: "In Lesson 19, authorization is separated from model confidence and from the mere existence of a capability."
       example: "A tool being available on the server does not imply every caller is authorized to execute it."
     related: [mcp-tool, mcp-resource]
+
+
+  - id: classification-head
+    category: machine-learning
+    lesson_first_seen: "11"
+    pt-BR:
+      term: Cabeça de classificação
+      english_term: Classification Head
+      definition: Camada ou pequeno conjunto de camadas adicionadas sobre a representação produzida por um encoder para transformar essa representação em escores associados às classes de uma tarefa supervisionada.
+      til_context: Na Aula 11, o DistilBERT fornece representações contextuais pré-treinadas e uma nova cabeça de classificação é inicializada para aprender a distinguir duvida, reclamacao e elogio. Os pesos dessa cabeça não vêm prontos do checkpoint-base e precisam ser aprendidos no fine-tuning.
+      example: Um encoder produz um vetor contextual para a mensagem; a cabeça de classificação converte esse vetor em logits para as classes duvida, reclamacao e elogio.
+    en:
+      term: Classification Head
+      definition: A layer or small set of layers added on top of an encoder representation to transform that representation into scores associated with the classes of a supervised task.
+      til_context: In Lesson 11, DistilBERT provides pretrained contextual representations and a new classification head is initialized to learn question, complaint, and praise. The head weights are not supplied by the base checkpoint and must be learned during fine-tuning.
+      example: An encoder produces a contextual vector for a message; the classification head transforms that vector into logits for question, complaint, and praise.
+    related: [fine-tuning, pretrained-model, sequence-classification, logits]
