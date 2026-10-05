@@ -60,9 +60,9 @@ Internet OFF, CPU, deterministic stratified splits and CV, no fixed numerical re
 
 ### G9 — Kaggle Run All
 
-**PENDING**
+**PASS**
 
-Fresh execution required after reengineering.
+The current reengineered revision completed successfully on Kaggle with `KernelWorkerStatus.COMPLETE`.
 
 ### G10 — Pedagogical inspection
 
