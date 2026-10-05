@@ -2,7 +2,7 @@
 
 ## Status
 
-REVIEW CANDIDATE — reengineered v2, not yet student-ready.
+AVAILABLE / STUDENT-READY — current revision validated.
 
 ## Central question
 
@@ -66,20 +66,20 @@ The current revision completed successfully on Kaggle after adding the executabl
 
 ### G10 — Pedagogical inspection
 
-**PENDING**
+**PASS — CURRENT REVISION**
 
-Verify that the student can explain:
+Observed routing evidence supports the intended diminishing-returns interpretation:
 
-1. why candidate-relative min-max scores depend on the comparison set;
-2. why adding a candidate can change another candidate's utility without changing its metrics;
-3. what anchored normalization improves;
-4. why anchor selection is itself a governance choice;
-5. why highest F1 is not necessarily highest utility;
-6. why utility is a policy function rather than an intrinsic property of a model.
+- threshold 0.80: quality 0.9330, escalation rate 0.1442, cost 15.4165, latency 22.2775, utility_relative 0.4305, utility_anchored 0.3885;
+- threshold 0.90: quality 0.9318, escalation rate 0.2346, cost 25.1524, latency 34.0148, utility_relative 0.3308, utility_anchored 0.2898.
+
+The stricter 0.90 gate escalates more cases and costs more time and computation, but does not improve observed quality; both utility measures also decrease. This makes diminishing returns directly observable and supports the governing TIL principle that additional architectural complexity must be justified by evidence of utility.
+
+The lesson remains careful not to claim that 0.80 is a universal optimum: it is only the best observed quality point among the four measured thresholds in this evidence set.
 
 ## Promotion rule
 
-Promote only after G9 and G10 pass.
+Promotion criteria satisfied: G9 and G10 pass on the current revision.
 
 ## Governing principle
 
