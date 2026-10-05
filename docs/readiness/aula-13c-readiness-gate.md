@@ -60,9 +60,9 @@ The notebook keeps evidence provenance explicit and does not overwrite measured 
 
 ### G9 — Kaggle Run All
 
-**PENDING — CURRENT REVISION**
+**PASS — CURRENT REVISION**
 
-A previous revision completed successfully on Kaggle and passed the semantic EVIDENCE check. The current notebook revision adds the executable diminishing-returns comparison (0.80 vs 0.90) and glossary-link normalization, so a fresh Run All is required to validate the exact current revision.
+The current revision completed successfully on Kaggle after adding the executable diminishing-returns comparison (0.80 vs 0.90) and glossary-link normalization.
 
 ### G10 — Pedagogical inspection
 
