@@ -146,9 +146,9 @@ Generated PT-BR/EN/HTML glossary views must still be regenerated and validated.
 
 ### G10 — Headless execution
 
-**PASS — CURRENT REVISION**
+**RECHECK REQUIRED — EXECUTABLE COMPARISON UPDATED**
 
-The current notebook completed end-to-end with `jupyter nbconvert --execute` on Windows.
+The previous revision completed end-to-end with `jupyter nbconvert --execute` on Windows. The executable comparison was subsequently corrected so workflow and agentic loop start with the same information and both must obtain `lesson_status` through the same capability. A fresh headless run is therefore required for the current revision.
 
 Observed runtime warnings were environmental rather than lesson failures:
 
