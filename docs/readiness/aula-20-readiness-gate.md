@@ -165,17 +165,39 @@ The current revision must complete on Kaggle with Internet OFF and GPU OFF.
 
 ### G12 — Pedagogical inspection
 
-**PENDING**
+**PASS — CURRENT REVISION**
 
-Verify that a student can explain:
+Observed comparative evidence is intentionally non-triumphal:
 
-1. why branching does not automatically imply agency;
-2. where next-action autonomy appears;
-3. why decision and authorization remain separate;
-4. why a step budget is architecturally necessary;
-5. when human escalation is a successful outcome;
-6. at least one scenario where a workflow is preferable;
-7. whether the measured benefit of autonomy justifies its added complexity.
+- ready_approved:
+  - workflow: success, 5 steps, cost proxy 5.0;
+  - agentic loop: success, 5 steps, 5 decisions, cost proxy 7.5;
+- not_ready:
+  - workflow stops after 2 steps, cost proxy 2.0;
+  - agentic loop reaches the same terminal result after 3 steps, cost proxy 4.5;
+- ambiguous:
+  - both escalate safely to a human;
+  - workflow does so without executing a step, while agentic loop spends one decision step and cost proxy 1.5;
+- approval_missing:
+  - both escalate safely to a human;
+  - workflow uses 4 steps / cost proxy 4.0, while agentic loop uses 5 steps / cost proxy 7.5.
+
+Therefore, in the measured scenarios, autonomy did not produce additional task utility. It introduced decision overhead without improving success or escalation outcomes.
+
+The failure lab also produced:
+
+```text
+inspect_request
+inspect_request
+inspect_request
+Termination: step_budget_exceeded
+```
+
+This makes the new governance surface directly observable: an agentic loop can fail to make progress and therefore requires explicit termination controls.
+
+Pedagogical conclusion:
+
+> In this task, the deterministic workflow remains the preferred architecture. The agentic loop is useful as a mechanism study, but its additional complexity has not yet been justified by observed utility.
 
 ## Promotion rule
 
