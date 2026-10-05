@@ -146,14 +146,16 @@ Generated PT-BR/EN/HTML glossary views must still be regenerated and validated.
 
 ### G10 — Headless execution
 
-**PENDING**
+**PASS — CURRENT REVISION**
 
-Run the current notebook end-to-end locally or with `nbconvert` and inspect:
+The current notebook completed end-to-end with `jupyter nbconvert --execute` on Windows.
 
-- comparison table;
-- termination reasons;
-- broken-loop evidence;
-- warnings/errors.
+Observed runtime warnings were environmental rather than lesson failures:
+
+- Tornado/ZMQ registered a selector thread because the Windows Proactor event loop does not implement the required `add_reader` family;
+- the temporary local Jupyter kernel reported unencrypted TCP transport.
+
+The notebook produced the executed artifact successfully. Comparative evidence and failure-lab outputs remain subject to pedagogical inspection under G12.
 
 ### G11 — Kaggle Run All
 
