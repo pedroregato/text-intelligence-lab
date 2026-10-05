@@ -1332,3 +1332,180 @@ terms:
       til_context: In Lesson 11, the top-1/top-2 margin is used as a diagnostic of separation between the winning class and the nearest alternative. Small margins indicate fragile decisions even when the top-1 class is correct.
       example: If the two highest probabilities are 0.340 and 0.331, the margin is 0.009, indicating weak separation between the two classes.
     related: [classification-head, logits, confidence, decision-threshold, abstention]
+
+
+  - id: ngram-range
+    category: text-representation
+    lesson_first_seen: "08"
+    pt-BR:
+      term: ngram_range
+      english_term: ngram_range
+      definition: Parâmetro que define os tamanhos mínimo e máximo de n-gramas que serão extraídos de um texto.
+      til_context: Na Aula 8, controla se a representação usa apenas unigramas ou combina unigramas, bigramas e outros n-gramas.
+      example: ngram_range=(1, 2) inclui unigramas e bigramas.
+    en:
+      term: ngram_range
+      definition: Parameter that defines the minimum and maximum n-gram sizes extracted from text.
+      til_context: In Lesson 8, it controls whether the representation uses only unigrams or combines unigrams, bigrams, and other n-grams.
+      example: ngram_range=(1, 2) includes unigrams and bigrams.
+    related: [ngram, unigram, bigram, trigram]
+
+  - id: feature-space
+    category: text-representation
+    lesson_first_seen: "08"
+    pt-BR:
+      term: Espaço de features
+      english_term: Feature Space
+      definition: Conjunto de dimensões ou variáveis usadas para representar cada exemplo de entrada para um modelo.
+      til_context: Na Aula 8, adicionar n-gramas amplia o espaço de features e pode aumentar capacidade de representação, custo e risco de esparsidade.
+      example: Um vocabulário com 10.000 termos produz uma representação com até 10.000 dimensões antes de outras transformações.
+    en:
+      term: Feature Space
+      definition: Set of dimensions or variables used to represent each input example for a model.
+      til_context: In Lesson 8, adding n-grams expands the feature space and may increase representational capacity, cost, and sparsity.
+      example: A vocabulary with 10,000 terms yields a representation with up to 10,000 dimensions before other transformations.
+    related: [feature, dimensionality, sparse-matrix, ngram]
+
+  - id: skip-gram
+    category: embeddings
+    lesson_first_seen: "09"
+    pt-BR:
+      term: Skip-gram
+      english_term: Skip-gram
+      definition: Arquitetura de treinamento do Word2Vec que usa uma palavra central para prever palavras de contexto.
+      til_context: Na Aula 9, aparece como uma das duas arquiteturas clássicas do Word2Vec.
+      example: Dada a palavra central banco, o modelo tenta prever palavras próximas na janela de contexto.
+    en:
+      term: Skip-gram
+      definition: Word2Vec training architecture that uses a center word to predict context words.
+      til_context: In Lesson 9, it appears as one of the two classic Word2Vec architectures.
+      example: Given the center word bank, the model predicts nearby words in the context window.
+    related: [word2vec, cbow, embedding, context-window]
+
+  - id: cbow
+    category: embeddings
+    lesson_first_seen: "09"
+    pt-BR:
+      term: CBOW
+      english_term: Continuous Bag of Words (CBOW)
+      definition: Arquitetura de treinamento do Word2Vec que usa palavras de contexto para prever a palavra central.
+      til_context: Na Aula 9, contrasta com Skip-gram como estratégia de aprendizagem de embeddings estáticos.
+      example: A partir das palavras ao redor de uma lacuna, o modelo tenta prever a palavra central.
+    en:
+      term: Continuous Bag of Words (CBOW)
+      definition: Word2Vec training architecture that uses context words to predict the center word.
+      til_context: In Lesson 9, it contrasts with Skip-gram as a strategy for learning static embeddings.
+      example: From the words around a gap, the model predicts the center word.
+    related: [word2vec, skip-gram, embedding, context-window]
+
+  - id: polysemy
+    category: linguistics
+    lesson_first_seen: "09"
+    pt-BR:
+      term: Polissemia
+      english_term: Polysemy
+      definition: Propriedade de uma palavra possuir múltiplos sentidos relacionados dependendo do contexto.
+      til_context: Na Aula 9, evidencia uma limitação de embeddings estáticos, que atribuem um único vetor à palavra mesmo quando seus sentidos mudam.
+      example: banco pode significar instituição financeira ou assento.
+    en:
+      term: Polysemy
+      definition: Property of a word having multiple related meanings depending on context.
+      til_context: In Lesson 9, it highlights a limitation of static embeddings, which assign one vector to a word even when its meaning changes.
+      example: bank may refer to a financial institution or a river bank.
+    related: [static-embedding, contextual-embedding, word2vec]
+
+  - id: attention-key
+    category: transformers
+    lesson_first_seen: "10"
+    pt-BR:
+      term: Key
+      english_term: Key
+      definition: Vetor usado no mecanismo de atenção para representar como um token pode ser encontrado ou correspondido por uma query.
+      til_context: Na Aula 10, a similaridade entre query e key contribui para calcular quanto peso de atenção será atribuído a cada token.
+      example: Uma query de um token é comparada às keys dos demais tokens para produzir escores de atenção.
+    en:
+      term: Key
+      definition: Vector used in attention to represent how a token can be matched by a query.
+      til_context: In Lesson 10, similarity between query and key contributes to the attention weight assigned to each token.
+      example: A token query is compared with the keys of other tokens to produce attention scores.
+    related: [self-attention, attention-query, attention-value]
+
+  - id: attention-value
+    category: transformers
+    lesson_first_seen: "10"
+    pt-BR:
+      term: Value
+      english_term: Value
+      definition: Vetor que carrega a informação combinada pelo mecanismo de atenção após a aplicação dos pesos derivados de query e key.
+      til_context: Na Aula 10, os values são ponderados pelos escores de atenção para formar a nova representação contextual de cada token.
+      example: Tokens mais relevantes contribuem mais para a soma ponderada dos values.
+    en:
+      term: Value
+      definition: Vector carrying the information combined by attention after applying weights derived from query and key.
+      til_context: In Lesson 10, values are weighted by attention scores to form each token's new contextual representation.
+      example: More relevant tokens contribute more to the weighted sum of values.
+    related: [self-attention, attention-query, attention-key]
+
+  - id: contextual-token
+    category: transformers
+    lesson_first_seen: "10"
+    pt-BR:
+      term: Token contextual
+      english_term: Contextual Token Representation
+      definition: Representação de um token cujo vetor depende dos demais tokens presentes no contexto.
+      til_context: Na Aula 10, contrasta com embeddings estáticos, pois a representação da mesma palavra pode mudar conforme a frase.
+      example: O vetor de banco muda entre banco financeiro e banco de praça.
+    en:
+      term: Contextual Token Representation
+      definition: Representation of a token whose vector depends on the other tokens present in its context.
+      til_context: In Lesson 10, it contrasts with static embeddings because the same word can receive different representations in different sentences.
+      example: The representation of bank changes across different meanings and contexts.
+    related: [contextual-embedding, transformer, self-attention, hidden-state]
+
+  - id: hidden-state
+    category: transformers
+    lesson_first_seen: "10"
+    pt-BR:
+      term: Hidden state
+      english_term: Hidden State
+      definition: Vetor interno produzido por uma camada do modelo para representar informação processada naquele ponto da rede.
+      til_context: Na Aula 10, os hidden states de um Transformer contêm representações contextuais que podem ser inspecionadas ou reutilizadas por tarefas posteriores.
+      example: A última camada do encoder produz um hidden state para cada token.
+    en:
+      term: Hidden State
+      definition: Internal vector produced by a model layer to represent information processed at that point in the network.
+      til_context: In Lesson 10, Transformer hidden states contain contextual representations that can be inspected or reused by downstream tasks.
+      example: The final encoder layer produces one hidden state per token.
+    related: [encoder, contextual-token, contextual-embedding, transformer]
+
+  - id: anisotropy
+    category: embeddings
+    lesson_first_seen: "10"
+    pt-BR:
+      term: Anisotropia
+      english_term: Anisotropy
+      definition: Propriedade de um espaço vetorial em que as representações não se distribuem uniformemente em todas as direções.
+      til_context: Na Aula 10, alerta que similaridade geométrica em embeddings contextuais deve ser interpretada com cuidado porque os vetores podem ocupar regiões preferenciais do espaço.
+      example: Muitos embeddings podem apontar para direções semelhantes mesmo quando representam textos semanticamente diferentes.
+    en:
+      term: Anisotropy
+      definition: Property of a vector space in which representations are not distributed uniformly across all directions.
+      til_context: In Lesson 10, it warns that geometric similarity in contextual embeddings must be interpreted carefully because vectors may occupy preferred regions of the space.
+      example: Many embeddings may point in similar directions even when they represent semantically different texts.
+    related: [embedding, contextual-embedding, cosine-similarity]
+
+  - id: eos-token
+    category: generative-models
+    lesson_first_seen: "14"
+    pt-BR:
+      term: EOS
+      english_term: End-of-Sequence Token (EOS)
+      definition: Token especial que sinaliza ao modelo que uma sequência terminou ou que a geração deve ser encerrada.
+      til_context: Na Aula 14, faz parte do mecanismo de geração autoregressiva e ajuda a explicar por que uma saída pode terminar antes de atingir o limite máximo de tokens.
+      example: Durante a geração, selecionar EOS encerra a sequência.
+    en:
+      term: End-of-Sequence Token (EOS)
+      definition: Special token that signals that a sequence has ended or generation should stop.
+      til_context: In Lesson 14, it is part of autoregressive generation and helps explain why output may stop before reaching the maximum token limit.
+      example: Selecting EOS during generation terminates the sequence.
+    related: [autoregressive-model, generation, token, sampling]
