@@ -89,9 +89,9 @@ Internet OFF, GPU OFF, no external API, deterministic selector and local tools.
 
 ### G9 — Kaggle Run All
 
-**PENDING**
+**PASS**
 
-Fresh execution required after reengineering.
+The current reengineered revision completed successfully on Kaggle with `KernelWorkerStatus.COMPLETE`.
 
 ### G10 — Pedagogical inspection
 
