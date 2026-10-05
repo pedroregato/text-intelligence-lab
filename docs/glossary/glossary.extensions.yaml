@@ -1335,7 +1335,7 @@ terms:
 
 
   - id: ngram-range
-    category: text-representation
+    category: text-intelligence
     lesson_first_seen: "08"
     pt-BR:
       term: ngram_range
@@ -1351,7 +1351,7 @@ terms:
     related: [ngram, unigram, bigram, trigram]
 
   - id: feature-space
-    category: text-representation
+    category: text-intelligence
     lesson_first_seen: "08"
     pt-BR:
       term: Espaço de features
@@ -1367,7 +1367,7 @@ terms:
     related: [feature, dimensionality, sparse-matrix, ngram]
 
   - id: skip-gram
-    category: embeddings
+    category: machine-learning
     lesson_first_seen: "09"
     pt-BR:
       term: Skip-gram
@@ -1383,7 +1383,7 @@ terms:
     related: [word2vec, cbow, embedding, context-window]
 
   - id: cbow
-    category: embeddings
+    category: machine-learning
     lesson_first_seen: "09"
     pt-BR:
       term: CBOW
@@ -1399,7 +1399,7 @@ terms:
     related: [word2vec, skip-gram, embedding, context-window]
 
   - id: polysemy
-    category: linguistics
+    category: text-intelligence
     lesson_first_seen: "09"
     pt-BR:
       term: Polissemia
@@ -1415,7 +1415,7 @@ terms:
     related: [static-embedding, contextual-embedding, word2vec]
 
   - id: attention-key
-    category: transformers
+    category: machine-learning
     lesson_first_seen: "10"
     pt-BR:
       term: Key
@@ -1431,7 +1431,7 @@ terms:
     related: [self-attention, attention-query, attention-value]
 
   - id: attention-value
-    category: transformers
+    category: machine-learning
     lesson_first_seen: "10"
     pt-BR:
       term: Value
@@ -1447,7 +1447,7 @@ terms:
     related: [self-attention, attention-query, attention-key]
 
   - id: contextual-token
-    category: transformers
+    category: machine-learning
     lesson_first_seen: "10"
     pt-BR:
       term: Token contextual
@@ -1463,7 +1463,7 @@ terms:
     related: [contextual-embedding, transformer, self-attention, hidden-state]
 
   - id: hidden-state
-    category: transformers
+    category: machine-learning
     lesson_first_seen: "10"
     pt-BR:
       term: Hidden state
@@ -1479,7 +1479,7 @@ terms:
     related: [encoder, contextual-token, contextual-embedding, transformer]
 
   - id: anisotropy
-    category: embeddings
+    category: machine-learning
     lesson_first_seen: "10"
     pt-BR:
       term: Anisotropia
@@ -1495,7 +1495,7 @@ terms:
     related: [embedding, contextual-embedding, cosine-similarity]
 
   - id: eos-token
-    category: generative-models
+    category: machine-learning
     lesson_first_seen: "14"
     pt-BR:
       term: EOS
@@ -1512,7 +1512,7 @@ terms:
 
 
   - id: attention-query
-    category: transformers
+    category: machine-learning
     lesson_first_seen: "10"
     pt-BR:
       term: Query (atenção)
