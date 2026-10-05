@@ -54,7 +54,9 @@ foreach ($item in $batch) {
     kaggle kernels status $item.Id
 
     if ($LASTEXITCODE -ne 0) {
-        throw ("Status check failed for lesson {0}" -f $item.Lesson)
+        Write-Warning ("Status unavailable for lesson {0}. It may not have started yet." -f $item.Lesson)
+        Write-Host ""
+        continue
     }
 
     Write-Host ""
