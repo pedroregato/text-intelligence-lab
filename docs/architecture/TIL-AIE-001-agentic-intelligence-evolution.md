@@ -244,9 +244,9 @@ Aula 17 — Tool Use, Function Calling and Contracts
 
 Aula 17 (`Review candidate v2 — revalidation pending`): tool contracts, schemas, validação, execução, efeitos colaterais e observabilidade.
 
-Aula 18 (`Pedagogically ready — technical revalidation pending`): composição determinística, estado, retries, idempotência, checkpoints, approval gates, recovery, observabilidade e Typed Decisions with Confidence-Gated Routing.
+Aula 18 (`Available / student-ready`): composição determinística, estado, retries, idempotência, checkpoints, approval gates, recovery, observabilidade e Typed Decisions with Confidence-Gated Routing.
 
-Aula 19 (`Pedagogically ready — final Kaggle revalidation pending`): MCP como camada padronizada de integração, cobrindo host/client/server, tools/resources/prompts, discovery, versioning, transport, authorization, segurança e governança. A especificação curricular usa como baseline o MCP `2026-07-28`, evitando ensinar semântica legada como se fosse atual.
+Aula 19 (`Available / student-ready`): MCP como camada padronizada de integração, cobrindo host/client/server, tools/resources/prompts, discovery, versioning, transport, authorization, segurança e governança. A especificação curricular usa como baseline o MCP `2026-07-28`, evitando ensinar semântica legada como se fosse atual.
 
 Princípio pedagógico:
 
