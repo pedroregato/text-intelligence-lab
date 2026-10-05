@@ -144,6 +144,13 @@
       "path": "course/19-model-context-protocol/19-til-model-context-protocol.ipynb",
       "url": "https://www.kaggle.com/code/pedrogentil/til-19-model-context-protocol",
       "published": true
+    },
+    {
+      "id": "20",
+      "title": "Aula 20 — Agentic Systems Foundations",
+      "path": "course/20-agentic-systems-foundations/20-til-agentic-systems-foundations.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-20-agentic-systems-foundations",
+      "published": false
     }
   ]
 }
