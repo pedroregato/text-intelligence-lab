@@ -2,7 +2,7 @@
 
 ## Status
 
-REVIEW CANDIDATE — reengineered v2, not yet student-ready
+AVAILABLE / STUDENT-READY — current revision validated.
 
 ## Scope
 
@@ -117,17 +117,18 @@ The reengineered v2 completed successfully on Kaggle with the required versioned
 
 ### G12 — Pedagogical review
 
-**PENDING**
+**PASS — CURRENT REVISION**
 
-Review should verify that the student can explain:
+Observed evidence supports the intended claims:
 
-1. why a static lexical representation does not adapt itself to context;
-2. how Q, K and V produce self-attention;
-3. why a single cosine is insufficient evidence;
-4. why grouped controls are stronger evidence;
-5. how contextual separation changes across layers;
-6. why attention weights are not equivalent to explanation;
-7. how contextual embeddings support a downstream decision.
+- the six "banco" examples produced higher mean cosine within the same sense (0.889) than across different senses (0.833), for an observed gap of 0.056;
+- lexical controls showed that absolute cosine values are not sufficient on their own, supporting the need for grouped comparisons;
+- layer-wise gaps were not monotonic: layers 0 and 1 were slightly negative (-0.003, -0.006), then became positive from layer 2 onward, reaching 0.056 at layer 6;
+- centroid disambiguation correctly separated a financial case ("o banco recusou meu financiamento") and a seat case ("pintei o banco que fica na varanda");
+- the intentionally ambiguous case ("fui ao banco") produced close scores (0.890 vs 0.907), making uncertainty observable instead of hiding it;
+- attention heads showed clearly different token-weight patterns, supporting the distinction between attention as mechanism evidence and attention as causal explanation.
+
+The lesson therefore demonstrates contextualization through measured representation changes, group-level evidence, layer-wise dynamics, downstream use and attention-pattern diversity.
 
 ## Promotion rule
 
@@ -137,7 +138,7 @@ Promote to:
 Available / student-ready
 ```
 
-only after G10, G11 and G12 pass.
+only after G10, G11 and G12 pass. All three gates now pass on the current revision.
 
 ## Governing principle
 
