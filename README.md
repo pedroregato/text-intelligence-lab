@@ -46,19 +46,19 @@ Ler
 | 8 | N-grams e engenharia de features textuais |
 | 9 | Word Embeddings |
 | 10 | Embeddings contextuais e Transformers |
-| 11 | BERT para classificação de texto |
+| 11 | BERT para classificação de texto — `Available / student-ready` |
 | 12 | Baselines clássicos fortes |
 | 13 | Métricas e indicadores: da fórmula à decisão |
 | 13B | Metric Scenario Lab: cenários, thresholds e custos de erro |
-| 13C | Model Routing, Orchestration e Utility: sistemas compostos de IA |
-| 14 | LLM Foundations: da classificação à geração — `revalidation pending` |
-| 15 | Retrieval, Semantic Search and Grounding — `revalidation pending` |
-| 16 | Retrieval-Augmented Generation (RAG) — `revalidation pending` |
-| 17 | Tool Use, Function Calling and Contracts — `revalidation pending` |
+| 13C | Model Routing, Orchestration e Utility: sistemas compostos de IA — `Available / student-ready` |
+| 14 | LLM Foundations: da classificação à geração — `Kaggle PASS / pedagogical review pending` |
+| 15 | Retrieval, Semantic Search and Grounding — `Available / student-ready` |
+| 16 | Retrieval-Augmented Generation (RAG) — `Kaggle PASS / pedagogical review pending` |
+| 17 | Tool Use, Function Calling and Contracts — `Kaggle PASS / pedagogical review pending` |
 | 18 | Deterministic Workflows — `Available / student-ready` |
 | 19 | Model Context Protocol (MCP) — `Available / student-ready` |
 
-As versões anteriores das Aulas **14–18** já foram publicadas/executadas no Kaggle. A revisão atual do repositório passou por uma reengenharia pedagógica baseada em evidência e está reunida em uma **bateria de revalidação**. Até o novo Run All, o status do commit atual deve ser lido como `review-candidate`, não como nova promoção automática. As **Aulas 18 e 19** concluíram a revalidação final no Kaggle e estão `Available / student-ready`.
+A revisão reengenheirada foi submetida a uma bateria formal de revalidação. As **Aulas 11, 13C, 15, 18 e 19** concluíram execução e inspeção pedagógica e estão `Available / student-ready`. As **Aulas 10, 14, 16 e 17** já passaram no Kaggle, mas ainda aguardam fechamento da inspeção pedagógica. As demais aulas permanecem sob seus readiness gates específicos; execução bem-sucedida, por si só, não implica promoção.
 
 ## Organização conceitual
 
@@ -352,7 +352,7 @@ O **EDU-ORCH-002** também foi concluído, medindo diretamente quatro configura�
 
 A Aula 13C também passou a cobrir a transição de **Model Intelligence para Agentic Systems**, conectando routing, orchestration, tools, computer use, observability, human oversight e utility.
 
-O movimento curricular até MCP já foi implementado. O foco atual é **revalidar a sequência reengenheirada** antes de avançar para novas unidades de Agentic Systems, preservando o princípio de que toda complexidade adicional deve ser justificada por evidência.
+O movimento curricular até MCP já foi implementado. O foco atual é **concluir as inspeções pedagógicas pendentes da sequência reengenheirada e então avançar para o próximo bloco de Agentic Systems**, preservando o princípio de que toda complexidade adicional deve ser justificada por evidência.
 
 ## Licenciamento
 
