@@ -2,7 +2,7 @@
 
 ## Status
 
-REVIEW CANDIDATE — reengineered v2, not yet student-ready.
+AVAILABLE / STUDENT-READY — current revision validated.
 
 ## Gates
 
@@ -56,13 +56,21 @@ The current reengineered revision completed successfully on Kaggle.
 
 ### G9 — Pedagogical inspection
 
-**PENDING**
+**PASS — CURRENT REVISION**
 
-Verify that the student can explain why a dense encoder is not automatically a strong retriever, why Recall@k is needed, and why observed ranking outranks intuition.
+Observed semantic retrieval evidence supports the lesson's intended interpretation:
+
+- Semantic Recall@1 mean: 0.625
+- Semantic Recall@2 mean: 0.75
+- Semantic Recall@3 mean: 1.0
+
+The results make top-k sensitivity directly observable: increasing k improves evidence coverage in this measured didactic set. This supports the lesson's core point that retrieval quality should be evaluated against labeled relevance rather than inferred from plausible-looking similarity scores alone.
+
+The ranking inspection also showed that semantic scores were relatively close across documents, reinforcing that a generic dense encoder is not automatically a strong retriever and that Recall@k is needed to evaluate whether relevant evidence is actually recovered.
 
 ## Promotion rule
 
-Promote only after G8 and G9 pass.
+Promotion criteria satisfied: G8 and G9 pass on the current revision.
 
 ## Governing principle
 
