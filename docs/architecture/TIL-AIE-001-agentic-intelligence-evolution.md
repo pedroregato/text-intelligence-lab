@@ -194,7 +194,7 @@ A sequência abaixo é arquitetural e pode ser refinada antes da criação dos n
 
 ### Bloco A — LLM Foundations
 
-Primeira unidade: **Aula 14 — LLM Foundations: da classificação à geração** (`Review candidate v2 — revalidation pending`).
+Primeira unidade: **Aula 14 — LLM Foundations: da classificação à geração** (`Kaggle PASS — pedagogical review pending`).
 
 Especificação: `docs/curriculum/AULA-14-llm-foundations.md`.
 
@@ -212,9 +212,9 @@ Tópicos candidatos:
 
 ### Bloco B — Retrieval and Grounding
 
-Primeira unidade: **Aula 15 — Retrieval, Semantic Search and Grounding** (`Review candidate v2 — revalidation pending`).
+Primeira unidade: **Aula 15 — Retrieval, Semantic Search and Grounding** (`Available / student-ready`).
 
-Segunda unidade: **Aula 16 — Retrieval-Augmented Generation (RAG)** (`Review candidate v2 — revalidation pending`).
+Segunda unidade: **Aula 16 — Retrieval-Augmented Generation (RAG)** (`Kaggle PASS — pedagogical review pending`).
 
 Especificação: `docs/curriculum/AULA-15-retrieval-semantic-search-grounding.md`.
 
@@ -242,7 +242,7 @@ Aula 17 — Tool Use, Function Calling and Contracts
 → Aula 19 — Model Context Protocol (MCP)
 ```
 
-Aula 17 (`Review candidate v2 — revalidation pending`): tool contracts, schemas, validação, execução, efeitos colaterais e observabilidade.
+Aula 17 (`Kaggle PASS — pedagogical review pending`): tool contracts, schemas, validação, execução, efeitos colaterais e observabilidade.
 
 Aula 18 (`Available / student-ready`): composição determinística, estado, retries, idempotência, checkpoints, approval gates, recovery, observabilidade e Typed Decisions with Confidence-Gated Routing.
 
