@@ -16,6 +16,7 @@ $batch = @(
     @{ Lesson = "10"; Path = "course\10-contextual-embeddings-and-transformers"; Id = "pedrogentil/til-10-contextual-embeddings-and-transformers" },
     @{ Lesson = "11"; Path = "course\11-bert-text-classification"; Id = "pedrogentil/til-11-bert-text-classification" },
     @{ Lesson = "12"; Path = "course\12-strong-classical-baselines"; Id = "pedrogentil/til-12-strong-classical-baselines" },
+    @{ Lesson = "13C"; Path = "kaggle\til-13c"; Id = "pedrogentil/til-13c-model-routing-orchestration-and-utility" },
     @{ Lesson = "14"; Path = "course\14-llm-foundations"; Id = "pedrogentil/til-14-llm-foundations" },
     @{ Lesson = "15"; Path = "course\15-retrieval-semantic-search-grounding"; Id = "pedrogentil/til-15-retrieval-semantic-search-grounding" },
     @{ Lesson = "16"; Path = "course\16-rag"; Id = "pedrogentil/til-16-retrieval-augmented-generation" },
@@ -44,6 +45,14 @@ foreach ($item in $batch) {
     Write-Host ("Lesson {0} - {1}" -f $item.Lesson, $item.Id)
 
     if (-not $StatusOnly) {
+        if ($item.Lesson -eq "13C") {
+            python scripts\build_kaggle_13c_wrapper.py
+
+            if ($LASTEXITCODE -ne 0) {
+                throw "Failed to build Aula 13C Kaggle wrapper"
+            }
+        }
+
         kaggle kernels push -p $item.Path
 
         if ($LASTEXITCODE -ne 0) {
@@ -61,8 +70,3 @@ foreach ($item in $batch) {
 
     Write-Host ""
 }
-
-Write-Warning "Lesson 13C is not included automatically."
-Write-Warning "The kernel-metadata.json in course\13-metrics-and-indicators belongs to Lesson 13, not Lesson 13C."
-Write-Warning "Do not run 'kaggle kernels push -p course\13-metrics-and-indicators' expecting to publish Lesson 13C."
-Write-Warning "Lesson 13C must be handled separately until it has a dedicated Kaggle wrapper."
