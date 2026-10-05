@@ -97,9 +97,9 @@ The reengineered notebook completed end-to-end with MCP SDK 2.2.0 during final d
 
 ### G5 — Kaggle execution
 
-**PENDING — FINAL TRUST/ERROR SEMANTICS**
+**PASS**
 
-The prior refinement completed successfully on Kaggle. A fresh Run All is required after the final trust/poisoning and error-surface corrections.
+The final reviewed revision completed successfully on Kaggle with `KernelWorkerStatus.COMPLETE` after the trust/poisoning, error-surface and opt-in exercise refinements.
 
 ### G6 — Living Glossary source
 
@@ -169,7 +169,11 @@ Pedagogical review is complete. Promote to:
 Available / student-ready
 ```
 
-when the final Kaggle Run All (G5) passes.
+after G5 passes.
+
+## Release status
+
+**AULA 19: AVAILABLE / STUDENT-READY**
 
 ## Governing principle
 
