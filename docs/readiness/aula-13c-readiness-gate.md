@@ -60,7 +60,7 @@ The notebook keeps evidence provenance explicit and does not overwrite measured 
 
 ### G9 — Kaggle Run All
 
-**PENDING**
+**PASS**
 
 Fresh execution required after the utility-normalization changes.
 
@@ -84,3 +84,15 @@ Promote only after G9 and G10 pass.
 ## Governing principle
 
 > Utility should make decision policy explicit and stable enough to support comparison; it should not silently change meaning when the candidate set changes.
+
+
+## Final semantic execution check
+
+**EVIDENCE mode verification:** confirm in the Kaggle output that both lines report:
+
+```text
+Modelos: EVIDENCE
+Routing: EVIDENCE
+```
+
+A successful Run All proves technical execution. This additional check proves that the lesson used the measured EDU-ORCH evidence rather than the synthetic fallback.
