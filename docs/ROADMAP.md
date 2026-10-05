@@ -85,7 +85,7 @@ Princípio:
 | 15 | Available / student-ready |
 | 18 | Available / student-ready |
 | 19 | Available / student-ready |
-| 10 | Kaggle PASS / pedagogical review pending |
+| 10 | Available / student-ready |
 | 14 | Kaggle PASS / pedagogical review pending |
 | 16 | Kaggle PASS / pedagogical review pending |
 | 17 | Kaggle PASS / pedagogical review pending |
@@ -151,8 +151,8 @@ O núcleo da primeira versão deve ser executável com `Internet OFF` e sem API 
 
 ### Bloco B — Retrieval and Grounding
 
-**Próxima unidade oficial: Aula 15 — Retrieval, Semantic Search and Grounding**  
-Status: `Review candidate v2 — Kaggle revalidation pending`  
+**Aula 15 — Retrieval, Semantic Search and Grounding**  
+Status: `Available / student-ready`  
 Especificação: `docs/curriculum/AULA-15-retrieval-semantic-search-grounding.md`
 
 Objetivo: separar retrieval de generation antes de construir RAG.
@@ -201,7 +201,7 @@ Aula 17 — Tool Use, Function Calling and Contracts
 ```
 
 **Aula 17 — Tool Use, Function Calling and Contracts**  
-Status: `Review candidate v2 — Kaggle revalidation pending`  
+Status: `Kaggle PASS — pedagogical review pending`  
 Especificação: `docs/curriculum/AULA-17-tool-use-function-calling.md`
 
 A Aula 17 introduz contratos de ferramenta, schemas, validação, execução, resultados, failure taxonomy, efeitos colaterais, safety e observabilidade.
@@ -233,13 +233,28 @@ A progressão evita transformar MCP em simples configuração: primeiro o aluno 
 
 Objetivo: tratar autonomia como propriedade mensurável.
 
-Tópicos candidatos:
+**Aula 20 — Agentic Systems Foundations**  
+Status: `Review candidate — implementation started`  
+Especificação: `docs/curriculum/AULA-20-agentic-systems-foundations.md`
+
+Pergunta central:
+
+> **Quando um sistema deixa de apenas seguir um workflow definido e passa a participar da decisão sobre a próxima ação?**
+
+Primeiro contraste executável:
+
+```text
+deterministic workflow
+vs
+minimal agentic loop
+```
+
+A Aula 20 introduz estado explícito, action space, decision provider, governance gate, step budget, termination conditions, human escalation e um laboratório comparativo de utility.
+
+Tópicos posteriores candidatos:
 
 - planning;
-- agent loop;
 - memory operacional;
-- execution policies;
-- human-in-the-loop;
 - computer use;
 - agentes especializados;
 - multi-agent systems quando justificados;
