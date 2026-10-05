@@ -66,9 +66,9 @@ Internet OFF, CPU, explicit seed, same folds and metric, no fixed numerical resu
 
 ### G10 — Kaggle Run All
 
-**PENDING**
+**PASS**
 
-Fresh execution required after reengineering.
+The current reengineered revision completed successfully on Kaggle with `KernelWorkerStatus.COMPLETE`.
 
 ### G11 — Pedagogical inspection
 
