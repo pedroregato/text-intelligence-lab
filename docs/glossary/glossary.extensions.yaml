@@ -1509,3 +1509,20 @@ terms:
       til_context: In Lesson 14, it is part of autoregressive generation and helps explain why output may stop before reaching the maximum token limit.
       example: Selecting EOS during generation terminates the sequence.
     related: [autoregressive-model, generation, token, sampling]
+
+
+  - id: attention-query
+    category: transformers
+    lesson_first_seen: "10"
+    pt-BR:
+      term: Query (atenção)
+      english_term: Attention Query
+      definition: Vetor usado no mecanismo de atenção para expressar o que a representação de um token procura nos demais tokens.
+      til_context: Na Aula 10, a query é comparada às keys para produzir escores que determinam quanto cada value contribuirá para a nova representação contextual.
+      example: A query de um token é comparada às keys de todos os tokens antes da normalização dos escores de atenção.
+    en:
+      term: Attention Query
+      definition: Vector used in attention to express what a token representation is looking for in other tokens.
+      til_context: In Lesson 10, the query is compared with keys to produce scores that determine how much each value contributes to the new contextual representation.
+      example: A token query is compared with all token keys before attention scores are normalized.
+    related: [self-attention, attention-key, attention-value]
