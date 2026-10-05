@@ -2005,3 +2005,27 @@ Camada ou pequeno conjunto de camadas adicionadas sobre a representação produz
 **Exemplo:** Um encoder produz um vetor contextual para a mensagem; a cabeça de classificação converte esse vetor em logits para as classes duvida, reclamacao e elogio.
 
 **Primeira aula:** 11
+
+## Encoder
+
+**English:** Encoder
+
+Componente de um modelo que transforma uma entrada em uma representação interna que preserva informações relevantes para tarefas posteriores.
+
+**No TIL:** Nas Aulas 10 e 11, o encoder Transformer produz representações contextuais dos tokens e do texto; essas representações podem ser reutilizadas por uma cabeça de classificação durante o fine-tuning.
+
+**Exemplo:** O DistilBERT recebe IDs de tokens e produz estados ocultos contextuais que servem de entrada para uma cabeça de classificação.
+
+**Primeira aula:** 10
+
+## Margem top-1/top-2
+
+**English:** Top-1/Top-2 Prediction Margin
+
+Diferença entre a maior e a segunda maior pontuação ou probabilidade atribuída pelo modelo às classes candidatas de uma previsão.
+
+**No TIL:** Na Aula 11, a margem top-1/top-2 é usada como diagnóstico de separação entre a classe vencedora e a alternativa mais próxima. Margens pequenas indicam decisões frágeis, mesmo quando a classe top-1 está correta.
+
+**Exemplo:** Se as duas maiores probabilidades forem 0,340 e 0,331, a margem é 0,009, sugerindo pouca separação entre as duas classes.
+
+**Primeira aula:** 11

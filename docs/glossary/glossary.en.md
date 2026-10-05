@@ -1671,3 +1671,23 @@ A layer or small set of layers added on top of an encoder representation to tran
 **Example:** An encoder produces a contextual vector for a message; the classification head transforms that vector into logits for question, complaint, and praise.
 
 **First lesson:** 11
+
+## Encoder
+
+A model component that transforms an input into an internal representation that preserves information relevant to downstream tasks.
+
+**In TIL:** In Lessons 10 and 11, the Transformer encoder produces contextual token and text representations that can be reused by a classification head during fine-tuning.
+
+**Example:** DistilBERT receives token IDs and produces contextual hidden states used by a classification head.
+
+**First lesson:** 10
+
+## Top-1/Top-2 Prediction Margin
+
+The difference between the highest and second-highest score or probability assigned by a model to candidate classes for a prediction.
+
+**In TIL:** In Lesson 11, the top-1/top-2 margin is used as a diagnostic of separation between the winning class and the nearest alternative. Small margins indicate fragile decisions even when the top-1 class is correct.
+
+**Example:** If the two highest probabilities are 0.340 and 0.331, the margin is 0.009, indicating weak separation between the two classes.
+
+**First lesson:** 11
