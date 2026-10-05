@@ -74,9 +74,9 @@ Internet OFF, versioned Kaggle Model, local_files_only=True, explicit seeds and 
 
 ### G10 — Kaggle Run All
 
-**PENDING**
+**PASS — CURRENT REVISION**
 
-Fresh execution required after reengineering.
+The current revision completed successfully on Kaggle after the glossary-aligned notebook update.
 
 ### G11 — Pedagogical inspection
 
