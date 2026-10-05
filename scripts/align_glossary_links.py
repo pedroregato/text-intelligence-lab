@@ -188,6 +188,12 @@ def link_bold_segment(
     aliases: dict[str, GlossaryTerm],
     unresolved: set[str],
 ) -> tuple[str, int]:
+    """Link unresolved concepts inside one bold concept list.
+
+    A segment may already contain some Markdown links from a previous run.
+    Existing links are preserved while unlinked siblings continue to be
+    audited. This property makes the script genuinely idempotent.
+    """
     parts = re.split(r"(\s+[·•]\s+)", segment)
     changed = 0
     out: list[str] = []
@@ -200,6 +206,12 @@ def link_bold_segment(
         raw = part
         label = raw.strip()
         if not label:
+            out.append(raw)
+            continue
+
+        # Preserve an existing Markdown link, but do not let it suppress
+        # auditing of the remaining concepts in the same bold segment.
+        if re.fullmatch(r"\[[^\]]+\]\([^)]+\)", label):
             out.append(raw)
             continue
 
@@ -220,6 +232,7 @@ def link_bold_segment(
     return "".join(out), changed
 
 
+
 BOLD_RE = re.compile(r"\*\*(.+?)\*\*")
 
 
@@ -228,17 +241,11 @@ def link_glossary_line(
     aliases: dict[str, GlossaryTerm],
     unresolved: set[str],
 ) -> tuple[str, int]:
-    if "](" in line and line.count("**") == 0:
-        return line, 0
-
     total = 0
 
     def repl(match: re.Match[str]) -> str:
         nonlocal total
         inner = match.group(1)
-
-        if "](" in inner:
-            return match.group(0)
 
         linked, count = link_bold_segment(inner, aliases, unresolved)
         total += count
