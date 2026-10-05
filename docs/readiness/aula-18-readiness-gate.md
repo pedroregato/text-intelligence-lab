@@ -78,13 +78,13 @@ Evidence:
 
 ### G6 — Execução Kaggle
 
-Status: **PENDING REVALIDATION**
+Status: **PASS**
 
 Evidence:
 
-- a versão anterior foi executada integralmente no Kaggle;
-- a revisão pedagógica permanece válida;
-- após a conversão das soluções para o padrão opt-in, um novo Run All será feito na bateria final.
+- a revisão atual foi executada integralmente no Kaggle;
+- a conversão das soluções para o padrão opt-in foi incluída;
+- o Run All final retornou `KernelWorkerStatus.COMPLETE`.
 
 ### G7 — Revisão pedagógica
 
@@ -118,14 +118,14 @@ G2 Decision contracts / routing       PASS
 G3 Representação visual               PASS
 G4 Glossário Vivo                     PASS
 G5 Reprodutibilidade                  PASS
-G6 Execução Kaggle                    PENDING REVALIDATION
+G6 Execução Kaggle                    PASS
 G7 Revisão pedagógica                 PASS
 G8 Navegação e promoção               PASS
 ```
 
 ## Release Status
 
-**AULA 18: PEDAGOGICALLY READY / TECHNICAL REVALIDATION PENDING**
+**AULA 18: AVAILABLE / STUDENT-READY**
 
 ## Exit Principle
 
