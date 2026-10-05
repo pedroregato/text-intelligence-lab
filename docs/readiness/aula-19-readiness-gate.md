@@ -33,7 +33,7 @@ The transition from Lessons 17 and 18 is explicit.
 
 ### G2 — Executable MCP lab
 
-**PENDING REVALIDATION — FINAL TRUST/ERROR SEMANTICS**
+**PASS — IMPLEMENTED AND LOCALLY VALIDATED**
 
 The notebook implements:
 
@@ -91,9 +91,9 @@ pedrogentil/til-mcp-python-sdk-wheelhouse
 
 ### G4 — Local headless execution
 
-**PENDING — v2 REENGINEERING**
+**PASS**
 
-The previous notebook version executed headlessly. The reengineered v2 must be executed again because its laboratory structure changed materially.
+The reengineered notebook completed end-to-end with MCP SDK 2.2.0 during final didactic review. The later gate-order adjustment does not change the underlying protocol behavior.
 
 ### G5 — Kaggle execution
 
@@ -163,13 +163,13 @@ The final pedagogical review passed. The lesson now demonstrates:
 
 ## Promotion rule
 
-Promote to:
+Pedagogical review is complete. Promote to:
 
 ```text
 Available / student-ready
 ```
 
-only after G8 passes.
+when the final Kaggle Run All (G5) passes.
 
 ## Governing principle
 
