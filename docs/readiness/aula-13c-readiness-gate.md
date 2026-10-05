@@ -88,7 +88,7 @@ Promote only after G9 and G10 pass.
 
 ## Previous semantic execution check
 
-**EVIDENCE mode verification: PASS (previous revision)** — the Kaggle output reported:
+**EVIDENCE mode verification: PASS — CURRENT REVISION** — the Kaggle output reported:
 
 ```text
 Modelos: EVIDENCE
@@ -100,7 +100,7 @@ The output also displayed the measured `til-model-evidence.csv` and `til-routing
 
 ## Semantic execution status
 
-**PASS FOR PREVIOUS REVISION — RECHECK REQUIRED FOR CURRENT REVISION**
+**PASS — CURRENT REVISION**
 
 Observed in the completed Kaggle run:
 
@@ -117,3 +117,17 @@ The displayed model table contained measured EDU-ORCH-001 evidence, and the rout
 After the successful semantic validation, the lesson gained an executable comparison between thresholds `0.80` and `0.90` to make diminishing returns observable. The new cell computes deltas for quality, cost, latency and escalation rate and connects the observed result to the TIL principle that architectural complexity must be earned by evidence of utility.
 
 Because this delta includes executable code, the current revision must be re-run on Kaggle before promotion.
+
+
+## Current revision semantic recheck
+
+**PASS**
+
+Observed again in the current completed Kaggle run:
+
+- `Modelos: EVIDENCE`
+- source: `data/model-evidence/til-model-evidence.csv`
+- `Routing: EVIDENCE`
+- source: `data/model-evidence/til-routing-evidence.csv`
+
+The model table remains `measured` from EDU-ORCH-001 and the routing table remains `measured-recovered` from EDU-ORCH-002. Provenance is preserved and no synthetic fallback was used.
