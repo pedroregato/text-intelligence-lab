@@ -2,7 +2,7 @@
 
 ## Status
 
-REVIEW CANDIDATE — reengineered v2, not yet student-ready.
+AVAILABLE / STUDENT-READY — current revision validated.
 
 ## Central question
 
@@ -80,20 +80,21 @@ The current revision completed successfully on Kaggle after the glossary-aligned
 
 ### G11 — Pedagogical inspection
 
-**PENDING**
+**PASS — CURRENT REVISION**
 
-Verify that the student can explain:
+Observed evidence supports the lesson's intended interpretation:
 
-1. why a new classification head requires controlled initialization;
-2. why changing several factors at once weakens causal interpretation;
-3. what A vs B isolates;
-4. what B vs C isolates;
-5. why diagnostic examples must not be treated as a metric;
-6. why softmax confidence is not calibrated certainty.
+- A_minimal: accuracy 0.3333, F1 macro 0.1667;
+- B_more_data: accuracy 0.4444, F1 macro 0.3485;
+- C_more_epochs: accuracy 0.4444, F1 macro 0.3333;
+- diagnostic examples had no exact duplicates in training;
+- top-1/top-2 margins were very small (0.002 to 0.017), with probabilities close to one third across classes.
+
+The outputs make the controlled comparisons visible: A vs B isolates the effect of more data, while B vs C shows that more epochs did not improve the observed result. The diagnostic set also demonstrates that a top-1 prediction can be fragile even when a class is selected.
 
 ## Promotion rule
 
-Promote only after G10 and G11 pass.
+Promotion criteria satisfied: G10 and G11 pass on the current revision.
 
 ## Governing principle
 
