@@ -60,9 +60,9 @@ Internet OFF, CPU, notebook-defined data and no fixed numerical results in expla
 
 ### G9 — Kaggle Run All
 
-**PENDING**
+**PASS**
 
-Fresh execution required after reengineering.
+The current reengineered revision completed successfully on Kaggle with `KernelWorkerStatus.COMPLETE`.
 
 ### G10 — Pedagogical inspection
 
