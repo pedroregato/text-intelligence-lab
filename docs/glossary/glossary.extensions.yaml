@@ -1298,3 +1298,37 @@ terms:
       til_context: In Lesson 11, DistilBERT provides pretrained contextual representations and a new classification head is initialized to learn question, complaint, and praise. The head weights are not supplied by the base checkpoint and must be learned during fine-tuning.
       example: An encoder produces a contextual vector for a message; the classification head transforms that vector into logits for question, complaint, and praise.
     related: [fine-tuning, pretrained-model, sequence-classification, logits]
+
+
+  - id: encoder
+    category: machine-learning
+    lesson_first_seen: "10"
+    pt-BR:
+      term: Encoder
+      english_term: Encoder
+      definition: Componente de um modelo que transforma uma entrada em uma representação interna que preserva informações relevantes para tarefas posteriores.
+      til_context: Nas Aulas 10 e 11, o encoder Transformer produz representações contextuais dos tokens e do texto; essas representações podem ser reutilizadas por uma cabeça de classificação durante o fine-tuning.
+      example: O DistilBERT recebe IDs de tokens e produz estados ocultos contextuais que servem de entrada para uma cabeça de classificação.
+    en:
+      term: Encoder
+      definition: A model component that transforms an input into an internal representation that preserves information relevant to downstream tasks.
+      til_context: In Lessons 10 and 11, the Transformer encoder produces contextual token and text representations that can be reused by a classification head during fine-tuning.
+      example: DistilBERT receives token IDs and produces contextual hidden states used by a classification head.
+    related: [contextual-embedding, transformer, hidden-state, classification-head, fine-tuning]
+
+
+  - id: prediction-margin
+    category: evaluation
+    lesson_first_seen: "11"
+    pt-BR:
+      term: Margem top-1/top-2
+      english_term: Top-1/Top-2 Prediction Margin
+      definition: Diferença entre a maior e a segunda maior pontuação ou probabilidade atribuída pelo modelo às classes candidatas de uma previsão.
+      til_context: Na Aula 11, a margem top-1/top-2 é usada como diagnóstico de separação entre a classe vencedora e a alternativa mais próxima. Margens pequenas indicam decisões frágeis, mesmo quando a classe top-1 está correta.
+      example: Se as duas maiores probabilidades forem 0,340 e 0,331, a margem é 0,009, sugerindo pouca separação entre as duas classes.
+    en:
+      term: Top-1/Top-2 Prediction Margin
+      definition: The difference between the highest and second-highest score or probability assigned by a model to candidate classes for a prediction.
+      til_context: In Lesson 11, the top-1/top-2 margin is used as a diagnostic of separation between the winning class and the nearest alternative. Small margins indicate fragile decisions even when the top-1 class is correct.
+      example: If the two highest probabilities are 0.340 and 0.331, the margin is 0.009, indicating weak separation between the two classes.
+    related: [classification-head, logits, confidence, decision-threshold, abstention]
