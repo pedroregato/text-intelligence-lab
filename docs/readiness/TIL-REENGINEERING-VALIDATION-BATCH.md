@@ -21,23 +21,23 @@ AND exercises require reasoning
 
 ## Batch
 
-| Aula | Principal ajuste | Estado antes da bateria final |
+| Aula | Principal ajuste | Estado atual |
 |---|---|---|
-| 02 | accent/negation collision labs | review-candidate-v2 |
-| 03 | observable Bag-of-Words order loss | review-candidate-v2 |
-| 04 | manual TF-IDF + sklearn reconciliation | review-candidate-v2 |
-| 05 | Naive Bayes score/probability path | review-candidate-v2 |
-| 06 | TP/FP/FN/TN derivation + same-accuracy lab | review-candidate-v2 |
-| 07 | honest model selection + leakage lab | review-candidate-v2 |
-| 09 | static embedding + stability/polysemy evidence | review-candidate-v2 |
-| 10 | contextualization evidence | Kaggle PASS; pedagogical gate pending |
-| 11 | one-factor-at-a-time fine-tuning experiments | review-candidate-v2 |
-| 12 | dynamic baseline evidence, no fixed results | review-candidate-v2 |
-| 13C | anchored utility + normalization sensitivity | review-candidate-v2 |
-| 14 | real autoregressive generation loop | review-candidate-v2 |
-| 15 | real semantic retrieval + Recall@k | review-candidate-v2 |
-| 16 | fair RAG comparison + failure localization | review-candidate-v2 |
-| 17 | observable tool-selection layer | review-candidate-v2 |
+| 02 | accent/negation collision labs | Kaggle PASS; pedagogical review pending |
+| 03 | observable Bag-of-Words order loss | Kaggle PASS; pedagogical review pending |
+| 04 | manual TF-IDF + sklearn reconciliation | Kaggle PASS; pedagogical review pending |
+| 05 | Naive Bayes score/probability path | Kaggle PASS; pedagogical review pending |
+| 06 | TP/FP/FN/TN derivation + same-accuracy lab | Kaggle PASS; pedagogical review pending |
+| 07 | honest model selection + leakage lab | Kaggle PASS; pedagogical review pending |
+| 09 | static embedding + stability/polysemy evidence | Kaggle PASS; pedagogical review pending |
+| 10 | contextualization evidence | Kaggle PASS; pedagogical review pending |
+| 11 | one-factor-at-a-time fine-tuning experiments | Available / student-ready |
+| 12 | dynamic baseline evidence, no fixed results | Kaggle PASS; pedagogical review pending |
+| 13C | anchored utility + normalization sensitivity | Available / student-ready |
+| 14 | real autoregressive generation loop | Kaggle PASS; pedagogical review pending |
+| 15 | real semantic retrieval + Recall@k | Available / student-ready |
+| 16 | fair RAG comparison + failure localization | Kaggle PASS; pedagogical review pending |
+| 17 | observable tool-selection layer | Kaggle PASS; pedagogical review pending |
 | 18 | pedagogically ready; opt-in exercise update | Available / student-ready |
 | 19 | pedagogically approved MCP lab | Available / student-ready |
 
@@ -113,3 +113,18 @@ review-candidate-v2
 ```
 
 Do not promote mechanically from Kaggle `COMPLETE`; inspect the resulting evidence first.
+
+
+## Consolidated outcome
+
+Promoted on the current revision:
+
+```text
+11   BERT text classification
+13C  Model Routing, Orchestration and Utility
+15   Retrieval, Semantic Search and Grounding
+18   Deterministic Workflows
+19   Model Context Protocol
+```
+
+The remaining review-candidate lessons have successful Kaggle execution recorded where indicated, but promotion remains blocked until their pedagogical inspection gate is explicitly closed.
