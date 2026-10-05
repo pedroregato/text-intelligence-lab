@@ -23,8 +23,8 @@ from pathlib import Path
 evidence_dir = Path("data/model-evidence")
 evidence_dir.mkdir(parents=True, exist_ok=True)
 
-(evidence_dir / "til-model-evidence.csv").write_text({model_csv!r}, encoding="utf-8")
-(evidence_dir / "til-routing-evidence.csv").write_text({routing_csv!r}, encoding="utf-8")
+(evidence_dir / "til-model-evidence.csv").write_text({json.dumps(model_csv, ensure_ascii=False)}, encoding="utf-8")
+(evidence_dir / "til-routing-evidence.csv").write_text({json.dumps(routing_csv, ensure_ascii=False)}, encoding="utf-8")
 
 print("Evidências EDU-ORCH materializadas para a Aula 13C.")
 print("Model evidence:", evidence_dir / "til-model-evidence.csv")
