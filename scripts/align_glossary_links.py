@@ -81,6 +81,15 @@ MANUAL_ALIASES = {
     "cost per inference": "cost-per-inference",
 }
 
+NOTEBOOK_ALIASES = {
+    # "query" is ambiguous across the course. In Lesson 10 it means the
+    # Transformer attention vector, not a retrieval query.
+    "course/10-contextual-embeddings-and-transformers/10-til-contextual-embeddings-and-transformers.ipynb": {
+        "query": "attention-query",
+    },
+}
+
+
 EDITORIAL_LABELS = {
     "glossário",
     "glossário:",
@@ -352,8 +361,14 @@ def process_notebook(
     path: Path,
     aliases: dict[str, GlossaryTerm],
     apply: bool,
+    by_id: dict[str, GlossaryTerm],
 ) -> tuple[int, set[str], bool]:
     notebook = json.loads(path.read_text(encoding="utf-8"))
+    relative = path.relative_to(ROOT).as_posix()
+    local_aliases = dict(aliases)
+    for alias, term_id in NOTEBOOK_ALIASES.get(relative, {}).items():
+        if term_id in by_id:
+            local_aliases[normalize(alias)] = by_id[term_id]
     linked = 0
     unresolved: set[str] = set()
     changed = False
@@ -366,7 +381,7 @@ def process_notebook(
         if "gloss" not in source.casefold() and "📚" not in source:
             continue
 
-        transformed, count, missing = transform_markdown(source, aliases)
+        transformed, count, missing = transform_markdown(source, local_aliases)
         linked += count
         unresolved.update(missing)
 
@@ -394,7 +409,7 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    _, aliases = load_terms()
+    by_id, aliases = load_terms()
 
     total_links = 0
     changed_paths: list[Path] = []
@@ -408,6 +423,7 @@ def main() -> int:
             path,
             aliases,
             apply=args.apply,
+            by_id=by_id,
         )
 
         if links or unresolved or changed:
