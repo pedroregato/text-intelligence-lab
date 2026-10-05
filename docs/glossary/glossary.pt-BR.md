@@ -1993,3 +1993,15 @@ Política que determina se um chamador autenticado ou identificado pode executar
 **Exemplo:** Uma tool disponível no servidor não implica que todo chamador esteja autorizado a executá-la.
 
 **Primeira aula:** 19
+
+## Cabeça de classificação
+
+**English:** Classification Head
+
+Camada ou pequeno conjunto de camadas adicionadas sobre a representação produzida por um encoder para transformar essa representação em escores associados às classes de uma tarefa supervisionada.
+
+**No TIL:** Na Aula 11, o DistilBERT fornece representações contextuais pré-treinadas e uma nova cabeça de classificação é inicializada para aprender a distinguir duvida, reclamacao e elogio. Os pesos dessa cabeça não vêm prontos do checkpoint-base e precisam ser aprendidos no fine-tuning.
+
+**Exemplo:** Um encoder produz um vetor contextual para a mensagem; a cabeça de classificação converte esse vetor em logits para as classes duvida, reclamacao e elogio.
+
+**Primeira aula:** 11

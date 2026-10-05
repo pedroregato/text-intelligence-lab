@@ -1661,3 +1661,13 @@ Policy determining whether an authenticated or identified caller may perform an 
 **Example:** A tool being available on the server does not imply every caller is authorized to execute it.
 
 **First lesson:** 19
+
+## Classification Head
+
+A layer or small set of layers added on top of an encoder representation to transform that representation into scores associated with the classes of a supervised task.
+
+**In TIL:** In Lesson 11, DistilBERT provides pretrained contextual representations and a new classification head is initialized to learn question, complaint, and praise. The head weights are not supplied by the base checkpoint and must be learned during fine-tuning.
+
+**Example:** An encoder produces a contextual vector for a message; the classification head transforms that vector into logits for question, complaint, and praise.
+
+**First lesson:** 11
