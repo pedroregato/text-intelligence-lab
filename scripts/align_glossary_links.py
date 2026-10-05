@@ -58,6 +58,8 @@ MANUAL_ALIASES = {
     "classification head": "classification-head",
     "cabeça da classificação": "classification-head",
     "cabeça de classificação": "classification-head",
+    "pré-treinamento": "pretrained-model",
+    "modelo pré-treinado": "pretrained-model",
     "sequence classification": "sequence-classification",
     "multinomialnb": "multinomial-naive-bayes",
     "naive bayes multinomial": "multinomial-naive-bayes",
@@ -77,6 +79,21 @@ MANUAL_ALIASES = {
     "model orchestration": "model-orchestration",
     "compound ai system": "compound-ai-system",
     "cost per inference": "cost-per-inference",
+}
+
+EDITORIAL_LABELS = {
+    "glossário",
+    "glossário:",
+    "glossário vivo",
+    "palavras-chave",
+    "palavras-chave:",
+    "leitura pelo glossário",
+    "leitura pelo glossário:",
+    "mindset til",
+    "mindset semântico til",
+    "mindset semântico til:",
+    "conceitos centrais no glossário vivo",
+    "conceitos do glossário",
 }
 
 
@@ -156,6 +173,10 @@ def resolve(label: str, aliases: dict[str, GlossaryTerm]) -> GlossaryTerm | None
     return aliases.get(normalize(clean))
 
 
+def is_editorial_label(label: str) -> bool:
+    return normalize(label) in {normalize(x) for x in EDITORIAL_LABELS}
+
+
 def direct_link(label: str, term: GlossaryTerm) -> str:
     return f"[{label.strip()}]({term.url})"
 
@@ -177,6 +198,10 @@ def link_bold_segment(
         raw = part
         label = raw.strip()
         if not label:
+            out.append(raw)
+            continue
+
+        if is_editorial_label(label):
             out.append(raw)
             continue
 
@@ -220,6 +245,31 @@ def link_glossary_line(
     return BOLD_RE.sub(repl, line), total
 
 
+def is_concept_inventory_line(line: str) -> bool:
+    return bool(
+        re.search(
+            r"(conceitos?\s+(?:centrais|chave)|palavras-chave)\s*:",
+            line,
+            flags=re.IGNORECASE,
+        )
+    )
+
+
+def is_glossary_callout(line: str) -> bool:
+    return bool(
+        re.search(
+            r"(?:📚\s*)?Gloss[aá]rio(?:\s+em\s+contexto)?\s*:",
+            line,
+            flags=re.IGNORECASE,
+        )
+    )
+
+
+def is_glossary_table_row(line: str) -> bool:
+    # Typical Aula 11 map row: | **pré-treinamento** | ... |
+    return line.lstrip().startswith("|") and "**" in line
+
+
 def heading_level(line: str) -> int | None:
     m = re.match(r"^\s*(#{1,6})\s+", line)
     return len(m.group(1)) if m else None
@@ -256,15 +306,13 @@ def transform_markdown(
             in_glossary = False
             glossary_level = None
 
-        contextual = bool(
-            re.search(
-                r"(?:📚\s*)?Gloss[aá]rio(?:\s+em\s+contexto)?\s*:",
-                stripped,
-                flags=re.IGNORECASE,
-            )
+        should_process = (
+            is_glossary_callout(stripped)
+            or (in_glossary and is_concept_inventory_line(stripped))
+            or (in_glossary and is_glossary_table_row(stripped))
         )
 
-        if in_glossary or contextual:
+        if should_process:
             converted, count = link_glossary_line(
                 stripped,
                 aliases,
