@@ -24,38 +24,31 @@ $batch = @(
 )
 
 Write-Host ""
-Write-Host "TIL — Reengineering Validation Batch"
+Write-Host "TIL - Reengineering Validation Batch"
 Write-Host "===================================="
 Write-Host ""
 
 foreach ($item in $batch) {
-    Write-Host ("Aula {0} — {1}" -f $item.Lesson, $item.Id)
+    Write-Host ("Lesson {0} - {1}" -f $item.Lesson, $item.Id)
 
     if (-not $StatusOnly) {
         kaggle kernels push -p $item.Path
 
         if ($LASTEXITCODE -ne 0) {
-            throw "Falha no push da Aula $($item.Lesson)"
+            throw ("Push failed for lesson {0}" -f $item.Lesson)
         }
     }
 
     kaggle kernels status $item.Id
+
+    if ($LASTEXITCODE -ne 0) {
+        throw ("Status check failed for lesson {0}" -f $item.Lesson)
+    }
+
     Write-Host ""
 }
 
-Write-Warning @"
-Aula 13C não foi incluída automaticamente.
-
-Motivo:
-- o notebook está em:
-  course\13-metrics-and-indicators\13c-model-routing-and-orchestration.ipynb
-- o kernel-metadata.json desse diretório pertence à Aula 13;
-- não há metadata Kaggle dedicado à 13C no estado atual do repositório.
-
-Não execute:
-  kaggle kernels push -p course\13-metrics-and-indicators
-
-esperando publicar a 13C, pois isso aponta para o kernel da Aula 13.
-
-Valide/publice a 13C separadamente até que seja criado um wrapper Kaggle dedicado.
-"@
+Write-Warning "Lesson 13C is not included automatically."
+Write-Warning "The kernel-metadata.json in course\13-metrics-and-indicators belongs to Lesson 13, not Lesson 13C."
+Write-Warning "Do not run 'kaggle kernels push -p course\13-metrics-and-indicators' expecting to publish Lesson 13C."
+Write-Warning "Lesson 13C must be handled separately until it has a dedicated Kaggle wrapper."
