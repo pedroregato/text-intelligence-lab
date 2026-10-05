@@ -2029,3 +2029,147 @@ Diferença entre a maior e a segunda maior pontuação ou probabilidade atribuí
 **Exemplo:** Se as duas maiores probabilidades forem 0,340 e 0,331, a margem é 0,009, sugerindo pouca separação entre as duas classes.
 
 **Primeira aula:** 11
+
+## ngram_range
+
+**English:** ngram_range
+
+Parâmetro que define os tamanhos mínimo e máximo de n-gramas que serão extraídos de um texto.
+
+**No TIL:** Na Aula 8, controla se a representação usa apenas unigramas ou combina unigramas, bigramas e outros n-gramas.
+
+**Exemplo:** ngram_range=(1, 2) inclui unigramas e bigramas.
+
+**Primeira aula:** 08
+
+## Espaço de features
+
+**English:** Feature Space
+
+Conjunto de dimensões ou variáveis usadas para representar cada exemplo de entrada para um modelo.
+
+**No TIL:** Na Aula 8, adicionar n-gramas amplia o espaço de features e pode aumentar capacidade de representação, custo e risco de esparsidade.
+
+**Exemplo:** Um vocabulário com 10.000 termos produz uma representação com até 10.000 dimensões antes de outras transformações.
+
+**Primeira aula:** 08
+
+## Skip-gram
+
+**English:** Skip-gram
+
+Arquitetura de treinamento do Word2Vec que usa uma palavra central para prever palavras de contexto.
+
+**No TIL:** Na Aula 9, aparece como uma das duas arquiteturas clássicas do Word2Vec.
+
+**Exemplo:** Dada a palavra central banco, o modelo tenta prever palavras próximas na janela de contexto.
+
+**Primeira aula:** 09
+
+## CBOW
+
+**English:** Continuous Bag of Words (CBOW)
+
+Arquitetura de treinamento do Word2Vec que usa palavras de contexto para prever a palavra central.
+
+**No TIL:** Na Aula 9, contrasta com Skip-gram como estratégia de aprendizagem de embeddings estáticos.
+
+**Exemplo:** A partir das palavras ao redor de uma lacuna, o modelo tenta prever a palavra central.
+
+**Primeira aula:** 09
+
+## Polissemia
+
+**English:** Polysemy
+
+Propriedade de uma palavra possuir múltiplos sentidos relacionados dependendo do contexto.
+
+**No TIL:** Na Aula 9, evidencia uma limitação de embeddings estáticos, que atribuem um único vetor à palavra mesmo quando seus sentidos mudam.
+
+**Exemplo:** banco pode significar instituição financeira ou assento.
+
+**Primeira aula:** 09
+
+## Key
+
+**English:** Key
+
+Vetor usado no mecanismo de atenção para representar como um token pode ser encontrado ou correspondido por uma query.
+
+**No TIL:** Na Aula 10, a similaridade entre query e key contribui para calcular quanto peso de atenção será atribuído a cada token.
+
+**Exemplo:** Uma query de um token é comparada às keys dos demais tokens para produzir escores de atenção.
+
+**Primeira aula:** 10
+
+## Value
+
+**English:** Value
+
+Vetor que carrega a informação combinada pelo mecanismo de atenção após a aplicação dos pesos derivados de query e key.
+
+**No TIL:** Na Aula 10, os values são ponderados pelos escores de atenção para formar a nova representação contextual de cada token.
+
+**Exemplo:** Tokens mais relevantes contribuem mais para a soma ponderada dos values.
+
+**Primeira aula:** 10
+
+## Token contextual
+
+**English:** Contextual Token Representation
+
+Representação de um token cujo vetor depende dos demais tokens presentes no contexto.
+
+**No TIL:** Na Aula 10, contrasta com embeddings estáticos, pois a representação da mesma palavra pode mudar conforme a frase.
+
+**Exemplo:** O vetor de banco muda entre banco financeiro e banco de praça.
+
+**Primeira aula:** 10
+
+## Hidden state
+
+**English:** Hidden State
+
+Vetor interno produzido por uma camada do modelo para representar informação processada naquele ponto da rede.
+
+**No TIL:** Na Aula 10, os hidden states de um Transformer contêm representações contextuais que podem ser inspecionadas ou reutilizadas por tarefas posteriores.
+
+**Exemplo:** A última camada do encoder produz um hidden state para cada token.
+
+**Primeira aula:** 10
+
+## Anisotropia
+
+**English:** Anisotropy
+
+Propriedade de um espaço vetorial em que as representações não se distribuem uniformemente em todas as direções.
+
+**No TIL:** Na Aula 10, alerta que similaridade geométrica em embeddings contextuais deve ser interpretada com cuidado porque os vetores podem ocupar regiões preferenciais do espaço.
+
+**Exemplo:** Muitos embeddings podem apontar para direções semelhantes mesmo quando representam textos semanticamente diferentes.
+
+**Primeira aula:** 10
+
+## EOS
+
+**English:** End-of-Sequence Token (EOS)
+
+Token especial que sinaliza ao modelo que uma sequência terminou ou que a geração deve ser encerrada.
+
+**No TIL:** Na Aula 14, faz parte do mecanismo de geração autoregressiva e ajuda a explicar por que uma saída pode terminar antes de atingir o limite máximo de tokens.
+
+**Exemplo:** Durante a geração, selecionar EOS encerra a sequência.
+
+**Primeira aula:** 14
+
+## Query (atenção)
+
+**English:** Attention Query
+
+Vetor usado no mecanismo de atenção para expressar o que a representação de um token procura nos demais tokens.
+
+**No TIL:** Na Aula 10, a query é comparada às keys para produzir escores que determinam quanto cada value contribuirá para a nova representação contextual.
+
+**Exemplo:** A query de um token é comparada às keys de todos os tokens antes da normalização dos escores de atenção.
+
+**Primeira aula:** 10

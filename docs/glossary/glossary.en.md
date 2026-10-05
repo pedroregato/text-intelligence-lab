@@ -1691,3 +1691,123 @@ The difference between the highest and second-highest score or probability assig
 **Example:** If the two highest probabilities are 0.340 and 0.331, the margin is 0.009, indicating weak separation between the two classes.
 
 **First lesson:** 11
+
+## ngram_range
+
+Parameter that defines the minimum and maximum n-gram sizes extracted from text.
+
+**In TIL:** In Lesson 8, it controls whether the representation uses only unigrams or combines unigrams, bigrams, and other n-grams.
+
+**Example:** ngram_range=(1, 2) includes unigrams and bigrams.
+
+**First lesson:** 08
+
+## Feature Space
+
+Set of dimensions or variables used to represent each input example for a model.
+
+**In TIL:** In Lesson 8, adding n-grams expands the feature space and may increase representational capacity, cost, and sparsity.
+
+**Example:** A vocabulary with 10,000 terms yields a representation with up to 10,000 dimensions before other transformations.
+
+**First lesson:** 08
+
+## Skip-gram
+
+Word2Vec training architecture that uses a center word to predict context words.
+
+**In TIL:** In Lesson 9, it appears as one of the two classic Word2Vec architectures.
+
+**Example:** Given the center word bank, the model predicts nearby words in the context window.
+
+**First lesson:** 09
+
+## Continuous Bag of Words (CBOW)
+
+Word2Vec training architecture that uses context words to predict the center word.
+
+**In TIL:** In Lesson 9, it contrasts with Skip-gram as a strategy for learning static embeddings.
+
+**Example:** From the words around a gap, the model predicts the center word.
+
+**First lesson:** 09
+
+## Polysemy
+
+Property of a word having multiple related meanings depending on context.
+
+**In TIL:** In Lesson 9, it highlights a limitation of static embeddings, which assign one vector to a word even when its meaning changes.
+
+**Example:** bank may refer to a financial institution or a river bank.
+
+**First lesson:** 09
+
+## Key
+
+Vector used in attention to represent how a token can be matched by a query.
+
+**In TIL:** In Lesson 10, similarity between query and key contributes to the attention weight assigned to each token.
+
+**Example:** A token query is compared with the keys of other tokens to produce attention scores.
+
+**First lesson:** 10
+
+## Value
+
+Vector carrying the information combined by attention after applying weights derived from query and key.
+
+**In TIL:** In Lesson 10, values are weighted by attention scores to form each token's new contextual representation.
+
+**Example:** More relevant tokens contribute more to the weighted sum of values.
+
+**First lesson:** 10
+
+## Contextual Token Representation
+
+Representation of a token whose vector depends on the other tokens present in its context.
+
+**In TIL:** In Lesson 10, it contrasts with static embeddings because the same word can receive different representations in different sentences.
+
+**Example:** The representation of bank changes across different meanings and contexts.
+
+**First lesson:** 10
+
+## Hidden State
+
+Internal vector produced by a model layer to represent information processed at that point in the network.
+
+**In TIL:** In Lesson 10, Transformer hidden states contain contextual representations that can be inspected or reused by downstream tasks.
+
+**Example:** The final encoder layer produces one hidden state per token.
+
+**First lesson:** 10
+
+## Anisotropy
+
+Property of a vector space in which representations are not distributed uniformly across all directions.
+
+**In TIL:** In Lesson 10, it warns that geometric similarity in contextual embeddings must be interpreted carefully because vectors may occupy preferred regions of the space.
+
+**Example:** Many embeddings may point in similar directions even when they represent semantically different texts.
+
+**First lesson:** 10
+
+## End-of-Sequence Token (EOS)
+
+Special token that signals that a sequence has ended or generation should stop.
+
+**In TIL:** In Lesson 14, it is part of autoregressive generation and helps explain why output may stop before reaching the maximum token limit.
+
+**Example:** Selecting EOS during generation terminates the sequence.
+
+**First lesson:** 14
+
+## Attention Query
+
+Vector used in attention to express what a token representation is looking for in other tokens.
+
+**In TIL:** In Lesson 10, the query is compared with keys to produce scores that determine how much each value contributes to the new contextual representation.
+
+**Example:** A token query is compared with all token keys before attention scores are normalized.
+
+**First lesson:** 10
