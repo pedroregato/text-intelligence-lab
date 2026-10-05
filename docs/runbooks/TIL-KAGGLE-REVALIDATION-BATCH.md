@@ -57,39 +57,20 @@ Aulas incluídas:
 .\scripts\push_revalidation_batch.ps1 -StatusOnly
 ```
 
-## 4. Aula 13C — tratamento separado
+## 4. Aula 13C agora possui wrapper dedicado em `kaggle/til-13c`.
 
-Notebook fonte:
-
-```text
-course/13-metrics-and-indicators/13c-model-routing-and-orchestration.ipynb
-```
-
-Kernel Kaggle esperado:
-
-```text
-pedrogentil/til-13c-model-routing-orchestration-and-utility
-```
-
-No estado atual do repositório não existe um `kernel-metadata.json` dedicado à 13C ao lado desse notebook.
-
-O arquivo:
-
-```text
-course/13-metrics-and-indicators/kernel-metadata.json
-```
-
-pertence à **Aula 13**, não à 13C.
-
-Portanto, não publique a 13C com:
+Antes do push, o script executa:
 
 ```powershell
-kaggle kernels push -p course\13-metrics-and-indicators
+python scripts\build_kaggle_13c_wrapper.py
 ```
 
-pois esse comando se refere ao kernel da Aula 13.
+Esse builder parte do notebook canônico em
+`course/13-metrics-and-indicators/13c-model-routing-and-orchestration.ipynb`
+e incorpora os artefatos medidos de `data/model-evidence`, permitindo que
+o kernel execute em modo `EVIDENCE` com Internet OFF.
 
-Até existir um wrapper Kaggle dedicado, a 13C deve ser sincronizada/publicada separadamente.
+Não edite manualmente o notebook gerado dentro de `kaggle/til-13c`.
 
 ## 5. Ordem de inspeção recomendada
 
@@ -165,3 +146,18 @@ review-candidate-v2
 ```
 
 Nenhuma aula deve ser promovida apenas pelo retorno `COMPLETE`.
+
+
+## Aula 13C
+
+Kernel ID:
+
+```text
+pedrogentil/til-13c-model-routing-orchestration-and-utility
+```
+
+Wrapper:
+
+```text
+kaggle/til-13c
+```
