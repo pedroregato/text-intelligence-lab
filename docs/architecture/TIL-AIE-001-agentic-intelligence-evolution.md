@@ -264,13 +264,38 @@ MCP não deve ser tratado como sinônimo de agente ou workflow; é uma camada de
 
 Objetivo: estudar autonomia como propriedade mensurável do sistema.
 
-Tópicos candidatos:
+Primeira unidade formal:
+
+**Aula 20 — Agentic Systems Foundations** (`Review candidate`).
+
+Especificação: `docs/curriculum/AULA-20-agentic-systems-foundations.md`.
+
+A primeira evidência do bloco compara:
+
+```text
+deterministic workflow
+vs
+minimal agentic loop
+```
+
+A autonomia é localizada na escolha iterativa da próxima ação a partir do estado observado, mantendo decisão, autorização e execução como responsabilidades separadas.
+
+A Aula 20 cobre inicialmente:
+
+- agentic loop;
+- explicit state;
+- action space;
+- decision provider;
+- governance gate;
+- step budget;
+- termination conditions;
+- human escalation;
+- comparative utility.
+
+Tópicos posteriores:
 
 - planning;
-- agent loop;
 - memory operacional;
-- execution policies;
-- human-in-the-loop;
 - computer use;
 - agentes especializados;
 - multi-agent systems;
