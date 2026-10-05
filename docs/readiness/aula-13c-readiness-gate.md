@@ -88,11 +88,25 @@ Promote only after G9 and G10 pass.
 
 ## Final semantic execution check
 
-**EVIDENCE mode verification:** confirm in the Kaggle output that both lines report:
+**EVIDENCE mode verification: PASS** — the Kaggle output reported:
 
 ```text
 Modelos: EVIDENCE
 Routing: EVIDENCE
 ```
 
-A successful Run All proves technical execution. This additional check proves that the lesson used the measured EDU-ORCH evidence rather than the synthetic fallback.
+The output also displayed the measured `til-model-evidence.csv` and `til-routing-evidence.csv` tables, confirming that the lesson used EDU-ORCH measured evidence rather than the synthetic fallback.
+
+
+## Semantic execution status
+
+**PASS**
+
+Observed in the completed Kaggle run:
+
+- `Modelos: EVIDENCE`
+- source: `data/model-evidence/til-model-evidence.csv`
+- `Routing: EVIDENCE`
+- source: `data/model-evidence/til-routing-evidence.csv`
+
+The displayed model table contained measured EDU-ORCH-001 evidence, and the routing table contained measured-recovered EDU-ORCH-002 evidence. This closes the semantic execution gate for Aula 13C.
