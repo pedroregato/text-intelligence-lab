@@ -191,13 +191,13 @@ Especificação: `docs/curriculum/AULA-17-tool-use-function-calling.md`
 A Aula 17 introduz contratos de ferramenta, schemas, validação, execução, resultados, failure taxonomy, efeitos colaterais, safety e observabilidade.
 
 **Aula 18 — Deterministic Workflows**  
-Status: `Pedagogically ready — technical revalidation pending`  
+Status: `Available / student-ready`  
 Especificação: `docs/curriculum/AULA-18-deterministic-workflows.md`
 
 A Aula 18 trata composição determinística de ferramentas, estado, retries, idempotência, checkpoints, approval gates, recovery, observabilidade e **Typed Decisions and Confidence-Gated Routing** por contratos de decisão e políticas explícitas. A versão anterior foi validada no Kaggle; a revisão atual preserva a aprovação pedagógica e aguarda nova execução técnica após a padronização dos exercícios opt-in.
 
 **Aula 19 — Model Context Protocol (MCP)**  
-Status: `Pedagogically ready — final Kaggle revalidation pending`  
+Status: `Available / student-ready`  
 Especificação: `docs/curriculum/AULA-19-model-context-protocol.md`  
 Baseline do protocolo: `2026-07-28`
 
