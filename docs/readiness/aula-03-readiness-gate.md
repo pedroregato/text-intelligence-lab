@@ -48,9 +48,9 @@ Internet OFF, CPU, notebook-defined data and deterministic CountVectorizer behav
 
 ### G7 — Kaggle Run All
 
-**PENDING**
+**PASS**
 
-Fresh execution required after reengineering.
+The current reengineered revision completed successfully on Kaggle with `KernelWorkerStatus.COMPLETE`.
 
 ### G8 — Pedagogical inspection
 
