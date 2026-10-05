@@ -76,6 +76,22 @@ Princípio:
 
 > **Experimentos produzem evidência; aulas consomem evidência.**
 
+## Estado de validação consolidado
+
+| Aula | Estado atual |
+|---|---|
+| 11 | Available / student-ready |
+| 13C | Available / student-ready |
+| 15 | Available / student-ready |
+| 18 | Available / student-ready |
+| 19 | Available / student-ready |
+| 10 | Kaggle PASS / pedagogical review pending |
+| 14 | Kaggle PASS / pedagogical review pending |
+| 16 | Kaggle PASS / pedagogical review pending |
+| 17 | Kaggle PASS / pedagogical review pending |
+
+A promoção continua dependente de execução e inspeção pedagógica. `KernelWorkerStatus.COMPLETE` não é, isoladamente, critério de `student-ready`.
+
 ## Próximo movimento curricular
 
 O próximo passo não é adicionar complexidade por sequência tecnológica. É avançar para novas capacidades somente quando houver uma pergunta pedagógica e uma evidência que justifiquem a transição.
@@ -114,7 +130,7 @@ A numeração das próximas aulas será definida quando cada unidade estiver suf
 ### Bloco A — LLM Foundations
 
 **Próxima unidade oficial: Aula 14 — LLM Foundations: da classificação à geração**  
-Status: `Review candidate v2 — Kaggle revalidation pending`  
+Status: `Kaggle PASS — pedagogical review pending`  
 Especificação: `docs/curriculum/AULA-14-llm-foundations.md`
 
 Objetivo: entender o que muda quando o sistema passa de modelos discriminativos/encoders para modelos generativos, sem assumir que a capacidade generativa substitui automaticamente soluções mais simples.
