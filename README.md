@@ -56,11 +56,11 @@ Ler
 | 16 | Retrieval-Augmented Generation (RAG) — `Kaggle PASS / pedagogical review pending` |
 | 17 | Tool Use, Function Calling and Contracts — `Kaggle PASS / pedagogical review pending` |
 | 18 | Deterministic Workflows — `Available / student-ready` |
-| 19 | Model Context Protocol (MCP) — `Validated / formal promotion pending` |
+| 19 | Model Context Protocol (MCP) — `Available / student-ready` |
 | 20 | Agentic Systems Foundations — `Available / student-ready` |
 | 21 | Planning and Goal Decomposition — `Available / student-ready` |
 
-A revisão reengenheirada foi submetida a uma bateria formal de revalidação. As **Aulas 10, 11, 13C, 15, 18, 20 e 21** possuem revisão promovida como `Available / student-ready`. A **Aula 19** está tecnicamente e pedagogicamente validada, mas sua promoção formal ainda está pendente. As **Aulas 14, 16 e 17** já passaram no Kaggle, mas ainda aguardam fechamento da inspeção pedagógica. A revisão pedagógica mais recente da **Aula 20** acrescentou interpretação guiada das evidências, progress failure, containment vs recovery, matriz de decisão arquitetural e o conceito de **Agent Harness**; essa revisão aguarda apenas a reexecução técnica final. A **Aula 21 — Planning and Goal Decomposition** foi promovida para `Available / student-ready` após validação headless, evidência comparativa, inspeção pedagógica e execução Kaggle. Execução bem-sucedida, por si só, não implica promoção.
+A revisão reengenheirada foi submetida a uma bateria formal de revalidação. As **Aulas 10, 11, 13C, 15, 18, 19, 20 e 21** possuem revisão promovida como `Available / student-ready`. As **Aulas 14, 16 e 17** já passaram no Kaggle, mas ainda aguardam fechamento da inspeção pedagógica. A revisão pedagógica mais recente da **Aula 20** acrescentou interpretação guiada das evidências, progress failure, containment vs recovery, matriz de decisão arquitetural e o conceito de **Agent Harness**; essa revisão aguarda apenas a reexecução técnica final. A **Aula 21 — Planning and Goal Decomposition** foi promovida para `Available / student-ready` após validação headless, evidência comparativa, inspeção pedagógica e execução Kaggle. Execução bem-sucedida, por si só, não implica promoção.
 
 ## Organização conceitual
 
