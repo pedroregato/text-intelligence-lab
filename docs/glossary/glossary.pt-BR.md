@@ -2281,3 +2281,15 @@ Verificação de que um plano possui ações permitidas, dependências válidas,
 **Exemplo:** Um plano que publica antes de solicitar aprovação deve ser rejeitado antes da execução.
 
 **Primeira aula:** 21
+
+## Agent Harness
+
+**English:** Agent Harness
+
+Camada executável que envolve o decision provider e controla como estado, contexto, ferramentas, políticas, observações, limites e condições de término participam da execução de um sistema agente.
+
+**No TIL:** Na Aula 20, o harness corresponde à infraestrutura de runtime que conecta estado explícito, decision provider, governance gate, capabilities, observação, step budget, terminação e escalonamento humano.
+
+**Exemplo:** Um decision provider pode propor publish_simulated, mas o harness aplica a política de aprovação, executa a capability permitida, registra o resultado e atualiza o estado.
+
+**Primeira aula:** 20

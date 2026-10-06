@@ -1901,3 +1901,13 @@ Verification that a plan contains allowed actions, valid dependencies, coherent 
 **Example:** A plan that publishes before requesting approval should be rejected before execution.
 
 **First lesson:** 21
+
+## Agent Harness
+
+The executable layer around a decision provider that controls how state, context, tools, policies, observations, limits, and termination conditions participate in an agent system's execution.
+
+**In TIL:** In Lesson 20, the harness is the runtime infrastructure connecting explicit state, the decision provider, governance gate, capabilities, observation, step budget, termination, and human escalation.
+
+**Example:** A decision provider may propose publish_simulated, but the harness applies the approval policy, executes the allowed capability, records the result, and updates state.
+
+**First lesson:** 20
