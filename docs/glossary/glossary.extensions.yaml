@@ -1671,3 +1671,19 @@ terms:
       example: A plan that publishes before requesting approval should be rejected before execution.
     related: [planning, governance, authorization]
 
+  - id: agent-harness
+    category: engineering
+    lesson_first_seen: "20"
+    pt-BR:
+      term: Agent Harness
+      english_term: Agent Harness
+      definition: Camada executável que envolve o decision provider e controla como estado, contexto, ferramentas, políticas, observações, limites e condições de término participam da execução de um sistema agente.
+      til_context: Na Aula 20, o harness corresponde à infraestrutura de runtime que conecta estado explícito, decision provider, governance gate, capabilities, observação, step budget, terminação e escalonamento humano.
+      example: Um decision provider pode propor publish_simulated, mas o harness aplica a política de aprovação, executa a capability permitida, registra o resultado e atualiza o estado.
+    en:
+      term: Agent Harness
+      definition: The executable layer around a decision provider that controls how state, context, tools, policies, observations, limits, and termination conditions participate in an agent system's execution.
+      til_context: In Lesson 20, the harness is the runtime infrastructure connecting explicit state, the decision provider, governance gate, capabilities, observation, step budget, termination, and human escalation.
+      example: A decision provider may propose publish_simulated, but the harness applies the approval policy, executes the allowed capability, records the result, and updates state.
+    related: [agentic-loop, autonomy, governance, tool-use, human-escalation]
+
