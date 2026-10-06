@@ -23,11 +23,24 @@ Planner = deterministic/local
 ### G1 — Reactive vs planning distinction
 **PASS — IMPLEMENTED**
 
-### G2 — Explicit plan contract
+### G2 — Goal decomposition + explicit plan contract
 **PASS — IMPLEMENTED**
+
+The lesson now makes the chain explicit:
+
+```text
+goal
+→ subgoals
+→ plan steps
+→ execution
+```
+
+Plan steps expose `subgoal`, `depends_on`, `preconditions`, `status` and `reason`.
 
 ### G3 — Plan validation
 **PASS — IMPLEMENTED**
+
+Validation now detects not only missing/future dependencies and disallowed actions, but also the safety ordering rule that approval must precede publication.
 
 ### G4 — Plan generation vs execution separation
 **PASS — IMPLEMENTED**
@@ -35,8 +48,12 @@ Planner = deterministic/local
 ### G5 — Replanning
 **PASS — IMPLEMENTED**
 
+When external state invalidates the original plan, the lesson now creates an explicit recovery plan v2, validates it and records both versions in `plan_history`.
+
 ### G6 — Comparative evidence lab
 **PASS — IMPLEMENTED**
+
+Reactive and plan-based architectures now receive the same external environment dynamics. The comparison includes `plan_versions` so replanning is observable and avoids privileged information on either side.
 
 ### G7 — Failure lab
 **PASS — IMPLEMENTED**
@@ -56,7 +73,17 @@ Canonical entries were added for Planning, Goal Decomposition, Replanning and Pl
 **PENDING**
 
 ### G12 — Pedagogical inspection
-**PENDING**
+**PENDING — EXECUTION EVIDENCE REQUIRED**
+
+Inspect at least:
+
+1. valid plan returns no validation errors;
+2. invalid plan reports `approval_must_precede_publish`;
+3. simple stable scenario reveals planning overhead when outcome is unchanged;
+4. state-change scenario produces `plan_versions = 2` and `replans = 1`;
+5. both architectures observe the same external state change;
+6. student can explain goal decomposition vs planning, dependency vs precondition, and planning vs execution;
+7. student can justify whether the measured planning benefit earns its complexity.
 
 Verify that the student can explain:
 
