@@ -257,6 +257,98 @@ references:
     local_assets:
       - "docs/case-studies/CASE-AI-BANKING-001-from-copilot-to-machine-customer.md"
 
+  - id: ref-langgraph-overview-2026
+    title: "LangGraph overview"
+    authors:
+      - "LangChain"
+    source: "LangGraph Documentation"
+    source_role: primary
+    type: official-doc
+    url: "https://langchain-ai.github.io/langgraph/"
+    accessed_at: "2026-10-06"
+    language: en
+    topics:
+      - orchestration-runtime
+      - stateful-agents
+      - durable-execution
+      - human-in-the-loop
+      - persistence
+    related_lessons:
+      - "22"
+    relevance: high
+    review_status: reviewed
+    summary: >
+      Documentação oficial que caracteriza LangGraph como runtime/framework de orquestração de baixo nível
+      para agentes stateful e long-running, com durable execution, persistence, streaming e human-in-the-loop.
+    pedagogical_use:
+      - "implementação de referência posterior aos conceitos vendor-neutral"
+      - "comparar framework/runtime com implementação procedural"
+    caveats:
+      - "LangGraph é uma implementação específica e não deve ser usado como definição universal de orchestration runtime."
+      - "APIs e nomenclatura podem mudar; validar versão antes de construir notebook."
+    local_assets:
+      - "docs/curriculum/AULA-22-agent-orchestration-runtimes.md"
+
+  - id: ref-langgraph-checkpoints-2026
+    title: "LangGraph Checkpointing"
+    authors:
+      - "LangChain"
+    source: "LangGraph Documentation"
+    source_role: primary
+    type: official-doc
+    url: "https://langchain-ai.github.io/langgraph/reference/checkpoints/"
+    accessed_at: "2026-10-06"
+    language: en
+    topics:
+      - checkpoint
+      - persistence
+      - recovery
+      - state
+    related_lessons:
+      - "22"
+    relevance: high
+    review_status: reviewed
+    summary: >
+      Documentação oficial sobre checkpoints como snapshots do estado do grafo, threads e mecanismos
+      de persistência usados para inspeção, retomada e fault tolerance.
+    pedagogical_use:
+      - "base primária para checkpointing e resume"
+      - "comparação entre memória em processo e estado persistido"
+    caveats:
+      - "Implementações de storage diferem entre desenvolvimento e produção."
+    local_assets:
+      - "docs/curriculum/AULA-22-agent-orchestration-runtimes.md"
+
+  - id: ref-langgraph-interrupts-2026
+    title: "LangGraph Interrupts"
+    authors:
+      - "LangChain"
+    source: "LangGraph Documentation"
+    source_role: primary
+    type: official-doc
+    url: "https://langchain-ai.github.io/langgraph/how-tos/create-react-agent-hitl/"
+    accessed_at: "2026-10-06"
+    language: en
+    topics:
+      - interrupt-resume
+      - human-in-the-loop
+      - checkpoint
+      - durable-execution
+    related_lessons:
+      - "22"
+    relevance: high
+    review_status: reviewed
+    summary: >
+      Documentação oficial sobre pausar execução, persistir estado e retomar um grafo após input externo,
+      incluindo padrões de human-in-the-loop.
+    pedagogical_use:
+      - "fonte primária para interrupt/resume"
+      - "exemplo concreto de aprovação humana com estado persistido"
+    caveats:
+      - "Ao retomar, o comportamento do node deve ser entendido com cuidado porque código anterior ao interrupt pode ser reexecutado."
+    local_assets:
+      - "docs/curriculum/AULA-22-agent-orchestration-runtimes.md"
+
 reference_sets:
   - id: set-hydrafusion-2026
     title: "HydraFusion — fonte primária + análise crítica"
@@ -288,4 +380,20 @@ reference_sets:
       - "Que novos controles surgem quando um agente representa o cliente?"
       - "Como identity, delegation, authorization e auditability mudam em agent-to-agent interaction?"
       - "Que evidência seria necessária antes de permitir negociação autônoma?"
+
+
+  - id: set-langgraph-orchestration-runtime-2026
+    title: "LangGraph — orchestration runtime reference set"
+    purpose: >
+      Apoiar a Aula 22 com documentação primária sobre orchestration runtime, persistence,
+      checkpointing e interrupt/resume, preservando a distinção entre conceito vendor-neutral e framework.
+    reference_ids:
+      - ref-langgraph-overview-2026
+      - ref-langgraph-checkpoints-2026
+      - ref-langgraph-interrupts-2026
+    learning_questions:
+      - "Quais capacidades justificam um orchestration runtime em vez de código procedural?"
+      - "Qual a diferença entre checkpoint, memory e durable execution?"
+      - "Como interrupt/resume implementa human-in-the-loop?"
+      - "Que partes pertencem ao framework e que partes são conceitos arquiteturais gerais?"
 
