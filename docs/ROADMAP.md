@@ -84,8 +84,9 @@ Princípio:
 | 13C | Available / student-ready |
 | 15 | Available / student-ready |
 | 18 | Available / student-ready |
-| 19 | Available / student-ready |
+| 19 | Validated / formal promotion pending |
 | 20 | Available / student-ready |
+| 21 | Available / student-ready |
 | 10 | Available / student-ready |
 | 14 | Kaggle PASS / pedagogical review pending |
 | 16 | Kaggle PASS / pedagogical review pending |
@@ -214,7 +215,7 @@ Especificação: `docs/curriculum/AULA-18-deterministic-workflows.md`
 A Aula 18 trata composição determinística de ferramentas, estado, retries, idempotência, checkpoints, approval gates, recovery, observabilidade e **Typed Decisions and Confidence-Gated Routing** por contratos de decisão e políticas explícitas. A versão anterior foi validada no Kaggle; a revisão atual preserva a aprovação pedagógica e aguarda nova execução técnica após a padronização dos exercícios opt-in.
 
 **Aula 19 — Model Context Protocol (MCP)**  
-Status: `Available / student-ready`  
+Status: `Validated — formal promotion pending`  
 Especificação: `docs/curriculum/AULA-19-model-context-protocol.md`  
 Baseline do protocolo: `2026-07-28`
 
@@ -255,7 +256,7 @@ A Aula 20 introduz estado explícito, action space, decision provider, governanc
 A revisão pedagógica mais recente da Aula 20 reforça a distinção entre decision provider e runtime controlado e mostra empiricamente que maior autonomia não implica maior utility.
 
 **Aula 21 — Planning and Goal Decomposition**  
-Status: `Review candidate — implementation started`  
+Status: `Available / student-ready`  
 Especificação: `docs/curriculum/AULA-21-planning-and-goal-decomposition.md`
 
 A Aula 21 parte da limitação deixada pela Aula 20: escolher apenas a próxima ação não equivale a construir um plano explícito. A unidade compara reactive next-action com plan-based execution e cobre goal decomposition, dependencies, plan validation, stale-plan risk e replanning controlado.
