@@ -53,34 +53,39 @@ Ler
 
 ## Trilha atual
 
-| Aula | Tema |
-| --- | --- |
-| 0 | Como o TIL funciona e validação do ambiente |
-| 1 | Texto como dado |
-| 2 | Tokenização e normalização |
-| 3 | Bag-of-Words |
-| 4 | TF-IDF |
-| 5 | Primeiro classificador de textos |
-| 6 | Avaliação de classificadores |
-| 7 | Seleção de modelos e tuning |
-| 8 | N-grams e engenharia de features textuais |
-| 9 | Word Embeddings |
-| 10 | Embeddings contextuais e Transformers — `Available / student-ready` |
-| 11 | BERT para classificação de texto — `Available / student-ready` |
-| 12 | Baselines clássicos fortes |
-| 13 | Métricas e indicadores: da fórmula à decisão |
-| 13B | Metric Scenario Lab: cenários, thresholds e custos de erro |
-| 13C | Model Routing, Orchestration e Utility: sistemas compostos de IA — `Available / student-ready` |
-| 14 | LLM Foundations: da classificação à geração — `Kaggle PASS / pedagogical review pending` |
-| 15 | Retrieval, Semantic Search and Grounding — `Available / student-ready` |
-| 16 | Retrieval-Augmented Generation (RAG) — `Kaggle PASS / pedagogical review pending` |
-| 17 | Tool Use, Function Calling and Contracts — `Kaggle PASS / pedagogical review pending` |
-| 18 | Deterministic Workflows — `Available / student-ready` |
-| 19 | Model Context Protocol (MCP) — `Available / student-ready` |
-| 20 | Agentic Systems Foundations — `Available / student-ready` |
-| 21 | Planning and Goal Decomposition — `Available / student-ready` |
+**Legenda:** `Student-ready` = gates técnicos e pedagógicos formalmente concluídos · `Disponível` = publicada/liberada sem promoção formal no gate atual · `Em revisão` = execução/revalidação em andamento; algum gate permanece aberto · `Planejada` = ainda não publicada.
 
-A revisão reengenheirada foi submetida a uma bateria formal de revalidação. As **Aulas 10, 11, 13C, 15, 18, 19, 20 e 21** possuem revisão promovida como `Available / student-ready`. As **Aulas 14, 16 e 17** já passaram no Kaggle, mas ainda aguardam fechamento da inspeção pedagógica. A revisão pedagógica mais recente da **Aula 20** acrescentou interpretação guiada das evidências, progress failure, containment vs recovery, matriz de decisão arquitetural e o conceito de **Agent Harness**; essa revisão aguarda apenas a reexecução técnica final. A **Aula 21 — Planning and Goal Decomposition** foi promovida para `Available / student-ready` após validação headless, evidência comparativa, inspeção pedagógica e execução Kaggle. Execução bem-sucedida, por si só, não implica promoção.
+| Aula | Tema | Status |
+| --- | --- | --- |
+| 0 | Como o TIL funciona e validação do ambiente | Disponível |
+| 1 | Texto como dado | Disponível |
+| 2 | Tokenização e normalização | Em revisão |
+| 3 | Bag-of-Words | Em revisão |
+| 4 | TF-IDF | Em revisão |
+| 5 | Primeiro classificador de textos | Em revisão |
+| 6 | Avaliação de classificadores | Em revisão |
+| 7 | Seleção de modelos e tuning | Em revisão |
+| 8 | N-grams e engenharia de features textuais | Disponível |
+| 9 | Word Embeddings | Em revisão |
+| 10 | Embeddings contextuais e Transformers | Em revisão |
+| 11 | BERT para classificação de texto | Student-ready |
+| 12 | Baselines clássicos fortes | Em revisão |
+| 13 | Métricas e indicadores: da fórmula à decisão | Disponível |
+| 13B | Metric Scenario Lab: cenários, thresholds e custos de erro | Disponível |
+| 13C | Model Routing, Orchestration e Utility | Student-ready |
+| 14 | LLM Foundations | Em revisão |
+| 15 | Retrieval, Semantic Search and Grounding | Student-ready |
+| 16 | Retrieval-Augmented Generation (RAG) | Em revisão |
+| 17 | Tool Use, Function Calling and Contracts | Em revisão |
+| 18 | Deterministic Workflows | Student-ready |
+| 19 | Model Context Protocol (MCP) | Student-ready |
+| 20 | Agentic Systems Foundations | Em revisão |
+| 21 | Planning and Goal Decomposition | Student-ready |
+| 22 | Agent Orchestration Runtimes | Planejada |
+
+A promoção é baseada em evidência da **revisão atual** do notebook. Um `Kaggle COMPLETE` isolado não implica `Student-ready`. O estado canônico de revalidação está documentado em `docs/readiness/`, especialmente em `TIL-REENGINEERING-VALIDATION-BATCH.md` e nos readiness gates de cada aula.
+
+A Aula 20 possui uma revisão anterior validada, mas a revisão pedagógica atual requer nova execução técnica antes de nova promoção. A Aula 21 está formalmente promovida na revisão atual.
 
 ## Organização conceitual
 
@@ -446,7 +451,7 @@ O **EDU-ORCH-002** também foi concluído, medindo diretamente quatro configura�
 
 A Aula 13C também passou a cobrir a transição de **Model Intelligence para Agentic Systems**, conectando routing, orchestration, tools, computer use, observability, human oversight e utility.
 
-O movimento curricular até MCP está implementado e a **Aula 20 — Agentic Systems Foundations** foi pedagogicamente consolidada, incluindo Agent Harness, interpretação das evidências, progress failure e decisão arquitetural por utility. A revisão atual da Aula 20 aguarda apenas a reexecução técnica final. A **Aula 21 — Planning and Goal Decomposition** já possui especificação, notebook inicial, readiness gate e metadata Kaggle e permanece em `review-candidate`.
+O movimento curricular até MCP está implementado. A **Aula 20 — Agentic Systems Foundations** foi pedagogicamente consolidada, incluindo Agent Harness, interpretação das evidências, progress failure e decisão arquitetural por utility, mas a revisão atual ainda requer reexecução técnica antes de nova promoção. A **Aula 21 — Planning and Goal Decomposition** está formalmente promovida como `Available / student-ready` na revisão atual.
 
 ## Autor e citação
 
