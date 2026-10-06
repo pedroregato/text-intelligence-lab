@@ -2,7 +2,7 @@
 
 ## Status
 
-Validated — formal promotion pending
+Available / student-ready
 
 ## Protocol Baseline
 
