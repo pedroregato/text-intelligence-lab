@@ -260,6 +260,14 @@ Especificação: `docs/curriculum/AULA-21-planning-and-goal-decomposition.md`
 
 A Aula 21 parte da limitação deixada pela Aula 20: escolher apenas a próxima ação não equivale a construir um plano explícito. A unidade compara reactive next-action com plan-based execution e cobre goal decomposition, dependencies, plan validation, stale-plan risk e replanning controlado.
 
+Estudo de caso transversal:
+
+```text
+CASE-AI-BANKING-001 — From Copilot to Machine Customer
+```
+
+O case conecta enterprise AI, orchestration, Agent Harness, human augmentation, business utility e a evolução futura para customer agents / machine customers. Ele também introduz uma disciplina editorial importante: separar claims verificados, interpretações e afirmações ainda sem fonte recuperada.
+
 Tópicos posteriores candidatos:
 
 - memory operacional;
