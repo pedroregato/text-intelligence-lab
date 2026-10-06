@@ -85,6 +85,7 @@ Princípio:
 | 15 | Available / student-ready |
 | 18 | Available / student-ready |
 | 19 | Available / student-ready |
+| 20 | Available / student-ready |
 | 10 | Available / student-ready |
 | 14 | Kaggle PASS / pedagogical review pending |
 | 16 | Kaggle PASS / pedagogical review pending |
@@ -234,7 +235,7 @@ A progressão evita transformar MCP em simples configuração: primeiro o aluno 
 Objetivo: tratar autonomia como propriedade mensurável.
 
 **Aula 20 — Agentic Systems Foundations**  
-Status: `Review candidate — implementation started`  
+Status: `Available / student-ready`  
 Especificação: `docs/curriculum/AULA-20-agentic-systems-foundations.md`
 
 Pergunta central:
