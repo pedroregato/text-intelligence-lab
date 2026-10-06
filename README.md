@@ -448,9 +448,26 @@ A Aula 13C também passou a cobrir a transição de **Model Intelligence para Ag
 
 O movimento curricular até MCP está implementado e a **Aula 20 — Agentic Systems Foundations** foi pedagogicamente consolidada, incluindo Agent Harness, interpretação das evidências, progress failure e decisão arquitetural por utility. A revisão atual da Aula 20 aguarda apenas a reexecução técnica final. A **Aula 21 — Planning and Goal Decomposition** já possui especificação, notebook inicial, readiness gate e metadata Kaggle e permanece em `review-candidate`.
 
+## Autor e citação
+
+O **Text Intelligence Lab (TIL)** é concebido, desenvolvido e mantido por **Pedro Gentil Regato de Oliveira Soares**.
+
+Estatístico, IA Product Builder e arquiteto de soluções analíticas, atua com inteligência artificial aplicada, automação, integração de sistemas e engenharia de processos.
+
+**Citação sugerida:**
+
+> SOARES, Pedro Gentil Regato de Oliveira. *Text Intelligence Lab (TIL): An evidence-driven path to Applied AI Engineering.* Kaggle/GitHub, 2026.
+
+Metadados estruturados para citação também estão disponíveis em `CITATION.cff`.
+
 ## Licenciamento
 
-A política de licenciamento está sendo formalizada em ADR específico antes da publicação ampla do material.
+O TIL utiliza licenciamento duplo:
+
+- **conteúdo didático e documentação:** CC BY 4.0 — consulte `LICENSE-CONTENT`;
+- **código, scripts e exemplos executáveis:** MIT License — consulte `LICENSE-CODE`.
+
+A política consolidada está em `LICENSE`. Materiais de terceiros permanecem sujeitos às respectivas licenças e termos.
 
 ## Qualidade
 
