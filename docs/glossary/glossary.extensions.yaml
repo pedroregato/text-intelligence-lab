@@ -1607,3 +1607,67 @@ terms:
       example: An ambiguous request ends in ask_human instead of the system inventing an action.
     related: [human-in-the-loop, agentic-loop, governance, approval-gate]
 
+  - id: planning
+    category: engineering
+    lesson_first_seen: "21"
+    pt-BR:
+      term: Planejamento
+      english_term: Planning
+      definition: Processo de transformar um objetivo em uma sequência estruturada de subtarefas, dependências e condições de execução.
+      til_context: Na Aula 21, planejamento é comparado com seleção reativa de próxima ação e deve ser validado antes da execução.
+      example: Publicar uma aula pode exigir validar estado, preparar nota, obter aprovação e só então publicar.
+    en:
+      term: Planning
+      definition: Process of transforming a goal into a structured sequence of subtasks, dependencies, and execution conditions.
+      til_context: In Lesson 21, planning is compared with reactive next-action selection and must be validated before execution.
+      example: Publishing a lesson may require validating status, preparing a note, obtaining approval, and only then publishing.
+    related: [agentic-loop, autonomy, governance]
+
+  - id: goal-decomposition
+    category: engineering
+    lesson_first_seen: "21"
+    pt-BR:
+      term: Decomposição de objetivo
+      english_term: Goal Decomposition
+      definition: Quebra de um objetivo amplo em subobjetivos menores, verificáveis e coordenáveis.
+      til_context: Na Aula 21, a decomposição torna explícitas as etapas necessárias antes da execução.
+      example: O objetivo publicar release pode ser decomposto em verificar prontidão, gerar nota, aprovar e publicar.
+    en:
+      term: Goal Decomposition
+      definition: Breaking a broad objective into smaller, verifiable, and coordinable subgoals.
+      til_context: In Lesson 21, decomposition makes required steps explicit before execution.
+      example: The goal publish release can be decomposed into readiness check, note creation, approval, and publication.
+    related: [planning, task, agentic-loop]
+
+  - id: replanning
+    category: engineering
+    lesson_first_seen: "21"
+    pt-BR:
+      term: Replanejamento
+      english_term: Replanning
+      definition: Revisão controlada de um plano quando nova evidência invalida etapas, dependências ou pré-condições do plano atual.
+      til_context: Na Aula 21, replanning só ocorre quando o estado observado torna o plano anterior inadequado.
+      example: Se a aprovação for negada após a criação do plano, a rota de publicação deve ser revisada ou escalada.
+    en:
+      term: Replanning
+      definition: Controlled revision of a plan when new evidence invalidates steps, dependencies, or preconditions in the current plan.
+      til_context: In Lesson 21, replanning occurs only when observed state makes the prior plan inadequate.
+      example: If approval is denied after planning, the publication path must be revised or escalated.
+    related: [planning, observability, governance]
+
+  - id: plan-validation
+    category: engineering
+    lesson_first_seen: "21"
+    pt-BR:
+      term: Validação de plano
+      english_term: Plan Validation
+      definition: Verificação de que um plano possui ações permitidas, dependências válidas, ordem coerente e condições mínimas de segurança antes da execução.
+      til_context: Na Aula 21, plan validation é separada de plan generation e de execution.
+      example: Um plano que publica antes de solicitar aprovação deve ser rejeitado antes da execução.
+    en:
+      term: Plan Validation
+      definition: Verification that a plan contains allowed actions, valid dependencies, coherent ordering, and minimum safety conditions before execution.
+      til_context: In Lesson 21, plan validation is separated from plan generation and execution.
+      example: A plan that publishes before requesting approval should be rejected before execution.
+    related: [planning, governance, authorization]
+
