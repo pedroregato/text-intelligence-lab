@@ -266,7 +266,7 @@ Objetivo: estudar autonomia como propriedade mensurável do sistema.
 
 Primeira unidade formal:
 
-**Aula 20 — Agentic Systems Foundations** (`Review candidate`).
+**Aula 20 — Agentic Systems Foundations** (`Available / student-ready`).
 
 Especificação: `docs/curriculum/AULA-20-agentic-systems-foundations.md`.
 
