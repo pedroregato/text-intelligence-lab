@@ -57,9 +57,9 @@ Ler
 | 17 | Tool Use, Function Calling and Contracts — `Kaggle PASS / pedagogical review pending` |
 | 18 | Deterministic Workflows — `Available / student-ready` |
 | 19 | Model Context Protocol (MCP) — `Available / student-ready` |
-| 20 | Agentic Systems Foundations — `review-candidate` |
+| 20 | Agentic Systems Foundations — `Available / student-ready` |
 
-A revisão reengenheirada foi submetida a uma bateria formal de revalidação. As **Aulas 11, 13C, 15, 18 e 19** concluíram execução e inspeção pedagógica e estão `Available / student-ready`. As **Aulas 10, 11, 13C, 15, 18 e 19** concluíram execução e inspeção pedagógica e estão `Available / student-ready`. As **Aulas 14, 16 e 17** já passaram no Kaggle, mas ainda aguardam fechamento da inspeção pedagógica. A **Aula 20** inaugura o bloco de Agentic Systems e está em `review-candidate`. As demais aulas permanecem sob seus readiness gates específicos; execução bem-sucedida, por si só, não implica promoção.
+A revisão reengenheirada foi submetida a uma bateria formal de revalidação. As **Aulas 11, 13C, 15, 18 e 19** concluíram execução e inspeção pedagógica e estão `Available / student-ready`. As **Aulas 10, 11, 13C, 15, 18 e 19** concluíram execução e inspeção pedagógica e estão `Available / student-ready`. As **Aulas 14, 16 e 17** já passaram no Kaggle, mas ainda aguardam fechamento da inspeção pedagógica. A **Aula 20** inaugura o bloco de Agentic Systems e está `Available / student-ready`. As demais aulas permanecem sob seus readiness gates específicos; execução bem-sucedida, por si só, não implica promoção.
 
 ## Organização conceitual
 
