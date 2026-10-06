@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use or reference the Text Intelligence Lab (TIL), please cite it using the metadata in this file."
+title: "Text Intelligence Lab (TIL): An evidence-driven path to Applied AI Engineering"
+type: software
+authors:
+  - family-names: "Soares"
+    given-names: "Pedro Gentil Regato de Oliveira"
+repository-code: "https://github.com/pedroregato/text-intelligence-lab"
+url: "https://www.kaggle.com/code/pedrogentil/text-intelligence-lab-applied-ai-engineering"
+date-released: 2026-10-06
+version: "2026"
+preferred-citation:
+  type: generic
+  title: "Text Intelligence Lab (TIL): An evidence-driven path to Applied AI Engineering"
+  authors:
+    - family-names: "Soares"
+      given-names: "Pedro Gentil Regato de Oliveira"
+  year: 2026
+  url: "https://www.kaggle.com/code/pedrogentil/text-intelligence-lab-applied-ai-engineering"
