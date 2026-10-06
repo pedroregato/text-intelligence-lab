@@ -457,7 +457,7 @@ O movimento curricular até MCP está implementado. A **Aula 20 — Agentic Syst
 
 O **Text Intelligence Lab (TIL)** é concebido, desenvolvido e mantido por **Pedro Gentil Regato de Oliveira Soares**.
 
-Estatístico, IA Product Builder e arquiteto de soluções analíticas, atua com inteligência artificial aplicada, automação, integração de sistemas e engenharia de processos.
+Estatístico, AI Product Builder e arquiteto de soluções analíticas, atua com inteligência artificial aplicada, automação, integração de sistemas e engenharia de processos.
 
 **Citação sugerida:**
 
@@ -469,10 +469,11 @@ Metadados estruturados para citação também estão disponíveis em `CITATION.c
 
 O TIL utiliza licenciamento duplo:
 
-- **conteúdo didático e documentação:** CC BY 4.0 — consulte `LICENSE-CONTENT`;
-- **código, scripts e exemplos executáveis:** MIT License — consulte `LICENSE-CODE`.
+- **código, scripts e exemplos executáveis:** MIT License — o arquivo raiz `LICENSE` contém o texto canônico reconhecível pelo GitHub;
+- **conteúdo didático e documentação:** CC BY 4.0 — consulte `LICENSE-CONTENT`.
 
-A política consolidada está em `LICENSE`. Materiais de terceiros permanecem sujeitos às respectivas licenças e termos.
+A política completa, inclusive para notebooks que combinam texto e código, está em `LICENSING.md`. Materiais de terceiros permanecem sujeitos às respectivas licenças e termos.
+
 
 ## Qualidade
 
