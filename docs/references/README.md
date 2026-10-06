@@ -116,6 +116,32 @@ docs/case-studies/github-hydrafusion-multi-model-orchestration.md
 course/13-metrics-and-indicators/13c-model-routing-and-orchestration.ipynb
 ```
 
+## Caso AI Banking / Machine Customer
+
+O segundo conjunto transversal da Biblioteca Viva conecta:
+
+- fontes primárias do Santander sobre adoção de IA e business value;
+- análises Gartner sobre `machine customers` e customer AI agents;
+- o estudo de caso local:
+
+```text
+docs/case-studies/CASE-AI-BANKING-001-from-copilot-to-machine-customer.md
+```
+
+O objetivo é separar explicitamente:
+
+```text
+resultado observado
+≠
+meta prospectiva
+≠
+interpretação arquitetural
+≠
+extrapolação futura
+```
+
+O case atravessa as Aulas 13C, 17, 18, 19, 20 e 21 e prepara discussões futuras sobre agent-to-agent interaction, delegation, negotiation, identity e authorization.
+
 ## Estados de revisão
 
 ```text
