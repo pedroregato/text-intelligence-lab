@@ -62,18 +62,46 @@ Reactive and plan-based architectures now receive the same external environment 
 **PASS — IMPLEMENTED**
 
 ### G9 — Living Glossary
-**PARTIAL**
+**PASS — CURRENT REVISION**
 
-Canonical entries were added for Planning, Goal Decomposition, Replanning and Plan Validation. Generated views still need regeneration and validation.
+Canonical entries for Planning, Goal Decomposition, Replanning and Plan Validation are present in the generated PT-BR and EN glossary views.
 
 ### G10 — Headless execution
-**PENDING**
+**PASS — CURRENT REVISION**
+
+Observed local nbconvert execution on 2026-10-06 completed successfully and produced:
+
+```text
+course/21-planning-and-goal-decomposition/21-til-planning-and-goal-decomposition.executed.ipynb
+```
+
+Observed evidence:
+
+- valid plan → `Plan errors: []`;
+- invalid plan → `('s3', 'approval_must_precede_publish')`;
+- `simple_ready`: both architectures succeed; plan-based has higher `cost_proxy` (7.5 vs 6.0);
+- `not_ready`: both safely refuse publication; plan-based has higher `cost_proxy` (5.5 vs 3.0);
+- `state_changes`: both avoid publication; plan-based records `plan_versions = 2` and `replans = 1`, with higher `cost_proxy` (10.0 vs 6.0).
 
 ### G11 — Kaggle Run All
 **PENDING**
 
 ### G12 — Pedagogical inspection
-**PENDING — EXECUTION EVIDENCE REQUIRED**
+**PASS — CURRENT REVISION**
+
+The observed run supports the intended claims:
+
+1. goal decomposition and plan structure are explicit;
+2. plan validation rejects an unsafe approval ordering before execution;
+3. planning does not improve task success in the measured scenarios;
+4. the reactive baseline remains cheaper in all measured scenarios;
+5. replanning is observable as a second plan artifact, not only as a trace label;
+6. the `state_changes` scenario shows that a reactive architecture can also stop safely when it revalidates critical state;
+7. therefore the evidence does not justify planning by task success alone.
+
+Pedagogical conclusion:
+
+> **In this lab, explicit planning earns value mainly through inspectability, pre-execution validation and observable plan revision — not through higher task success. If those properties are not required, the simpler reactive architecture remains preferable.**
 
 Inspect at least:
 
@@ -98,6 +126,10 @@ Verify that the student can explain:
 ## Promotion rule
 
 Promote only after G9–G12 pass.
+
+Current remaining blocker:
+
+- G11 — Kaggle Run All / COMPLETE for the current revision.
 
 ## Governing principle
 
