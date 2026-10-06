@@ -61,6 +61,24 @@ choose_next_action
 
 The lesson preserves the TIL principle that a decision does not authorize itself.
 
+### G3B — Agent Harness
+
+**PASS — IMPLEMENTED**
+
+The lesson now explicitly identifies the runtime layer around the decision provider as an Agent Harness and distinguishes its responsibilities from the model/decision provider, MCP, workflows and orchestration.
+
+The notebook makes the following components visible inside the harness boundary:
+
+- explicit state;
+- action space;
+- governance gate;
+- capability execution;
+- observation and state update;
+- step budget;
+- termination;
+- human escalation;
+- observability.
+
 ### G4 — Termination and step budget
 
 **PASS — IMPLEMENTED**
@@ -140,7 +158,8 @@ Canonical entries were added for:
 - Autonomy;
 - Step Budget;
 - Termination Condition;
-- Human Escalation.
+- Human Escalation;
+- Agent Harness.
 
 Generated PT-BR/EN/HTML glossary views must still be regenerated and validated.
 
@@ -201,7 +220,7 @@ Pedagogical conclusion:
 
 ## Promotion rule
 
-Promotion criteria satisfied on the current revision: glossary integration, headless execution, Kaggle execution and pedagogical inspection pass.
+Pedagogical criteria are satisfied. Final promotion of the current notebook revision requires regenerated glossary views, fresh headless execution and a fresh Kaggle Run All.
 
 ## Governing principle
 
