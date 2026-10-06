@@ -84,7 +84,7 @@ Princípio:
 | 13C | Available / student-ready |
 | 15 | Available / student-ready |
 | 18 | Available / student-ready |
-| 19 | Validated / formal promotion pending |
+| 19 | Available / student-ready |
 | 20 | Available / student-ready |
 | 21 | Available / student-ready |
 | 10 | Available / student-ready |
@@ -215,11 +215,11 @@ Especificação: `docs/curriculum/AULA-18-deterministic-workflows.md`
 A Aula 18 trata composição determinística de ferramentas, estado, retries, idempotência, checkpoints, approval gates, recovery, observabilidade e **Typed Decisions and Confidence-Gated Routing** por contratos de decisão e políticas explícitas. A versão anterior foi validada no Kaggle; a revisão atual preserva a aprovação pedagógica e aguarda nova execução técnica após a padronização dos exercícios opt-in.
 
 **Aula 19 — Model Context Protocol (MCP)**  
-Status: `Validated — formal promotion pending`  
+Status: `Available / student-ready`  
 Especificação: `docs/curriculum/AULA-19-model-context-protocol.md`  
 Baseline do protocolo: `2026-07-28`
 
-A Aula 19 introduz **Model Context Protocol (MCP)** depois que o aluno já domina tools e workflows. A revisão pedagógica está concluída; falta apenas o Run All final no Kaggle. O foco será:
+A Aula 19 introduz **Model Context Protocol (MCP)** depois que o aluno já domina tools e workflows. A revisão pedagógica, a execução headless e o Run All no Kaggle estão concluídos. O foco será:
 
 - host / client / server;
 - tools, resources e prompts;
