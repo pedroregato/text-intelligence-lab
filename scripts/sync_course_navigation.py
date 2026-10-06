@@ -35,9 +35,9 @@ def nav_markdown(previous, current, next_item, course_home, roadmap_url, next_pl
         " &nbsp;&nbsp;|&nbsp;&nbsp; "
         f"🏠 **[Apresentação do curso]({course_home['url']})**"
         " &nbsp;&nbsp;|&nbsp;&nbsp; "
-        f"**[Próxima: {next_label}]({next_url})** →\\n\\n"
+        f"**[Próxima: {next_label}]({next_url})** →\n\n"
         "TIL · Pedro Gentil Regato de Oliveira Soares · "
-        "Conteúdo: CC BY 4.0 · Código: MIT\\n"
+        "Conteúdo: CC BY 4.0 · Código: MIT\n"
     )
 
 
