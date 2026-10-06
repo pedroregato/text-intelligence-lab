@@ -2,7 +2,7 @@
 
 ## Status
 
-Draft implementation
+Validated — formal promotion pending
 
 ## Protocol Baseline
 
