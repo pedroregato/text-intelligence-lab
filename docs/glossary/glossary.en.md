@@ -1811,3 +1811,93 @@ Vector used in attention to express what a token representation is looking for i
 **Example:** A token query is compared with all token keys before attention scores are normalized.
 
 **First lesson:** 10
+
+## Agentic Loop
+
+Iterative cycle in which a system observes state, proposes the next action, executes under controls, observes the result, and decides whether to continue, stop, or escalate.
+
+**In TIL:** In Lesson 20, the agentic loop is directly compared with a deterministic workflow to make the locus of autonomy observable.
+
+**Example:** Observe state → choose action → validate → execute → update state → choose next step.
+
+**First lesson:** 20
+
+## Autonomy
+
+Degree to which a system participates in choosing actions and next steps without every transition being explicitly specified by a human operator.
+
+**In TIL:** In Lesson 20, autonomy is treated as a measurable property rather than a binary agent/non-agent label.
+
+**Example:** A workflow fixes the next step; an agentic loop may select among allowed actions based on observed state.
+
+**First lesson:** 20
+
+## Step Budget
+
+Explicit limit on the number of iterations or actions a system may execute before stopping, failing safely, or escalating.
+
+**In TIL:** In Lesson 20, the step budget prevents open loops and makes cost, latency, and operational risk observable.
+
+**Example:** max_steps=6 stops the loop and records a termination reason when the goal is not reached in time.
+
+**First lesson:** 20
+
+## Termination Condition
+
+Explicit rule that determines when a loop stops because of success, safe terminal state, need for supervision, exceeded limit, or unrecoverable failure.
+
+**In TIL:** In Lesson 20, termination conditions are part of the control contract of the agentic loop.
+
+**Example:** Stop when published=True, needs_human=True, or step_count reaches max_steps.
+
+**First lesson:** 20
+
+## Human Escalation
+
+Controlled transition in which a system stops deciding or acting autonomously and requests human judgment, approval, or intervention.
+
+**In TIL:** In Lesson 20, human escalation is a safe terminal state for ambiguity, missing authorization, or low operational confidence.
+
+**Example:** An ambiguous request ends in ask_human instead of the system inventing an action.
+
+**First lesson:** 20
+
+## Planning
+
+Process of transforming a goal into a structured sequence of subtasks, dependencies, and execution conditions.
+
+**In TIL:** In Lesson 21, planning is compared with reactive next-action selection and must be validated before execution.
+
+**Example:** Publishing a lesson may require validating status, preparing a note, obtaining approval, and only then publishing.
+
+**First lesson:** 21
+
+## Goal Decomposition
+
+Breaking a broad objective into smaller, verifiable, and coordinable subgoals.
+
+**In TIL:** In Lesson 21, decomposition makes required steps explicit before execution.
+
+**Example:** The goal publish release can be decomposed into readiness check, note creation, approval, and publication.
+
+**First lesson:** 21
+
+## Replanning
+
+Controlled revision of a plan when new evidence invalidates steps, dependencies, or preconditions in the current plan.
+
+**In TIL:** In Lesson 21, replanning occurs only when observed state makes the prior plan inadequate.
+
+**Example:** If approval is denied after planning, the publication path must be revised or escalated.
+
+**First lesson:** 21
+
+## Plan Validation
+
+Verification that a plan contains allowed actions, valid dependencies, coherent ordering, and minimum safety conditions before execution.
+
+**In TIL:** In Lesson 21, plan validation is separated from plan generation and execution.
+
+**Example:** A plan that publishes before requesting approval should be rejected before execution.
+
+**First lesson:** 21

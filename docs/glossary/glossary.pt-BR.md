@@ -2173,3 +2173,111 @@ Vetor usado no mecanismo de atenção para expressar o que a representação de 
 **Exemplo:** A query de um token é comparada às keys de todos os tokens antes da normalização dos escores de atenção.
 
 **Primeira aula:** 10
+
+## Loop agente
+
+**English:** Agentic Loop
+
+Ciclo iterativo em que o sistema observa o estado, propõe a próxima ação, executa sob controles, observa o resultado e decide se continua, encerra ou escala.
+
+**No TIL:** Na Aula 20, o loop agente é comparado diretamente com um workflow determinístico para tornar observável onde a autonomia entra na arquitetura.
+
+**Exemplo:** Observar estado → escolher ação → validar → executar → atualizar estado → decidir próximo passo.
+
+**Primeira aula:** 20
+
+## Autonomia
+
+**English:** Autonomy
+
+Grau em que um sistema participa da escolha de ações e próximos passos sem que cada transição tenha sido explicitamente definida por um operador humano.
+
+**No TIL:** Na Aula 20, autonomia é tratada como propriedade mensurável, não como rótulo binário de agente versus não-agente.
+
+**Exemplo:** Um workflow fixa a próxima etapa; um agentic loop pode selecionar entre ações permitidas conforme o estado observado.
+
+**Primeira aula:** 20
+
+## Orçamento de passos
+
+**English:** Step Budget
+
+Limite explícito para a quantidade de iterações ou ações que um sistema pode executar antes de interromper, falhar de forma segura ou escalar.
+
+**No TIL:** Na Aula 20, o step budget impede loops abertos e torna custo, latência e risco operacional observáveis.
+
+**Exemplo:** max_steps=6 encerra o loop e produz uma razão de término quando o objetivo não foi atingido a tempo.
+
+**Primeira aula:** 20
+
+## Condição de término
+
+**English:** Termination Condition
+
+Regra explícita que determina quando um loop deve encerrar por sucesso, estado seguro, necessidade de supervisão, limite excedido ou falha não recuperável.
+
+**No TIL:** Na Aula 20, condições de término são parte do contrato de controle do agentic loop.
+
+**Exemplo:** Encerrar quando published=True, needs_human=True ou step_count atingir max_steps.
+
+**Primeira aula:** 20
+
+## Escalonamento humano
+
+**English:** Human Escalation
+
+Transição controlada em que o sistema deixa de decidir ou executar autonomamente e solicita julgamento, aprovação ou intervenção humana.
+
+**No TIL:** Na Aula 20, o escalonamento humano é um estado terminal seguro para ambiguidade, ausência de autorização ou baixa confiança operacional.
+
+**Exemplo:** Uma solicitação ambígua termina em ask_human em vez de o sistema inventar uma ação.
+
+**Primeira aula:** 20
+
+## Planejamento
+
+**English:** Planning
+
+Processo de transformar um objetivo em uma sequência estruturada de subtarefas, dependências e condições de execução.
+
+**No TIL:** Na Aula 21, planejamento é comparado com seleção reativa de próxima ação e deve ser validado antes da execução.
+
+**Exemplo:** Publicar uma aula pode exigir validar estado, preparar nota, obter aprovação e só então publicar.
+
+**Primeira aula:** 21
+
+## Decomposição de objetivo
+
+**English:** Goal Decomposition
+
+Quebra de um objetivo amplo em subobjetivos menores, verificáveis e coordenáveis.
+
+**No TIL:** Na Aula 21, a decomposição torna explícitas as etapas necessárias antes da execução.
+
+**Exemplo:** O objetivo publicar release pode ser decomposto em verificar prontidão, gerar nota, aprovar e publicar.
+
+**Primeira aula:** 21
+
+## Replanejamento
+
+**English:** Replanning
+
+Revisão controlada de um plano quando nova evidência invalida etapas, dependências ou pré-condições do plano atual.
+
+**No TIL:** Na Aula 21, replanning só ocorre quando o estado observado torna o plano anterior inadequado.
+
+**Exemplo:** Se a aprovação for negada após a criação do plano, a rota de publicação deve ser revisada ou escalada.
+
+**Primeira aula:** 21
+
+## Validação de plano
+
+**English:** Plan Validation
+
+Verificação de que um plano possui ações permitidas, dependências válidas, ordem coerente e condições mínimas de segurança antes da execução.
+
+**No TIL:** Na Aula 21, plan validation é separada de plan generation e de execution.
+
+**Exemplo:** Um plano que publica antes de solicitar aprovação deve ser rejeitado antes da execução.
+
+**Primeira aula:** 21
