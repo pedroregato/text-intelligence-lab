@@ -5,8 +5,8 @@
   },
   "roadmap_url": "https://github.com/pedroregato/text-intelligence-lab/blob/main/docs/ROADMAP.md",
   "next_planned": {
-    "label": "Aula 21 — Planning and Goal Decomposition",
-    "status": "review-candidate"
+    "label": "Aula 22 — Agent Orchestration Runtimes",
+    "status": "proposed"
   },
   "lessons": [
     {
@@ -157,7 +157,7 @@
       "title": "Aula 21 — Planning and Goal Decomposition",
       "path": "course/21-planning-and-goal-decomposition/21-til-planning-and-goal-decomposition.ipynb",
       "url": "https://www.kaggle.com/code/pedrogentil/til-21-planning-and-goal-decomposition",
-      "published": false
+      "published": true
     }
   ]
 }
