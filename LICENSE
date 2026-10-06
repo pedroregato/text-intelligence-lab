@@ -1,0 +1,30 @@
+# Text Intelligence Lab (TIL) — Licensing Policy
+
+Copyright (c) 2026 Pedro Gentil Regato de Oliveira Soares.
+
+This repository uses a dual licensing model.
+
+## Educational content and documentation
+
+Unless otherwise noted, prose, Markdown, diagrams, explanatory text, course material, documentation, and other non-code educational content are licensed under the **Creative Commons Attribution 4.0 International License (CC BY 4.0)**.
+
+See `LICENSE-CONTENT`.
+
+## Code
+
+Unless otherwise noted, source code, Python examples, scripts, helpers, and other executable code are licensed under the **MIT License**.
+
+See `LICENSE-CODE`.
+
+## Third-party material
+
+Third-party datasets, models, libraries, trademarks, quotations, images, and other external materials remain subject to their own licenses and terms. This repository's licenses do not override third-party rights.
+
+## Attribution
+
+When reusing TIL educational content, attribution should identify:
+
+**Pedro Gentil Regato de Oliveira Soares — Text Intelligence Lab (TIL)**  
+*An evidence-driven path to Applied AI Engineering*
+
+Repository: https://github.com/pedroregato/text-intelligence-lab
