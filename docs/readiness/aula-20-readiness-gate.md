@@ -2,7 +2,7 @@
 
 ## Status
 
-REVIEW CANDIDATE — initial agentic systems foundation.
+AVAILABLE / STUDENT-READY — current revision validated.
 
 ## Scope
 
@@ -159,9 +159,9 @@ The notebook produced the executed artifact successfully. Comparative evidence a
 
 ### G11 — Kaggle Run All
 
-**PENDING**
+**PASS — CURRENT REVISION**
 
-The current revision must complete on Kaggle with Internet OFF and GPU OFF.
+Kaggle version 2 completed successfully for `pedrogentil/til-20-agentic-systems-foundations` with the lesson's execution contract preserved.
 
 ### G12 — Pedagogical inspection
 
@@ -201,7 +201,7 @@ Pedagogical conclusion:
 
 ## Promotion rule
 
-Promote only after G9–G12 pass.
+Promotion criteria satisfied on the current revision: glossary integration, headless execution, Kaggle execution and pedagogical inspection pass.
 
 ## Governing principle
 
