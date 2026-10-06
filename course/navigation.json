@@ -5,8 +5,8 @@
   },
   "roadmap_url": "https://github.com/pedroregato/text-intelligence-lab/blob/main/docs/ROADMAP.md",
   "next_planned": {
-    "label": "Bloco D — Agentic Systems",
-    "status": "in preparation"
+    "label": "Aula 21 — Planning and Goal Decomposition",
+    "status": "review-candidate"
   },
   "lessons": [
     {
@@ -150,7 +150,7 @@
       "title": "Aula 20 — Agentic Systems Foundations",
       "path": "course/20-agentic-systems-foundations/20-til-agentic-systems-foundations.ipynb",
       "url": "https://www.kaggle.com/code/pedrogentil/til-20-agentic-systems-foundations",
-      "published": false
+      "published": true
     },
     {
       "id": "21",
