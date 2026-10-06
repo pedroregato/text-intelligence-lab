@@ -287,14 +287,35 @@ A Aula 20 cobre inicialmente:
 - action space;
 - decision provider;
 - governance gate;
+- **Agent Harness** como camada de runtime;
 - step budget;
 - termination conditions;
 - human escalation;
+- progress failure;
 - comparative utility.
+
+Definição operacional adotada no TIL:
+
+```text
+Decision Provider
++
+Agent Harness
+=
+execução agentic controlada
+```
+
+A expressão é uma abstração didática, não uma definição universal de agente. O harness concentra runtime state, action space, governance, capability execution, observation/state update, termination, human escalation e observability.
+
+Segunda unidade formal:
+
+**Aula 21 — Planning and Goal Decomposition** (`Review candidate`).
+
+Especificação: `docs/curriculum/AULA-21-planning-and-goal-decomposition.md`.
+
+A Aula 21 compara reactive next-action com explicit planning e introduz goal decomposition, dependencies, plan validation, stale-plan risk e replanning controlado.
 
 Tópicos posteriores:
 
-- planning;
 - memory operacional;
 - computer use;
 - agentes especializados;
