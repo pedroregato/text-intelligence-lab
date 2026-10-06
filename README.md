@@ -1,8 +1,28 @@
 # Text Intelligence Lab (TIL) with Kaggle
 
-Laboratório educacional e experimental de **Text Intelligence, NLP, Machine Learning, Transformers e LLMs**, construído com foco em compreensão, experimentação, reprodutibilidade e engenharia aplicada.
+## *An evidence-driven path to Applied AI Engineering*
 
-O TIL foi desenhado para ensinar a transformar texto em dados, features, modelos e sistemas capazes de apoiar decisões reais.
+O **Text Intelligence Lab (TIL)** é uma trajetória educacional e experimental que parte de **Text Intelligence** e avança progressivamente para **Applied AI Engineering**.
+
+O curso conecta fundamentos de NLP, Machine Learning, Transformers e LLMs a sistemas compostos de IA, retrieval, RAG, tools, workflows, MCP, agentes, planning e orchestration runtimes.
+
+Sua tese central é:
+
+> **Complexidade arquitetural precisa ser conquistada por evidência.**
+
+A progressão oficial é:
+
+```text
+I — Text Intelligence
+→ II — Model Engineering
+→ III — Intelligent Orchestration
+→ IV — Agentic Systems
+```
+
+O objetivo não é simplesmente ensinar tecnologias em ordem crescente de sofisticação. O TIL ensina a **construir, medir e justificar** cada aumento de capacidade, equilibrando qualidade, custo, latência, risco, observabilidade e autonomia.
+
+- **Course Home:** `course/course-home/til-course-home.ipynb`
+- **Architecture, Evidence & Roadmap:** `docs/TIL-ARCHITECTURE-EVIDENCE-ROADMAP.md`
 
 ## Para quem é este curso
 
