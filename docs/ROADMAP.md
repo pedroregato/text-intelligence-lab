@@ -268,6 +268,12 @@ CASE-AI-BANKING-001 — From Copilot to Machine Customer
 
 O case conecta enterprise AI, orchestration, Agent Harness, human augmentation, business utility e a evolução futura para customer agents / machine customers. Ele também introduz uma disciplina editorial importante: separar claims verificados, interpretações e afirmações ainda sem fonte recuperada.
 
+**Aula 22 — Agent Orchestration Runtimes**  
+Status: `Proposed`  
+Especificação: `docs/curriculum/AULA-22-agent-orchestration-runtimes.md`
+
+A Aula 22 deverá comparar orchestration procedural com graph runtime, cobrindo shared state, nodes, conditional routing, checkpoints, durable execution, interrupt/resume, recovery e human-in-the-loop. **LangGraph entra apenas como implementação de referência**, depois que os mecanismos vendor-neutral estiverem claros.
+
 Tópicos posteriores candidatos:
 
 - memory operacional;
