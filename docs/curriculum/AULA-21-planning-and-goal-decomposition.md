@@ -2,7 +2,7 @@
 
 ## Status
 
-Draft / review candidate
+Available / student-ready
 
 ## Role in the TIL
 
