@@ -1687,3 +1687,67 @@ terms:
       example: A decision provider may propose publish_simulated, but the harness applies the approval policy, executes the allowed capability, records the result, and updates state.
     related: [agentic-loop, autonomy, governance, tool-use, human-escalation]
 
+  - id: orchestration-runtime
+    category: engineering
+    lesson_first_seen: "22"
+    pt-BR:
+      term: Runtime de orquestração
+      english_term: Orchestration Runtime
+      definition: Camada de execução que coordena estado, transições, branching, persistência, interrupções, retomada e observabilidade de um fluxo ou sistema agente.
+      til_context: Na Aula 22, o runtime de orquestração será comparado com código procedural para verificar quando a coordenação explícita conquista sua complexidade.
+      example: Um fluxo pode pausar para aprovação humana, persistir o estado e retomar do checkpoint depois da decisão.
+    en:
+      term: Orchestration Runtime
+      definition: Execution layer that coordinates state, transitions, branching, persistence, interrupts, resumption, and observability for a workflow or agent system.
+      til_context: In Lesson 22, an orchestration runtime is compared with procedural code to test when explicit coordination earns its complexity.
+      example: A flow can pause for human approval, persist state, and resume from a checkpoint after the decision.
+    related: [agent-harness, planning, governance]
+
+  - id: checkpoint
+    category: engineering
+    lesson_first_seen: "22"
+    pt-BR:
+      term: Checkpoint
+      english_term: Checkpoint
+      definition: Snapshot persistido do estado de execução em um ponto específico, usado para inspeção, retomada ou recuperação.
+      til_context: Na Aula 22, checkpoints tornam possível interromper e retomar uma execução sem depender apenas de memória em processo.
+      example: Salvar o estado antes de uma aprovação humana permite retomar o fluxo posteriormente.
+    en:
+      term: Checkpoint
+      definition: Persisted snapshot of execution state at a specific point, used for inspection, resumption, or recovery.
+      til_context: In Lesson 22, checkpoints enable pausing and resuming execution without relying only on in-process memory.
+      example: Saving state before human approval allows the flow to resume later.
+    related: [orchestration-runtime, durable-execution, human-escalation]
+
+  - id: durable-execution
+    category: engineering
+    lesson_first_seen: "22"
+    pt-BR:
+      term: Execução durável
+      english_term: Durable Execution
+      definition: Capacidade de preservar o progresso de uma execução para que ela possa sobreviver a interrupções, falhas ou pausas prolongadas e continuar posteriormente.
+      til_context: Na Aula 22, durable execution será tratada como capacidade que deve ser justificada por processos longos, interrompíveis ou sujeitos a falhas.
+      example: Um processo de aprovação pode parar por horas e retomar sem reiniciar todas as etapas já concluídas.
+    en:
+      term: Durable Execution
+      definition: Ability to preserve execution progress so a run can survive interruptions, failures, or long pauses and continue later.
+      til_context: In Lesson 22, durable execution is treated as a capability justified by long-running, interruptible, or failure-prone processes.
+      example: An approval process can pause for hours and resume without restarting all completed steps.
+    related: [checkpoint, orchestration-runtime, recovery]
+
+  - id: interrupt-resume
+    category: engineering
+    lesson_first_seen: "22"
+    pt-BR:
+      term: Interrupção e retomada
+      english_term: Interrupt and Resume
+      definition: Padrão em que uma execução é pausada de forma controlada, preserva contexto e estado e continua quando uma condição externa é satisfeita.
+      til_context: Na Aula 22, interrupt/resume será usado para demonstrar human-in-the-loop e retomada controlada.
+      example: O sistema pausa antes de uma ação sensível, aguarda aprovação humana e retoma do estado persistido.
+    en:
+      term: Interrupt and Resume
+      definition: Pattern in which execution pauses in a controlled way, preserves context and state, and continues when an external condition is satisfied.
+      til_context: In Lesson 22, interrupt/resume demonstrates human-in-the-loop and controlled continuation.
+      example: The system pauses before a sensitive action, waits for human approval, and resumes from persisted state.
+    related: [checkpoint, durable-execution, human-escalation]
+
