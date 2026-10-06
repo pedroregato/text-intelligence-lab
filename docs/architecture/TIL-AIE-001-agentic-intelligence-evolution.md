@@ -322,6 +322,38 @@ Tópicos posteriores:
 - multi-agent systems;
 - avaliação de agentes.
 
+## Agent-to-Agent / Machine Customer horizon
+
+O TIL passa a registrar um horizonte posterior a planning e orchestration runtimes:
+
+```text
+single agent
+→ planning
+→ orchestration runtime
+→ delegated agent
+→ customer agent
+→ agent-to-agent interaction
+```
+
+O estudo de caso `CASE-AI-BANKING-001 — From Copilot to Machine Customer` introduz essa fronteira sem promovê-la ainda a módulo autônomo.
+
+Novas dimensões a estudar:
+
+- identity;
+- delegation;
+- authorization;
+- negotiation;
+- conflicting utility functions;
+- trust;
+- protocol;
+- audit trail;
+- liability;
+- human override.
+
+Princípio:
+
+> **Quanto maior a delegação, maior deve ser a capacidade de provar quem autorizou, o que foi permitido, por que a ação ocorreu e como interrompê-la.**
+
 ## Evidence Gates for Complexity
 
 Uma nova camada arquitetural só deve ser promovida quando o aluno conseguir comparar a solução mais simples com a solução mais complexa.
