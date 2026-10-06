@@ -314,6 +314,14 @@ Especificação: `docs/curriculum/AULA-21-planning-and-goal-decomposition.md`.
 
 A Aula 21 compara reactive next-action com explicit planning e introduz goal decomposition, dependencies, plan validation, stale-plan risk e replanning controlado.
 
+Terceira unidade proposta:
+
+**Aula 22 — Agent Orchestration Runtimes** (`Proposed`).
+
+Especificação: `docs/curriculum/AULA-22-agent-orchestration-runtimes.md`.
+
+A unidade deve comparar código procedural com graph runtime, tornando observáveis shared state, nodes, conditional routing, checkpoints, interrupt/resume, recovery e durable execution. LangGraph é tratado como implementação de referência posterior aos conceitos, não como dependência estrutural do TIL.
+
 Tópicos posteriores:
 
 - memory operacional;
