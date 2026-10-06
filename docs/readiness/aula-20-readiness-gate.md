@@ -218,6 +218,10 @@ Pedagogical conclusion:
 
 > In this task, the deterministic workflow remains the preferred architecture. The agentic loop is useful as a mechanism study, but its additional complexity has not yet been justified by observed utility.
 
+## Final rendering note
+
+The comprehension check now includes collapsible answer blocks using HTML `<details>/<summary>`. Executable logic is unchanged, but the current notebook revision should be run once more locally and on Kaggle to confirm end-to-end execution and rendering.
+
 ## Promotion rule
 
 Pedagogical criteria are satisfied. Final promotion of the current notebook revision requires regenerated glossary views, fresh headless execution and a fresh Kaggle Run All.
