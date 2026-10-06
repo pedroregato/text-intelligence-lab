@@ -250,11 +250,18 @@ vs
 minimal agentic loop
 ```
 
-A Aula 20 introduz estado explícito, action space, decision provider, governance gate, step budget, termination conditions, human escalation e um laboratório comparativo de utility.
+A Aula 20 introduz estado explícito, action space, decision provider, governance gate, **Agent Harness**, step budget, termination conditions, human escalation, progress failure e um laboratório comparativo de utility.
+
+A revisão pedagógica mais recente da Aula 20 reforça a distinção entre decision provider e runtime controlado e mostra empiricamente que maior autonomia não implica maior utility.
+
+**Aula 21 — Planning and Goal Decomposition**  
+Status: `Review candidate — implementation started`  
+Especificação: `docs/curriculum/AULA-21-planning-and-goal-decomposition.md`
+
+A Aula 21 parte da limitação deixada pela Aula 20: escolher apenas a próxima ação não equivale a construir um plano explícito. A unidade compara reactive next-action com plan-based execution e cobre goal decomposition, dependencies, plan validation, stale-plan risk e replanning controlado.
 
 Tópicos posteriores candidatos:
 
-- planning;
 - memory operacional;
 - computer use;
 - agentes especializados;
