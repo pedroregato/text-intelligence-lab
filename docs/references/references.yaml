@@ -112,6 +112,151 @@ references:
       - "docs/case-studies/github-hydrafusion-multi-model-orchestration.md"
       - "course/13-metrics-and-indicators/13c-model-routing-and-orchestration.ipynb"
 
+  - id: ref-santander-ai-first-openai-2025
+    title: "Santander’s data & AI-first strategy accelerates through OpenAI collaboration"
+    authors:
+      - "Banco Santander"
+    source: "Banco Santander"
+    source_role: primary
+    type: official-doc
+    url: "https://www.santander.com/en/stories/santander-data-ai-first-strategy-accelerates-through-openai-collaboration"
+    published_at: "2025"
+    accessed_at: "2026-10-06"
+    language: en
+    topics:
+      - enterprise-ai
+      - agentic-ai
+      - software-development
+      - contact-center
+      - human-augmentation
+      - governance
+      - business-value
+    related_lessons:
+      - "13C"
+      - "17"
+      - "18"
+      - "20"
+    relevance: high
+    review_status: reviewed
+    summary: >
+      Fonte primária do Santander sobre sua estratégia data & AI-first, incluindo economias geradas por IA,
+      adoção em contact centers, speech analytics, uso por desenvolvedores, produtividade e treinamento responsável.
+    pedagogical_use:
+      - "fonte primária para CASE-AI-BANKING-001"
+      - "ponte entre capability técnica, KPI operacional e valor empresarial"
+      - "exemplo de adoção de IA em escala"
+    caveats:
+      - "É uma fonte corporativa e deve ser lida como evidência primária da própria organização."
+      - "Resultados operacionais não devem ser generalizados automaticamente para outras empresas."
+    local_assets:
+      - "docs/case-studies/CASE-AI-BANKING-001-from-copilot-to-machine-customer.md"
+
+  - id: ref-santander-investor-day-2026
+    title: "2026 Santander Investor Day — Strategic Plan 2026–2028"
+    authors:
+      - "Banco Santander"
+    source: "Banco Santander"
+    source_role: primary
+    type: official-doc
+    url: "https://www.santander.com/en/press-room/press-releases/2026/02/2026-santander-investor-day"
+    published_at: "2026-02-25"
+    accessed_at: "2026-10-06"
+    language: en
+    topics:
+      - business-value
+      - enterprise-ai
+      - efficiency
+      - operating-model
+      - strategy
+    related_lessons:
+      - "13C"
+      - "20"
+    relevance: high
+    review_status: reviewed
+    summary: >
+      Apresenta metas 2026–2028 do Santander, incluindo clientes, lucro, efficiency ratio e contribuição esperada
+      de data & AI para geração anual de valor de negócio.
+    pedagogical_use:
+      - "ligar métricas técnicas a metas de negócio"
+      - "discutir utility empresarial e escala"
+    caveats:
+      - "Metas prospectivas não são resultados realizados."
+      - "Business value combina economia e receita e deve ser interpretado no contexto metodológico do banco."
+    local_assets:
+      - "docs/case-studies/CASE-AI-BANKING-001-from-copilot-to-machine-customer.md"
+
+  - id: ref-gartner-machine-customers-banking-2024
+    title: "A New Era in Digital Banking: How CIOs Can Prepare for Machine Customers"
+    authors:
+      - "Alistair Newton"
+      - "Christophe Uzureau"
+      - "Mark Raskino"
+      - "Don Scheibenreif"
+    source: "Gartner"
+    source_role: secondary
+    type: industry-article
+    url: "https://www.gartner.com/en/documents/5212363"
+    published_at: "2024-02-20"
+    accessed_at: "2026-10-06"
+    language: en
+    topics:
+      - machine-customers
+      - customer-agents
+      - autonomous-business
+      - banking
+      - delegation
+      - negotiation
+    related_lessons:
+      - "20"
+      - "21"
+    relevance: high
+    review_status: reviewed
+    summary: >
+      Descreve uma progressão em que machine customers inicialmente aconselham humanos e posteriormente
+      agem diretamente em seu nome, inclusive negociando com bancos como proxy customers.
+    pedagogical_use:
+      - "base conceitual para agent-to-agent interaction"
+      - "provocação sobre identidade, delegação, autorização e negociação"
+    caveats:
+      - "O conteúdo completo é proprietário; o registro usa o resumo público disponível."
+      - "Trata-se de análise prospectiva, não de prova de adoção universal."
+    local_assets:
+      - "docs/case-studies/CASE-AI-BANKING-001-from-copilot-to-machine-customer.md"
+
+  - id: ref-gartner-customer-ai-agents-banking-2026
+    title: "Prepare Bank Systems for Customer AI Agents"
+    authors:
+      - "Sophia Palmstedt"
+    source: "Gartner"
+    source_role: secondary
+    type: industry-article
+    url: "https://www.gartner.com/en/documents/7735358"
+    published_at: "2026-04-17"
+    accessed_at: "2026-10-06"
+    language: en
+    topics:
+      - customer-agents
+      - agentic-commerce
+      - banking
+      - identity
+      - system-readiness
+    related_lessons:
+      - "20"
+      - "21"
+    relevance: high
+    review_status: reviewed
+    summary: >
+      Analisa a emergência de customer AI agents e a necessidade de bancos prepararem sistemas críticos
+      para interagir com clientes representados por agentes.
+    pedagogical_use:
+      - "evidência externa contemporânea para o cenário de machine customers"
+      - "ponte para agent-to-agent systems"
+    caveats:
+      - "O conteúdo completo é proprietário; o registro usa o resumo público disponível."
+      - "A análise é prospectiva e orientada a líderes de tecnologia."
+    local_assets:
+      - "docs/case-studies/CASE-AI-BANKING-001-from-copilot-to-machine-customer.md"
+
 reference_sets:
   - id: set-hydrafusion-2026
     title: "HydraFusion — fonte primária + análise crítica"
@@ -125,3 +270,22 @@ reference_sets:
       - "Quais interpretações são introduzidas pela análise secundária?"
       - "Os benchmarks sustentam a mesma conclusão para qualidade e custo?"
       - "Que informações adicionais seriam necessárias antes de adotar a arquitetura em produção?"
+
+
+  - id: set-ai-banking-machine-customer-2026
+    title: "AI Banking — enterprise impact + machine customers"
+    purpose: >
+      Conectar evidência primária de adoção empresarial em larga escala a análises prospectivas sobre customer agents
+      e machine customers, distinguindo resultados observados de extrapolações arquiteturais.
+    reference_ids:
+      - ref-santander-ai-first-openai-2025
+      - ref-santander-investor-day-2026
+      - ref-gartner-machine-customers-banking-2024
+      - ref-gartner-customer-ai-agents-banking-2026
+    learning_questions:
+      - "Quais resultados são observados e quais são metas futuras?"
+      - "Que parte do valor vem do modelo e que parte vem do sistema e do operating model?"
+      - "Que novos controles surgem quando um agente representa o cliente?"
+      - "Como identity, delegation, authorization e auditability mudam em agent-to-agent interaction?"
+      - "Que evidência seria necessária antes de permitir negociação autônoma?"
+
