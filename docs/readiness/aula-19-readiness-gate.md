@@ -2,7 +2,7 @@
 
 ## Status
 
-AVAILABLE / STUDENT-READY — current revision validated.
+VALIDATED — PROMOTION PENDING.
 
 ## Scope
 
@@ -173,7 +173,9 @@ after G5 passes.
 
 ## Release status
 
-**AULA 19: AVAILABLE / STUDENT-READY**
+**AULA 19: VALIDATED / FORMAL PROMOTION PENDING**
+
+All technical and pedagogical gates are recorded as PASS, but the lesson has not yet undergone the explicit promotion step in the TIL release workflow.
 
 ## Governing principle
 
