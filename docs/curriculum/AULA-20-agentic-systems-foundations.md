@@ -2,7 +2,7 @@
 
 ## Status
 
-Draft / review candidate
+AVAILABLE / STUDENT-READY — pedagogically revised; current notebook revision awaiting final re-execution.
 
 ## Role in the TIL
 
@@ -95,6 +95,42 @@ observation ≠ memory
 agent loop ≠ unlimited loop
 ```
 
+## Agent Harness
+
+A arquitetura da Aula 20 também introduz o conceito de **Agent Harness** como camada executável ao redor do decision provider.
+
+Definição operacional no TIL:
+
+> **Agent Harness é a camada de runtime que conecta estado explícito, action space, governance, capabilities, observação, atualização de estado, limites, terminação, escalonamento humano e observabilidade.**
+
+Abstração didática:
+
+```text
+Decision Provider
++
+Agent Harness
+=
+execução agentic controlada
+```
+
+Essa expressão não é uma definição universal de agente. Ela serve para destacar que o comportamento do sistema não depende apenas do modelo ou decision provider.
+
+Distinções:
+
+```text
+MCP
+→ padroniza integração de capabilities
+
+Workflow
+→ coordena transições ou sequências
+
+Agent Harness
+→ controla o runtime do comportamento agente
+
+Orchestrator
+→ coordena múltiplos componentes, fluxos ou agentes
+```
+
 ## Learning Objectives
 
 Ao final da aula, o aluno deverá conseguir:
@@ -105,12 +141,13 @@ Ao final da aula, o aluno deverá conseguir:
 4. explicar por que branching não é sinônimo de agência;
 5. implementar um loop agente mínimo e observável;
 6. separar decisão, validação, autorização e execução;
-7. aplicar step budget e termination conditions;
-8. reconhecer quando escalar para supervisão humana;
-9. comparar workflow e agentic loop sob a mesma tarefa;
-10. avaliar sucesso, custo proxy, latência proxy, decisões, tool calls e intervenção humana;
-11. localizar falhas em decision, policy, tool, observation e termination;
-12. justificar quando a autonomia adicional não compensa.
+7. explicar o papel do agent harness como camada de runtime e controle;
+8. aplicar step budget e termination conditions;
+9. reconhecer quando escalar para supervisão humana;
+10. comparar workflow e agentic loop sob a mesma tarefa;
+11. avaliar sucesso, custo proxy, latência proxy, decisões, tool calls e intervenção humana;
+12. localizar falhas em decision, policy, tool, observation e termination;
+13. justificar quando a autonomia adicional não compensa.
 
 ## Student Lab
 
