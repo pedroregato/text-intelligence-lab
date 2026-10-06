@@ -2,7 +2,7 @@
 
 ## Status
 
-REVIEW CANDIDATE — initial planning foundation.
+AVAILABLE / STUDENT-READY — current revision promoted.
 
 ## Scope
 
@@ -84,7 +84,9 @@ Observed evidence:
 - `state_changes`: both avoid publication; plan-based records `plan_versions = 2` and `replans = 1`, with higher `cost_proxy` (10.0 vs 6.0).
 
 ### G11 — Kaggle Run All
-**PENDING**
+**PASS — CURRENT REVISION**
+
+Current revision was promoted after successful Kaggle publication / Run All confirmation.
 
 ### G12 — Pedagogical inspection
 **PASS — CURRENT REVISION**
@@ -125,11 +127,11 @@ Verify that the student can explain:
 
 ## Promotion rule
 
-Promote only after G9–G12 pass.
+All promotion gates are satisfied for the current revision.
 
-Current remaining blocker:
+## Release status
 
-- G11 — Kaggle Run All / COMPLETE for the current revision.
+**AULA 21: AVAILABLE / STUDENT-READY**
 
 ## Governing principle
 
