@@ -150,9 +150,9 @@ using variability, predictability, reversibility, cost, risk and supervision.
 
 ### G9 — Living Glossary
 
-**PARTIAL**
+**PASS — CURRENT REVISION**
 
-Canonical entries were added for:
+Canonical entries are present for:
 
 - Agentic Loop;
 - Autonomy;
@@ -161,7 +161,7 @@ Canonical entries were added for:
 - Human Escalation;
 - Agent Harness.
 
-Generated PT-BR/EN/HTML glossary views must still be regenerated and validated.
+The PT-BR, EN and HTML glossary views were regenerated after the Agent Harness entry was added.
 
 ### G10 — Headless execution
 
