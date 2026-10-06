@@ -60,7 +60,7 @@ Ler
 | 20 | Agentic Systems Foundations — `Available / student-ready` |
 | 21 | Planning and Goal Decomposition — `review-candidate` |
 
-A revisão reengenheirada foi submetida a uma bateria formal de revalidação. As **Aulas 11, 13C, 15, 18 e 19** concluíram execução e inspeção pedagógica e estão `Available / student-ready`. As **Aulas 10, 11, 13C, 15, 18 e 19** concluíram execução e inspeção pedagógica e estão `Available / student-ready`. As **Aulas 14, 16 e 17** já passaram no Kaggle, mas ainda aguardam fechamento da inspeção pedagógica. A **Aula 20** inaugura o bloco de Agentic Systems e está `Available / student-ready`. As demais aulas permanecem sob seus readiness gates específicos; execução bem-sucedida, por si só, não implica promoção.
+A revisão reengenheirada foi submetida a uma bateria formal de revalidação. As **Aulas 10, 11, 13C, 15, 18, 19 e 20** concluíram inspeção pedagógica e possuem revisão validada como `Available / student-ready`. As **Aulas 14, 16 e 17** já passaram no Kaggle, mas ainda aguardam fechamento da inspeção pedagógica. A revisão pedagógica mais recente da **Aula 20** acrescentou interpretação guiada das evidências, progress failure, containment vs recovery, matriz de decisão arquitetural e o conceito de **Agent Harness**; essa revisão aguarda apenas a reexecução técnica final. A **Aula 21 — Planning and Goal Decomposition** está em `review-candidate`. Execução bem-sucedida, por si só, não implica promoção.
 
 ## Organização conceitual
 
@@ -77,7 +77,7 @@ III — Intelligent Orchestration
 → routing, quality gates, cascades e utility
 
 IV — Agentic Systems
-→ tools, workflows, execução e autonomia
+→ tools, workflows, harness, execução, planning e autonomia
 ```
 
 A **Aula 13C** é o ponto formal de transição entre Model Engineering e Intelligent Orchestration e prepara a entrada em Agentic Systems.
@@ -87,6 +87,55 @@ Observabilidade, segurança, governança, reprodutibilidade, custo, latência, a
 A especificação arquitetural está registrada em `docs/architecture/TIL-AIE-001-agentic-intelligence-evolution.md`.
 
 Capstone — Kaggle permanece como etapa integradora futura.
+
+## Agent Harness e a transição para sistemas agentes
+
+A **Aula 20 — Agentic Systems Foundations** introduz autonomia controlada na escolha da próxima ação e consolida uma separação arquitetural importante:
+
+```text
+Decision Provider
+→ propõe o que fazer
+
+Agent Harness
+→ controla o runtime da decisão
+→ estado
+→ action space
+→ governance
+→ capability execution
+→ observation / state update
+→ step budget
+→ termination
+→ human escalation
+→ observability
+```
+
+No TIL, `Agent Harness` é uma definição operacional para a camada executável ao redor do decision provider. Ela não é sinônimo de modelo, framework, workflow ou MCP.
+
+```text
+MCP
+→ padroniza integração de capabilities
+
+Workflow
+→ coordena transições ou sequências
+
+Agent Harness
+→ controla o runtime do comportamento agente
+
+Orchestrator
+→ coordena múltiplos componentes, fluxos ou agentes
+```
+
+A evidência da Aula 20 também reforçou uma regra central:
+
+```text
+maior autonomia
+≠
+maior utility
+```
+
+Nos cenários medidos, o agentic loop chegou aos mesmos desfechos do workflow com maior overhead decisório. O Failure Lab mostrou ainda um `progress failure`: ações válidas podem se repetir sem progresso, justificando controles explícitos de terminação.
+
+A próxima unidade, **Aula 21 — Planning and Goal Decomposition**, parte exatamente dessa limitação: escolher apenas a próxima ação não equivale a construir, validar e revisar um plano explícito.
 
 ## Da avaliação de modelos à avaliação de sistemas
 
@@ -354,7 +403,7 @@ O **EDU-ORCH-002** também foi concluído, medindo diretamente quatro configura�
 
 A Aula 13C também passou a cobrir a transição de **Model Intelligence para Agentic Systems**, conectando routing, orchestration, tools, computer use, observability, human oversight e utility.
 
-O movimento curricular até MCP já foi implementado e a **Aula 20 — Agentic Systems Foundations** foi iniciada. O foco atual é **validar a primeira unidade de Agentic Systems sem perder a fila de inspeções pedagógicas pendentes**, preservando o princípio de que toda complexidade adicional deve ser justificada por evidência.
+O movimento curricular até MCP está implementado e a **Aula 20 — Agentic Systems Foundations** foi pedagogicamente consolidada, incluindo Agent Harness, interpretação das evidências, progress failure e decisão arquitetural por utility. A revisão atual da Aula 20 aguarda apenas a reexecução técnica final. A **Aula 21 — Planning and Goal Decomposition** já possui especificação, notebook inicial, readiness gate e metadata Kaggle e permanece em `review-candidate`.
 
 ## Licenciamento
 
