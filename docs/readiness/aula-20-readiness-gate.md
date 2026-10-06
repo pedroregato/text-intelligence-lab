@@ -2,7 +2,7 @@
 
 ## Status
 
-AVAILABLE / STUDENT-READY — current revision validated.
+AVAILABLE / STUDENT-READY — previous validated revision; current pedagogical revision requires fresh execution.
 
 ## Scope
 
@@ -146,7 +146,7 @@ Generated PT-BR/EN/HTML glossary views must still be regenerated and validated.
 
 ### G10 — Headless execution
 
-**PASS — CURRENT REVISION**
+**RECHECK REQUIRED — PEDAGOGICAL REVISION UPDATED NOTEBOOK**
 
 The current fairness-corrected revision completed end-to-end with `jupyter nbconvert --execute` on Windows. Workflow and agentic loop now start with the same information and both obtain `lesson_status` through the same capability.
 
@@ -159,7 +159,7 @@ The notebook produced the executed artifact successfully. Comparative evidence a
 
 ### G11 — Kaggle Run All
 
-**PASS — CURRENT REVISION**
+**RECHECK REQUIRED — PEDAGOGICAL REVISION UPDATED NOTEBOOK**
 
 Kaggle version 2 completed successfully for `pedrogentil/til-20-agentic-systems-foundations` with the lesson's execution contract preserved.
 
