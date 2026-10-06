@@ -278,6 +278,29 @@ web/index.html
 
 Os notebooks apontam para o glossário nos conceitos centrais de cada aula.
 
+## Estudo de caso transversal — AI Banking / Machine Customer
+
+O TIL passa a manter também o estudo de caso:
+
+```text
+CASE-AI-BANKING-001 — From Copilot to Machine Customer
+```
+
+Ele conecta:
+
+```text
+enterprise AI
+→ orchestration
+→ governance
+→ Agent Harness
+→ operational KPI
+→ business value
+→ customer agents
+→ agent-to-agent interaction
+```
+
+O case separa explicitamente resultado observado, meta prospectiva, interpretação arquitetural e afirmações ainda sem fonte recuperada. Ele atravessa as Aulas 13C, 17, 18, 19, 20 e 21 e prepara discussões futuras sobre delegated agents, machine customers, identity, authorization e negotiation.
+
 ## Biblioteca Viva de Referências
 
 O TIL também mantém referências externas em uma fonte canônica estruturada:
