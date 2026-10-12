@@ -368,7 +368,7 @@ Arquitetar
 
 O GitHub é a fonte de verdade do projeto.
 
-Os notebooks oficiais usam **internet desabilitada por padrão**. A internet é habilitada apenas quando uma dependência externa fizer parte intencionalmente do objetivo pedagógico.
+Os notebooks oficiais usam **internet desabilitada por padrão**. Na configuração Kaggle atual, todas as aulas publicadas estão com `enable_internet = false` e `enable_gpu = false`. Quando uma dependência externa é necessária, o TIL prefere anexá-la como model source ou dataset source do Kaggle, preservando a execução offline.
 
 Dados pequenos podem ser embutidos no notebook. Datasets maiores e modelos externos devem, quando apropriado, ser versionados ou anexados via recursos do Kaggle.
 
