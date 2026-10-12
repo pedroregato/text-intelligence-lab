@@ -2,7 +2,7 @@
 
 ## Status
 
-PROPOSED — architecture defined; implementation not started.
+REVIEW CANDIDATE — notebook implemented; execution and pedagogical validation pending.
 
 ## Scope
 
@@ -64,7 +64,22 @@ Canonical entries added for:
 Generated glossary views still need regeneration.
 
 ### G12 — Notebook implementation
-**PENDING**
+**PASS — IMPLEMENTED**
+
+The current notebook includes:
+
+- explicit shared state;
+- vendor-neutral nodes and transition policy;
+- conditional routing;
+- in-memory checkpoint store;
+- interrupt / resume;
+- durable-resume simulation;
+- retry / recovery distinction;
+- procedural baseline;
+- comparative evidence table;
+- checkpoint failure lab;
+- Architecture Decision Lab;
+- LangGraph mapping only after mechanism-first instruction.
 
 ### G13 — Headless execution
 **PENDING**
