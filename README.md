@@ -81,11 +81,11 @@ Ler
 | 19 | Model Context Protocol (MCP) | Student-ready |
 | 20 | Agentic Systems Foundations | Em revisão |
 | 21 | Planning and Goal Decomposition | Student-ready |
-| 22 | Agent Orchestration Runtimes | Planejada |
+| 22 | Agent Orchestration Runtimes | Em revisão |
 
 A promoção é baseada em evidência da **revisão atual** do notebook. Um `Kaggle COMPLETE` isolado não implica `Student-ready`. O estado canônico de revalidação está documentado em `docs/readiness/`, especialmente em `TIL-REENGINEERING-VALIDATION-BATCH.md` e nos readiness gates de cada aula.
 
-A Aula 20 possui uma revisão anterior validada, mas a revisão pedagógica atual requer nova execução técnica antes de nova promoção. A Aula 21 está formalmente promovida na revisão atual.
+A Aula 20 possui uma revisão anterior validada, mas a revisão pedagógica atual requer nova execução técnica antes de nova promoção. A Aula 21 está formalmente promovida na revisão atual. A Aula 22 — Agent Orchestration Runtimes já possui notebook-base implementado e permanece em revisão até concluir glossário, execução headless, Kaggle Run All e inspeção pedagógica.
 
 ## Organização conceitual
 
