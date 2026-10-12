@@ -147,3 +147,33 @@ Uma aula só deve ser considerada student-ready após:
 6. glossário atualizado;
 7. revisão pedagógica;
 8. aceite em perspectiva de aluno.
+## Artifact Versioning Policy
+
+Generated execution artifacts are **local by default**.
+
+```text
+source notebook
+→ tracked
+
+local headless / executed output
+→ ignored
+
+measured evidence selected for the course
+→ promoted explicitly
+→ tracked with provenance
+```
+
+Default local artifacts include:
+
+- `*.headless.ipynb`;
+- `*.executed.ipynb`;
+- `.artifacts/`;
+- temporary Kaggle output directories;
+- local backup directories.
+
+An executed notebook becomes repository evidence only through an explicit promotion decision. Existing tracked evidence artifacts remain tracked even when a matching ignore rule exists; new evidence artifacts must be deliberately added (for example with `git add -f`) and documented with their provenance.
+
+This policy keeps `git status` focused on intentional source changes while preserving the TIL principle:
+
+> **Execution produces evidence, but not every execution artifact is canonical evidence.**
+
