@@ -219,3 +219,17 @@ __marimo__/
 
 # PyCharm local project settings
 .idea/
+
+# TIL local execution artifacts
+# Generated notebooks are local by default. Promote an executed notebook to
+# versioned evidence only by an explicit repository decision.
+**/*.executed.ipynb
+**/*.headless.ipynb
+
+# Local experiment / Kaggle scratch outputs
+.artifacts/
+tmp-kaggle-*/
+my-new-dataset/
+
+# Local backups are never canonical course sources
+kaggle/*-local-backup/
