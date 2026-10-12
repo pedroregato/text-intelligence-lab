@@ -82,7 +82,21 @@ The current notebook includes:
 - LangGraph mapping only after mechanism-first instruction.
 
 ### G13 — Headless execution
-**PENDING**
+**PASS — CURRENT REVISION**
+
+Observed local execution on Windows with `jupyter nbconvert --execute` completed successfully and produced:
+
+```text
+course/22-agent-orchestration-runtimes/
+└── 22-til-agent-orchestration-runtimes.executed.ipynb
+```
+
+The observed warnings were environmental rather than lesson failures:
+
+- Tornado/ZMQ registered an additional selector thread because the Windows Proactor event loop does not implement the required `add_reader` family;
+- the temporary local Jupyter kernel reported unencrypted TCP transport.
+
+The notebook executed to completion under the target local deterministic contract.
 
 ### G14 — Kaggle Run All
 **PENDING**
