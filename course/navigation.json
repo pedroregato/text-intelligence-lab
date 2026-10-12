@@ -5,8 +5,8 @@
   },
   "roadmap_url": "https://github.com/pedroregato/text-intelligence-lab/blob/main/docs/ROADMAP.md",
   "next_planned": {
-    "label": "Aula 22 — Agent Orchestration Runtimes",
-    "status": "proposed"
+    "label": "Próxima unidade do TIL",
+    "status": "to-be-defined"
   },
   "lessons": [
     {
@@ -158,6 +158,13 @@
       "path": "course/21-planning-and-goal-decomposition/21-til-planning-and-goal-decomposition.ipynb",
       "url": "https://www.kaggle.com/code/pedrogentil/til-21-planning-and-goal-decomposition",
       "published": true
+    },
+    {
+      "id": "22",
+      "title": "Aula 22 — Agent Orchestration Runtimes",
+      "path": "course/22-agent-orchestration-runtimes/22-til-agent-orchestration-runtimes.ipynb",
+      "url": "https://www.kaggle.com/code/pedrogentil/til-22-agent-orchestration-runtimes",
+      "published": false
     }
   ]
 }
