@@ -139,18 +139,33 @@ Cenários:
 4. falha transitória com resume;
 5. estado persistido e retomada posterior.
 
-Comparar:
+Comparar em duas camadas.
+
+### Evidência observada
 
 - task success;
-- code complexity;
-- state visibility;
-- recovery capability;
-- restart cost;
-- number of transitions;
-- persistence overhead;
+- outcome;
+- node executions;
+- graph transitions, sem misturá-las com nodes;
+- tool calls;
+- retries;
+- resumes;
+- checkpoints;
+- reconstructed steps após perda de processo;
 - human intervention;
-- cost proxy;
-- latency proxy.
+- state visibility;
+- recovery capability.
+
+### Utility contextual
+
+Qualquer score agregado deve:
+
+- declarar os pesos;
+- aplicar a mesma função às arquiteturas comparadas;
+- distinguir observação de preferência;
+- permitir que a conclusão mude com o contexto.
+
+O laboratório não deve produzir um “vencedor” por meio de pesos escondidos ou fórmulas diferentes por arquitetura.
 
 ## Architecture Decision Lab
 
@@ -170,6 +185,25 @@ Critérios:
 - observabilidade;
 - custo operacional;
 - risco.
+
+## Agentic Routing Bridge
+
+Depois de consolidar o runtime determinístico, a aula deve reconectar-se à Aula 20:
+
+```text
+state
+→ Decision Provider
+→ proposed transition
+→ governance
+→ accepted / rejected transition
+→ orchestration runtime
+```
+
+O Decision Provider pode ser simulado e determinístico. O objetivo é mostrar que:
+
+- agentic decision-making não é sinônimo de orchestration;
+- o provider propõe, mas o runtime governa a execução;
+- uma transição proposta precisa respeitar o contrato de transições permitidas.
 
 ## LangGraph as Reference Implementation
 
@@ -269,18 +303,26 @@ A aula só deve ser promovida quando:
 
 1. procedural vs graph estiver explicitamente comparado;
 2. shared state for observável;
-3. conditional routing executável;
-4. checkpoint executável;
-5. interrupt/resume executável;
-6. recovery demonstrado;
-7. human-in-the-loop demonstrado;
-8. overhead de runtime medido;
-9. Architecture Decision Lab concluído;
-10. LangGraph permanecer opcional;
-11. Glossário Vivo integrado;
-12. headless PASS;
-13. Kaggle COMPLETE;
-14. inspeção pedagógica final.
+3. conditional routing real estiver executável;
+4. checkpoint estiver consistente e executável;
+5. interrupt/resume ocorrer sob controle do runtime;
+6. durable resume demonstrar perda de processo explicitamente;
+7. retry, resume e recovery estiverem semanticamente separados;
+8. falhas de runtime terminarem como failed, não completed;
+9. human-in-the-loop estiver demonstrado;
+10. nodes e transitions não forem misturados na mesma métrica;
+11. evidência observada estiver separada de utility contextual;
+12. qualquer função de utility usar pesos explícitos e arquitetura-neutros;
+13. Decision Provider estiver reconectado à orquestração sob governança;
+14. Architecture Decision Lab estiver concluído;
+15. Coding Lab estiver disponível;
+16. respostas de referência estiverem disponíveis para a checagem final;
+17. LangGraph permanecer opcional;
+18. Glossário Vivo estiver integrado;
+19. headless PASS na revisão atual;
+20. Kaggle COMPLETE na revisão atual;
+21. outputs salvos estiverem consistentes com a narrativa;
+22. inspeção pedagógica final estiver concluída.
 
 ## Exit Condition
 
