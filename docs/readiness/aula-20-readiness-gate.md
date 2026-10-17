@@ -2,7 +2,24 @@
 
 ## Status
 
-AVAILABLE / STUDENT-READY — previous validated revision; current pedagogical revision requires fresh execution.
+REVIEW CANDIDATE v2 — consolidation revision (2026-10-17); previous student-ready revision superseded until G10–G12 pass again.
+
+## Consolidation revision — 2026-10-17
+
+Changes:
+
+- new scenario `partially_done`: both architectures receive the same already-observed facts; the workflow repeats them, the agentic loop skips them;
+- `initial_state` applies known facts identically to both architectures;
+- new section explaining why a deterministic `if` chain still occupies a decision-provider slot (decision recalculated from observed state vs position in a sequence);
+- the fixed `cost_proxy` (penalty of 0.5 per decision) replaced by counted work (`tool_calls`, `redundant_actions`, `decisions`) plus an explicit `decision_weight` sensitivity table;
+- "Resultado observado" no longer hard-codes numbers; it guides the student to read the output;
+- comprehension check and synthesis updated; stale duplicated footer removed.
+
+Local headless execution (Python 3.13, CPU, no Internet): completed without errors. Observed:
+
+- `partially_done`: workflow 5 tool calls / 3 redundant; agentic loop 2 tool calls / 0 redundant / 2 decisions;
+- agentic loop cheaper in `partially_done` for `decision_weight` < 1.5, tie at 1.5, more expensive above;
+- the other four scenarios: same tool calls, the loop only adds decisions.
 
 ## Scope
 
@@ -101,9 +118,9 @@ Ambiguous requests and missing approval can terminate in a controlled human esca
 
 ### G6 — Comparative evidence
 
-**PASS — IMPLEMENTED**
+**PASS — REVISED 2026-10-17**
 
-The same scenarios are executed by:
+Five scenarios, including the positive case `partially_done`, are executed by:
 
 - deterministic workflow;
 - minimal agentic loop.
@@ -111,13 +128,13 @@ The same scenarios are executed by:
 The comparison records:
 
 - success;
-- steps;
-- decision count;
 - tool calls;
+- redundant actions;
+- decisions;
 - human intervention;
 - termination reason;
-- cost proxy;
-- latency proxy.
+
+plus a `decision_weight` sensitivity table instead of a fixed cost proxy.
 
 ### G7 — Failure taxonomy
 
@@ -165,7 +182,7 @@ The PT-BR, EN and HTML glossary views were regenerated after the Agent Harness e
 
 ### G10 — Headless execution
 
-**RECHECK REQUIRED — PEDAGOGICAL REVISION UPDATED NOTEBOOK**
+**RECHECK REQUIRED — CONSOLIDATION REVISION 2026-10-17** (local Python run passed; repeat with the standard `nbconvert` runbook)
 
 The current fairness-corrected revision completed end-to-end with `jupyter nbconvert --execute` on Windows. Workflow and agentic loop now start with the same information and both obtain `lesson_status` through the same capability.
 
@@ -184,7 +201,9 @@ Kaggle version 2 completed successfully for `pedrogentil/til-20-agentic-systems-
 
 ### G12 — Pedagogical inspection
 
-**PASS — CURRENT REVISION**
+**RECHECK REQUIRED — CONSOLIDATION REVISION 2026-10-17**
+
+The evidence below refers to the previous revision.
 
 Observed comparative evidence is intentionally non-triumphal:
 

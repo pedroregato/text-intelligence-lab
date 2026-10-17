@@ -85,7 +85,7 @@ Princípio:
 | 15 | Available / student-ready |
 | 18 | Available / student-ready |
 | 19 | Available / student-ready |
-| 20 | Available / student-ready |
+| 20 | Review candidate v2 — consolidation revision pending execution |
 | 21 | Available / student-ready |
 | 10 | Available / student-ready |
 | 14 | Kaggle PASS / pedagogical review pending |
