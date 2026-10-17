@@ -88,20 +88,21 @@ The current notebook includes:
 - LangGraph mapping only after mechanism-first instruction.
 
 ### G13 — Headless execution
-**PENDING — FRESH RUN REQUIRED FOR v2**
+**PASS — CURRENT v2**
 
-A prior revision passed local headless execution, but the current v2 changed:
+Fresh local execution of the hardened v2 completed successfully with `jupyter nbconvert --execute` and produced:
 
-- routing semantics;
-- resume control;
-- failure states;
-- procedural baseline;
-- evidence metrics;
-- contextual utility analysis;
-- agentic routing bridge;
-- coding exercises.
+```text
+course/22-agent-orchestration-runtimes/
+└── 22-til-agent-orchestration-runtimes.executed.ipynb
+```
 
-Therefore the earlier PASS is retained only as historical evidence and does **not** promote the current revision.
+Observed warnings remained environmental rather than lesson failures:
+
+- Tornado/ZMQ registered an additional selector thread because the Windows Proactor event loop does not implement the required `add_reader` family;
+- the temporary local Jupyter kernel reported unencrypted TCP transport.
+
+The current v2 therefore passes the local deterministic execution gate.
 
 ### G14 — Kaggle Run All
 **PENDING — CURRENT v2 NOT YET EXECUTED**
