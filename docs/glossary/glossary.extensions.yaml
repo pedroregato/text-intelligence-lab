@@ -1000,15 +1000,15 @@ terms:
     pt-BR:
       term: "Checkpoint"
       english_term: "Checkpoint"
-      definition: "Registro persistente ou explícito de um estado intermediário que permite inspecionar ou retomar um workflow."
-      til_context: "Na Aula 18, o conceito é usado no laboratório TIL Lesson Release Workflow."
-      example: "O aluno executa, interrompe, retoma e observa um workflow determinístico sob regras explícitas."
+      definition: "Snapshot persistido ou registro explícito de um estado intermediário de execução, usado para inspeção, retomada ou recuperação."
+      til_context: "Na Aula 18, o conceito aparece no laboratório TIL Lesson Release Workflow. Na Aula 22, passa a sustentar interrupt/resume e durable execution, permitindo que uma execução continue sem depender apenas da memória do processo original."
+      example: "Salvar o estado antes de uma aprovação humana permite retomar o fluxo posteriormente sem reiniciar todas as etapas já concluídas."
     en:
       term: "Checkpoint"
-      definition: "Persistent or explicit record of an intermediate state that allows a workflow to be inspected or resumed."
-      til_context: "In Lesson 18, the concept is used in the TIL Lesson Release Workflow lab."
-      example: "The learner executes, interrupts, resumes, and observes a deterministic workflow under explicit rules."
-    related: []
+      definition: "Persisted snapshot or explicit record of an intermediate execution state, used for inspection, resumption, or recovery."
+      til_context: "In Lesson 18, the concept appears in the TIL Lesson Release Workflow lab. In Lesson 22, it supports interrupt/resume and durable execution, allowing a run to continue without relying only on the original process memory."
+      example: "Saving state before human approval allows the flow to resume later without restarting all previously completed steps."
+    related: [orchestration-runtime, durable-execution, interrupt-resume, human-escalation]
 
   - id: retryable-error
     category: production
@@ -1702,22 +1702,6 @@ terms:
       til_context: In Lesson 22, an orchestration runtime is compared with procedural code to test when explicit coordination earns its complexity.
       example: A flow can pause for human approval, persist state, and resume from a checkpoint after the decision.
     related: [agent-harness, planning, governance]
-
-  - id: checkpoint
-    category: engineering
-    lesson_first_seen: "22"
-    pt-BR:
-      term: Checkpoint
-      english_term: Checkpoint
-      definition: Snapshot persistido do estado de execução em um ponto específico, usado para inspeção, retomada ou recuperação.
-      til_context: Na Aula 22, checkpoints tornam possível interromper e retomar uma execução sem depender apenas de memória em processo.
-      example: Salvar o estado antes de uma aprovação humana permite retomar o fluxo posteriormente.
-    en:
-      term: Checkpoint
-      definition: Persisted snapshot of execution state at a specific point, used for inspection, resumption, or recovery.
-      til_context: In Lesson 22, checkpoints enable pausing and resuming execution without relying only on in-process memory.
-      example: Saving state before human approval allows the flow to resume later.
-    related: [orchestration-runtime, durable-execution, human-escalation]
 
   - id: durable-execution
     category: engineering
