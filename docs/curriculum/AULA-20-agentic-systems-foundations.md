@@ -2,7 +2,7 @@
 
 ## Status
 
-AVAILABLE / STUDENT-READY — pedagogically revised; current notebook revision awaiting final re-execution.
+REVIEW CANDIDATE v2 — consolidated with a positive scenario and counted costs; awaiting execution and pedagogical gates.
 
 ## Role in the TIL
 
@@ -278,20 +278,21 @@ Executar workflow e agentic loop sobre os mesmos cenários:
 1. aula pronta e aprovação disponível;
 2. aula não pronta;
 3. solicitação ambígua;
-4. aprovação ausente.
+4. aprovação ausente;
+5. pedido retomado com estado parcialmente conhecido (`partially_done`).
 
-Comparar:
+O quinto cenário é o caso positivo: os fatos já observados são entregues igualmente às duas arquiteturas; o workflow refaz o trabalho pela posição na sequência e o agentic loop o pula por consultar o estado.
+
+Comparar, por contagem:
 
 - task success;
-- steps executed;
-- decision count;
 - tool calls;
-- unnecessary actions;
+- redundant actions (trabalho refeito cujo resultado já era conhecido);
+- decisions;
 - human intervention;
-- policy violations;
-- termination reason;
-- cost proxy;
-- latency proxy.
+- termination reason.
+
+Custo não é uma coluna fixa. A aula soma `tool_calls + decision_weight × decisions` e varia `decision_weight` (0 a 2), mostrando em que ponto a vantagem do loop desaparece. Isso prepara a Aula 23, em que decidir passa a custar uma chamada de modelo.
 
 Pergunta de evidência:
 
