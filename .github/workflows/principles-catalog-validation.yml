@@ -1,0 +1,21 @@
+name: Principles Catalog Validation
+
+on:
+  pull_request:
+    paths:
+      - "docs/principles/**"
+      - "docs/proposals/TIL-EP-001-engineering-principles.md"
+      - "scripts/validate_principles_catalog.py"
+      - ".github/workflows/principles-catalog-validation.yml"
+  workflow_dispatch:
+
+jobs:
+  validate-principles:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate catalog contract and literal lemmas
+        run: python scripts/validate_principles_catalog.py
