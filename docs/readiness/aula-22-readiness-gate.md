@@ -2,7 +2,7 @@
 
 ## Status
 
-REVIEW CANDIDATE — notebook implemented; execution and pedagogical validation pending.
+REVIEW CANDIDATE v2 — runtime semantics, evidence design and pedagogy hardened; fresh execution and final inspection required.
 
 ## Scope
 
@@ -69,40 +69,58 @@ Generated glossary views still need regeneration.
 The current notebook includes:
 
 - explicit shared state;
-- vendor-neutral nodes and transition policy;
-- conditional routing;
-- in-memory checkpoint store;
-- interrupt / resume;
-- durable-resume simulation;
-- retry / recovery distinction;
-- procedural baseline;
-- comparative evidence table;
-- checkpoint failure lab;
+- vendor-neutral nodes and governed transition policy;
+- real conditional routing through a revision branch;
+- in-memory checkpoint store with checkpoint counters persisted consistently;
+- interrupt / resume controlled by the runtime rather than by manual node mutation;
+- durable-resume simulation with explicit process-loss semantics;
+- distinct terminal semantics for completed, interrupted, recoverable error and failed;
+- retry / resume / recovery distinction;
+- fair procedural baseline with real pause/resume behavior;
+- reconstruction work measured after process loss instead of injected as an arbitrary restart constant;
+- comparable raw metrics with node executions separated from graph transitions;
+- contextual utility profiles using the same declared weights across architectures;
+- Decision Provider bridge back to Aula 20 with governed agentic routing;
+- invalid-checkpoint failure lab;
 - Architecture Decision Lab;
+- Coding Lab with checkpoint and compensation challenges;
+- reference answers for the comprehension check;
 - LangGraph mapping only after mechanism-first instruction.
 
 ### G13 — Headless execution
-**PASS — CURRENT REVISION**
+**PENDING — FRESH RUN REQUIRED FOR v2**
 
-Observed local execution on Windows with `jupyter nbconvert --execute` completed successfully and produced:
+A prior revision passed local headless execution, but the current v2 changed:
 
-```text
-course/22-agent-orchestration-runtimes/
-└── 22-til-agent-orchestration-runtimes.executed.ipynb
-```
+- routing semantics;
+- resume control;
+- failure states;
+- procedural baseline;
+- evidence metrics;
+- contextual utility analysis;
+- agentic routing bridge;
+- coding exercises.
 
-The observed warnings were environmental rather than lesson failures:
-
-- Tornado/ZMQ registered an additional selector thread because the Windows Proactor event loop does not implement the required `add_reader` family;
-- the temporary local Jupyter kernel reported unencrypted TCP transport.
-
-The notebook executed to completion under the target local deterministic contract.
+Therefore the earlier PASS is retained only as historical evidence and does **not** promote the current revision.
 
 ### G14 — Kaggle Run All
-**PENDING**
+**PENDING — CURRENT v2 NOT YET EXECUTED**
+
+A previous revision reached Kaggle execution, but v2 must receive a fresh Run All after local headless validation.
 
 ### G15 — Pedagogical inspection
-**PENDING**
+**PENDING — FINAL REVIEW AFTER EXECUTION**
+
+Final inspection must confirm:
+
+- no manual node jump during resume;
+- invalid runtime state ends as failed;
+- raw metrics compare compatible quantities;
+- utility weights are explicit and architecture-neutral;
+- transient failure narrative does not claim a graph advantage that the evidence does not show;
+- human interrupt and durable resume remain semantically distinct;
+- Decision Provider integration preserves runtime governance;
+- saved outputs match the written interpretation.
 
 ## LangGraph policy
 
