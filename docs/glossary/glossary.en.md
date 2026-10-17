@@ -1484,11 +1484,11 @@ Property by which repeating an operation with the same input does not produce un
 
 ## Checkpoint
 
-Persistent or explicit record of an intermediate state that allows a workflow to be inspected or resumed.
+Persisted snapshot or explicit record of an intermediate execution state, used for inspection, resumption, or recovery.
 
-**In TIL:** In Lesson 18, the concept is used in the TIL Lesson Release Workflow lab.
+**In TIL:** In Lesson 18, the concept appears in the TIL Lesson Release Workflow lab. In Lesson 22, it supports interrupt/resume and durable execution, allowing a run to continue without relying only on the original process memory.
 
-**Example:** The learner executes, interrupts, resumes, and observes a deterministic workflow under explicit rules.
+**Example:** Saving state before human approval allows the flow to resume later without restarting all previously completed steps.
 
 **First lesson:** 18
 
@@ -1911,3 +1911,33 @@ The executable layer around a decision provider that controls how state, context
 **Example:** A decision provider may propose publish_simulated, but the harness applies the approval policy, executes the allowed capability, records the result, and updates state.
 
 **First lesson:** 20
+
+## Orchestration Runtime
+
+Execution layer that coordinates state, transitions, branching, persistence, interrupts, resumption, and observability for a workflow or agent system.
+
+**In TIL:** In Lesson 22, an orchestration runtime is compared with procedural code to test when explicit coordination earns its complexity.
+
+**Example:** A flow can pause for human approval, persist state, and resume from a checkpoint after the decision.
+
+**First lesson:** 22
+
+## Durable Execution
+
+Ability to preserve execution progress so a run can survive interruptions, failures, or long pauses and continue later.
+
+**In TIL:** In Lesson 22, durable execution is treated as a capability justified by long-running, interruptible, or failure-prone processes.
+
+**Example:** An approval process can pause for hours and resume without restarting all completed steps.
+
+**First lesson:** 22
+
+## Interrupt and Resume
+
+Pattern in which execution pauses in a controlled way, preserves context and state, and continues when an external condition is satisfied.
+
+**In TIL:** In Lesson 22, interrupt/resume demonstrates human-in-the-loop and controlled continuation.
+
+**Example:** The system pauses before a sensitive action, waits for human approval, and resumes from persisted state.
+
+**First lesson:** 22

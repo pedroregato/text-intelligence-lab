@@ -1782,11 +1782,11 @@ Propriedade pela qual repetir uma operação com a mesma entrada não produz efe
 
 **English:** Checkpoint
 
-Registro persistente ou explícito de um estado intermediário que permite inspecionar ou retomar um workflow.
+Snapshot persistido ou registro explícito de um estado intermediário de execução, usado para inspeção, retomada ou recuperação.
 
-**No TIL:** Na Aula 18, o conceito é usado no laboratório TIL Lesson Release Workflow.
+**No TIL:** Na Aula 18, o conceito aparece no laboratório TIL Lesson Release Workflow. Na Aula 22, passa a sustentar interrupt/resume e durable execution, permitindo que uma execução continue sem depender apenas da memória do processo original.
 
-**Exemplo:** O aluno executa, interrompe, retoma e observa um workflow determinístico sob regras explícitas.
+**Exemplo:** Salvar o estado antes de uma aprovação humana permite retomar o fluxo posteriormente sem reiniciar todas as etapas já concluídas.
 
 **Primeira aula:** 18
 
@@ -2293,3 +2293,39 @@ Camada executável que envolve o decision provider e controla como estado, conte
 **Exemplo:** Um decision provider pode propor publish_simulated, mas o harness aplica a política de aprovação, executa a capability permitida, registra o resultado e atualiza o estado.
 
 **Primeira aula:** 20
+
+## Runtime de orquestração
+
+**English:** Orchestration Runtime
+
+Camada de execução que coordena estado, transições, branching, persistência, interrupções, retomada e observabilidade de um fluxo ou sistema agente.
+
+**No TIL:** Na Aula 22, o runtime de orquestração será comparado com código procedural para verificar quando a coordenação explícita conquista sua complexidade.
+
+**Exemplo:** Um fluxo pode pausar para aprovação humana, persistir o estado e retomar do checkpoint depois da decisão.
+
+**Primeira aula:** 22
+
+## Execução durável
+
+**English:** Durable Execution
+
+Capacidade de preservar o progresso de uma execução para que ela possa sobreviver a interrupções, falhas ou pausas prolongadas e continuar posteriormente.
+
+**No TIL:** Na Aula 22, durable execution será tratada como capacidade que deve ser justificada por processos longos, interrompíveis ou sujeitos a falhas.
+
+**Exemplo:** Um processo de aprovação pode parar por horas e retomar sem reiniciar todas as etapas já concluídas.
+
+**Primeira aula:** 22
+
+## Interrupção e retomada
+
+**English:** Interrupt and Resume
+
+Padrão em que uma execução é pausada de forma controlada, preserva contexto e estado e continua quando uma condição externa é satisfeita.
+
+**No TIL:** Na Aula 22, interrupt/resume será usado para demonstrar human-in-the-loop e retomada controlada.
+
+**Exemplo:** O sistema pausa antes de uma ação sensível, aguarda aprovação humana e retoma do estado persistido.
+
+**Primeira aula:** 22
