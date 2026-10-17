@@ -18,6 +18,7 @@ A unidade de análise é **princípio → critério verificável → evidência 
 - [Structured catalog](principles-catalog.yaml): IDs, estados, lemas literais, critérios e proveniência para validações futuras.
 - [Principles to lessons](principles-to-lessons.md): mapa contextual de aulas, evidências e pontos de integração propostos.
 - [Review and adoption](REVIEW-AND-ADOPTION.md): avaliação crítica, níveis de alegação, rubrica e protocolo de revisão adversarial.
+- [Worked decision — Aula 21](EXAMPLE-AULA-21-DECISION.md): uma ficha preenchida, com hipótese, evidência, limites e decisão contextual.
 
 ## Protocolo editorial
 
@@ -40,12 +41,25 @@ A unidade de análise é **princípio → critério verificável → evidência 
 
 Os links para aulas abaixo são um **mapa piloto**, não integração efetiva aos notebooks. Nenhuma alteração dos notebooks ou do glossário é introduzida nesta revisão.
 
+## Validação técnica do catálogo
+
+Execute na raiz do repositório:
+
+```powershell
+python scripts/validate_principles_catalog.py
+```
+
+O script utiliza somente a biblioteca padrão do Python e verifica IDs, preservação literal dos oito lemas, estado `Proposed`, campos obrigatórios e existência de arquivos de proveniência. O mesmo comando integra `.github/workflows/principles-catalog-validation.yml`.
+
+**Limite:** este é um validador lexical para o formato controlado atual de YAML, não um parser YAML genérico nem uma aprovação de conteúdo. Qualidade técnica, implicações pedagógicas e mudança de status continuam dependendo de revisão humana.
+
 ## Gates desta proposta
 
 - [x] Preservar oito lemas originais na ordem definida em TIL-EP-001.
 - [x] Separar princípios, critérios e evidências.
 - [x] Fornecer exemplos, limitações e verificações para cada princípio.
 - [x] Associar Aula 21 a observações com proveniência.
+- [x] Incluir exemplo de decisão preenchida e validador automatizado do contrato documental.
 - [x] Revisão crítica preliminar com testes de aplicação e contrapontos documentados.
 - [ ] Revisão humana do catálogo e dos termos.
 - [ ] Decisão de adoção, com aprovação e registro apropriados.
