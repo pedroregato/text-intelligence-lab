@@ -110,18 +110,31 @@ The current v2 therefore passes the local deterministic execution gate.
 A previous revision reached Kaggle execution, but v2 must receive a fresh Run All after local headless validation.
 
 ### G15 — Pedagogical inspection
-**PENDING — FINAL REVIEW AFTER EXECUTION**
+**PASS — CURRENT v2 LOCAL EVIDENCE REVIEW**
 
-Final inspection must confirm:
+Fresh executed outputs were inspected and confirmed:
 
-- no manual node jump during resume;
-- invalid runtime state ends as failed;
-- raw metrics compare compatible quantities;
-- utility weights are explicit and architecture-neutral;
-- transient failure narrative does not claim a graph advantage that the evidence does not show;
-- human interrupt and durable resume remain semantically distinct;
-- Decision Provider integration preserves runtime governance;
-- saved outputs match the written interpretation.
+- resume is controlled by the runtime rather than by manual node mutation;
+- invalid runtime state ends as `failed / invalid_node`;
+- `node_executions` is comparable across architectures and graph transitions are reported separately;
+- utility profiles use explicit, architecture-neutral formulas;
+- transient failure shows no artificial graph advantage;
+- human interrupt and durable resume are behaviorally distinct;
+- durable resume is the only current scenario where the graph runtime achieves lower burden under both declared utility profiles;
+- the Decision Provider bridge accepts a valid `prepare` proposal and rejects an unsafe direct `publish` proposal;
+- the saved local outputs are consistent with the written interpretation.
+
+Observed evidence summary:
+
+```text
+linear              → procedural lower burden
+branching           → procedural lower burden
+human_interrupt     → procedural lower burden
+transient_failure   → procedural lower burden
+durable_resume      → graph runtime lower burden
+```
+
+This is the intended evidence pattern: graph orchestration earns its complexity only when durable state and recovery materially reduce reconstruction work.
 
 ## LangGraph policy
 
