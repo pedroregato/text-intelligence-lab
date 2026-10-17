@@ -10,13 +10,14 @@
 
 Este catálogo registra princípios **duradouros e questionáveis**, distintos de decisões contextuais (ADRs), resultados experimentais, verbetes do glossário e requisitos obrigatórios do [TIL Course Design Contract](../TIL-COURSE-DESIGN-CONTRACT.md).
 
-A unidade de análise é **princípio → critério verificável → evidência e limites → decisão**. As evidências podem sustentar, restringir ou contestar decisões. Não há hierarquia presumida na qual agentes, LLMs ou Transformers sejam superiores.
+A unidade de análise é **princípio → critério verificável → evidência e limites → decisão**. O princípio é uma orientação normativa; sua **aplicação** deve ser auditável. Não reivindicamos testar um lema como se fosse uma hipótese estatística isolada. As evidências podem sustentar, restringir ou contestar decisões. Não há hierarquia presumida na qual agentes, LLMs ou Transformers sejam superiores.
 
 ## Navegação
 
 - [Engineering principles](engineering-principles.md): formulações originais e fichas com critérios, exemplos, contraexemplos e limitações.
 - [Structured catalog](principles-catalog.yaml): IDs, estados, lemas literais, critérios e proveniência para validações futuras.
 - [Principles to lessons](principles-to-lessons.md): mapa contextual de aulas, evidências e pontos de integração propostos.
+- [Review and adoption](REVIEW-AND-ADOPTION.md): avaliação crítica, níveis de alegação, rubrica e protocolo de revisão adversarial.
 
 ## Protocolo editorial
 
@@ -45,6 +46,7 @@ Os links para aulas abaixo são um **mapa piloto**, não integração efetiva ao
 - [x] Separar princípios, critérios e evidências.
 - [x] Fornecer exemplos, limitações e verificações para cada princípio.
 - [x] Associar Aula 21 a observações com proveniência.
+- [x] Revisão crítica preliminar com testes de aplicação e contrapontos documentados.
 - [ ] Revisão humana do catálogo e dos termos.
 - [ ] Decisão de adoção, com aprovação e registro apropriados.
 - [ ] Integração curricular gradual sem duplicar glossário ou ADRs.
