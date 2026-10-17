@@ -19,6 +19,8 @@ A unidade de análise é **princípio → critério verificável → evidência 
 - [Principles to lessons](principles-to-lessons.md): mapa contextual de aulas, evidências e pontos de integração propostos.
 - [Review and adoption](REVIEW-AND-ADOPTION.md): avaliação crítica, níveis de alegação, rubrica e protocolo de revisão adversarial.
 - [Worked decision — Aula 21](EXAMPLE-AULA-21-DECISION.md): uma ficha preenchida, com hipótese, evidência, limites e decisão contextual.
+- [Decision Lab 01](DECISION-LAB-01.md): exercício de decisão arquitetural com dados explicitamente fictícios, perguntas adversariais e resposta de referência opcional.
+- [Decision template](DECISION-TEMPLATE.md): ficha mínima reutilizável, sem obrigatoriedade burocrática.
 
 ## Protocolo editorial
 
@@ -60,6 +62,8 @@ O script utiliza somente a biblioteca padrão do Python e verifica IDs, preserva
 - [x] Fornecer exemplos, limitações e verificações para cada princípio.
 - [x] Associar Aula 21 a observações com proveniência.
 - [x] Incluir exemplo de decisão preenchida e validador automatizado do contrato documental.
+- [x] Propor exercício de tomada de decisão sob evidência incompleta com gabarito opcional e template leve.
+- [ ] Submeter o exercício a revisão humana/estudante independente para validar aprendizagem, sem confundir com execução técnica.
 - [x] Revisão crítica preliminar com testes de aplicação e contrapontos documentados.
 - [ ] Revisão humana do catálogo e dos termos.
 - [ ] Decisão de adoção, com aprovação e registro apropriados.
