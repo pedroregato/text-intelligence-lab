@@ -2,7 +2,7 @@
 
 ## Status
 
-REVIEW CANDIDATE v2 — runtime semantics, evidence design and pedagogy hardened; fresh execution and final inspection required.
+REVIEW CANDIDATE v2 — technical and pedagogical gates passed; Living Glossary regeneration remains before promotion.
 
 ## Scope
 
@@ -52,7 +52,7 @@ LangGraph = optional reference implementation
 **PASS — SPECIFIED**
 
 ### G11 — Living Glossary
-**PARTIAL**
+**PARTIAL — CANONICAL ENTRIES PRESENT; GENERATED VIEWS PENDING**
 
 Canonical entries added for:
 
@@ -105,9 +105,9 @@ Observed warnings remained environmental rather than lesson failures:
 The current v2 therefore passes the local deterministic execution gate.
 
 ### G14 — Kaggle Run All
-**PENDING — CURRENT v2 NOT YET EXECUTED**
+**PASS — CURRENT v2**
 
-A previous revision reached Kaggle execution, but v2 must receive a fresh Run All after local headless validation.
+The hardened v2 was pushed to Kaggle after the final local headless run and completed successfully. This satisfies the current-revision Kaggle execution gate.
 
 ### G15 — Pedagogical inspection
 **PASS — CURRENT v2 LOCAL EVIDENCE REVIEW**
