@@ -2,7 +2,7 @@
 
 ## Status
 
-REVIEW CANDIDATE v2 — technical and pedagogical gates passed; Living Glossary regeneration remains before promotion.
+STUDENT-READY — all technical, glossary, execution, and pedagogical gates passed for the current v2.
 
 ## Scope
 
@@ -52,16 +52,16 @@ LangGraph = optional reference implementation
 **PASS — SPECIFIED**
 
 ### G11 — Living Glossary
-**PARTIAL — CANONICAL ENTRIES PRESENT; GENERATED VIEWS PENDING**
+**PASS — CURRENT v2**
 
-Canonical entries added for:
+Canonical entries are present and generated views have been verified for:
 
-- Orchestration Runtime;
+- Orchestration Runtime / Runtime de orquestração;
 - Checkpoint;
-- Durable Execution;
-- Interrupt and Resume.
+- Durable Execution / Execução durável;
+- Interrupt and Resume / Interrupção e retomada.
 
-Generated glossary views still need regeneration.
+The duplicate `checkpoint` glossary ID was merged into a single canonical definition preserving `lesson_first_seen: "18"` while extending the concept for Aula 22. Generated PT-BR, EN, and interactive HTML views are consistent with the canonical source.
 
 ### G12 — Notebook implementation
 **PASS — IMPLEMENTED**
@@ -155,9 +155,11 @@ recovery
 
 and only then map those concepts to framework primitives.
 
-## Promotion rule
+## Promotion
 
-Do not promote until G11–G15 pass.
+**PROMOTED — ✅ Student-ready**
+
+G11–G15 have passed for the current v2. Future content or code changes that materially affect execution, evidence, or pedagogy require revalidation before retaining Student-ready status.
 
 ## Governing principle
 
