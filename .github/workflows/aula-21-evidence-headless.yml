@@ -1,0 +1,48 @@
+name: Aula 21 Evidence Headless
+
+on:
+  pull_request:
+    paths:
+      - 'course/21-planning-and-goal-decomposition/**'
+      - '.github/workflows/aula-21-evidence-headless.yml'
+  workflow_dispatch:
+
+jobs:
+  aula21:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install notebook runtime
+        run: python -m pip install --disable-pip-version-check 'nbconvert>=7,<8' 'ipykernel>=6,<7' 'pandas>=2,<3' 'ipython>=8,<10'
+      - name: Validate notebook JSON and cell IDs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          p = Path('course/21-planning-and-goal-decomposition/21-til-planning-and-goal-decomposition.ipynb')
+          nb = json.loads(p.read_text(encoding='utf-8'))
+          ids = [cell['id'] for cell in nb['cells']]
+          assert len(ids) == len(set(ids)), 'IDs duplicados no notebook'
+          assert ids.count('nav-21') == 1, 'Aula 21 deve ter somente um rodapé'
+          assert 'l21-advanced-tests' in ids
+          print('Notebook JSON e estrutura OK:', len(ids), 'células')
+          PY
+      - name: Run all cells headlessly
+        run: |
+          python -m jupyter nbconvert \
+            --to notebook --execute \
+            --ExecutePreprocessor.timeout=120 \
+            --output aula21-executed.ipynb \
+            --output-dir /tmp \
+            course/21-planning-and-goal-decomposition/21-til-planning-and-goal-decomposition.ipynb
+      - name: Attach executed notebook for inspection
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aula21-headless-evidence
+          path: /tmp/aula21-executed.ipynb
+          if-no-files-found: ignore
