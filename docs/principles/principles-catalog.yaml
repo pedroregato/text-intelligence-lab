@@ -1,0 +1,69 @@
+schema_version: "1.0"
+catalog_status: Proposed
+specification: docs/proposals/TIL-EP-001-engineering-principles.md
+provenance_notice: "Lemas literais da especificação; critérios e exemplos são propostas editoriais."
+principles:
+  - id: TIL-PRINCIPLE-001
+    title: "Complexidade conquistada"
+    status: Proposed
+    lemma: "Complexidade arquitetural precisa ser conquistada por evidência."
+    verification: "Comparar alternativa simples e complexa sob condições e objetivos equivalentes, registrando qualidade, custo, latência e riscos."
+    limitation: "O proxy da Aula 21 é sintético; não generalizar como benchmark real."
+    origin: docs/proposals/TIL-EP-001-engineering-principles.md
+    pilot_evidence: docs/readiness/AULA-21-EVIDENCE-REVIEW-2026-10-17.md
+  - id: TIL-PRINCIPLE-002
+    title: "Benefício demonstrável"
+    status: Proposed
+    lemma: "Não basta demonstrar que uma arquitetura consegue planejar, validar ou replanejar. É necessário demonstrar qual benefício cada mecanismo efetivamente produz, em quais condições e a que custo."
+    verification: "Declarar hipótese incremental; definir baseline, mecanismo, métrica de resultado e orçamento antes do teste."
+    limitation: "Demonstrar valor depende de objetivo e restrições explícitos; não reduzir tudo ao custo."
+    origin: docs/proposals/TIL-EP-001-engineering-principles.md
+    pilot_evidence: docs/readiness/AULA-21-EVIDENCE-REVIEW-2026-10-17.md
+  - id: TIL-PRINCIPLE-003
+    title: "Atribuição causal"
+    status: Proposed
+    lemma: "Não atribua ao planejamento um benefício produzido por um mecanismo de segurança compartilhado."
+    verification: "Inventariar guards, políticas e informação recebida por cada arquitetura; isolar intervenções e comparar contrafactuais plausíveis."
+    limitation: "Cenários controlados ajudam, mas não eliminam automaticamente confundimento."
+    origin: docs/proposals/TIL-EP-001-engineering-principles.md
+    pilot_evidence: docs/readiness/AULA-21-EVIDENCE-REVIEW-2026-10-17.md
+  - id: TIL-PRINCIPLE-004
+    title: "Evidência antes de preferência"
+    status: Proposed
+    lemma: "A arquitetura preferida deve ser consequência da evidência, não uma premissa do experimento."
+    verification: "Pré-declarar hipótese, baseline e condições de equivalência; registrar também resultados negativos."
+    limitation: "Resultados favoráveis em um dataset ou cenário não bastam para alegar superioridade geral."
+    origin: docs/proposals/TIL-EP-001-engineering-principles.md
+    pilot_evidence: docs/readiness/AULA-21-EVIDENCE-REVIEW-2026-10-17.md
+  - id: TIL-PRINCIPLE-005
+    title: "Resultado não é mecanismo"
+    status: Proposed
+    lemma: "Observar um resultado correto não demonstra que o mecanismo responsável por ele foi corretamente identificado."
+    verification: "Inspecionar traces por etapa e verificar causas alternativas para mesmo resultado."
+    limitation: "O trace é evidência parcial; ausência de eventos instrumentados não prova ausência de comportamento."
+    origin: docs/proposals/TIL-EP-001-engineering-principles.md
+    pilot_evidence: docs/readiness/AULA-21-EVIDENCE-REVIEW-2026-10-17.md
+  - id: TIL-PRINCIPLE-006
+    title: "Validação não é segurança demonstrada"
+    status: Proposed
+    lemma: "Rejeitar um plano inválido demonstra que uma regra foi aplicada; não demonstra, por si só, que um incidente foi evitado."
+    verification: "Separar validade estrutural, executabilidade, política e resultado; descrever o incidente que ocorreria sem o validador e confrontar com guards existentes."
+    limitation: "Rejeição conservadora pode ser mandatória por compliance, mas não equivale a incidente evitado."
+    origin: docs/proposals/TIL-EP-001-engineering-principles.md
+    pilot_evidence: docs/readiness/AULA-21-EVIDENCE-REVIEW-2026-10-17.md
+  - id: TIL-PRINCIPLE-007
+    title: "Resultado negativo legítimo"
+    status: Proposed
+    lemma: "Não encontrar evidências suficientes para justificar uma arquitetura mais complexa é um resultado legítimo do experimento."
+    verification: "Reportar hipótese, dados, intervalos/limites, resultado e decisão, inclusive quando não há ganho."
+    limitation: "Poder estatístico, cobertura de cenários e escolha de métricas limitam a conclusão."
+    origin: docs/proposals/TIL-EP-001-engineering-principles.md
+    pilot_evidence: docs/readiness/AULA-21-EVIDENCE-REVIEW-2026-10-17.md
+  - id: TIL-PRINCIPLE-008
+    title: "Planejamento e governança"
+    status: Proposed
+    lemma: "O plano orienta a execução; as políticas e os mecanismos de segurança limitam o que a execução está autorizada a fazer."
+    verification: "Aplicar guards de autorização, política e estado imediatamente antes de ação irreversível, com traces e razão de término."
+    limitation: "O caso de publicação é simulado e não substitui testes de segurança reais."
+    origin: docs/proposals/TIL-EP-001-engineering-principles.md
+    pilot_evidence: docs/readiness/AULA-21-EVIDENCE-REVIEW-2026-10-17.md
