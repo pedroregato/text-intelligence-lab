@@ -10,6 +10,7 @@ This directory contains the engineering, pedagogical, experimental, and referenc
 - `references/` — Living Reference Library and editorial policy.
 - `case-studies/` — external and internal cases used as teaching evidence.
 - `readiness/` — lesson readiness and release checks.
+- `principles/` — proposed engineering principles, operational criteria, provenance and curriculum map (TIL-EP-001).
 - `runbooks/` — repeatable operational procedures.
 - `templates/` — reusable documentation templates.
 - `ENGINEERING.md` — execution architecture and engineering policies.
