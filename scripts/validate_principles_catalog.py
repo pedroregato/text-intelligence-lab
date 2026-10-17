@@ -11,7 +11,7 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "docs" / "principles"
 YAML = BASE / "principles-catalog.yaml"
 MARKDOWN = BASE / "engineering-principles.md"
