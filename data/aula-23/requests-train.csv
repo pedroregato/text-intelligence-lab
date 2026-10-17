@@ -1,0 +1,33 @@
+request_id,text,intent,lesson_id
+T01,publique a aula 20,publish_lesson,20
+T02,publicar a aula 18,publish_lesson,18
+T03,quero publicar a aula 21,publish_lesson,21
+T04,faça a publicação da aula 19,publish_lesson,19
+T05,publique a release da aula 22,publish_lesson,22
+T06,por favor publique a aula 17,publish_lesson,17
+T07,pode publicar a aula 20 agora,publish_lesson,20
+T08,gere a release e publique a aula 21,publish_lesson,21
+T09,qual o status da aula 20,check_status,20
+T10,consulte o status da aula 18,check_status,18
+T11,a aula 21 está pronta,check_status,21
+T12,verifique se a aula 22 está pronta,check_status,22
+T13,me diga o status da aula 19,check_status,19
+T14,em que estado está a aula 17,check_status,17
+T15,a aula 20 já pode ser publicada,check_status,20
+T16,status da aula 21,check_status,21
+T17,faça o que for melhor com a aula,ambiguous,
+T18,resolva isso,ambiguous,
+T19,cuida da aula pra mim,ambiguous,
+T20,preciso de ajuda com uma aula,ambiguous,
+T21,faz alguma coisa com o curso,ambiguous,
+T22,você decide,ambiguous,
+T23,o que eu faço agora,ambiguous,
+T24,mexe na aula,ambiguous,
+T25,qual a previsão do tempo para amanhã,out_of_scope,
+T26,escreva um poema sobre embeddings,out_of_scope,
+T27,quanto é 12% de 850,out_of_scope,
+T28,me recomende um filme,out_of_scope,
+T29,traduza bom dia para inglês,out_of_scope,
+T30,qual a capital da austrália,out_of_scope,
+T31,marque uma reunião para segunda,out_of_scope,
+T32,explique o que é tf-idf,out_of_scope,
