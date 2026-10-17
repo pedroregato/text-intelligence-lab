@@ -2,7 +2,7 @@
 
 **Status:** Proposed · **Origem:** [TIL-EP-001](../proposals/TIL-EP-001-engineering-principles.md) · **Aplicação-piloto:** Aula 21
 
-Os lemas abaixo são **transcrições literais da especificação**; exemplos, critérios e contraexemplos são interpretações propostas e devem ser revisados. Nenhum enunciado é lei universal. A proposta não cria exigências retroativas para aulas já homologadas.
+Os lemas abaixo são **transcrições literais da especificação**; exemplos, critérios e contraexemplos são interpretações propostas e devem ser revisados. Nenhum enunciado é lei universal. **Aderência a um princípio é julgamento normativo contextual; testes de aplicação auditam decisões e evidências, não demonstram que um lema seja uma lei empírica.** A proposta não cria exigências retroativas para aulas já homologadas.
 
 ## TIL-PRINCIPLE-001 — Complexidade conquistada
 
@@ -13,6 +13,8 @@ Os lemas abaixo são **transcrições literais da especificação**; exemplos, c
 **Falha evitada:** Adotar solução mais sofisticada por prestígio técnico.
 
 **Critério verificável:** Comparar alternativa simples e complexa sob condições e objetivos equivalentes, registrando qualidade, custo, latência e riscos.
+
+**Teste de aplicação (auditável):** Verificar se o registro da decisão contém alternativa baseline, critérios de resultado, restrições e custo adicional. **Não conformidade:** complexidade promovida apenas por preferência ou prestígio, sem justificar requisitos não medidos.
 
 **Exemplo:** Aula 21: reactive preserva a segurança do guard com menor custo proxy nos cenários comparáveis.
 
@@ -32,6 +34,8 @@ Os lemas abaixo são **transcrições literais da especificação**; exemplos, c
 
 **Critério verificável:** Declarar hipótese incremental; definir baseline, mecanismo, métrica de resultado e orçamento antes do teste.
 
+**Teste de aplicação (auditável):** Verificar hipótese de benefício marginal, métrica, orçamento, baseline e condições de comparação. **Não conformidade:** apenas demonstrar a existência de um plano v2 e chamar isso de ganho de utility.
+
 **Exemplo:** Aula 21: replan:v2 é observável, mas não demonstra segurança incremental frente ao guard compartilhado.
 
 **Contraexemplo ou condição de contorno:** Um contrato obrigatório pode justificar rastreabilidade mesmo se utility operacional for neutra.
@@ -49,6 +53,8 @@ Os lemas abaixo são **transcrições literais da especificação**; exemplos, c
 **Falha evitada:** Creditar a componente errada um resultado positivo.
 
 **Critério verificável:** Inventariar guards, políticas e informação recebida por cada arquitetura; isolar intervenções e comparar contrafactuais plausíveis.
+
+**Teste de aplicação (auditável):** Identificar os controles comuns e avaliar se a conclusão isola o mecanismo adicional. **Não conformidade:** atribuir ao replanejamento a segurança produzida pelo guard presente nos dois grupos.
 
 **Exemplo:** Em state_changes, ambos os executores releem status antes de publicar e interrompem a publicação.
 
@@ -68,6 +74,8 @@ Os lemas abaixo são **transcrições literais da especificação**; exemplos, c
 
 **Critério verificável:** Pré-declarar hipótese, baseline e condições de equivalência; registrar também resultados negativos.
 
+**Teste de aplicação (auditável):** Conferir se critérios de escolha e alternativas estavam definidos antes da interpretação, e se resultados desfavoráveis permanecem no relatório. **Não conformidade:** ocultar cenários em que a solução preferida perde.
+
 **Exemplo:** Aula 21 mantém em evidência a ausência de ganho em tarefas simples.
 
 **Contraexemplo ou condição de contorno:** Escolhas podem depender de restrições legais ou pedagógicas não traduzidas em métricas do laboratório.
@@ -85,6 +93,8 @@ Os lemas abaixo são **transcrições literais da especificação**; exemplos, c
 **Falha evitada:** Usar sucesso final como prova de execução ou planejamento corretos.
 
 **Critério verificável:** Inspecionar traces por etapa e verificar causas alternativas para mesmo resultado.
+
+**Teste de aplicação (auditável):** Confrontar o resultado final com traces e pelo menos uma hipótese causal alternativa. **Não conformidade:** inferir que o planning foi responsável por uma publicação correta apenas porque ela terminou corretamente.
 
 **Exemplo:** Publicação concluída no fluxo reativo não implica que um plano formal tenha sido executado.
 
@@ -104,6 +114,8 @@ Os lemas abaixo são **transcrições literais da especificação**; exemplos, c
 
 **Critério verificável:** Separar validade estrutural, executabilidade, política e resultado; descrever o incidente que ocorreria sem o validador e confrontar com guards existentes.
 
+**Teste de aplicação (auditável):** Distinguir contrato violado, execução factível, política aplicável e contrafactual do dano. **Não conformidade:** chamar uma rejeição contratual de incidente evitado sem traço ou experimento que demonstre esse risco.
+
 **Exemplo:** Em contract_violation, planning rejeita plano sem depends_on direto, mas reativo publica com guard e autorização.
 
 **Contraexemplo ou condição de contorno:** Se ausência de uma dependência permitir publicação prévia à aprovação num executor sem guard, o risco pode ser real — precisa ser demonstrado.
@@ -122,6 +134,8 @@ Os lemas abaixo são **transcrições literais da especificação**; exemplos, c
 
 **Critério verificável:** Reportar hipótese, dados, intervalos/limites, resultado e decisão, inclusive quando não há ganho.
 
+**Teste de aplicação (auditável):** Documentar resultados sem ganho, incerteza e limites de escopo; não exigir superioridade da arquitetura complexa. **Não conformidade:** reclassificar empate como vitória sem justificativa.
+
 **Exemplo:** Aula 21 aceita a conclusão de que planning não pagou o overhead nos cenários comparáveis.
 
 **Contraexemplo ou condição de contorno:** Ausência de evidência não demonstra equivalência ou impossibilidade de benefício em outros cenários.
@@ -139,6 +153,8 @@ Os lemas abaixo são **transcrições literais da especificação**; exemplos, c
 **Falha evitada:** Permitir que um plano previamente aprovado dispense controle antes de efeitos sensíveis.
 
 **Critério verificável:** Aplicar guards de autorização, política e estado imediatamente antes de ação irreversível, com traces e razão de término.
+
+**Teste de aplicação (auditável):** Verificar que a autorização e o estado são novamente observados antes da ação sensível. **Não conformidade:** supor que aprovação do plano substitui guard de execução.
 
 **Exemplo:** Aula 21: revalidação de prontidão antes da publicação, tanto no reactive quanto no planning.
 
