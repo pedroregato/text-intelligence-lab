@@ -2,10 +2,10 @@
 
 **Projeto:** Text Intelligence Lab (TIL) with Kaggle  
 **Versão:** 1.0 — especificação inicial  
-**Status:** PROPOSED / DEFERRED  
+**Status:** PROPOSED / IN REVIEW  
 **Registro:** 17/10/2026  
 **Dependência:** concluir a revisão e homologação da Aula 21 — Planning and Goal Decomposition (Issue #3, PR #4).  
-**Escopo deste registro:** preservar e especificar a iniciativa; **não** implementar ainda o catálogo, integrações ou mecanismos de governança.
+**Escopo original do registro:** preservar e especificar a iniciativa. **Retomada após encerramento da Aula 21:** catálogo documental inicial proposto em `docs/principles/`, ainda sem adoção nem alteração de notebooks.
 
 ## 1. Motivação
 
@@ -128,4 +128,4 @@ Ao implementar o framework, revisitar a versão homologada da Aula 21; não cong
 
 **Retomar esta especificação assim que a revisão da Aula 21 estiver encerrada**, com os resultados de execução e homologação disponíveis. A conclusão da Aula 21 é um marco de trabalho, não uma condição técnica para que o registro exista.
 
-**Nesta data, somente a especificação fica registrada. Nenhuma integração curricular ou implementação do framework está autorizada por este documento, por si só.**
+**Nota histórica (17/10/2026):** o registro inicial foi deliberadamente adiado até o encerramento da Aula 21. **Estado atual:** retomada para elaboração e revisão do catálogo em `docs/principles/`; nenhum princípio foi automaticamente adotado e nenhuma integração curricular foi publicada.
